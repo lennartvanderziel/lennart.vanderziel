@@ -63,6 +63,7 @@ const jsonLd = {
       description:
         "Former founder & CEO of an award-winning tech startup. Since 2020, develops founders through strategy coaching, masterminds and communities.",
       knowsAbout: ["Founder development", "Business strategy", "Masterminds", "Entrepreneur communities", "Health optimization"],
+      sameAs: ["https://www.instagram.com/lennartvanderziel/", "https://www.linkedin.com/in/lennartvanderziel/", "https://www.crunchbase.com/person/lennart-van-der-ziel"],
     },
     {
       "@type": "ProfessionalService",

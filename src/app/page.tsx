@@ -26,6 +26,7 @@ export default function Home() {
               <a href="#story" className="nav-link" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>My story</a>
               <a href="#programs" className="nav-link" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>Programs</a>
               <a href="/shoulder-to-shoulder" className="nav-link" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>Shoulder to Shoulder</a>
+              <a href="/high-performance-mentoring" className="nav-link" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>High Performance</a>
             </div>
             <a href="/platform" className="nav-link" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 600, whiteSpace: "nowrap" }}>Log in</a>
             <a href="#contact" className="btn-primary" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "10px 18px", borderRadius: 100, fontSize: 13.5, fontWeight: 600, whiteSpace: "nowrap" }}>Work with me</a>
@@ -47,7 +48,7 @@ export default function Home() {
             The man behind<br />the highest-performing<br /><span style={{ color: ACCENT }}>founders.</span>
           </h1>
           <p style={{ maxWidth: 540, fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,0.75)", marginBottom: 40, fontWeight: 500 }}>
-            I spent a decade building technology. Now I develop people — through a founder brotherhood and high performance mentoring.
+            I spent a decade building technology. Now I develop people — the founders behind growing businesses.
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
             <a href="#programs" className="btn-primary" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "17px 34px", borderRadius: 100, fontSize: 15, fontWeight: 700 }}>Explore the programs →</a>
@@ -118,56 +119,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROGRAMS — the two levels */}
+      {/* PROGRAMS — the two initiatives */}
       <section id="programs" style={{ background: PANEL, borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "110px 32px" }}>
           <div style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 64px" }}>
-            <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 24, color: ACCENT }}>How we work together</span>
-            <h2 style={{ fontSize: "clamp(32px,4.6vw,54px)", fontWeight: 800, lineHeight: 1.04, letterSpacing: "-0.025em", marginTop: 10, color: INK }}>Two ways in.</h2>
+            <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 24, color: ACCENT }}>My two initiatives</span>
+            <h2 style={{ fontSize: "clamp(32px,4.6vw,54px)", fontWeight: 800, lineHeight: 1.04, letterSpacing: "-0.025em", marginTop: 10, color: INK }}>I&apos;m the guy behind these two.</h2>
           </div>
 
-          {/* Level 1 — Shoulder to Shoulder */}
-          <div className="card-lift flex-wrap-col" style={{ display: "flex", gap: 0, background: "#fff", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 16, overflow: "hidden", flexWrap: "wrap" }}>
-            <div className="photo-zoom" style={{ flex: "1 1 380px", position: "relative", minHeight: 340 }}>
-              <Image src="/founders.jpg" alt="Shoulder to Shoulder Founder Circle" fill style={{ objectFit: "cover" }} />
-            </div>
-            <div style={{ flex: "1 1 460px", padding: "48px 44px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>Level 1 · The Club</span>
-              <h3 style={{ fontSize: "clamp(26px,3vw,36px)", fontWeight: 800, marginTop: 12, letterSpacing: "-0.02em", color: INK }}>Shoulder to Shoulder</h3>
-              <p style={{ marginTop: 14, fontSize: 16.5, lineHeight: 1.6, color: "#5f5a51" }}>A brotherhood of founders, organised in <strong style={{ color: INK }}>Founder Circles</strong> that meet in regular sessions to hold each other accountable and solve each other&apos;s business challenges. Plus the Global STS Summit and unforgettable gatherings.</p>
-              <p style={{ marginTop: 12, fontSize: 16.5, lineHeight: 1.6, color: "#5f5a51" }}>A place where we help each other reach <strong style={{ color: INK }}>exponential growth</strong> — together.</p>
-              <div style={{ marginTop: 28 }}>
-                <a href="/shoulder-to-shoulder" className="btn-primary" style={{ display: "inline-flex", textDecoration: "none", color: "#fff", background: ACCENT, padding: "15px 30px", borderRadius: 100, fontSize: 14.5, fontWeight: 700 }}>Discover the club →</a>
-              </div>
-            </div>
-          </div>
+          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
 
-          {/* Level 2 — High Performance Mentoring */}
-          <div className="card-lift flex-wrap-col" style={{ display: "flex", gap: 0, background: INK, border: "1px solid rgba(0,0,0,0.1)", borderRadius: 16, overflow: "hidden", flexWrap: "wrap", marginTop: 28 }}>
-            <div style={{ flex: "1 1 460px", padding: "48px 44px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>Level 2 · 1-on-1</span>
-              <h3 style={{ fontSize: "clamp(26px,3vw,36px)", fontWeight: 800, marginTop: 12, letterSpacing: "-0.02em", color: "#f6f3ec" }}>High Performance Mentoring</h3>
-              <p style={{ marginTop: 14, fontSize: 16.5, lineHeight: 1.6, color: "#a59e93" }}>For founders who want to operate at their A-game — <strong style={{ color: "#f6f3ec" }}>mentally, physically and emotionally</strong>.</p>
-              <ul style={{ marginTop: 16, paddingLeft: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
-                {[
-                  "Full physical & mental assessment — including health tests like blood work",
-                  "A specific plan for your physical health",
-                  "A plan for mental & emotional peak performance",
-                  "Ongoing coaching to make sure it keeps getting better",
-                ].map((item) => (
-                  <li key={item} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
-                    <span style={{ color: ACCENT, fontWeight: 800, fontSize: 16, lineHeight: 1.5 }}>✓</span>
-                    <span style={{ fontSize: 15.5, lineHeight: 1.55, color: "#cfc8bd" }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ marginTop: 28 }}>
-                <a href="#contact" className="btn-primary" style={{ display: "inline-flex", textDecoration: "none", color: "#fff", background: ACCENT, padding: "15px 30px", borderRadius: 100, fontSize: 14.5, fontWeight: 700 }}>Request a conversation →</a>
+            {/* Shoulder to Shoulder */}
+            <a href="/shoulder-to-shoulder" className="card-lift" style={{ textDecoration: "none", background: "#fff", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
+              <div className="photo-zoom" style={{ position: "relative", aspectRatio: "16/10" }}>
+                <Image src="/founders.jpg" alt="Shoulder to Shoulder — the founder group" fill style={{ objectFit: "cover" }} />
               </div>
-            </div>
-            <div className="photo-zoom" style={{ flex: "1 1 380px", position: "relative", minHeight: 340 }}>
-              <Image src="/mastermind.jpg" alt="High Performance Mentoring" fill style={{ objectFit: "cover" }} />
-            </div>
+              <div style={{ padding: "34px 32px 38px" }}>
+                <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>The Club</span>
+                <h3 style={{ fontSize: 26, fontWeight: 800, marginTop: 10, letterSpacing: "-0.02em", color: INK }}>Shoulder to Shoulder</h3>
+                <p style={{ marginTop: 12, fontSize: 16, lineHeight: 1.6, color: "#5f5a51" }}>Founder Circles that meet in regular sessions, the Global STS Summit, and a community where founders hold each other accountable and reach exponential growth — together.</p>
+                <span style={{ display: "inline-flex", marginTop: 20, color: ACCENT, fontSize: 14.5, fontWeight: 700 }}>Discover the club →</span>
+              </div>
+            </a>
+
+            {/* High Performance Mentoring */}
+            <a href="/high-performance-mentoring" className="card-lift" style={{ textDecoration: "none", background: "#fff", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
+              <div style={{ position: "relative", aspectRatio: "16/10", background: "linear-gradient(135deg, #1c1915, #2e2820)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ textAlign: "center", padding: 20 }}>
+                  <span style={{ display: "inline-flex", width: 54, height: 54, borderRadius: "50%", background: "rgba(232,116,43,0.16)", border: "1px solid rgba(232,116,43,0.4)", alignItems: "center", justifyContent: "center", fontSize: 22 }}>📷</span>
+                  <p style={{ marginTop: 12, fontSize: 13, color: "rgba(255,255,255,0.45)", fontWeight: 600 }}>Photo with 1-on-1 client — coming soon</p>
+                </div>
+              </div>
+              <div style={{ padding: "34px 32px 38px" }}>
+                <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>1-on-1</span>
+                <h3 style={{ fontSize: 26, fontWeight: 800, marginTop: 10, letterSpacing: "-0.02em", color: INK }}>High Performance Mentoring</h3>
+                <p style={{ marginTop: 12, fontSize: 16, lineHeight: 1.6, color: "#5f5a51" }}>Private mentoring for founders who want to operate at their A-game — mentally, physically and emotionally. Built on real assessments and a plan that keeps getting better.</p>
+                <span style={{ display: "inline-flex", marginTop: 20, color: ACCENT, fontSize: 14.5, fontWeight: 700 }}>Explore the mentoring →</span>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -207,9 +196,8 @@ export default function Home() {
           <div>
             <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "#7d766c" }}>Follow</span>
             <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 10 }}>
-              {["Instagram", "LinkedIn", "YouTube"].map((s) => (
-                <a key={s} href="#" style={{ textDecoration: "none", color: "#cfc8bd", fontSize: 15 }}>{s}</a>
-              ))}
+              <a href="https://www.instagram.com/lennartvanderziel/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "#cfc8bd", fontSize: 15 }}>Instagram</a>
+              <a href="https://www.linkedin.com/in/lennartvanderziel/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "#cfc8bd", fontSize: 15 }}>LinkedIn</a>
             </div>
           </div>
         </div>
