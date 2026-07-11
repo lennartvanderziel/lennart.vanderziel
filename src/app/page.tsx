@@ -44,20 +44,45 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <header id="top" className="hero-pad" style={{ maxWidth: 980, margin: "0 auto", padding: "96px 32px 72px", textAlign: "center" }}>
-        <div style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(0,0,0,0.12)", borderRadius: 100, padding: "7px 16px", marginBottom: 34 }}>
-          <span style={{ width: 7, height: 7, borderRadius: "50%", background: ACCENT }} />
-          <span style={{ fontSize: 12.5, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: MUTED }}>For committed founders · By invitation</span>
-        </div>
-        <h1 style={{ fontSize: "clamp(44px,7vw,86px)", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.03em", color: INK }}>
-          Grow your business by growing the <span style={{ color: ACCENT }}>founder</span> behind it.
-        </h1>
-        <p style={{ margin: "30px auto 0", maxWidth: 620, fontSize: 19, lineHeight: 1.55, color: MUTED }}>
-          I help entrepreneurs scale through sharper strategy and deeper personal leadership — optimising the mind, body and psychology that make you both successful and genuinely happy. Inside a private brotherhood of high-level founders.
-        </p>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 20, flexWrap: "wrap", marginTop: 40 }}>
-          <a href="#waitlist" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "17px 34px", borderRadius: 100, fontSize: 15, fontWeight: 600 }}>Join the waitlist →</a>
-          <span style={{ fontSize: 13.5, color: "#8a847a", fontWeight: 500 }}>First cohort · Limited places</span>
+      <header id="top" style={{ position: "relative", width: "100%", minHeight: "100vh", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
+        {/* Background photo */}
+        <Image src="/lennart.jpg" alt="Lennart van der Ziel" fill style={{ objectFit: "cover", objectPosition: "center 15%" }} priority />
+        {/* Gradient overlay */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,8,6,0.25) 0%, rgba(10,8,6,0.1) 30%, rgba(10,8,6,0.6) 60%, rgba(10,8,6,0.92) 100%)" }} />
+
+        {/* Content */}
+        <div style={{ position: "relative", maxWidth: 1180, margin: "0 auto", width: "100%", padding: "0 32px 80px" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: "1px solid rgba(255,255,255,0.25)", borderRadius: 100, padding: "7px 16px", marginBottom: 28, backdropFilter: "blur(8px)", background: "rgba(255,255,255,0.08)" }}>
+            <span style={{ width: 7, height: 7, borderRadius: "50%", background: ACCENT }} />
+            <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.85)" }}>Health Performance Coach · By invitation</span>
+          </div>
+          <h1 style={{ fontSize: "clamp(42px,7vw,90px)", fontWeight: 800, lineHeight: 0.97, letterSpacing: "-0.035em", color: "#fff", maxWidth: 820, marginBottom: 28 }}>
+            The man behind<br />the highest-performing<br /><span style={{ color: ACCENT }}>founders.</span>
+          </h1>
+          <p style={{ maxWidth: 520, fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,0.75)", marginBottom: 40, fontWeight: 500 }}>
+            I help elite entrepreneurs optimize their mind, body and business — so they perform at the highest level without burning out.
+          </p>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
+            <a href="#waitlist" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "17px 34px", borderRadius: 100, fontSize: 15, fontWeight: 700, transition: "filter .2s" }}>Work with Lennart →</a>
+            <a href="#system" style={{ textDecoration: "none", color: "rgba(255,255,255,0.8)", fontSize: 14, fontWeight: 500, display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ width: 32, height: 32, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.3)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12 }}>↓</span>
+              See the system
+            </a>
+          </div>
+
+          {/* Credentials bar */}
+          <div style={{ marginTop: 56, paddingTop: 28, borderTop: "1px solid rgba(255,255,255,0.12)", display: "flex", gap: 40, flexWrap: "wrap" }}>
+            {[
+              { num: "€12M+", label: "Revenue scaled" },
+              { num: "10+", label: "Years coaching" },
+              { num: "3", label: "Pillars: Mind · Body · Business" },
+            ].map((s) => (
+              <div key={s.num}>
+                <div style={{ fontSize: 26, fontWeight: 800, color: "#fff", letterSpacing: "-0.02em" }}>{s.num}</div>
+                <div style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", marginTop: 2, fontWeight: 500 }}>{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </header>
 
