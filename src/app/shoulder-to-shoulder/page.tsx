@@ -31,7 +31,7 @@ export default function ShoulderToShoulder() {
 
       {/* NAV */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 40, background: "linear-gradient(to bottom, rgba(10,9,7,0.55), transparent)" }}>
-        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "22px 28px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20 }}>
+        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "16px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20 }}>
           <a href="#top" style={{ display: "flex", alignItems: "center", gap: 11, textDecoration: "none", color: "#fff" }}>
             <span style={{ flex: "0 0 auto", width: 32, height: 32, borderRadius: 9, background: ACCENT, display: "flex", alignItems: "center", justifyContent: "center", gap: 3.5 }}>
               <span style={{ width: 5, height: 14, borderRadius: 3, background: "#fff" }} />
@@ -128,7 +128,7 @@ export default function ShoulderToShoulder() {
       </section>
 
       {/* PHOTO GALLERY */}
-      <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, background: "#0f0e0b" }}>
+      <section className="photo-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, background: "#0f0e0b" }}>
         <div style={{ position: "relative", aspectRatio: "4/5", overflow: "hidden" }}>
           <Image src="/dinner.jpg" alt="Founders dinner" fill style={{ objectFit: "cover" }} />
         </div>
@@ -157,13 +157,13 @@ export default function ShoulderToShoulder() {
       </section>
 
       {/* ABOUT */}
-      <section style={{ background: "#fff", color: "#15130f", padding: "110px 28px" }}>
+      <section style={{ background: "#fff", color: "#15130f", padding: "80px 20px" }}>
         <div style={{ maxWidth: 820, margin: "0 auto" }}>
           <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto 44px" }}>
             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>About us</span>
             <h2 style={{ marginTop: 10, fontSize: "clamp(28px,4.2vw,44px)", fontWeight: 800, lineHeight: 1.06, letterSpacing: "-0.02em" }}>Your host</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 32, alignItems: "center", background: "#f6f5f2", border: "1px solid rgba(0,0,0,0.06)", borderRadius: 18, padding: 32 }}>
+          <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 32, alignItems: "center", background: "#f6f5f2", border: "1px solid rgba(0,0,0,0.06)", borderRadius: 18, padding: 32 }}>
             <div style={{ position: "relative", width: 200, height: 200, borderRadius: 14, overflow: "hidden", flex: "0 0 auto" }}>
               <Image src="/lennart.jpg" alt="Lennart van der Ziel" fill style={{ objectFit: "cover" }} />
             </div>

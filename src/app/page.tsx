@@ -31,18 +31,20 @@ export default function Home() {
             <span style={{ width: 9, height: 9, borderRadius: "50%", background: ACCENT, display: "inline-block" }} />
             <span style={{ fontSize: 18, fontWeight: 800, letterSpacing: "-0.01em" }}>Lennart van der Ziel</span>
           </a>
-          <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-            <a href="#challenges" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>The Problem</a>
-            <a href="#system" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>The System</a>
-            <a href="#faq" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>FAQ</a>
-            <a href="/shoulder-to-shoulder" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>Shoulder to Shoulder</a>
-            <a href="#waitlist" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "11px 22px", borderRadius: 100, fontSize: 13.5, fontWeight: 600 }}>Join the waitlist</a>
+          <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+            <div className="nav-links" style={{ display: "flex", alignItems: "center", gap: 28 }}>
+              <a href="#challenges" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>The Problem</a>
+              <a href="#system" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>The System</a>
+              <a href="#faq" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>FAQ</a>
+              <a href="/shoulder-to-shoulder" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>Shoulder to Shoulder</a>
+            </div>
+            <a href="#waitlist" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "10px 18px", borderRadius: 100, fontSize: 13.5, fontWeight: 600, whiteSpace: "nowrap" }}>Join the waitlist</a>
           </div>
         </div>
       </nav>
 
       {/* HERO */}
-      <header id="top" style={{ maxWidth: 980, margin: "0 auto", padding: "96px 32px 72px", textAlign: "center" }}>
+      <header id="top" className="hero-pad" style={{ maxWidth: 980, margin: "0 auto", padding: "96px 32px 72px", textAlign: "center" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(0,0,0,0.12)", borderRadius: 100, padding: "7px 16px", marginBottom: 34 }}>
           <span style={{ width: 7, height: 7, borderRadius: "50%", background: ACCENT }} />
           <span style={{ fontSize: 12.5, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: MUTED }}>For committed founders · By invitation</span>
@@ -60,13 +62,13 @@ export default function Home() {
       </header>
 
       {/* COMMUNITY PROOF */}
-      <section style={{ maxWidth: 1180, margin: "0 auto", padding: "24px 32px 96px" }}>
+      <section className="section-pad" style={{ maxWidth: 1180, margin: "0 auto", padding: "24px 32px 96px" }}>
         <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}>
           <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 23, color: ACCENT }}>The room</span>
           <h2 style={{ fontSize: "clamp(28px,3.8vw,44px)", fontWeight: 800, lineHeight: 1.06, letterSpacing: "-0.02em", marginTop: 8, color: INK }}>Real founders. Real rooms.</h2>
           <p style={{ marginTop: 14, fontSize: 16.5, lineHeight: 1.55, color: MUTED }}>From masterminds to long dinners — a community built on eye contact and trust, not another group chat.</p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))", gap: 20 }}>
+        <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))", gap: 20 }}>
           {[
             { src: "/mastermind.jpg", caption: "Founders Mastermind · Bali" },
             { src: "/founders.jpg", caption: "The Founders · Bali" },
@@ -82,7 +84,7 @@ export default function Home() {
       {/* CHALLENGES */}
       <section id="challenges" style={{ background: PANEL, borderTop: "1px solid rgba(0,0,0,0.06)", borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "90px 32px", display: "flex", gap: 72, flexWrap: "wrap" }}>
-          <div style={{ flex: "1 1 380px" }}>
+          <div className="flex-wrap-col" style={{ flex: "1 1 380px" }}>
             <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 24, color: ACCENT }}>Sounds familiar?</span>
             <h2 style={{ fontSize: "clamp(30px,4.2vw,50px)", fontWeight: 800, lineHeight: 1.04, letterSpacing: "-0.02em", marginTop: 12, color: INK }}>Being a high-level founder comes with unique challenges.</h2>
             <a href="#waitlist" style={{ display: "inline-block", marginTop: 34, textDecoration: "none", color: "#fff", background: ACCENT, padding: "15px 30px", borderRadius: 100, fontSize: 14.5, fontWeight: 600 }}>Join the waitlist →</a>
@@ -105,7 +107,7 @@ export default function Home() {
 
       {/* MEET LENNART */}
       <section style={{ maxWidth: 1180, margin: "0 auto", padding: "96px 32px" }}>
-        <div style={{ display: "flex", gap: 64, alignItems: "center", flexWrap: "wrap" }}>
+        <div className="flex-wrap-col" style={{ display: "flex", gap: 64, alignItems: "center", flexWrap: "wrap" }}>
           <div style={{ flex: "1 1 360px", minWidth: 300 }}>
             <div style={{ position: "relative", aspectRatio: "4/5", borderRadius: 8, overflow: "hidden", background: "#e7e3db" }}>
               <Image src="/lennart.jpg" alt="Lennart van der Ziel" fill style={{ objectFit: "cover", objectPosition: "center 18%" }} />
