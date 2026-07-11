@@ -39,22 +39,22 @@ export default function ShoulderToShoulder() {
             </span>
             <span style={{ fontSize: 15.5, fontWeight: 800, letterSpacing: "-0.01em", color: "#fff" }}>Shoulder to Shoulder</span>
           </a>
-          <a href="#apply" style={{ textDecoration: "none", color: "#15130f", background: "#fff", padding: "11px 22px", borderRadius: 100, fontSize: 13.5, fontWeight: 700 }}>Apply now</a>
+          <a href="#apply" className="btn-light" style={{ textDecoration: "none", color: "#15130f", background: "#fff", padding: "11px 22px", borderRadius: 100, fontSize: 13.5, fontWeight: 700 }}>Apply now</a>
         </div>
       </nav>
 
       {/* HERO */}
       <header id="top" style={{ position: "relative", width: "100%", height: "100vh", minHeight: 640, overflow: "hidden" }}>
-        <Image src="/founders.jpg" alt="Founders" fill style={{ objectFit: "cover" }} priority />
+        <Image src="/founders.jpg" alt="Founders" fill className="ken-burns" style={{ objectFit: "cover" }} priority />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,9,7,0.5) 0%, rgba(10,9,7,0.15) 38%, rgba(10,9,7,0.55) 68%, rgba(10,9,7,0.92) 100%)", pointerEvents: "none" }} />
         <div style={{ position: "relative", height: "100%", display: "flex", flexDirection: "column", justifyContent: "flex-end", maxWidth: 1180, margin: "0 auto", padding: "0 28px 88px" }}>
           <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 23, color: "#fff", opacity: 0.9 }}>Founder Circle</span>
           <h1 style={{ marginTop: 8, fontSize: "clamp(40px,7vw,88px)", fontWeight: 800, lineHeight: 0.98, letterSpacing: "-0.035em", color: "#fff", maxWidth: 820 }}>Scale further, alongside founders who've been there.</h1>
           <p style={{ marginTop: 20, fontSize: 19, lineHeight: 1.5, color: "rgba(255,255,255,0.86)", fontWeight: 500, maxWidth: 540 }}>Some weeks you're on fire. Other weeks you're stuck — losing momentum, money and growth. Shoulder to Shoulder makes reaching your potential inevitable.</p>
           <div style={{ marginTop: 32, display: "flex", alignItems: "center", gap: 18, flexWrap: "wrap" }}>
-            <a href="#apply" style={{ textDecoration: "none", color: "#15130f", background: "#fff", padding: "17px 34px", borderRadius: 100, fontSize: 16, fontWeight: 700 }}>Apply to join →</a>
+            <a href="#apply" className="btn-light" style={{ textDecoration: "none", color: "#15130f", background: "#fff", padding: "17px 34px", borderRadius: 100, fontSize: 16, fontWeight: 700 }}>Apply to join →</a>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 9, fontSize: 13.5, fontWeight: 600, color: "rgba(255,255,255,0.75)" }}>
-              <span style={{ width: 7, height: 7, borderRadius: "50%", background: ACCENT, display: "inline-block" }} />
+              <span className="pulse-dot" style={{ width: 7, height: 7, borderRadius: "50%", background: ACCENT, display: "inline-block" }} />
               By application only
             </span>
           </div>
@@ -117,7 +117,7 @@ export default function ShoulderToShoulder() {
               { quote: "I stopped thinking like an operator and started thinking like the founder I need to become to raise €40M for my business. That changed how I do everything.", name: "KIBET KIPKEMOI" },
               { quote: "I'd been circling the real estate idea for a while without moving. With the support of the group it turned into land I now own and a 14-unit project underway.", name: "SAMER ATTALLA" },
             ].map((t) => (
-              <div key={t.name} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 16, padding: "30px 30px" }}>
+              <div key={t.name} className="card-lift-dark" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 16, padding: "30px 30px" }}>
                 <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 40, color: ACCENT, lineHeight: 0.4, display: "block" }}>"</span>
                 <p style={{ marginTop: 10, fontSize: 16.5, lineHeight: 1.5, fontWeight: 500, color: "#f0ece4" }}>{t.quote}</p>
                 <p style={{ marginTop: 16, fontSize: 13, fontWeight: 700, color: ACCENT, letterSpacing: "0.06em" }}>{t.name}</p>
@@ -197,10 +197,10 @@ export default function ShoulderToShoulder() {
                 </div>
               ) : (
                 <form onSubmit={(e) => { e.preventDefault(); if (name.trim() && email.trim()) setApplied(true); }} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                  <input type="text" required placeholder="Full name" value={name} onChange={(e) => setName(e.target.value)} style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: "#15130f", padding: "15px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 10, outline: "none" }} />
-                  <input type="email" required placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: "#15130f", padding: "15px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 10, outline: "none" }} />
-                  <input type="text" required placeholder="Business & monthly revenue" value={biz} onChange={(e) => setBiz(e.target.value)} style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: "#15130f", padding: "15px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 10, outline: "none" }} />
-                  <button type="submit" style={{ marginTop: 4, background: ACCENT, color: "#fff", border: "none", padding: "18px 24px", fontSize: 16, fontWeight: 700, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: "pointer" }}>Apply to join →</button>
+                  <input type="text" required placeholder="Full name" value={name} onChange={(e) => setName(e.target.value)} className="input-premium" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: "#15130f", padding: "15px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 10, outline: "none" }} />
+                  <input type="email" required placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} className="input-premium" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: "#15130f", padding: "15px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 10, outline: "none" }} />
+                  <input type="text" required placeholder="Business & monthly revenue" value={biz} onChange={(e) => setBiz(e.target.value)} className="input-premium" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: "#15130f", padding: "15px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 10, outline: "none" }} />
+                  <button type="submit" className="btn-primary" style={{ marginTop: 4, background: ACCENT, color: "#fff", border: "none", padding: "18px 24px", fontSize: 16, fontWeight: 700, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: "pointer" }}>Apply to join →</button>
                 </form>
               )}
             </div>

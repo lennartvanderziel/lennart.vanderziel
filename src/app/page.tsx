@@ -33,12 +33,12 @@ export default function Home() {
           </a>
           <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
             <div className="nav-links" style={{ display: "flex", alignItems: "center", gap: 28 }}>
-              <a href="#challenges" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>The Problem</a>
-              <a href="#system" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>The System</a>
-              <a href="#faq" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>FAQ</a>
-              <a href="/shoulder-to-shoulder" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>Shoulder to Shoulder</a>
+              <a href="#challenges" className="nav-link" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>The Problem</a>
+              <a href="#system" className="nav-link" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>The System</a>
+              <a href="#faq" className="nav-link" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>FAQ</a>
+              <a href="/shoulder-to-shoulder" className="nav-link" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>Shoulder to Shoulder</a>
             </div>
-            <a href="#waitlist" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "10px 18px", borderRadius: 100, fontSize: 13.5, fontWeight: 600, whiteSpace: "nowrap" }}>Join the waitlist</a>
+            <a href="#waitlist" className="btn-primary" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "10px 18px", borderRadius: 100, fontSize: 13.5, fontWeight: 600, whiteSpace: "nowrap" }}>Join the waitlist</a>
           </div>
         </div>
       </nav>
@@ -46,14 +46,14 @@ export default function Home() {
       {/* HERO */}
       <header id="top" style={{ position: "relative", width: "100%", minHeight: "100vh", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
         {/* Background photo */}
-        <Image src="/lennart.jpg" alt="Lennart van der Ziel" fill style={{ objectFit: "cover", objectPosition: "center 15%" }} priority />
+        <Image src="/lennart.jpg" alt="Lennart van der Ziel" fill className="ken-burns" style={{ objectFit: "cover", objectPosition: "center 15%" }} priority />
         {/* Gradient overlay */}
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,8,6,0.25) 0%, rgba(10,8,6,0.1) 30%, rgba(10,8,6,0.6) 60%, rgba(10,8,6,0.92) 100%)" }} />
 
         {/* Content */}
-        <div style={{ position: "relative", maxWidth: 1180, margin: "0 auto", width: "100%", padding: "0 32px 80px" }}>
+        <div className="fade-up" style={{ position: "relative", maxWidth: 1180, margin: "0 auto", width: "100%", padding: "0 32px 80px" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: "1px solid rgba(255,255,255,0.25)", borderRadius: 100, padding: "7px 16px", marginBottom: 28, backdropFilter: "blur(8px)", background: "rgba(255,255,255,0.08)" }}>
-            <span style={{ width: 7, height: 7, borderRadius: "50%", background: ACCENT }} />
+            <span className="pulse-dot" style={{ width: 7, height: 7, borderRadius: "50%", background: ACCENT }} />
             <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.85)" }}>Health Performance Coach · By invitation</span>
           </div>
           <h1 style={{ fontSize: "clamp(42px,7vw,90px)", fontWeight: 800, lineHeight: 0.97, letterSpacing: "-0.035em", color: "#fff", maxWidth: 820, marginBottom: 28 }}>
@@ -63,8 +63,8 @@ export default function Home() {
             I help elite entrepreneurs optimize their mind, body and business — so they perform at the highest level without burning out.
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
-            <a href="#waitlist" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "17px 34px", borderRadius: 100, fontSize: 15, fontWeight: 700, transition: "filter .2s" }}>Work with Lennart →</a>
-            <a href="#system" style={{ textDecoration: "none", color: "rgba(255,255,255,0.8)", fontSize: 14, fontWeight: 500, display: "flex", alignItems: "center", gap: 8 }}>
+            <a href="#waitlist" className="btn-primary" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "17px 34px", borderRadius: 100, fontSize: 15, fontWeight: 700 }}>Work with Lennart →</a>
+            <a href="#system" className="btn-ghost" style={{ textDecoration: "none", color: "rgba(255,255,255,0.8)", fontSize: 14, fontWeight: 500, display: "flex", alignItems: "center", gap: 8, padding: "10px 16px", borderRadius: 100, border: "1px solid transparent" }}>
               <span style={{ width: 32, height: 32, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.3)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12 }}>↓</span>
               See the system
             </a>
@@ -98,7 +98,7 @@ export default function Home() {
             { src: "/mastermind.jpg", caption: "Founders Mastermind · Bali" },
             { src: "/founders.jpg", caption: "The Founders · Bali" },
           ].map((img) => (
-            <figure key={img.src} style={{ margin: 0, position: "relative", borderRadius: 10, overflow: "hidden", aspectRatio: "4/3", background: "#e7e3db" }}>
+            <figure key={img.src} className="photo-zoom" style={{ margin: 0, position: "relative", borderRadius: 10, overflow: "hidden", aspectRatio: "4/3", background: "#e7e3db" }}>
               <Image src={img.src} alt={img.caption} fill style={{ objectFit: "cover", objectPosition: "center 35%" }} />
               <figcaption style={{ position: "absolute", left: 16, bottom: 14, color: "#fff", fontSize: 13, fontWeight: 600, letterSpacing: "0.02em", textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>{img.caption}</figcaption>
             </figure>
@@ -112,7 +112,7 @@ export default function Home() {
           <div className="flex-wrap-col" style={{ flex: "1 1 380px" }}>
             <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 24, color: ACCENT }}>Sounds familiar?</span>
             <h2 style={{ fontSize: "clamp(30px,4.2vw,50px)", fontWeight: 800, lineHeight: 1.04, letterSpacing: "-0.02em", marginTop: 12, color: INK }}>Being a high-level founder comes with unique challenges.</h2>
-            <a href="#waitlist" style={{ display: "inline-block", marginTop: 34, textDecoration: "none", color: "#fff", background: ACCENT, padding: "15px 30px", borderRadius: 100, fontSize: 14.5, fontWeight: 600 }}>Join the waitlist →</a>
+            <a href="#waitlist" className="btn-primary" style={{ display: "inline-flex", marginTop: 34, textDecoration: "none", color: "#fff", background: ACCENT, padding: "15px 30px", borderRadius: 100, fontSize: 14.5, fontWeight: 600 }}>Join the waitlist →</a>
           </div>
           <div style={{ flex: "1 1 420px", display: "flex", flexDirection: "column" }}>
             {[
@@ -165,7 +165,7 @@ export default function Home() {
               { n: "02", title: "Mind & Psychology", body: "A psychology built for performance and peace. Optimise your mental capacity and lead yourself first — so success and happiness stop competing." },
               { n: "03", title: "Body & Energy", body: "Train the physical capacity to carry the weight of your ambition. Energy, resilience and a body that keeps pace with the business you're building." },
             ].map((card) => (
-              <div key={card.n} style={{ border: "1px solid rgba(0,0,0,0.1)", borderRadius: 8, padding: "40px 34px", background: "#fff", transition: "transform .25s, box-shadow .25s" }}>
+              <div key={card.n} className="card-lift" style={{ border: "1px solid rgba(0,0,0,0.1)", borderRadius: 8, padding: "40px 34px", background: "#fff" }}>
                 <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 46, height: 46, borderRadius: 10, background: `color-mix(in srgb, ${ACCENT} 14%, transparent)`, color: ACCENT, fontWeight: 800, fontSize: 18 }}>{card.n}</span>
                 <h3 style={{ fontSize: 24, fontWeight: 700, marginTop: 22, letterSpacing: "-0.01em", color: INK }}>{card.title}</h3>
                 <p style={{ marginTop: 12, fontSize: 15.5, lineHeight: 1.58, color: MUTED }}>{card.body}</p>
@@ -264,8 +264,8 @@ export default function Home() {
           ) : (
             <>
               <form onSubmit={(e) => { e.preventDefault(); if (email.trim()) setJoined(true); }} style={{ margin: "38px auto 0", maxWidth: 520, display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
-                <input type="email" required placeholder="your@email.com" value={email} onChange={(e) => setEmail(e.target.value)} style={{ flex: "1 1 260px", background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: INK, padding: "16px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, outline: "none" }} />
-                <button type="submit" style={{ background: ACCENT, color: "#fff", border: "none", padding: "16px 30px", fontSize: 15, fontWeight: 600, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: "pointer" }}>Request an invitation</button>
+                <input type="email" required placeholder="your@email.com" value={email} onChange={(e) => setEmail(e.target.value)} className="input-premium" style={{ flex: "1 1 260px", background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: INK, padding: "16px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, outline: "none" }} />
+                <button type="submit" className="btn-primary" style={{ background: ACCENT, color: "#fff", border: "none", padding: "16px 30px", fontSize: 15, fontWeight: 600, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: "pointer" }}>Request an invitation</button>
               </form>
               <p style={{ marginTop: 14, fontSize: 12.5, color: "#8a847a" }}>No spam. One message when the cohort opens.</p>
             </>
