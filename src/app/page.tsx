@@ -55,13 +55,13 @@ export default function Home() {
         <div className="fade-up" style={{ position: "relative", maxWidth: 1180, margin: "0 auto", width: "100%", padding: "0 32px 80px" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: "1px solid rgba(255,255,255,0.25)", borderRadius: 100, padding: "7px 16px", marginBottom: 28, backdropFilter: "blur(8px)", background: "rgba(255,255,255,0.08)" }}>
             <span className="pulse-dot" style={{ width: 7, height: 7, borderRadius: "50%", background: ACCENT }} />
-            <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.85)" }}>Health Performance Coach · By invitation</span>
+            <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.85)" }}>Strategy · Masterminds · Founder Communities</span>
           </div>
           <h1 style={{ fontSize: "clamp(42px,7vw,90px)", fontWeight: 800, lineHeight: 0.97, letterSpacing: "-0.035em", color: "#fff", maxWidth: 820, marginBottom: 28 }}>
             The man behind<br />the highest-performing<br /><span style={{ color: ACCENT }}>founders.</span>
           </h1>
           <p style={{ maxWidth: 520, fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,0.75)", marginBottom: 40, fontWeight: 500 }}>
-            I help elite entrepreneurs optimize their mind, body and business — so they perform at the highest level without burning out.
+            I spent a decade building technology. Now I develop people — helping business owners sharpen their strategy and surrounding them with the right entrepreneurs, who hold each other accountable and solve each other's challenges.
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
             <a href="#waitlist" className="btn-primary" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "17px 34px", borderRadius: 100, fontSize: 15, fontWeight: 700 }}>Work with Lennart →</a>
@@ -76,7 +76,7 @@ export default function Home() {
             {[
               { num: "€12M+", label: "Scaled as founder & CEO" },
               { num: "50,000+", label: "Products sold worldwide" },
-              { num: "100+", label: "Founders guided since 2019" },
+              { num: "100+", label: "Founders developed since 2020" },
             ].map((s) => (
               <div key={s.num}>
                 <div style={{ fontSize: 26, fontWeight: 800, color: "#fff", letterSpacing: "-0.02em" }}>{s.num}</div>
@@ -153,8 +153,8 @@ export default function Home() {
             <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 23, color: ACCENT }}>Meet your guide</span>
             <h2 style={{ fontSize: "clamp(30px,4vw,48px)", fontWeight: 800, lineHeight: 1.06, letterSpacing: "-0.02em", marginTop: 10, color: INK }}>Lennart van der Ziel</h2>
             <p style={{ marginTop: 22, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>As co-founder & CEO of <strong style={{ color: INK }}>Travis the Translator</strong>, I took a hardware startup from idea to 50,000+ devices sold in its first year — featured at CES, covered by TechRadar and The Telegraph. I also co-founded <strong style={{ color: INK }}>Venture Café Rotterdam</strong>, one of the largest founder communities in the Netherlands.</p>
-            <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>Then the success bill arrived: a long, painful burnout. That crash became my life's work — I rebuilt myself through health, psychology and structure, and since 2019 I've guided 100+ founders to perform at the highest level <em>without paying the price I paid</em>.</p>
-            <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>The strategy is rarely the bottleneck. The founder is. My work closes that gap.</p>
+            <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>In 2020 I made a decision: I'd rather develop <strong style={{ color: INK }}>founders</strong> than technology. Developing people is simply more meaningful work.</p>
+            <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>Since then I've worked with 100+ business owners on their strategy — and just as importantly, on who's around them. In mastermind groups and communities, the right entrepreneurs keep each other accountable and solve each other's business challenges. That's the work.</p>
             <div style={{ marginTop: 26, display: "flex", alignItems: "center", gap: 12 }}>
               <span style={{ width: 30, height: 1, background: "rgba(0,0,0,0.25)" }} />
               <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 22, color: INK }}>Lennart van der Ziel</span>
@@ -236,7 +236,7 @@ export default function Home() {
             {[
               { step: "Level 1", title: "Shoulder to Shoulder", desc: "The Founder Circle. Weekly peer sessions, the Global STS Summit, and a brotherhood that holds your standard.", cta: "Apply to join →", href: "/shoulder-to-shoulder", featured: false },
               { step: "Level 2", title: "1-on-1 Coaching", desc: "Private, high-touch coaching on your health, psychology and business — full access to Lennart, built entirely around you.", cta: "Request a conversation →", href: "#waitlist", featured: true },
-              { step: "Level 3", title: "Elite Mastermind", desc: "An invitation-only room for founders past 7 figures. Deep strategy, longevity protocols and life design at the highest level.", cta: "By invitation only", href: "#waitlist", featured: false },
+              { step: "Level 3", title: "The Mastermind", desc: "An invitation-only room for founders past 7 figures. Deep strategy, sharper decisions and a small group of peers who\u2019ve been there.", cta: "By invitation only", href: "#waitlist", featured: false },
             ].map((tier) => (
               <div key={tier.title} className="card-lift-dark" style={{ background: tier.featured ? "rgba(232,116,43,0.09)" : "rgba(255,255,255,0.04)", border: tier.featured ? "1px solid rgba(232,116,43,0.55)" : "1px solid rgba(255,255,255,0.1)", borderRadius: 16, padding: "38px 32px", display: "flex", flexDirection: "column" }}>
                 <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>{tier.step}</span>

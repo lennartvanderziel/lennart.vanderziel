@@ -8,14 +8,14 @@ const cormorant = Cormorant_Garamond({ subsets: ["latin"], variable: "--font-ser
 export const metadata: Metadata = {
   metadataBase: new URL("https://lennartvanderziel.com"),
   title: {
-    default: "Lennart van der Ziel · Health Performance Coach for Founders",
+    default: "Lennart van der Ziel · Developing Founders, Not Technology",
     template: "%s · Lennart van der Ziel",
   },
   description:
-    "Elite health performance coaching for founders. Optimize your mind, body and business — scale further without burning out. Home of the Shoulder to Shoulder Founder Circle.",
+    "Former founder & CEO of an award-winning tech startup, now developing the people behind businesses — strategy, masterminds and founder communities. Home of Shoulder to Shoulder.",
   keywords: [
-    "health performance coach",
     "founder coaching",
+    "founder development",
     "executive performance",
     "entrepreneur coaching",
     "Shoulder to Shoulder",
@@ -31,16 +31,16 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://lennartvanderziel.com",
     siteName: "Lennart van der Ziel",
-    title: "Lennart van der Ziel · Health Performance Coach for Founders",
+    title: "Lennart van der Ziel · Developing Founders, Not Technology",
     description:
-      "Elite health performance coaching for founders. Optimize your mind, body and business — scale further without burning out.",
-    images: [{ url: "/lennart.jpg", width: 1200, height: 630, alt: "Lennart van der Ziel — Health Performance Coach" }],
+      "Strategy, masterminds and founder communities. I help business owners grow — surrounded by the right entrepreneurs.",
+    images: [{ url: "/lennart.jpg", width: 1200, height: 630, alt: "Lennart van der Ziel" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lennart van der Ziel · Health Performance Coach for Founders",
+    title: "Lennart van der Ziel · Developing Founders, Not Technology",
     description:
-      "Elite health performance coaching for founders. Optimize your mind, body and business — scale further without burning out.",
+      "Strategy, masterminds and founder communities. I help business owners grow — surrounded by the right entrepreneurs.",
     images: ["/lennart.jpg"],
   },
   robots: {
@@ -59,10 +59,10 @@ const jsonLd = {
       name: "Lennart van der Ziel",
       url: "https://lennartvanderziel.com",
       image: "https://lennartvanderziel.com/lennart.jpg",
-      jobTitle: "Health Performance Coach",
+      jobTitle: "Founder Coach & Mastermind Facilitator",
       description:
-        "Former founder & CEO who scaled his tech business to €12M+ in revenue. Now coaches elite entrepreneurs on mind, body and business performance.",
-      knowsAbout: ["Health optimization", "Founder coaching", "Business strategy", "Performance psychology"],
+        "Former founder & CEO of an award-winning tech startup. Since 2020, develops founders through strategy coaching, masterminds and communities.",
+      knowsAbout: ["Founder development", "Business strategy", "Masterminds", "Entrepreneur communities", "Health optimization"],
     },
     {
       "@type": "ProfessionalService",
