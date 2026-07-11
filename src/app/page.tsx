@@ -35,6 +35,7 @@ export default function Home() {
             <a href="#challenges" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>The Problem</a>
             <a href="#system" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>The System</a>
             <a href="#faq" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>FAQ</a>
+            <a href="/shoulder-to-shoulder" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>Shoulder to Shoulder</a>
             <a href="#waitlist" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "11px 22px", borderRadius: 100, fontSize: 13.5, fontWeight: 600 }}>Join the waitlist</a>
           </div>
         </div>
