@@ -38,6 +38,7 @@ export default function Home() {
               <a href="#faq" className="nav-link" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>FAQ</a>
               <a href="/shoulder-to-shoulder" className="nav-link" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 500 }}>Shoulder to Shoulder</a>
             </div>
+            <a href="/platform" className="nav-link" style={{ textDecoration: "none", color: MUTED, fontSize: 14, fontWeight: 600, whiteSpace: "nowrap" }}>Log in</a>
             <a href="#waitlist" className="btn-primary" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "10px 18px", borderRadius: 100, fontSize: 13.5, fontWeight: 600, whiteSpace: "nowrap" }}>Join the waitlist</a>
           </div>
         </div>
@@ -73,9 +74,9 @@ export default function Home() {
           {/* Credentials bar */}
           <div style={{ marginTop: 56, paddingTop: 28, borderTop: "1px solid rgba(255,255,255,0.12)", display: "flex", gap: 40, flexWrap: "wrap" }}>
             {[
-              { num: "€12M+", label: "Revenue scaled" },
-              { num: "10+", label: "Years coaching" },
-              { num: "3", label: "Pillars: Mind · Body · Business" },
+              { num: "€12M+", label: "Scaled as founder & CEO" },
+              { num: "50,000+", label: "Products sold worldwide" },
+              { num: "100+", label: "Founders guided since 2019" },
             ].map((s) => (
               <div key={s.num}>
                 <div style={{ fontSize: 26, fontWeight: 800, color: "#fff", letterSpacing: "-0.02em" }}>{s.num}</div>
@@ -85,6 +86,16 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      {/* PRESS / AUTHORITY */}
+      <section style={{ borderBottom: "1px solid rgba(0,0,0,0.07)", background: "#fff" }}>
+        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "28px 32px", display: "flex", alignItems: "center", justifyContent: "center", gap: 36, flexWrap: "wrap" }}>
+          <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#a39d92" }}>Ventures featured at</span>
+          {["CES Las Vegas", "TechRadar", "The Telegraph", "Indiegogo", "Venture Café"].map((brand) => (
+            <span key={brand} style={{ fontSize: 16, fontWeight: 700, letterSpacing: "-0.01em", color: "#8a847a" }}>{brand}</span>
+          ))}
+        </div>
+      </section>
 
       {/* COMMUNITY PROOF */}
       <section className="section-pad" style={{ maxWidth: 1180, margin: "0 auto", padding: "24px 32px 96px" }}>
@@ -141,8 +152,9 @@ export default function Home() {
           <div style={{ flex: "1 1 440px" }}>
             <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 23, color: ACCENT }}>Meet your guide</span>
             <h2 style={{ fontSize: "clamp(30px,4vw,48px)", fontWeight: 800, lineHeight: 1.06, letterSpacing: "-0.02em", marginTop: 10, color: INK }}>Lennart van der Ziel</h2>
-            <p style={{ marginTop: 22, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>For years I've worked with founders at the point where the business outgrows the person running it. The strategy is rarely the bottleneck — the leadership, the energy and the psychology are.</p>
-            <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>My work is to close that gap: a clear strategy for the company, and a stronger man behind it. Built alongside a circle of founders who hold the standard with you.</p>
+            <p style={{ marginTop: 22, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>As co-founder & CEO of <strong style={{ color: INK }}>Travis the Translator</strong>, I took a hardware startup from idea to 50,000+ devices sold in its first year — featured at CES, covered by TechRadar and The Telegraph. I also co-founded <strong style={{ color: INK }}>Venture Café Rotterdam</strong>, one of the largest founder communities in the Netherlands.</p>
+            <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>Then the success bill arrived: a long, painful burnout. That crash became my life's work — I rebuilt myself through health, psychology and structure, and since 2019 I've guided 100+ founders to perform at the highest level <em>without paying the price I paid</em>.</p>
+            <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>The strategy is rarely the bottleneck. The founder is. My work closes that gap.</p>
             <div style={{ marginTop: 26, display: "flex", alignItems: "center", gap: 12 }}>
               <span style={{ width: 30, height: 1, background: "rgba(0,0,0,0.25)" }} />
               <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 22, color: INK }}>Lennart van der Ziel</span>
@@ -209,6 +221,31 @@ export default function Home() {
               <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.58, color: MUTED }}>{perk.body}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* THE PATH — client journey */}
+      <section id="path" style={{ background: INK }}>
+        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "100px 32px" }}>
+          <div style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 60px" }}>
+            <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 24, color: ACCENT }}>Your journey</span>
+            <h2 style={{ fontSize: "clamp(32px,4.6vw,54px)", fontWeight: 800, lineHeight: 1.04, letterSpacing: "-0.025em", marginTop: 10, color: "#f6f3ec" }}>Three levels. One standard.</h2>
+            <p style={{ marginTop: 16, fontSize: 17, lineHeight: 1.55, color: "#a59e93" }}>Every founder enters where it fits. Most stay for years — because the work compounds.</p>
+          </div>
+          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))", gap: 22 }}>
+            {[
+              { step: "Level 1", title: "Shoulder to Shoulder", desc: "The Founder Circle. Weekly peer sessions, the Global STS Summit, and a brotherhood that holds your standard.", cta: "Apply to join →", href: "/shoulder-to-shoulder", featured: false },
+              { step: "Level 2", title: "1-on-1 Coaching", desc: "Private, high-touch coaching on your health, psychology and business — full access to Lennart, built entirely around you.", cta: "Request a conversation →", href: "#waitlist", featured: true },
+              { step: "Level 3", title: "Elite Mastermind", desc: "An invitation-only room for founders past 7 figures. Deep strategy, longevity protocols and life design at the highest level.", cta: "By invitation only", href: "#waitlist", featured: false },
+            ].map((tier) => (
+              <div key={tier.title} className="card-lift-dark" style={{ background: tier.featured ? "rgba(232,116,43,0.09)" : "rgba(255,255,255,0.04)", border: tier.featured ? "1px solid rgba(232,116,43,0.55)" : "1px solid rgba(255,255,255,0.1)", borderRadius: 16, padding: "38px 32px", display: "flex", flexDirection: "column" }}>
+                <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>{tier.step}</span>
+                <h3 style={{ fontSize: 25, fontWeight: 800, marginTop: 14, letterSpacing: "-0.01em", color: "#f6f3ec" }}>{tier.title}</h3>
+                <p style={{ marginTop: 12, fontSize: 15.5, lineHeight: 1.6, color: "#a59e93", flex: 1 }}>{tier.desc}</p>
+                <a href={tier.href} style={{ marginTop: 26, textDecoration: "none", color: tier.featured ? "#fff" : ACCENT, background: tier.featured ? ACCENT : "transparent", border: tier.featured ? "none" : "1px solid rgba(232,116,43,0.4)", padding: "13px 24px", borderRadius: 100, fontSize: 14, fontWeight: 700, textAlign: "center" }} className={tier.featured ? "btn-primary" : "btn-ghost"}>{tier.cta}</a>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -39,7 +39,10 @@ export default function ShoulderToShoulder() {
             </span>
             <span style={{ fontSize: 15.5, fontWeight: 800, letterSpacing: "-0.01em", color: "#fff" }}>Shoulder to Shoulder</span>
           </a>
-          <a href="#apply" className="btn-light" style={{ textDecoration: "none", color: "#15130f", background: "#fff", padding: "11px 22px", borderRadius: 100, fontSize: 13.5, fontWeight: 700 }}>Apply now</a>
+          <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+            <a href="/platform" style={{ textDecoration: "none", color: "rgba(255,255,255,0.75)", fontSize: 13.5, fontWeight: 600 }}>Member login</a>
+            <a href="#apply" className="btn-light" style={{ textDecoration: "none", color: "#15130f", background: "#fff", padding: "11px 22px", borderRadius: 100, fontSize: 13.5, fontWeight: 700 }}>Apply now</a>
+          </div>
         </div>
       </nav>
 
