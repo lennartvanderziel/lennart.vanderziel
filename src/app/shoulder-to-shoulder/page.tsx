@@ -11,8 +11,6 @@ const included = [
   "A one-hour online circle session every week — from anywhere",
   "Offline dinners, activities and side quests in Bali and Europe",
   "Two STS Summits per year — everybody together",
-  "Exclusive opportunities shared inside the community",
-  "A vetted network across the Netherlands, Bali and beyond",
 ];
 
 const fitFor = [
