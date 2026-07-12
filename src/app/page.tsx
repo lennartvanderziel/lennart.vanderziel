@@ -48,7 +48,7 @@ export default function Home() {
             The man behind<br />the highest-performing<br /><span style={{ color: ACCENT }}>founders.</span>
           </h1>
           <p style={{ maxWidth: 540, fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,0.75)", marginBottom: 40, fontWeight: 500 }}>
-            I spent a decade building technology. Now I develop people — the founders behind growing businesses.
+            I spent 5 years building technology as a tech CEO. Now I develop people — the founders behind growing businesses.
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
             <a href="#programs" className="btn-primary" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "17px 34px", borderRadius: 100, fontSize: 15, fontWeight: 700 }}>Explore the programs →</a>
