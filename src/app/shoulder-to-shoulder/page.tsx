@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import ApplicationForm from "@/components/ApplicationForm";
 
 const ACCENT = "#E8742B";
 
@@ -37,10 +38,6 @@ const faqs = [
 ];
 
 export default function ShoulderToShoulder() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [biz, setBiz] = useState("");
-  const [applied, setApplied] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
@@ -320,19 +317,7 @@ export default function ShoulderToShoulder() {
           </div>
           <div style={{ background: "#fff", borderRadius: 18, overflow: "hidden", boxShadow: "0 30px 70px rgba(0,0,0,0.35)" }}>
             <div style={{ padding: "32px 32px 34px" }}>
-              {applied ? (
-                <div style={{ textAlign: "center", padding: "14px 4px" }}>
-                  <p style={{ fontSize: 24, fontWeight: 800, color: "#15130f" }}>Application received.</p>
-                  <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.55, color: "#6b665d" }}>We review every application personally. If there&apos;s a strong mutual fit, you&apos;ll hear from us about a short Founder Fit Conversation.</p>
-                </div>
-              ) : (
-                <form onSubmit={(e) => { e.preventDefault(); if (name.trim() && email.trim()) setApplied(true); }} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                  <input type="text" required placeholder="Full name" value={name} onChange={(e) => setName(e.target.value)} className="input-premium" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: "#15130f", padding: "15px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 10, outline: "none" }} />
-                  <input type="email" required placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} className="input-premium" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: "#15130f", padding: "15px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 10, outline: "none" }} />
-                  <input type="text" required placeholder="Business & monthly revenue" value={biz} onChange={(e) => setBiz(e.target.value)} className="input-premium" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: "#15130f", padding: "15px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 10, outline: "none" }} />
-                  <button type="submit" className="btn-primary" style={{ marginTop: 4, background: ACCENT, color: "#fff", border: "none", padding: "18px 24px", fontSize: 16, fontWeight: 700, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: "pointer" }}>Apply to join →</button>
-                </form>
-              )}
+              <ApplicationForm />
             </div>
           </div>
         </div>
