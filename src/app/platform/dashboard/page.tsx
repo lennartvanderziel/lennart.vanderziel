@@ -79,6 +79,8 @@ function loadState<T>(key: string, fallback: T): T {
 
 const defaultAcc = {
   q3Objective: "",
+  pathway: "",
+  bottleneck: "",
   monthlyTarget: "",
   metricName: "Monthly revenue (€)",
   metricHistory: [] as { week: string; value: string }[],
@@ -256,6 +258,22 @@ export default function Dashboard() {
                   <span style={eyebrowStyle("#5b8ca6")}>Monthly · set at the start of each month</span>
                   <h2 style={{ fontSize: 16.5, fontWeight: 800, color: "#fff", margin: "12px 0 10px" }}>Monthly target</h2>
                   <input placeholder="What's your target for this month?" value={acc.monthlyTarget} onChange={(e) => saveAcc({ ...acc, monthlyTarget: e.target.value })} style={inputDark} />
+                </section>
+
+                {/* PRIMARY PATHWAY */}
+                <section style={{ ...sectionCard, borderLeft: `3px solid #5b8ca6` }}>
+                  <span style={eyebrowStyle("#5b8ca6")}>Monthly · your key pathway</span>
+                  <h2 style={{ fontSize: 16.5, fontWeight: 800, color: "#fff", margin: "12px 0 6px" }}>Primary strategy / key pathway</h2>
+                  <p style={{ fontSize: 12.5, color: "#8a847a", margin: "0 0 10px" }}>The main route to your target this month. Holds for at least a month.</p>
+                  <input placeholder="What's the key pathway to your goal?" value={acc.pathway} onChange={(e) => saveAcc({ ...acc, pathway: e.target.value })} style={inputDark} />
+                </section>
+
+                {/* BOTTLENECK */}
+                <section style={{ ...sectionCard, borderLeft: `3px solid ${RED}` }}>
+                  <span style={eyebrowStyle(RED)}>Rolling · update when it changes</span>
+                  <h2 style={{ fontSize: 16.5, fontWeight: 800, color: "#fff", margin: "12px 0 6px" }}>Current bottleneck / constraint</h2>
+                  <p style={{ fontSize: 12.5, color: "#8a847a", margin: "0 0 10px" }}>The one thing blocking your pathway. Solve it, then name the next — we work this every session.</p>
+                  <input placeholder="What's the one thing blocking your progress?" value={acc.bottleneck} onChange={(e) => saveAcc({ ...acc, bottleneck: e.target.value })} style={inputDark} />
                 </section>
 
                 {/* KEY METRIC */}

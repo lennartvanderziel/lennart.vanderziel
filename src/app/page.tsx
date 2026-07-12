@@ -43,7 +43,7 @@ export default function Home() {
         <div className="fade-up" style={{ position: "relative", maxWidth: 1180, margin: "0 auto", width: "100%", padding: "0 32px 80px" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: "1px solid rgba(255,255,255,0.25)", borderRadius: 100, padding: "7px 16px", marginBottom: 28, backdropFilter: "blur(8px)", background: "rgba(255,255,255,0.08)" }}>
             <span className="pulse-dot" style={{ width: 7, height: 7, borderRadius: "50%", background: ACCENT }} />
-            <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.85)" }}>Developing founders, not technology</span>
+            <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.85)" }}>Founder coaching · Masterminds · Mentoring</span>
           </div>
           <h1 style={{ fontSize: "clamp(42px,7vw,90px)", fontWeight: 800, lineHeight: 0.97, letterSpacing: "-0.035em", color: "#fff", maxWidth: 820, marginBottom: 28 }}>
             The man behind<br />the highest-performing<br /><span style={{ color: ACCENT }}>founders.</span>
