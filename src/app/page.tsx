@@ -6,17 +6,17 @@ import { submitToInbox } from "@/lib/submit";
 const ACCENT = "#E8742B";
 const INK = "#15130f";
 const MUTED = "#6b665d";
-const PANEL = "#f6f5f2";
+const PANEL = "#f4f1ea";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [joined, setJoined] = useState(false);
 
   return (
-    <div style={{ background: "#ffffff", color: INK, minHeight: "100vh", overflowX: "hidden" }}>
+    <div style={{ background: "#fbf9f5", color: INK, minHeight: "100vh", overflowX: "hidden" }}>
 
       {/* NAV */}
-      <nav style={{ position: "sticky", top: 0, zIndex: 30, background: "rgba(255,255,255,0.86)", backdropFilter: "blur(14px)", borderBottom: "1px solid rgba(0,0,0,0.08)" }}>
+      <nav style={{ position: "sticky", top: 0, zIndex: 30, background: "rgba(251,249,245,0.88)", backdropFilter: "blur(14px)", borderBottom: "1px solid rgba(0,0,0,0.08)" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "18px 32px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24 }}>
           <a href="#top" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", color: INK }}>
             <span style={{ width: 9, height: 9, borderRadius: "50%", background: ACCENT, display: "inline-block" }} />
@@ -37,7 +37,7 @@ export default function Home() {
 
       {/* HERO */}
       <header id="top" style={{ position: "relative", width: "100%", minHeight: "100vh", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
-        <Image src="/lennart.jpg" alt="Lennart van der Ziel" fill className="ken-burns" style={{ objectFit: "cover", objectPosition: "center 15%" }} priority />
+        <Image src="/lennart.jpg" alt="Lennart van der Ziel" fill className="ken-burns photo-grade-warm" style={{ objectFit: "cover", objectPosition: "center 15%" }} priority />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,8,6,0.25) 0%, rgba(10,8,6,0.1) 30%, rgba(10,8,6,0.6) 60%, rgba(10,8,6,0.92) 100%)" }} />
 
         <div className="fade-up" style={{ position: "relative", maxWidth: 1180, margin: "0 auto", width: "100%", padding: "0 32px 80px" }}>
@@ -75,7 +75,7 @@ export default function Home() {
       </header>
 
       {/* PRESS / AUTHORITY */}
-      <section style={{ borderBottom: "1px solid rgba(0,0,0,0.07)", background: "#fff" }}>
+      <section style={{ borderBottom: "1px solid rgba(0,0,0,0.07)", background: "#fbf9f5" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "28px 32px", display: "flex", alignItems: "center", justifyContent: "center", gap: 36, flexWrap: "wrap" }}>
           <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#a39d92" }}>Ventures featured at</span>
           {["CES Las Vegas", "TechRadar", "The Telegraph", "Indiegogo", "Venture Café"].map((brand) => (
@@ -131,7 +131,7 @@ export default function Home() {
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
 
             {/* Shoulder to Shoulder */}
-            <a href="/shoulder-to-shoulder" className="card-lift" style={{ textDecoration: "none", background: "#fff", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
+            <a href="/shoulder-to-shoulder" className="card-lift" style={{ textDecoration: "none", background: "#fffdf9", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
               <div className="photo-zoom" style={{ position: "relative", aspectRatio: "16/10" }}>
                 <Image src="/founders.jpg" alt="Shoulder to Shoulder — the founder group" fill style={{ objectFit: "cover" }} />
               </div>
@@ -144,11 +144,12 @@ export default function Home() {
             </a>
 
             {/* High Performance Mentoring */}
-            <a href="/high-performance-mentoring" className="card-lift" style={{ textDecoration: "none", background: "#fff", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
+            <a href="/high-performance-mentoring" className="card-lift" style={{ textDecoration: "none", background: "#fffdf9", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
               <div style={{ position: "relative", aspectRatio: "16/10", background: "linear-gradient(135deg, #1c1915, #2e2820)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ textAlign: "center", padding: 20 }}>
-                  <span style={{ display: "inline-flex", width: 54, height: 54, borderRadius: "50%", background: "rgba(232,116,43,0.16)", border: "1px solid rgba(232,116,43,0.4)", alignItems: "center", justifyContent: "center", fontSize: 22 }}>📷</span>
-                  <p style={{ marginTop: 12, fontSize: 13, color: "rgba(255,255,255,0.45)", fontWeight: 600 }}>Photo with 1-on-1 client — coming soon</p>
+                <div style={{ textAlign: "center", padding: 28 }}>
+                  <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 22, color: "rgba(246,243,236,0.85)", lineHeight: 1.4, display: "block" }}>&ldquo;Your body carries<br />your business.&rdquo;</span>
+                  <span style={{ display: "block", marginTop: 14, width: 26, height: 1, background: "rgba(232,116,43,0.6)", marginLeft: "auto", marginRight: "auto" }} />
+                  <span className="eyebrow" style={{ display: "block", marginTop: 12, color: "rgba(255,255,255,0.4)" }}>1-on-1 Mentoring</span>
                 </div>
               </div>
               <div style={{ padding: "34px 32px 38px" }}>
@@ -163,7 +164,7 @@ export default function Home() {
       </section>
 
       {/* CONTACT / CTA */}
-      <section id="contact" style={{ background: "#fff" }}>
+      <section id="contact" style={{ background: "#fbf9f5" }}>
         <div style={{ maxWidth: 720, margin: "0 auto", padding: "110px 32px", textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(36px,5.4vw,64px)", fontWeight: 800, lineHeight: 1.02, letterSpacing: "-0.03em", color: INK }}>Start the conversation.</h2>
           <p style={{ margin: "20px auto 0", maxWidth: 480, fontSize: 17, lineHeight: 1.55, color: MUTED }}>Leave your email and I&apos;ll personally reach out to find the right fit — the club or 1-on-1 mentoring.</p>

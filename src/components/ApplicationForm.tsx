@@ -5,7 +5,7 @@ import { submitToInbox } from "@/lib/submit";
 const ACCENT = "#E8742B";
 
 const revenueBands = ["Pre-revenue / Early stage", "Less than €10k / month", "€10k – €25k / month", "€25k+ / month"];
-const sources = ["Lennart / Alexander", "A member or referral", "A friend", "Instagram", "Somewhere else"];
+const sources = ["Lennart", "A member or referral", "A friend", "Instagram", "Somewhere else"];
 
 const inputStyle: React.CSSProperties = {
   background: "#fff",
@@ -140,7 +140,7 @@ export default function ApplicationForm() {
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What does your business do?</p>
           <p style={{ fontSize: 13.5, color: "#8a847a", marginTop: -6 }}>One or two sentences is perfect.</p>
-          <textarea autoFocus rows={3} placeholder="E.g. online health coaching for ambitious women, mostly US & EU" value={data.business} onChange={(e) => setData({ ...data, business: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+          <textarea autoFocus rows={3} placeholder="E.g. e-commerce brand in sports nutrition, 8 people, mostly EU market" value={data.business} onChange={(e) => setData({ ...data, business: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
         </div>
       )}
 

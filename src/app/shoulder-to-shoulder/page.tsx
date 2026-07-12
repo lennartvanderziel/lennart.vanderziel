@@ -31,6 +31,7 @@ const faqs = [
   { q: "Are the sessions online or offline?", a: "Both — by design. Circle sessions are online, so you can join from anywhere in the world. The events, dinners, activities and side quests are offline, in Bali and Europe — where most members are based. And twice a year the whole community comes together at the STS Summit." },
   { q: "I split my time between countries. Does that work?", a: "Perfectly. Most members are based in Europe or Bali, and many move between them. Your circle travels with you because it's online — and there are offline gatherings in both regions." },
   { q: "Who is in the community?", a: "Two levels: founders doing €5k–25k/month scaling to €1M/year, and founders past €25k/month scaling to multiple 7 figures. Every member is personally vetted on level, values and attitude." },
+  { q: "Is it only for male founders?", a: "Yes — Shoulder to Shoulder is built around male founders working in small, tight circles. It keeps the dynamic honest and direct. Reach out if you have questions about fit." },
   { q: "What is the time commitment?", a: "Built for busy founders: regular circle sessions online, offline gatherings you choose to attend, and two Summits a year. Intentional, never noise." },
   { q: "What happens after I apply?", a: "Every application is reviewed personally. If there's a potential fit, you're invited to a short Founder Fit Conversation — and from there, matched into your circle." },
 ];
@@ -60,7 +61,7 @@ export default function ShoulderToShoulder() {
 
       {/* HERO */}
       <header id="top" style={{ position: "relative", width: "100%", height: "100vh", minHeight: 640, overflow: "hidden" }}>
-        <Image src="/founders.jpg" alt="Founders" fill className="ken-burns" style={{ objectFit: "cover" }} priority />
+        <Image src="/founders.jpg" alt="Founders" fill className="ken-burns photo-grade" style={{ objectFit: "cover" }} priority />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,9,7,0.5) 0%, rgba(10,9,7,0.15) 38%, rgba(10,9,7,0.55) 68%, rgba(10,9,7,0.92) 100%)", pointerEvents: "none" }} />
         <div style={{ position: "relative", height: "100%", display: "flex", flexDirection: "column", justifyContent: "flex-end", maxWidth: 1180, margin: "0 auto", padding: "0 28px 88px" }}>
           <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 23, color: "#fff", opacity: 0.9 }}>The club for founders</span>
@@ -101,7 +102,7 @@ export default function ShoulderToShoulder() {
 
       {/* QUOTE PHOTO */}
       <section style={{ position: "relative", width: "100%", height: "70vh", minHeight: 440, overflow: "hidden" }}>
-        <Image src="/mastermind.jpg" alt="Founders Mastermind" fill style={{ objectFit: "cover" }} />
+        <Image src="/mastermind.jpg" alt="Founders Mastermind" fill className="photo-grade" style={{ objectFit: "cover" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,9,7,0.85) 0%, rgba(10,9,7,0.05) 45%)", pointerEvents: "none", display: "flex", alignItems: "flex-end", padding: 48 }}>
           <p style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: "clamp(24px,3.4vw,34px)", color: "#fff", maxWidth: 640, lineHeight: 1.3 }}>&quot;Others see what you can&apos;t, and know things you don&apos;t.&quot;</p>
         </div>
@@ -134,17 +135,17 @@ export default function ShoulderToShoulder() {
           </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))", gap: 20 }}>
             <div className="card-lift" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 16, padding: "36px 32px" }}>
-              <span style={{ fontSize: 26 }}>💻</span>
+              <span className="eyebrow" style={{ color: ACCENT }}>01 — Weekly</span>
               <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 14 }}>Circle sessions — online</h3>
               <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#6b665d" }}>Your Founder Circle meets online, so it works from anywhere — whether you&apos;re in Amsterdam, Bali or on the road. No flights needed to stay sharp.</p>
             </div>
             <div className="card-lift" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 16, padding: "36px 32px" }}>
-              <span style={{ fontSize: 26 }}>🍽️</span>
+              <span className="eyebrow" style={{ color: ACCENT }}>02 — Monthly</span>
               <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 14 }}>Events & side quests — offline</h3>
               <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#6b665d" }}>Dinners, activities and side quests happen in person, in <strong>Bali</strong> and <strong>Europe</strong> — where most members are based. Join whatever is happening near you.</p>
             </div>
             <div className="card-lift" style={{ background: "#15130f", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 16, padding: "36px 32px" }}>
-              <span style={{ fontSize: 26 }}>🌍</span>
+              <span className="eyebrow" style={{ color: ACCENT }}>03 — Biannual</span>
               <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 14, color: "#fff" }}>STS Summit — twice a year</h3>
               <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#a59e93" }}>Twice a year <strong style={{ color: "#fff" }}>everybody comes together</strong> at the STS Summit — several days of strategy, connection and unforgettable experiences.</p>
             </div>
@@ -209,13 +210,13 @@ export default function ShoulderToShoulder() {
         </div>
         <div className="photo-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, marginTop: 64 }}>
           <div className="photo-zoom" style={{ position: "relative", aspectRatio: "4/5", overflow: "hidden" }}>
-            <Image src="/dinner.jpg" alt="Long dinners together" fill style={{ objectFit: "cover" }} />
+            <Image src="/dinner.jpg" alt="Long dinners together" fill className="photo-grade" style={{ objectFit: "cover" }} />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,9,7,0.7), transparent 40%)", display: "flex", alignItems: "flex-end", padding: 24 }}>
               <span style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>The dinners</span>
             </div>
           </div>
           <div className="photo-zoom" style={{ position: "relative", aspectRatio: "4/5", overflow: "hidden", background: "#1a1816" }}>
-            <Image src="/mastermind.jpg" alt="Side quests and weekends" fill style={{ objectFit: "cover" }} />
+            <Image src="/mastermind.jpg" alt="Side quests and weekends" fill className="photo-grade" style={{ objectFit: "cover" }} />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,9,7,0.7), transparent 40%)", display: "flex", alignItems: "flex-end", padding: 24 }}>
               <span style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>The side quests</span>
             </div>

@@ -6,7 +6,7 @@ import { submitToInbox } from "@/lib/submit";
 const ACCENT = "#E8742B";
 const INK = "#15130f";
 const MUTED = "#6b665d";
-const PANEL = "#f6f5f2";
+const PANEL = "#f4f1ea";
 
 const pillars = [
   {
@@ -39,10 +39,10 @@ export default function HighPerformanceMentoring() {
   const [applied, setApplied] = useState(false);
 
   return (
-    <div style={{ background: "#ffffff", color: INK, minHeight: "100vh", overflowX: "hidden" }}>
+    <div style={{ background: "#fbf9f5", color: INK, minHeight: "100vh", overflowX: "hidden" }}>
 
       {/* NAV */}
-      <nav style={{ position: "sticky", top: 0, zIndex: 30, background: "rgba(255,255,255,0.86)", backdropFilter: "blur(14px)", borderBottom: "1px solid rgba(0,0,0,0.08)" }}>
+      <nav style={{ position: "sticky", top: 0, zIndex: 30, background: "rgba(251,249,245,0.88)", backdropFilter: "blur(14px)", borderBottom: "1px solid rgba(0,0,0,0.08)" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "18px 32px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24 }}>
           <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", color: INK }}>
             <span style={{ width: 9, height: 9, borderRadius: "50%", background: ACCENT, display: "inline-block" }} />
@@ -79,9 +79,10 @@ export default function HighPerformanceMentoring() {
           </div>
           <div className="fade-up-1" style={{ flex: "1 1 380px", minWidth: 300 }}>
             <div style={{ position: "relative", aspectRatio: "4/5", borderRadius: 12, overflow: "hidden", background: "linear-gradient(135deg, #1c1915, #2e2820)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <div style={{ textAlign: "center", padding: 24 }}>
-                <span style={{ display: "inline-flex", width: 60, height: 60, borderRadius: "50%", background: "rgba(232,116,43,0.16)", border: "1px solid rgba(232,116,43,0.4)", alignItems: "center", justifyContent: "center", fontSize: 24 }}>📷</span>
-                <p style={{ marginTop: 14, fontSize: 13.5, color: "rgba(255,255,255,0.45)", fontWeight: 600 }}>Lennart with a 1-on-1 client<br />— photo coming soon</p>
+              <div style={{ textAlign: "center", padding: 32 }}>
+                <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 26, color: "rgba(246,243,236,0.85)", lineHeight: 1.4, display: "block" }}>&ldquo;Your body carries your business.<br />Treat it that way.&rdquo;</span>
+                <span style={{ display: "block", marginTop: 18, width: 26, height: 1, background: "rgba(232,116,43,0.6)", marginLeft: "auto", marginRight: "auto" }} />
+                <span className="eyebrow" style={{ display: "block", marginTop: 16, color: "rgba(255,255,255,0.4)" }}>Lennart van der Ziel</span>
               </div>
             </div>
           </div>
