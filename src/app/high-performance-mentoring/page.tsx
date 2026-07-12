@@ -78,12 +78,8 @@ export default function HighPerformanceMentoring() {
             </div>
           </div>
           <div className="fade-up-1" style={{ flex: "1 1 380px", minWidth: 300 }}>
-            <div style={{ position: "relative", aspectRatio: "4/5", borderRadius: 12, overflow: "hidden", background: "linear-gradient(135deg, #1c1915, #2e2820)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <div style={{ textAlign: "center", padding: 32 }}>
-                <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 26, color: "rgba(246,243,236,0.85)", lineHeight: 1.4, display: "block" }}>&ldquo;Your body carries your business.<br />Treat it that way.&rdquo;</span>
-                <span style={{ display: "block", marginTop: 18, width: 26, height: 1, background: "rgba(232,116,43,0.6)", marginLeft: "auto", marginRight: "auto" }} />
-                <span className="eyebrow" style={{ display: "block", marginTop: 16, color: "rgba(255,255,255,0.4)" }}>Lennart van der Ziel</span>
-              </div>
+            <div className="photo-zoom" style={{ position: "relative", aspectRatio: "4/5", borderRadius: 12, overflow: "hidden" }}>
+              <Image src="/coaching-portrait.jpg" alt="Lennart van der Ziel mentoring" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 20%" }} />
             </div>
           </div>
         </div>

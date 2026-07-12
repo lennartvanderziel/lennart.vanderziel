@@ -37,7 +37,7 @@ export default function Home() {
 
       {/* HERO */}
       <header id="top" style={{ position: "relative", width: "100%", minHeight: "100vh", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
-        <Image src="/lennart.jpg" alt="Lennart van der Ziel" fill className="ken-burns photo-grade-warm" style={{ objectFit: "cover", objectPosition: "center 15%" }} priority />
+        <Image src="/coaching.jpg" alt="Lennart van der Ziel coaching founders" fill className="ken-burns photo-grade-warm" style={{ objectFit: "cover", objectPosition: "center 30%" }} priority />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,8,6,0.25) 0%, rgba(10,8,6,0.1) 30%, rgba(10,8,6,0.6) 60%, rgba(10,8,6,0.92) 100%)" }} />
 
         <div className="fade-up" style={{ position: "relative", maxWidth: 1180, margin: "0 auto", width: "100%", padding: "0 32px 80px" }}>
@@ -89,7 +89,7 @@ export default function Home() {
         <div className="flex-wrap-col" style={{ display: "flex", gap: 64, alignItems: "center", flexWrap: "wrap" }}>
           <div style={{ flex: "1 1 360px", minWidth: 300 }}>
             <div className="photo-zoom" style={{ position: "relative", aspectRatio: "4/5", borderRadius: 8, overflow: "hidden", background: "#e7e3db" }}>
-              <Image src="/lennart.jpg" alt="Lennart van der Ziel" fill style={{ objectFit: "cover", objectPosition: "center 18%" }} />
+              <Image src="/coaching-portrait.jpg" alt="Lennart van der Ziel" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 20%" }} />
             </div>
           </div>
           <div style={{ flex: "1 1 440px" }}>
@@ -145,12 +145,8 @@ export default function Home() {
 
             {/* High Performance Mentoring */}
             <a href="/high-performance-mentoring" className="card-lift" style={{ textDecoration: "none", background: "#fffdf9", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
-              <div style={{ position: "relative", aspectRatio: "16/10", background: "linear-gradient(135deg, #1c1915, #2e2820)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ textAlign: "center", padding: 28 }}>
-                  <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 22, color: "rgba(246,243,236,0.85)", lineHeight: 1.4, display: "block" }}>&ldquo;Your body carries<br />your business.&rdquo;</span>
-                  <span style={{ display: "block", marginTop: 14, width: 26, height: 1, background: "rgba(232,116,43,0.6)", marginLeft: "auto", marginRight: "auto" }} />
-                  <span className="eyebrow" style={{ display: "block", marginTop: 12, color: "rgba(255,255,255,0.4)" }}>1-on-1 Mentoring</span>
-                </div>
+              <div className="photo-zoom" style={{ position: "relative", aspectRatio: "16/10" }}>
+                <Image src="/circle.jpg" alt="High Performance Mentoring — 1-on-1" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 30%" }} />
               </div>
               <div style={{ padding: "34px 32px 38px" }}>
                 <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>1-on-1</span>

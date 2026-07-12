@@ -102,7 +102,7 @@ export default function ShoulderToShoulder() {
 
       {/* QUOTE PHOTO */}
       <section style={{ position: "relative", width: "100%", height: "70vh", minHeight: 440, overflow: "hidden" }}>
-        <Image src="/mastermind.jpg" alt="Founders Mastermind" fill className="photo-grade" style={{ objectFit: "cover" }} />
+        <Image src="/session.jpg" alt="Founder Circle session" fill className="photo-grade" style={{ objectFit: "cover" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,9,7,0.85) 0%, rgba(10,9,7,0.05) 45%)", pointerEvents: "none", display: "flex", alignItems: "flex-end", padding: 48 }}>
           <p style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: "clamp(24px,3.4vw,34px)", color: "#fff", maxWidth: 640, lineHeight: 1.3 }}>&quot;Others see what you can&apos;t, and know things you don&apos;t.&quot;</p>
         </div>
@@ -216,7 +216,7 @@ export default function ShoulderToShoulder() {
             </div>
           </div>
           <div className="photo-zoom" style={{ position: "relative", aspectRatio: "4/5", overflow: "hidden", background: "#1a1816" }}>
-            <Image src="/mastermind.jpg" alt="Side quests and weekends" fill className="photo-grade" style={{ objectFit: "cover" }} />
+            <Image src="/members.jpg" alt="Side quests and weekends" fill className="photo-grade" style={{ objectFit: "cover" }} />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,9,7,0.7), transparent 40%)", display: "flex", alignItems: "flex-end", padding: 24 }}>
               <span style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>The side quests</span>
             </div>
@@ -271,7 +271,7 @@ export default function ShoulderToShoulder() {
           </div>
           <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 32, alignItems: "center", background: "#f6f5f2", border: "1px solid rgba(0,0,0,0.06)", borderRadius: 18, padding: 32 }}>
             <div style={{ position: "relative", width: 200, height: 200, borderRadius: 14, overflow: "hidden", flex: "0 0 auto" }}>
-              <Image src="/lennart.jpg" alt="Lennart van der Ziel" fill style={{ objectFit: "cover" }} />
+              <Image src="/coaching-portrait.jpg" alt="Lennart van der Ziel" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 20%" }} />
             </div>
             <div>
               <h3 style={{ fontSize: 22, fontWeight: 800, letterSpacing: "-0.01em" }}>Lennart van der Ziel</h3>
