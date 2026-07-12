@@ -1,16 +1,11 @@
 "use client";
 import { useState } from "react";
+import { submitToInbox } from "@/lib/submit";
 
 const ACCENT = "#E8742B";
 
-const revenueBands = ["Below €5k / month", "€5k – €25k / month", "€25k – €100k / month", "€100k+ / month"];
-const locations = ["Netherlands / Europe", "Bali / Southeast Asia", "Somewhere else"];
-const drivers = [
-  "Growing my business faster",
-  "Peers who hold me accountable",
-  "A network at my level",
-  "More fun & life quality on the way up",
-];
+const revenueBands = ["Pre-revenue / Early stage", "Less than €10k / month", "€10k – €25k / month", "€25k+ / month"];
+const sources = ["Lennart / Alexander", "A member or referral", "A friend", "Instagram", "Somewhere else"];
 
 const inputStyle: React.CSSProperties = {
   background: "#fff",
@@ -42,33 +37,53 @@ const optionStyle = (selected: boolean): React.CSSProperties => ({
   transition: "border-color .15s ease, background .15s ease",
 });
 
+const emptyData = {
+  firstName: "", lastName: "", email: "", whatsapp: "", instagram: "",
+  business: "", revenue: "", why: "", source: "",
+};
+
 export default function ApplicationForm() {
   const [step, setStep] = useState(0);
-  const [data, setData] = useState({ name: "", email: "", business: "", revenue: "", location: "", driver: "", bottleneck: "" });
-  const [done, setDone] = useState(false);
+  const [data, setData] = useState({ ...emptyData });
+  const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
 
   const steps = [
-    { key: "intro", valid: true },
-    { key: "person", valid: data.name.trim().length > 1 && /.+@.+\..+/.test(data.email) },
-    { key: "business", valid: data.business.trim().length > 2 },
-    { key: "revenue", valid: data.revenue !== "" },
-    { key: "location", valid: data.location !== "" },
-    { key: "driver", valid: data.driver !== "" },
-    { key: "bottleneck", valid: true },
+    { valid: true }, // 0 intro
+    { valid: data.firstName.trim().length > 1 && data.lastName.trim().length > 0 }, // 1 name
+    { valid: /.+@.+\..+/.test(data.email) && data.whatsapp.trim().length > 4 }, // 2 contact
+    { valid: data.business.trim().length > 2 }, // 3 business
+    { valid: data.revenue !== "" }, // 4 revenue
+    { valid: data.why.trim().length > 2 }, // 5 why
+    { valid: data.source !== "" }, // 6 source
   ];
-  const total = steps.length - 1; // intro doesn't count in progress
+  const total = steps.length - 1;
   const progress = Math.min(step / total, 1) * 100;
+
+  async function submit() {
+    setStatus("sending");
+    const ok = await submitToInbox(
+      `New STS application — ${data.firstName} ${data.lastName}`,
+      {
+        Name: `${data.firstName} ${data.lastName}`,
+        Email: data.email,
+        WhatsApp: data.whatsapp,
+        Instagram: data.instagram || "—",
+        Business: data.business,
+        "Monthly revenue": data.revenue,
+        "Why join / what would make it valuable": data.why,
+        "How did you hear about us": data.source,
+      }
+    );
+    setStatus(ok ? "done" : "error");
+  }
 
   function next() {
     if (!steps[step].valid) return;
-    if (step === steps.length - 1) {
-      setDone(true);
-      return;
-    }
+    if (step === steps.length - 1) { submit(); return; }
     setStep(step + 1);
   }
 
-  if (done) {
+  if (status === "done") {
     return (
       <div style={{ textAlign: "center", padding: "22px 4px" }}>
         <span style={{ display: "inline-flex", width: 54, height: 54, borderRadius: "50%", background: `color-mix(in srgb, ${ACCENT} 14%, transparent)`, alignItems: "center", justifyContent: "center", fontSize: 24, color: ACCENT, fontWeight: 800 }}>✓</span>
@@ -82,7 +97,6 @@ export default function ApplicationForm() {
 
   return (
     <div>
-      {/* Progress bar */}
       {step > 0 && (
         <div style={{ marginBottom: 26 }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
@@ -108,24 +122,33 @@ export default function ApplicationForm() {
       {step === 1 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>First — who are you?</p>
-          <input autoFocus type="text" placeholder="Full name" value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
-          <input type="email" placeholder="Email address" value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
+          <input autoFocus type="text" placeholder="First name" value={data.firstName} onChange={(e) => setData({ ...data, firstName: e.target.value })} className="input-premium" style={inputStyle} />
+          <input type="text" placeholder="Last name" value={data.lastName} onChange={(e) => setData({ ...data, lastName: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
         </div>
       )}
 
       {step === 2 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What business do you run?</p>
-          <p style={{ fontSize: 13.5, color: "#8a847a", marginTop: -6 }}>One or two sentences is perfect.</p>
-          <textarea autoFocus rows={3} placeholder="E.g. e-commerce brand in sports nutrition, 8 people, mostly EU market" value={data.business} onChange={(e) => setData({ ...data, business: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>How can we reach you?</p>
+          <input autoFocus type="email" placeholder="Email address" value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} className="input-premium" style={inputStyle} />
+          <input type="tel" placeholder="WhatsApp number (incl. country code)" value={data.whatsapp} onChange={(e) => setData({ ...data, whatsapp: e.target.value })} className="input-premium" style={inputStyle} />
+          <input type="text" placeholder="Instagram (optional)" value={data.instagram} onChange={(e) => setData({ ...data, instagram: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
         </div>
       )}
 
       {step === 3 && (
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What does your business do?</p>
+          <p style={{ fontSize: 13.5, color: "#8a847a", marginTop: -6 }}>One or two sentences is perfect.</p>
+          <textarea autoFocus rows={3} placeholder="E.g. online health coaching for ambitious women, mostly US & EU" value={data.business} onChange={(e) => setData({ ...data, business: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+        </div>
+      )}
+
+      {step === 4 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f", marginBottom: 4 }}>Current monthly revenue?</p>
+          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f", marginBottom: 4 }}>Your current monthly revenue?</p>
           {revenueBands.map((band) => (
-            <button key={band} onClick={() => { setData({ ...data, revenue: band }); setTimeout(() => setStep(4), 180); }} style={optionStyle(data.revenue === band)}>
+            <button key={band} onClick={() => { setData({ ...data, revenue: band }); setTimeout(() => setStep(5), 180); }} style={optionStyle(data.revenue === band)}>
               <span style={{ width: 18, height: 18, borderRadius: "50%", border: data.revenue === band ? `6px solid ${ACCENT}` : "2px solid rgba(0,0,0,0.25)", flex: "0 0 auto", boxSizing: "border-box" }} />
               {band}
             </button>
@@ -133,52 +156,44 @@ export default function ApplicationForm() {
         </div>
       )}
 
-      {step === 4 && (
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f", marginBottom: 4 }}>Where are you based?</p>
-          {locations.map((loc) => (
-            <button key={loc} onClick={() => { setData({ ...data, location: loc }); setTimeout(() => setStep(5), 180); }} style={optionStyle(data.location === loc)}>
-              <span style={{ width: 18, height: 18, borderRadius: "50%", border: data.location === loc ? `6px solid ${ACCENT}` : "2px solid rgba(0,0,0,0.25)", flex: "0 0 auto", boxSizing: "border-box" }} />
-              {loc}
-            </button>
-          ))}
-        </div>
-      )}
-
       {step === 5 && (
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f", marginBottom: 4 }}>What matters most to you right now?</p>
-          {drivers.map((d) => (
-            <button key={d} onClick={() => { setData({ ...data, driver: d }); setTimeout(() => setStep(6), 180); }} style={optionStyle(data.driver === d)}>
-              <span style={{ width: 18, height: 18, borderRadius: "50%", border: data.driver === d ? `6px solid ${ACCENT}` : "2px solid rgba(0,0,0,0.25)", flex: "0 0 auto", boxSizing: "border-box" }} />
-              {d}
-            </button>
-          ))}
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>Why would you like to join?</p>
+          <p style={{ fontSize: 13.5, color: "#8a847a", marginTop: -6 }}>And what would make it truly valuable for you?</p>
+          <textarea autoFocus rows={4} placeholder="E.g. I want honest feedback, accountability and like-minded founders to grow and enjoy the journey with…" value={data.why} onChange={(e) => setData({ ...data, why: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
         </div>
       )}
 
       {step === 6 && (
-        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>Last one — what&apos;s your biggest bottleneck right now?</p>
-          <p style={{ fontSize: 13.5, color: "#8a847a", marginTop: -6 }}>Optional, but it helps us match you to the right circle.</p>
-          <textarea autoFocus rows={3} placeholder="E.g. I'm the bottleneck in sales, the team depends on me for everything…" value={data.bottleneck} onChange={(e) => setData({ ...data, bottleneck: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f", marginBottom: 4 }}>How did you hear about us?</p>
+          {sources.map((src) => (
+            <button key={src} onClick={() => setData({ ...data, source: src })} style={optionStyle(data.source === src)}>
+              <span style={{ width: 18, height: 18, borderRadius: "50%", border: data.source === src ? `6px solid ${ACCENT}` : "2px solid rgba(0,0,0,0.25)", flex: "0 0 auto", boxSizing: "border-box" }} />
+              {src}
+            </button>
+          ))}
         </div>
       )}
 
-      {/* Nav buttons */}
-      {step > 0 && step !== 3 && step !== 4 && step !== 5 && (
+      {status === "error" && (
+        <p style={{ marginTop: 16, fontSize: 13.5, color: "#c0392b" }}>Something went wrong sending your application. Please email l.vanderziel@gmail.com directly.</p>
+      )}
+
+      {/* Nav buttons (radio steps 4 auto-advance, step 6 needs submit) */}
+      {step > 0 && step !== 4 && (
         <div style={{ display: "flex", gap: 12, marginTop: 20 }}>
           <button onClick={() => setStep(step - 1)} style={{ background: "transparent", border: "1px solid rgba(0,0,0,0.15)", color: "#6b665d", padding: "14px 22px", fontSize: 14, fontWeight: 600, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: "pointer" }}>
             ← Back
           </button>
-          <button onClick={next} disabled={!steps[step].valid} className={steps[step].valid ? "btn-primary" : undefined} style={{ flex: 1, background: steps[step].valid ? ACCENT : "rgba(0,0,0,0.12)", color: "#fff", border: "none", padding: "14px 24px", fontSize: 15, fontWeight: 700, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: steps[step].valid ? "pointer" : "not-allowed", transition: "background .2s ease" }}>
-            {step === steps.length - 1 ? "Submit application →" : "Continue →"}
+          <button onClick={next} disabled={!steps[step].valid || status === "sending"} className={steps[step].valid ? "btn-primary" : undefined} style={{ flex: 1, background: steps[step].valid ? ACCENT : "rgba(0,0,0,0.12)", color: "#fff", border: "none", padding: "14px 24px", fontSize: 15, fontWeight: 700, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: steps[step].valid && status !== "sending" ? "pointer" : "not-allowed", transition: "background .2s ease" }}>
+            {status === "sending" ? "Sending…" : step === steps.length - 1 ? "Submit application →" : "Continue →"}
           </button>
         </div>
       )}
-      {(step === 3 || step === 4 || step === 5) && (
+      {step === 4 && (
         <div style={{ marginTop: 20 }}>
-          <button onClick={() => setStep(step - 1)} style={{ background: "transparent", border: "1px solid rgba(0,0,0,0.15)", color: "#6b665d", padding: "14px 22px", fontSize: 14, fontWeight: 600, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: "pointer" }}>
+          <button onClick={() => setStep(3)} style={{ background: "transparent", border: "1px solid rgba(0,0,0,0.15)", color: "#6b665d", padding: "14px 22px", fontSize: 14, fontWeight: 600, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: "pointer" }}>
             ← Back
           </button>
         </div>

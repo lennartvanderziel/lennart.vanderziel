@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { submitToInbox } from "@/lib/submit";
 
 const ACCENT = "#E8742B";
 const INK = "#15130f";
@@ -160,7 +161,7 @@ export default function HighPerformanceMentoring() {
               <p style={{ marginTop: 8, fontSize: 15, color: MUTED }}>I&apos;ll personally reach out to schedule the conversation.</p>
             </div>
           ) : (
-            <form onSubmit={(e) => { e.preventDefault(); if (name.trim() && email.trim()) setApplied(true); }} style={{ margin: "36px auto 0", maxWidth: 480, display: "flex", flexDirection: "column", gap: 12 }}>
+            <form onSubmit={async (e) => { e.preventDefault(); if (name.trim() && email.trim()) { await submitToInbox(`High Performance Mentoring request — ${name}`, { Name: name, Email: email, Source: "High Performance Mentoring page" }); setApplied(true); } }} style={{ margin: "36px auto 0", maxWidth: 480, display: "flex", flexDirection: "column", gap: 12 }}>
               <input type="text" required placeholder="Full name" value={name} onChange={(e) => setName(e.target.value)} className="input-premium" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: INK, padding: "15px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 10, outline: "none" }} />
               <input type="email" required placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} className="input-premium" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: INK, padding: "15px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 10, outline: "none" }} />
               <button type="submit" className="btn-primary" style={{ marginTop: 4, background: ACCENT, color: "#fff", border: "none", padding: "17px 24px", fontSize: 15.5, fontWeight: 700, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: "pointer" }}>Request a conversation →</button>

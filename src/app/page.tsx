@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { submitToInbox } from "@/lib/submit";
 
 const ACCENT = "#E8742B";
 const INK = "#15130f";
@@ -173,7 +174,7 @@ export default function Home() {
             </div>
           ) : (
             <>
-              <form onSubmit={(e) => { e.preventDefault(); if (email.trim()) setJoined(true); }} style={{ margin: "38px auto 0", maxWidth: 520, display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
+              <form onSubmit={async (e) => { e.preventDefault(); if (email.trim()) { await submitToInbox("New contact from lennartvanderziel.com", { Email: email, Source: "Homepage contact form" }); setJoined(true); } }} style={{ margin: "38px auto 0", maxWidth: 520, display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
                 <input type="email" required placeholder="your@email.com" value={email} onChange={(e) => setEmail(e.target.value)} className="input-premium" style={{ flex: "1 1 260px", background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: INK, padding: "16px 18px", fontSize: 15, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, outline: "none" }} />
                 <button type="submit" className="btn-primary" style={{ background: ACCENT, color: "#fff", border: "none", padding: "16px 30px", fontSize: 15, fontWeight: 600, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: "pointer" }}>Get in touch</button>
               </form>
