@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 // Sends email via Resend (resend.com) — no external email program needed.
-// Setup (one-time): create a free Resend account, verify lennartvanderziel.com,
+// Setup (one-time): create a free Resend account, verify shouldertoshoulder.club,
 // then add RESEND_API_KEY in Vercel → Settings → Environment Variables.
 
 export async function POST(req: Request) {
@@ -23,7 +23,7 @@ export async function POST(req: Request) {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
       body: JSON.stringify({
-        from: "Lennart van der Ziel <lennart@lennartvanderziel.com>",
+        from: "Lennart van der Ziel <lennart@shouldertoshoulder.club>",
         to: [to],
         reply_to: "l.vanderziel@gmail.com",
         subject,

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 const ACCENT = "#E8742B";
 const GREEN = "#7fb069";
@@ -14,13 +14,16 @@ type LeadStatus = "new" | "reviewing" | "call_booked" | "member" | "declined";
 type AdminTab = "dashboard" | "leads" | "members" | "emails";
 
 interface Lead {
-  id: string; name: string; email: string; business: string; revenue: string;
+  id: string; name: string; email: string; whatsapp: string; instagram: string;
+  business: string; revenue: string;
   source: string; status: LeadStatus; notes: string; createdAt: number;
   sequenceStep: number; lastEmailAt: number | null; sequenceActive: boolean;
 }
 interface Member {
-  id: string; name: string; email: string; company: string; tier: string;
-  price: string; circle: string; joinedAt: string; renewsAt: string; status: "active" | "paused" | "churned"; notes: string;
+  id: string; name: string; email: string; whatsapp: string; instagram: string; revenue: string;
+  company: string; tier: string;
+  price: string; circle: string; joinedAt: string; renewsAt: string; status: "active" | "paused" | "churned";
+  engagement: string; needs: string; connections: string; notes: string;
 }
 interface SeqStep { id: string; dayOffset: number; subject: string; body: string }
 
@@ -54,6 +57,7 @@ export default function Admin() {
   const [showAddLead, setShowAddLead] = useState(false);
   const [showAddMember, setShowAddMember] = useState(false);
   const [editStep, setEditStep] = useState<string | null>(null);
+  const [openMember, setOpenMember] = useState<string | null>(null);
   const [sending, setSending] = useState<string | null>(null);
   const [toast, setToast] = useState("");
 
@@ -73,7 +77,7 @@ export default function Admin() {
   const dueEmails = useMemo(() => {
     const now = Date.now();
     return leads.flatMap((lead) => {
-      if (!lead.sequenceActive || lead.status === "member" || lead.status === "declined") return [];
+      if (!lead.sequenceActive || !lead.email || lead.status === "member" || lead.status === "declined") return [];
       const step = sequence[lead.sequenceStep];
       if (!step) return [];
       const anchor = lead.lastEmailAt ?? lead.createdAt;
@@ -213,9 +217,13 @@ export default function Admin() {
                         <h3 style={{ fontSize: 16, fontWeight: 800, color: "#fff", margin: 0 }}>{lead.name}</h3>
                         <span style={{ fontSize: 11, fontWeight: 800, color: leadStatusConfig[lead.status].color, background: `color-mix(in srgb, ${leadStatusConfig[lead.status].color} 12%, transparent)`, padding: "3px 10px", borderRadius: 100 }}>{leadStatusConfig[lead.status].label}</span>
                       </div>
-                      <p style={{ fontSize: 12.5, color: "#8a847a", margin: "4px 0 0" }}>{lead.email} · {lead.revenue} · via {lead.source} · added {new Date(lead.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</p>
+                      <p style={{ fontSize: 12.5, color: "#8a847a", margin: "4px 0 0" }}>{[lead.email, lead.whatsapp && `WA ${lead.whatsapp}`, lead.instagram && `IG ${lead.instagram}`].filter(Boolean).join(" · ") || "no contact details"} · {lead.revenue} · via {lead.source} · added {new Date(lead.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</p>
                       {lead.business && <p style={{ fontSize: 13.5, color: "#a59e93", margin: "8px 0 0", lineHeight: 1.5 }}>{lead.business}</p>}
-                      <p style={{ fontSize: 12, color: "#8a847a", margin: "8px 0 0" }}>Sequence: step {Math.min(lead.sequenceStep + 1, sequence.length)}/{sequence.length}{lead.sequenceActive ? " · active" : " · paused"}{lead.lastEmailAt ? ` · last email ${new Date(lead.lastEmailAt).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}` : ""}</p>
+                      {lead.email ? (
+                        <p style={{ fontSize: 12, color: "#8a847a", margin: "8px 0 0" }}>Sequence: step {Math.min(lead.sequenceStep + 1, sequence.length)}/{sequence.length}{lead.sequenceActive ? " · active" : " · paused"}{lead.lastEmailAt ? ` · last email ${new Date(lead.lastEmailAt).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}` : ""}</p>
+                      ) : (
+                        <p style={{ fontSize: 12, color: ACCENT, margin: "8px 0 0", fontWeight: 700 }}>No email — follow up via {lead.whatsapp ? "WhatsApp" : lead.instagram ? "Instagram" : "…add a contact channel"}</p>
+                      )}
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-end" }}>
                       <select value={lead.status} onChange={(e) => { const status = e.target.value as LeadStatus; saveLeads(leads.map((l) => l.id === lead.id ? { ...l, status, ...(status === "member" ? { sequenceActive: false } : {}) } : l)); if (status === "member") notify("🎉 Converted! Add them under Members."); }} style={{ ...inputS, width: "auto", padding: "8px 12px" }}>
@@ -256,9 +264,10 @@ export default function Admin() {
                     {members.map((m) => {
                       const months = Math.max(0, Math.floor((Date.now() - new Date(m.joinedAt).getTime()) / (30.44 * DAY)));
                       return (
-                        <tr key={m.id} style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-                          <td style={{ padding: "14px 12px" }}>
-                            <div style={{ fontWeight: 700, color: "#fff" }}>{m.name}</div>
+                        <React.Fragment key={m.id}>
+                        <tr style={{ borderBottom: openMember === m.id ? "none" : "1px solid rgba(255,255,255,0.05)" }}>
+                          <td style={{ padding: "14px 12px", cursor: "pointer" }} onClick={() => setOpenMember(openMember === m.id ? null : m.id)}>
+                            <div style={{ fontWeight: 700, color: "#fff" }}>{m.name} <span style={{ color: ACCENT, fontSize: 11 }}>{openMember === m.id ? "▲" : "▼ profile"}</span></div>
                             <div style={{ fontSize: 12, color: "#8a847a" }}>{m.email}{m.company ? ` · ${m.company}` : ""}</div>
                           </td>
                           <td style={{ padding: "14px 12px", color: "#cfc8bd" }}>{m.tier}</td>
@@ -275,6 +284,41 @@ export default function Admin() {
                             <button onClick={() => { if (confirm(`Delete ${m.name}?`)) saveMembers(members.filter((x) => x.id !== m.id)); }} style={{ ...ghostS, padding: "6px 12px", fontSize: 11.5, color: RED, borderColor: "rgba(217,83,79,0.4)" }}>Delete</button>
                           </td>
                         </tr>
+                        {openMember === m.id && (
+                          <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                            <td colSpan={8} style={{ padding: "0 12px 20px" }}>
+                              <div style={{ background: "rgba(255,255,255,0.03)", border: BORDER, borderRadius: 12, padding: "20px 22px", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 14 }}>
+                                <div>
+                                  <label style={{ fontSize: 11, fontWeight: 800, color: "#8a847a", textTransform: "uppercase", letterSpacing: "0.08em" }}>WhatsApp</label>
+                                  <input value={m.whatsapp || ""} onChange={(e) => saveMembers(members.map((x) => x.id === m.id ? { ...x, whatsapp: e.target.value } : x))} style={{ ...inputS, marginTop: 6 }} placeholder="+31 6…" />
+                                  <label style={{ fontSize: 11, fontWeight: 800, color: "#8a847a", textTransform: "uppercase", letterSpacing: "0.08em", display: "block", marginTop: 12 }}>Instagram</label>
+                                  <input value={m.instagram || ""} onChange={(e) => saveMembers(members.map((x) => x.id === m.id ? { ...x, instagram: e.target.value } : x))} style={{ ...inputS, marginTop: 6 }} placeholder="@handle" />
+                                  <label style={{ fontSize: 11, fontWeight: 800, color: "#8a847a", textTransform: "uppercase", letterSpacing: "0.08em", display: "block", marginTop: 12 }}>Revenue bracket</label>
+                                  <select value={m.revenue || ""} onChange={(e) => saveMembers(members.map((x) => x.id === m.id ? { ...x, revenue: e.target.value } : x))} style={{ ...inputS, marginTop: 6 }}>
+                                    <option value="">Unknown</option>
+                                    {["Pre-revenue / Early stage", "Less than €10k / month", "€10k – €25k / month", "€25k – €100k / month", "€100k+ / month"].map((r) => <option key={r}>{r}</option>)}
+                                  </select>
+                                  <label style={{ fontSize: 11, fontWeight: 800, color: "#8a847a", textTransform: "uppercase", letterSpacing: "0.08em", display: "block", marginTop: 12 }}>Engagement score</label>
+                                  <select value={m.engagement || ""} onChange={(e) => saveMembers(members.map((x) => x.id === m.id ? { ...x, engagement: e.target.value } : x))} style={{ ...inputS, marginTop: 6 }}>
+                                    <option value="">—</option>
+                                    {["10 — fully engaged", "8 — strong", "6 — okay", "4 — drifting", "2 — at risk"].map((r) => <option key={r}>{r}</option>)}
+                                  </select>
+                                </div>
+                                <div>
+                                  <label style={{ fontSize: 11, fontWeight: 800, color: ACCENT, textTransform: "uppercase", letterSpacing: "0.08em" }}>What they need right now</label>
+                                  <textarea rows={4} value={m.needs || ""} onChange={(e) => saveMembers(members.map((x) => x.id === m.id ? { ...x, needs: e.target.value } : x))} style={{ ...inputS, marginTop: 6, resize: "vertical" }} placeholder="From dashboard inputs, calls, bottlenecks — what does this member actually need?" />
+                                  <label style={{ fontSize: 11, fontWeight: 800, color: "#7fb069", textTransform: "uppercase", letterSpacing: "0.08em", display: "block", marginTop: 12 }}>Possible combinations & intros</label>
+                                  <textarea rows={4} value={m.connections || ""} onChange={(e) => saveMembers(members.map((x) => x.id === m.id ? { ...x, connections: e.target.value } : x))} style={{ ...inputS, marginTop: 6, resize: "vertical" }} placeholder="Who in the club or your network should this member meet? Why?" />
+                                </div>
+                                <div>
+                                  <label style={{ fontSize: 11, fontWeight: 800, color: "#5b8ca6", textTransform: "uppercase", letterSpacing: "0.08em" }}>Session notes & transcript summaries</label>
+                                  <textarea rows={11} value={m.notes || ""} onChange={(e) => saveMembers(members.map((x) => x.id === m.id ? { ...x, notes: e.target.value } : x))} style={{ ...inputS, marginTop: 6, resize: "vertical", lineHeight: 1.5 }} placeholder={"Paste key points from call transcripts, dashboard scores, observations…\n\n12 Jul — bottleneck: hiring closer. Score 6/10.\n05 Jul — big win on pricing."} />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        )}
+                        </React.Fragment>
                       );
                     })}
                   </tbody>
@@ -330,26 +374,28 @@ export default function Admin() {
   );
 }
 
-function LeadForm({ onAdd, inputS, btnS }: { onAdd: (l: { name: string; email: string; business: string; revenue: string; source: string }) => void; inputS: React.CSSProperties; btnS: React.CSSProperties }) {
-  const [f, setF] = useState({ name: "", email: "", business: "", revenue: "€10k – €25k / month", source: "Application form" });
+function LeadForm({ onAdd, inputS, btnS }: { onAdd: (l: { name: string; email: string; whatsapp: string; instagram: string; business: string; revenue: string; source: string }) => void; inputS: React.CSSProperties; btnS: React.CSSProperties }) {
+  const [f, setF] = useState({ name: "", email: "", whatsapp: "", instagram: "", business: "", revenue: "€10k – €25k / month", source: "Application form" });
   return (
-    <form onSubmit={(e) => { e.preventDefault(); if (f.name && f.email) onAdd(f); }} style={{ marginTop: 16, background: CARD, border: BORDER, borderRadius: 14, padding: "20px 22px", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 10 }}>
+    <form onSubmit={(e) => { e.preventDefault(); if (f.name && (f.email || f.whatsapp || f.instagram)) onAdd(f); }} style={{ marginTop: 16, background: CARD, border: BORDER, borderRadius: 14, padding: "20px 22px", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 10 }}>
       <input placeholder="Full name" value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} style={inputS} required />
-      <input type="email" placeholder="Email" value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} style={inputS} required />
+      <input type="email" placeholder="Email (optional if WA/IG)" value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} style={inputS} />
+      <input placeholder="WhatsApp (optional)" value={f.whatsapp} onChange={(e) => setF({ ...f, whatsapp: e.target.value })} style={inputS} />
+      <input placeholder="Instagram (optional)" value={f.instagram} onChange={(e) => setF({ ...f, instagram: e.target.value })} style={inputS} />
       <input placeholder="Business (short)" value={f.business} onChange={(e) => setF({ ...f, business: e.target.value })} style={inputS} />
       <select value={f.revenue} onChange={(e) => setF({ ...f, revenue: e.target.value })} style={inputS}>
         {["Pre-revenue / Early stage", "Less than €10k / month", "€10k – €25k / month", "€25k+ / month"].map((r) => <option key={r}>{r}</option>)}
       </select>
       <select value={f.source} onChange={(e) => setF({ ...f, source: e.target.value })} style={inputS}>
-        {["Application form", "Referral", "Instagram", "Event / dinner", "Other"].map((r) => <option key={r}>{r}</option>)}
+        {["Application form", "Referral", "Instagram", "Event / dinner", "WhatsApp", "Never officially applied", "Other"].map((r) => <option key={r}>{r}</option>)}
       </select>
-      <button type="submit" style={btnS}>Add lead & start sequence</button>
+      <button type="submit" style={btnS}>Add lead{f.email ? " & start sequence" : ""}</button>
     </form>
   );
 }
 
-function MemberForm({ onAdd, inputS, btnS }: { onAdd: (m: { name: string; email: string; company: string; tier: string; price: string; circle: string; joinedAt: string; renewsAt: string }) => void; inputS: React.CSSProperties; btnS: React.CSSProperties }) {
-  const [f, setF] = useState({ name: "", email: "", company: "", tier: "Founder Circle", price: "€", circle: "Circle A", joinedAt: "", renewsAt: "" });
+function MemberForm({ onAdd, inputS, btnS }: { onAdd: (m: Omit<Member, "id" | "status" | "notes">) => void; inputS: React.CSSProperties; btnS: React.CSSProperties }) {
+  const [f, setF] = useState({ name: "", email: "", whatsapp: "", instagram: "", revenue: "", company: "", tier: "Founder Circle", price: "€", circle: "Circle A", joinedAt: "", renewsAt: "", engagement: "", needs: "", connections: "" });
   return (
     <form onSubmit={(e) => { e.preventDefault(); if (f.name && f.email) onAdd(f); }} style={{ marginTop: 16, background: CARD, border: BORDER, borderRadius: 14, padding: "20px 22px", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))", gap: 10 }}>
       <input placeholder="Full name" value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} style={inputS} required />
