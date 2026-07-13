@@ -228,7 +228,7 @@ export default function ShoulderToShoulder() {
             </div>
           </div>
           <div className="photo-zoom" style={{ position: "relative", aspectRatio: "4/5", overflow: "hidden", background: "#1a1816" }}>
-            <Image src="/members.jpg" alt="Side quests and weekends" fill className="photo-grade" style={{ objectFit: "cover" }} />
+            <Image src="/event-group.jpg" alt="The club together" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 60%" }} />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,9,7,0.7), transparent 40%)", display: "flex", alignItems: "flex-end", padding: 24 }}>
               <span style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>The side quests</span>
             </div>

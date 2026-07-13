@@ -133,7 +133,7 @@ export default function Home() {
             {/* Shoulder to Shoulder */}
             <a href="/shoulder-to-shoulder" className="card-lift" style={{ textDecoration: "none", background: "#fffdf9", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
               <div className="photo-zoom" style={{ position: "relative", aspectRatio: "16/10" }}>
-                <Image src="/founders.jpg" alt="Shoulder to Shoulder — the founder group" fill style={{ objectFit: "cover" }} />
+                <Image src="/event-group.jpg" alt="Shoulder to Shoulder — founders event" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 60%" }} />
               </div>
               <div style={{ padding: "34px 32px 38px" }}>
                 <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>The Club</span>

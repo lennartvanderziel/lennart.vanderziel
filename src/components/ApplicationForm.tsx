@@ -46,6 +46,7 @@ export default function ApplicationForm() {
   const [step, setStep] = useState(0);
   const [data, setData] = useState({ ...emptyData });
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [hp, setHp] = useState(""); // honeypot — humans never see or fill this
 
   const steps = [
     { valid: true }, // 0 intro
@@ -72,7 +73,8 @@ export default function ApplicationForm() {
         "Monthly revenue": data.revenue,
         "Why join / what would make it valuable": data.why,
         "How did you hear about us": data.source,
-      }
+      },
+      hp
     );
     setStatus(ok ? "done" : "error");
   }
@@ -122,6 +124,7 @@ export default function ApplicationForm() {
       {step === 1 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>First — who are you?</p>
+          <input type="text" name="company_website" tabIndex={-1} autoComplete="off" value={hp} onChange={(e) => setHp(e.target.value)} style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }} aria-hidden="true" />
           <input autoFocus type="text" placeholder="First name" value={data.firstName} onChange={(e) => setData({ ...data, firstName: e.target.value })} className="input-premium" style={inputStyle} />
           <input type="text" placeholder="Last name" value={data.lastName} onChange={(e) => setData({ ...data, lastName: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
         </div>
