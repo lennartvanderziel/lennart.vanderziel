@@ -9,7 +9,7 @@ const ACCENT = "#E8742B";
 const included = [
   "Your Founder Circle — 6 to 8 founders at your level",
   "A one-hour online circle session every week — from anywhere",
-  "Offline dinners, activities and side quests in Bali and Europe",
+  "Offline dinners, activities and side quests in Southeast Asia and Europe",
   "Two STS Summits per year — everybody together",
 ];
 
@@ -28,8 +28,8 @@ const steps = [
 
 const faqs = [
   { q: "How do the Founder Circles work?", a: "Your circle is a fixed group of 6 to 8 founders operating at your level. You meet online for one hour every week, using a structured system: sharing opportunities, providing solutions, solving each other's problems and holding each other accountable. Same faces, growing trust, compounding value." },
-  { q: "Are the sessions online or offline?", a: "Both — by design. Circle sessions are online, so you can join from anywhere in the world. The events, dinners, activities and side quests are offline, in Bali and Europe — where most members are based. And twice a year the whole community comes together at the STS Summit." },
-  { q: "I split my time between countries. Does that work?", a: "Perfectly. Most members are based in Europe or Bali, and many move between them. Your circle travels with you because it's online — and there are offline gatherings in both regions." },
+  { q: "Are the sessions online or offline?", a: "Both — by design. Circle sessions are online, so you can join from anywhere in the world. The events, dinners, activities and side quests are offline, in Southeast Asia and Europe — where most members are based. And twice a year the whole community comes together at the STS Summit." },
+  { q: "I split my time between countries. Does that work?", a: "Perfectly. Most members are based in Europe or Southeast Asia, and many move between them. Your circle travels with you because it's online — and there are offline gatherings in both regions." },
   { q: "Who is in the community?", a: "Two levels: founders doing €5k–25k/month scaling to €1M/year, and founders past €25k/month scaling to multiple 7 figures. Every member is personally vetted on level, values and attitude." },
   { q: "Is it only for male founders?", a: "Yes — Shoulder to Shoulder is built around male founders working in small, tight circles. It keeps the dynamic honest and direct. Reach out if you have questions about fit." },
   { q: "What is the time commitment?", a: "Built for busy founders: regular circle sessions online, offline gatherings you choose to attend, and two Summits a year. Intentional, never noise." },
@@ -66,7 +66,7 @@ export default function ShoulderToShoulder() {
         <div style={{ position: "relative", height: "100%", display: "flex", flexDirection: "column", justifyContent: "flex-end", maxWidth: 1180, margin: "0 auto", padding: "0 28px 88px" }}>
           <span className="eyebrow" style={{ color: ACCENT, fontSize: 12 }}>The club for founders</span>
           <h1 style={{ marginTop: 8, fontSize: "clamp(40px,7vw,88px)", fontWeight: 800, lineHeight: 0.98, letterSpacing: "-0.035em", color: "#fff", maxWidth: 820 }}>Grow exponentially, shoulder to shoulder.</h1>
-          <p style={{ marginTop: 20, fontSize: 19, lineHeight: 1.5, color: "rgba(255,255,255,0.86)", fontWeight: 500, maxWidth: 560 }}>A circle of 6–8 founders at your level. Online sessions from anywhere, offline experiences in Bali and Europe, and two Summits a year where everybody comes together.</p>
+          <p style={{ marginTop: 20, fontSize: 19, lineHeight: 1.5, color: "rgba(255,255,255,0.86)", fontWeight: 500, maxWidth: 560 }}>A circle of 6–8 founders at your level. Online sessions from anywhere, offline experiences in Southeast Asia and Europe, and two Summits a year where everybody comes together.</p>
           <div style={{ marginTop: 32, display: "flex", alignItems: "center", gap: 18, flexWrap: "wrap" }}>
             <a href="#apply" className="btn-light" style={{ textDecoration: "none", color: "#15130f", background: "#fff", padding: "17px 34px", borderRadius: 100, fontSize: 16, fontWeight: 700 }}>Apply to join →</a>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 9, fontSize: 13.5, fontWeight: 600, color: "rgba(255,255,255,0.75)" }}>
@@ -137,12 +137,12 @@ export default function ShoulderToShoulder() {
             <div className="card-lift" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 16, padding: "36px 32px" }}>
               <span className="eyebrow" style={{ color: ACCENT }}>01 — Weekly</span>
               <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 14 }}>Circle sessions — online</h3>
-              <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#6b665d" }}>Your Founder Circle meets online, so it works from anywhere — whether you&apos;re in Amsterdam, Bali or on the road. No flights needed to stay sharp.</p>
+              <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#6b665d" }}>Your Founder Circle meets online, so it works from anywhere — whether you&apos;re in Amsterdam, Southeast Asia or on the road. No flights needed to stay sharp.</p>
             </div>
             <div className="card-lift" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 16, padding: "36px 32px" }}>
               <span className="eyebrow" style={{ color: ACCENT }}>02 — Monthly</span>
               <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 14 }}>Events & side quests — offline</h3>
-              <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#6b665d" }}>Dinners, activities and side quests happen in person, in <strong>Bali</strong> and <strong>Europe</strong> — where most members are based. Join whatever is happening near you.</p>
+              <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#6b665d" }}>Dinners, activities and side quests happen in person, in <strong>Southeast Asia</strong> and <strong>Europe</strong> — where most members are based. Join whatever is happening near you.</p>
             </div>
             <div className="card-lift" style={{ background: "#15130f", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 16, padding: "36px 32px" }}>
               <span className="eyebrow" style={{ color: ACCENT }}>03 — Biannual</span>

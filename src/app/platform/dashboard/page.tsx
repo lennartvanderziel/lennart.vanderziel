@@ -27,16 +27,16 @@ const circles = [
   {
     name: "Circle A",
     members: [
-      { name: "Member 1", company: "Company", focus: "E-commerce", location: "Bali", intro: "Building an e-com brand. Ask me about logistics & sourcing." },
+      { name: "Member 1", company: "Company", focus: "E-commerce", location: "Southeast Asia", intro: "Building an e-com brand. Ask me about logistics & sourcing." },
       { name: "Member 2", company: "Company", focus: "Agency", location: "Netherlands", intro: "Runs a marketing agency. Strong in paid social." },
-      { name: "Member 3", company: "Company", focus: "SaaS", location: "Bali", intro: "Bootstrapping a B2B SaaS. Loves product talk." },
+      { name: "Member 3", company: "Company", focus: "SaaS", location: "Southeast Asia", intro: "Bootstrapping a B2B SaaS. Loves product talk." },
     ],
   },
   {
     name: "Circle B",
     members: [
       { name: "Member 4", company: "Company", focus: "Real estate", location: "Netherlands", intro: "Developing property projects. Happy to share deal structures." },
-      { name: "Member 5", company: "Company", focus: "Coaching", location: "Bali", intro: "Scaling a coaching business past €25k/mo." },
+      { name: "Member 5", company: "Company", focus: "Coaching", location: "Southeast Asia", intro: "Scaling a coaching business past €25k/mo." },
       { name: "Member 6", company: "Company", focus: "E-commerce", location: "Europe", intro: "Second e-com exit in progress. Ops nerd." },
     ],
   },
@@ -219,7 +219,7 @@ export default function Dashboard() {
                 <section className="fade-up-2 photo-zoom" style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3", border: BORDER }}>
                   <Image src="/session.jpg" alt="Circle session" fill className="photo-grade" style={{ objectFit: "cover" }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,9,7,0.8), transparent 55%)", display: "flex", alignItems: "flex-end", padding: 18 }}>
-                    <span style={{ fontSize: 13, fontWeight: 700, color: "#fff" }}>Last mastermind · Bali</span>
+                    <span style={{ fontSize: 13, fontWeight: 700, color: "#fff" }}>Last mastermind · Southeast Asia</span>
                   </div>
                 </section>
                 <section className="fade-up-3" style={{ background: "rgba(232,116,43,0.09)", border: "1px solid rgba(232,116,43,0.4)", borderRadius: 16, padding: "24px 24px" }}>
@@ -468,7 +468,7 @@ export default function Dashboard() {
                 </div>
                 <div style={{ marginTop: 16, background: "rgba(255,255,255,0.03)", border: BORDER, borderRadius: 12, padding: "14px 16px" }}>
                   <h3 style={{ fontSize: 12, fontWeight: 800, color: ACCENT, margin: "0 0 6px", letterSpacing: "0.08em", textTransform: "uppercase" }}>What to share</h3>
-                  <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "#a59e93", margin: 0 }}>The one-liner: &quot;It&apos;s a circle of 6–8 founders at your level — weekly online sessions, dinners and side quests in Bali and Europe, and two Summits a year. By application only.&quot;</p>
+                  <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "#a59e93", margin: 0 }}>The one-liner: &quot;It&apos;s a circle of 6–8 founders at your level — weekly online sessions, dinners and side quests in Southeast Asia and Europe, and two Summits a year. By application only.&quot;</p>
                 </div>
               </section>
               <section style={sectionCard}>
