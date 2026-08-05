@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Schibsted_Grotesk, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/components/i18n";
 
 const schibsted = Schibsted_Grotesk({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 const cormorant = Cormorant_Garamond({ subsets: ["latin"], variable: "--font-serif", style: ["normal", "italic"], weight: ["400", "500", "600"], display: "swap" });
@@ -90,7 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${schibsted.variable} ${cormorant.variable}`}>
       <body style={{ fontFamily: "var(--font-sans), ui-sans-serif, sans-serif", background: "#ffffff", color: "#15130f", WebkitFontSmoothing: "antialiased" }}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );
