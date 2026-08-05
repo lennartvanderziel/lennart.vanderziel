@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { portalCircles } from "@/lib/portalRoster";
 
 const ACCENT = "#E8742B";
 const GREEN = "#7fb069";
@@ -23,24 +24,7 @@ const tabs: { id: Tab; label: string }[] = [
   { id: "billing", label: "Billing" },
 ];
 
-const circles = [
-  {
-    name: "Circle A",
-    members: [
-      { name: "Member 1", company: "Company", focus: "E-commerce", location: "Southeast Asia", intro: "Building an e-com brand. Ask me about logistics & sourcing." },
-      { name: "Member 2", company: "Company", focus: "Agency", location: "Netherlands", intro: "Runs a marketing agency. Strong in paid social." },
-      { name: "Member 3", company: "Company", focus: "SaaS", location: "Southeast Asia", intro: "Bootstrapping a B2B SaaS. Loves product talk." },
-    ],
-  },
-  {
-    name: "Circle B",
-    members: [
-      { name: "Member 4", company: "Company", focus: "Real estate", location: "Netherlands", intro: "Developing property projects. Happy to share deal structures." },
-      { name: "Member 5", company: "Company", focus: "Coaching", location: "Southeast Asia", intro: "Scaling a coaching business past €25k/mo." },
-      { name: "Member 6", company: "Company", focus: "E-commerce", location: "Europe", intro: "Second e-com exit in progress. Ops nerd." },
-    ],
-  },
-];
+const circles = portalCircles;
 
 const pastSessions = [
   { date: "Last Tuesday", title: "Circle Session — Pricing deep-dive", summary: "Reviewed two pricing models; agreed on value-anchoring experiment for Member 3. Everyone set one pricing action.", recording: "#" },
