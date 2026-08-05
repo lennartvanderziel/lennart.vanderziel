@@ -122,7 +122,7 @@ export function Dashboard({ crm, onNavigate }: { crm: Crm; onNavigate: (v: View)
         )}
       </Card>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: 20 }}>
+      <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: 20 }}>
         <Card>
           <SectionTitle>Pipeline overview</SectionTitle>
           {leads.length === 0 ? (

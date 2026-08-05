@@ -26,6 +26,7 @@ export default function Admin() {
 
   return (
     <div
+      className="os-shell"
       style={{
         minHeight: "100vh",
         background: PAGE,
@@ -41,7 +42,7 @@ export default function Admin() {
         counts={{ dueEmails: crm.dueEmails.length, openLeads, members: activeMembers }}
       />
 
-      <main style={{ flex: 1, minWidth: 0, padding: "36px 34px 90px", maxWidth: 1320 }}>
+      <main className="os-main" style={{ flex: 1, minWidth: 0, padding: "36px 34px 90px", maxWidth: 1320, width: "100%" }}>
         {view === "dashboard" && <Dashboard crm={crm} onNavigate={setView} />}
         {view === "leads" && <Leads crm={crm} />}
         {view === "pipeline" && <Pipeline crm={crm} />}

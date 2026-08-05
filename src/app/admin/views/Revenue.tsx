@@ -49,7 +49,7 @@ export function Revenue({ crm }: { crm: Crm }) {
         />
       </StatRow>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: 20 }}>
+      <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: 20 }}>
         <Card>
           <SectionTitle>Revenue by tier</SectionTitle>
           {byTier.length === 0 ? (

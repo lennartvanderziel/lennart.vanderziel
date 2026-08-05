@@ -79,6 +79,7 @@ export function StatTile({
 export function StatRow({ children }: { children: ReactNode }) {
   return (
     <div
+      className="stat-row"
       style={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))",

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { portalCircles } from "@/lib/portalRoster";
+import { portalCircles, portalMembers } from "@/lib/portalRoster";
 
 const ACCENT = "#E8742B";
 const GREEN = "#7fb069";
@@ -24,7 +24,16 @@ const tabs: { id: Tab; label: string }[] = [
   { id: "billing", label: "Billing" },
 ];
 
-const circles = portalCircles;
+// Group the roster by circle. Nobody is assigned yet (the accountability
+// database has no circle field), so fall back to one "The crew" section
+// rather than rendering empty circle headings.
+const assigned = portalCircles.map((c) => ({
+  ...c,
+  members: portalMembers.filter((m) => m.circle === c.name),
+}));
+const circles = assigned.some((c) => c.members.length > 0)
+  ? assigned
+  : [{ name: "The crew", goal: "", meets: "", members: portalMembers }];
 
 const pastSessions = [
   { date: "Last Tuesday", title: "Circle Session — Pricing deep-dive", summary: "Reviewed two pricing models; agreed on value-anchoring experiment for Member 3. Everyone set one pricing action.", recording: "#" },
@@ -392,10 +401,10 @@ export default function Dashboard() {
                         </span>
                         <div>
                           <h3 style={{ fontSize: 15.5, fontWeight: 800, color: "#fff", margin: 0 }}>{m.name}</h3>
-                          <p style={{ fontSize: 12.5, color: "#8a847a", margin: "2px 0 0" }}>{m.focus} · {m.location}</p>
+                          {(m.focus || m.location) && <p style={{ fontSize: 12.5, color: "#8a847a", margin: "2px 0 0" }}>{[m.focus, m.location].filter(Boolean).join(" · ")}</p>}
                         </div>
                       </div>
-                      <p style={{ marginTop: 12, fontSize: 13.5, lineHeight: 1.55, color: "#a59e93" }}>{m.intro}</p>
+                      {m.intro && <p style={{ marginTop: 12, fontSize: 13.5, lineHeight: 1.55, color: "#a59e93" }}>{m.intro}</p>}
                     </div>
                   ))}
                 </div>

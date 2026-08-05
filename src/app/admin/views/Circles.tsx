@@ -25,7 +25,7 @@ export function Circles({ crm }: { crm: Crm }) {
       {active.length === 0 ? (
         <EmptyState>No active members yet. Add members and assign them to a circle.</EmptyState>
       ) : (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: 20 }}>
+        <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: 20 }}>
           {names.map((circle) => {
             const roster = active.filter((m) => m.circle === circle);
             const mrr = roster.reduce((s, m) => s + priceToNumber(m.price), 0);

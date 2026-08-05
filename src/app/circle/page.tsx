@@ -170,7 +170,7 @@ export default function CirclePage() {
         </div>
       </header>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: 20, alignItems: "start" }}>
+      <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: 20, alignItems: "start" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <section style={{ ...card, borderLeft: `3px solid #8a7aa8` }}>
             <span style={labelS}>Quarterly · set once per quarter</span>
@@ -346,7 +346,7 @@ export default function CirclePage() {
             </p>
           </div>
         ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 16 }}>
+          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 16 }}>
             {others.map((other) => {
               const entry = entryFor(other.id, weekId);
               const plan = store.plans[other.id] ?? blankPlan(other.id, other.name, other.circle);

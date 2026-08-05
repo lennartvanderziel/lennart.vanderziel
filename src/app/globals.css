@@ -176,3 +176,53 @@ body {
   .fade-up, .fade-up-1, .fade-up-2, .fade-up-3, .ken-burns, .pulse-dot { animation: none; }
   .btn-primary, .btn-light, .card-lift, .card-lift-dark, .photo-zoom img { transition: none; }
 }
+
+/* ---------- OS SHELL (CRM + member circle view) ---------- */
+/* Below 860px the fixed sidebar becomes a horizontal nav bar so the
+   Command Center is usable on a phone. */
+@media (max-width: 860px) {
+  .os-shell { flex-direction: column !important; }
+
+  .os-sidebar {
+    width: 100% !important;
+    height: auto !important;
+    position: sticky !important;
+    top: 0;
+    z-index: 50;
+    border-right: none !important;
+    border-bottom: 1px solid #e7e3db;
+    padding: 10px 12px !important;
+    gap: 0 !important;
+  }
+
+  .os-brand { padding: 2px 4px 10px !important; }
+
+  .os-nav {
+    flex-direction: row !important;
+    overflow-x: auto;
+    gap: 6px !important;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .os-nav::-webkit-scrollbar { display: none; }
+
+  .os-nav-group {
+    margin-top: 0 !important;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .os-nav-heading { display: none !important; }
+  .os-nav button { white-space: nowrap; }
+  .os-back { display: none !important; }
+
+  .os-main { padding: 22px 16px 72px !important; }
+}
+
+@media (max-width: 640px) {
+  .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
+@media (max-width: 400px) {
+  .stat-row { grid-template-columns: 1fr !important; }
+}

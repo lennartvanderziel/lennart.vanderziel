@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import type { Crm } from "../useCrm";
 import { EmptyState, PageHeader } from "../components/ui";
 import { MemberForm } from "../forms/MemberForm";
+import { DataTransfer } from "../components/DataTransfer";
 import { memberStatusColor } from "../statuses";
 import { ACCENT, ACCENT_TEXT, BLUE, BORDER, FILL, GREEN, INK, MUTED, RED, btnS, ghostS, inputS, labelS } from "../theme";
 import { DAY, REVENUE_BRACKETS, uid, type Member } from "../types";
@@ -161,6 +162,8 @@ export function Members({ crm }: { crm: Crm }) {
           </table>
         )}
       </div>
+
+      <DataTransfer />
     </>
   );
 }

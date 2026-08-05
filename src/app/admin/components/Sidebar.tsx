@@ -69,6 +69,7 @@ export function Sidebar({
 }) {
   return (
     <aside
+      className="os-sidebar"
       style={{
         width: SIDEBAR_W,
         flexShrink: 0,
@@ -84,7 +85,7 @@ export function Sidebar({
         overflowY: "auto",
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 11, padding: "0 10px 20px" }}>
+      <div className="os-brand" style={{ display: "flex", alignItems: "center", gap: 11, padding: "0 10px 20px" }}>
         <span
           style={{
             width: 36,
@@ -122,11 +123,12 @@ export function Sidebar({
         </span>
       </div>
 
-      <nav style={{ display: "flex", flexDirection: "column", gap: 2 }} aria-label="CRM sections">
+      <nav className="os-nav" style={{ display: "flex", flexDirection: "column", gap: 2 }} aria-label="CRM sections">
         {navGroups(counts).map((group) => (
-          <div key={group.heading ?? "root"} style={{ marginTop: group.heading ? 18 : 0 }}>
+          <div key={group.heading ?? "root"} className="os-nav-group" style={{ marginTop: group.heading ? 18 : 0 }}>
             {group.heading && (
               <div
+                className="os-nav-heading"
                 style={{
                   fontSize: 9.5,
                   fontWeight: 800,
@@ -190,7 +192,7 @@ export function Sidebar({
         ))}
       </nav>
 
-      <div style={{ marginTop: "auto", paddingTop: 20 }}>
+      <div className="os-back" style={{ marginTop: "auto", paddingTop: 20 }}>
         <Link
           href="/"
           style={{
