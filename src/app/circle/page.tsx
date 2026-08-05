@@ -36,6 +36,7 @@ import { useAccountability } from "@/lib/useAccountability";
 import { type RosterMember } from "@/lib/members";
 import { useLocalStore } from "@/lib/useLocalStore";
 import { portalMembers } from "@/lib/portalRoster";
+import { Wordmark } from "@/components/Wordmark";
 
 const ME_KEY = "sts-circle-me";
 // Same starting roster the CRM uses, so a member opening this link before
@@ -446,7 +447,7 @@ function Shell({ children }: { children: React.ReactNode }) {
             <span style={{ width: 4.5, height: 13, borderRadius: 3, background: "#fff" }} />
             <span style={{ width: 4.5, height: 13, borderRadius: 3, background: "#fff", opacity: 0.72 }} />
           </span>
-          <span style={{ fontSize: 14.5, fontWeight: 800, color: INK }}>Shoulder to Shoulder</span>
+          <Wordmark size={14.5} />
         </div>
       </nav>
       <main style={{ maxWidth: 1180, margin: "0 auto", padding: "36px 24px 80px" }}>{children}</main>

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { ACCENT, ACCENT_TINT, ACCENT_TEXT, BORDER, CARD, FAINT, INK, MUTED, SIDEBAR_W } from "../theme";
+import { Wordmark } from "@/components/Wordmark";
+import { ACCENT, ACCENT_TINT, ACCENT_TEXT, BORDER, CARD, FAINT, MUTED, SIDEBAR_W } from "../theme";
 
 export type View =
   | "dashboard"
@@ -102,8 +103,8 @@ export function Sidebar({
           S
         </span>
         <span style={{ lineHeight: 1.25, minWidth: 0 }}>
-          <span style={{ display: "block", fontSize: 14, fontWeight: 800, color: INK }}>
-            Shoulder to Shoulder
+          <span style={{ display: "block" }}>
+            <Wordmark size={14} />
           </span>
           <span
             style={{
