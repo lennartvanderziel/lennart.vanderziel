@@ -15,7 +15,7 @@ const copy = {
     bookArrow: "Book a Founder Fit Call →",
     bySelection: "By selection only",
 
-    heroKicker: "For entrepreneurs who refuse to grow slowly.",
+    heroKicker: "Scale to 7 and 8 figures and beyond, alongside exceptional founders.",
     heroTitleA: "Your own weekly ",
     heroTitleB: "board of founders.",
     heroSub: "A hand-picked circle of entrepreneurs who make the big decisions with you, inside a system built to make growth inevitable.",
@@ -114,7 +114,7 @@ const copy = {
     bookArrow: "Boek een Founder Fit Call →",
     bySelection: "Alleen op selectie",
 
-    heroKicker: "Voor ondernemers die weigeren langzaam te groeien.",
+    heroKicker: "Schaal naar 7 en 8 cijfers en verder, naast uitzonderlijke ondernemers.",
     heroTitleA: "Je eigen wekelijkse ",
     heroTitleB: "raad van founders.",
     heroSub: "Een zorgvuldig geselecteerde kring ondernemers die de grote beslissingen mét je nemen, binnen een systeem gebouwd om groei onvermijdelijk te maken.",
