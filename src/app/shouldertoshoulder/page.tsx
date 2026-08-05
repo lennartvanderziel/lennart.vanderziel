@@ -28,9 +28,18 @@ const copy = {
       { title: "More fun", desc: "Wins get shared, problems get lighter, building stops feeling lonely." },
     ],
 
-    probEyebrow: "The real reason growth stalls",
-    probTitle: "At some point, you become your own bottleneck.",
-    probP: "Not for lack of talent. Because no one challenges your thinking, makes the hard calls with you, or spots the blind spot you can't see alone.",
+    storyEyebrow: "Why this exists",
+    storyLead: "Every founder knows the feeling. Some weeks you're on fire, solving big problems. Other weeks you're stuck. That's frustrating, because you're losing momentum, money and growth.",
+    storyBridge: "But there's another way. The fastest-growing entrepreneurs have a few things in common:",
+    storyPoints: [
+      "Collaboration with exceptional founders who have been there.",
+      "Solving critical problems before they cost them weeks of growth.",
+      "Sharing exclusive opportunities before the rest of the world hears about them.",
+    ],
+    storyQuote: "Others see what you can't, and know things you don't.",
+    storyImagine: "Imagine overcoming obstacles faster. Imagine consistently acting on the highest-leverage opportunities. How much further ahead would your business be in 12 months? And in 3 years?",
+    storyClosePre: "This is why Shoulder to Shoulder exists: ",
+    storyCloseAccent: "make reaching your potential inevitable.",
 
     netEyebrow: "“But I already know entrepreneurs”",
     netTitle: "Knowing people isn't having a circle.",
@@ -40,19 +49,11 @@ const copy = {
     netRightTitle: "Shoulder to Shoulder",
     netRight: ["The same circle, every week", "They know your business", "Big decisions made together", "A system that compounds"],
 
-    workEyebrow: "Why it works",
-    workTitle: "The right people, and a system.",
-    workItems: [
-      { title: "Think bigger", desc: "The circle raises your standard." },
-      { title: "Decide together", desc: "Every big call gets pressure-tested." },
-      { title: "Move faster", desc: "Bottlenecks clear in one conversation." },
-    ],
-
     sysEyebrow: "The system",
     sysTitle: "How growth becomes inevitable.",
     sysItems: ["Set your 10 goals", "Outside-the-box strategies", "Needle-moving actions", "Accountability dashboard", "Bottlenecks cleared together"],
     sysClose: "So growth becomes inevitable.",
-    meetCaption: "Weekly session on Google Meet (screenshot coming)",
+    meetCaption: "A weekly session on Google Meet",
 
     circleEyebrow: "How it's built",
     circleTitle: "Your circle of six. Plus the whole club.",
@@ -126,9 +127,18 @@ const copy = {
       { title: "Meer plezier", desc: "Wins worden gedeeld, problemen lichter, ondernemen voelt niet langer eenzaam." },
     ],
 
-    probEyebrow: "De echte reden dat groei stokt",
-    probTitle: "Op een gegeven moment word je je eigen bottleneck.",
-    probP: "Niet door gebrek aan talent. Maar omdat niemand je denken uitdaagt, de moeilijke keuzes mét je maakt, of de blinde vlek ziet die je alleen niet ziet.",
+    storyEyebrow: "Waarom dit bestaat",
+    storyLead: "Elke founder kent het gevoel. Sommige weken sta je in vuur en vlam en los je grote problemen op. Andere weken zit je vast. En dat is frustrerend, want je verliest momentum, geld en groei.",
+    storyBridge: "Maar er is een andere manier. De snelst groeiende ondernemers hebben een paar dingen gemeen:",
+    storyPoints: [
+      "Samenwerken met uitzonderlijke founders die er al geweest zijn.",
+      "Kritieke problemen oplossen voordat ze weken groei kosten.",
+      "Exclusieve kansen delen voordat de rest van de wereld ervan hoort.",
+    ],
+    storyQuote: "Anderen zien wat jij niet ziet, en weten wat jij niet weet.",
+    storyImagine: "Stel je voor dat je obstakels sneller overwint. Stel je voor dat je consistent inzet op de kansen met de meeste impact. Hoeveel verder zou je business zijn over 12 maanden? En over 3 jaar?",
+    storyClosePre: "Daarom bestaat Shoulder to Shoulder: ",
+    storyCloseAccent: "je potentieel bereiken onvermijdelijk maken.",
 
     netEyebrow: "“Maar ik ken al ondernemers”",
     netTitle: "Mensen kennen is geen kring hebben.",
@@ -138,19 +148,11 @@ const copy = {
     netRightTitle: "Shoulder to Shoulder",
     netRight: ["Dezelfde kring, elke week", "Ze kennen je business", "Grote beslissingen samen", "Een systeem dat compound"],
 
-    workEyebrow: "Waarom het werkt",
-    workTitle: "De juiste mensen, en een systeem.",
-    workItems: [
-      { title: "Denk groter", desc: "De kring verhoogt je standaard." },
-      { title: "Beslis samen", desc: "Elke grote keuze wordt getoetst." },
-      { title: "Beweeg sneller", desc: "Bottlenecks los je op in één gesprek." },
-    ],
-
     sysEyebrow: "Het systeem",
     sysTitle: "Hoe groei onvermijdelijk wordt.",
     sysItems: ["Stel je 10 doelen", "Outside-the-box strategieën", "Needle-moving acties", "Accountability-dashboard", "Bottlenecks samen opgelost"],
     sysClose: "Zo wordt groei onvermijdelijk.",
-    meetCaption: "Wekelijkse sessie op Google Meet (screenshot volgt)",
+    meetCaption: "Een wekelijkse sessie op Google Meet",
 
     circleEyebrow: "Hoe het is opgebouwd",
     circleTitle: "Je kring van zes. Plus de hele club.",
@@ -280,12 +282,23 @@ export default function Join() {
         </div>
       </section>
 
-      {/* PROBLEM */}
-      <section style={{ background: "#0f0e0b", padding: "90px 24px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+      {/* STORYLINE — why this exists */}
+      <section style={{ background: "#0f0e0b", padding: "100px 24px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
-          <span style={eyebrow()}>{t.probEyebrow}</span>
-          <h2 style={{ marginTop: 12, fontSize: "clamp(28px,4.4vw,46px)", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-0.03em", color: "#fff" }}>{t.probTitle}</h2>
-          <p style={{ marginTop: 18, fontSize: 18, lineHeight: 1.6, color: MUT_SOFT }}>{t.probP}</p>
+          <span style={eyebrow()}>{t.storyEyebrow}</span>
+          <p style={{ marginTop: 18, fontSize: "clamp(20px,2.6vw,27px)", lineHeight: 1.45, fontWeight: 600, color: "#fff", letterSpacing: "-0.01em" }}>{t.storyLead}</p>
+          <p style={{ marginTop: 24, fontSize: 17.5, lineHeight: 1.6, color: MUT_SOFT }}>{t.storyBridge}</p>
+          <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 13 }}>
+            {t.storyPoints.map((p) => (
+              <div key={p} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                <span style={{ flex: "0 0 auto", marginTop: 2, width: 22, height: 22, borderRadius: "50%", background: ACCENT, color: "#fff", fontSize: 12, fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center" }}>✓</span>
+                <span style={{ fontSize: 16.5, lineHeight: 1.5, color: "#f0ece4", fontWeight: 500 }}>{p}</span>
+              </div>
+            ))}
+          </div>
+          <p style={{ margin: "38px 0", textAlign: "center", fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: "clamp(23px,3.4vw,32px)", lineHeight: 1.3, color: ACCENT }}>&ldquo;{t.storyQuote}&rdquo;</p>
+          <p style={{ fontSize: 17.5, lineHeight: 1.6, color: MUT_SOFT }}>{t.storyImagine}</p>
+          <p style={{ marginTop: 28, fontSize: "clamp(22px,3vw,30px)", fontWeight: 800, lineHeight: 1.2, letterSpacing: "-0.02em", color: "#fff" }}>{t.storyClosePre}<span style={{ color: ACCENT }}>{t.storyCloseAccent}</span></p>
         </div>
       </section>
 
@@ -324,22 +337,6 @@ export default function Join() {
         </div>
       </section>
 
-      {/* WHY IT WORKS — short */}
-      <section style={{ background: "#15130f", padding: "90px 24px" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
-          <span style={eyebrow()}>{t.workEyebrow}</span>
-          <h2 style={{ marginTop: 12, fontSize: "clamp(28px,4.4vw,46px)", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-0.03em", color: "#fff" }}>{t.workTitle}</h2>
-          <div className="grid-auto" style={{ marginTop: 44, display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 20, textAlign: "left" }}>
-            {t.workItems.map((c) => (
-              <div key={c.title} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 16, padding: "26px 24px" }}>
-                <h3 style={{ fontSize: 19, fontWeight: 800, color: "#fff", letterSpacing: "-0.01em" }}>{c.title}</h3>
-                <p style={{ marginTop: 8, fontSize: 15, lineHeight: 1.5, color: MUT }}>{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* THE SYSTEM — labels only */}
       <section style={{ background: "#fff", color: "#15130f", padding: "90px 24px" }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
@@ -367,6 +364,14 @@ export default function Join() {
           <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 44px" }}>
             <span style={eyebrow()}>{t.circleEyebrow}</span>
             <h2 style={{ marginTop: 12, fontSize: "clamp(28px,4.2vw,44px)", fontWeight: 800, lineHeight: 1.06, letterSpacing: "-0.02em", color: "#fff" }}>{t.circleTitle}</h2>
+          </div>
+          <div style={{ ...mediaBox, aspectRatio: "16/10", maxWidth: 820, margin: "0 auto 20px" }}>
+            <span style={{ position: "absolute", fontSize: 30, opacity: 0.5 }}>🎥</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/session-meet.jpg" alt="A weekly session on Google Meet" className="photo-grade" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,9,7,0.72), transparent 55%)", display: "flex", alignItems: "flex-end", padding: 20 }}>
+              <span style={{ fontSize: 13.5, fontWeight: 700, color: "#fff" }}>{t.meetCaption}</span>
+            </div>
           </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))", gap: 20 }}>
             <div style={{ background: "rgba(232,116,43,0.08)", border: `1px solid ${ACCENT}`, borderRadius: 18, padding: "30px 28px" }}>
