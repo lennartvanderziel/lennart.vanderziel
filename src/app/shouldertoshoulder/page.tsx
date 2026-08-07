@@ -46,6 +46,9 @@ const copy = {
       { title: "Enjoy the journey", desc: "Fun stuff, dinners and activities. You're not doing this alone anymore." },
     ],
 
+    visionLine: "Imagine overcoming obstacles faster, and consistently acting on your highest-leverage opportunities.",
+    visionQ: "How much further ahead would your business be in 12 months? And in 3 years?",
+
     roomEyebrow: "Who's in the room",
     roomTitle: "The founders who are in already.",
     roomSub: "Just some examples of who you grow with, every week.",
@@ -120,6 +123,9 @@ const copy = {
       { title: "Een echt team", desc: "Een echt team van founders om je heen, die je business kennen en achter je staan bij elke keuze." },
       { title: "Geniet van de reis", desc: "Leuke dingen, diners en activiteiten. Je doet dit niet langer alleen." },
     ],
+
+    visionLine: "Stel je voor dat je obstakels sneller overwint, en consistent inzet op je kansen met de meeste impact.",
+    visionQ: "Hoeveel verder zou je business zijn over 12 maanden? En over 3 jaar?",
 
     roomEyebrow: "Wie er in de kamer zit",
     roomTitle: "De founders die er al in zitten.",
@@ -278,6 +284,14 @@ export default function Join() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* VISION */}
+      <section style={{ background: "#15130f", padding: "76px 24px" }}>
+        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
+          <p style={{ fontSize: "clamp(19px,2.5vw,25px)", lineHeight: 1.5, color: MUT_SOFT, fontWeight: 500 }}>{t.visionLine}</p>
+          <p style={{ marginTop: 18, fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: "clamp(23px,3.2vw,32px)", lineHeight: 1.3, color: ACCENT, letterSpacing: "-0.01em" }}>{t.visionQ}</p>
         </div>
       </section>
 
