@@ -31,6 +31,9 @@ const copy = {
     heroSub: "Grow faster, with more confidence and more fun. Beside founders who have been there.",
     freeNote: "Free · 30 min",
 
+    painEyebrow: "Sound familiar?",
+    painLine: "Building alone is slow. You hit the same walls, second-guess the big calls, and lose weeks no one helps you avoid.",
+
     changeEyebrow: "What you get",
     changeTitle: "Faster growth. A real team. More fun.",
     changes: [
@@ -41,7 +44,7 @@ const copy = {
 
     roomEyebrow: "Who's in the room",
     roomTitle: "The founders beside you.",
-    roomSub: "Real operators building real businesses. This is who you grow with, every week.",
+    roomSub: "Real operators building real businesses. Founders like David, Zach, Samer and Kibet. This is who you grow with, every week.",
 
     proofEyebrow: "Proof",
     proofTitle: "What it does for them.",
@@ -54,13 +57,17 @@ const copy = {
     storyLine: "I built the room I wish I'd had as a founder.",
     storyName: "Lennart van der Ziel",
 
-    howEyebrow: "How it works",
-    howTitle: "Simple.",
-    how: [
-      "Weekly circle session with your six.",
-      "Monthly 1-on-1 with Lennart.",
-      "Dinners & activities. The fun, offline.",
-    ],
+    ccEyebrow: "The circle & the club",
+    ccTitle: "You're never in it alone.",
+    ccCircleTitle: "Your circle",
+    ccCircleDesc: "A weekly session with your six, plus a monthly 1-on-1 with Lennart. Online, because members are everywhere.",
+    ccClubTitle: "The club",
+    ccClubDesc: "The whole community together: events, dinners and sidequests, in person.",
+
+    hostEyebrow: "Your host",
+    hostName: "Lennart van der Ziel",
+    hostChips: ["Founder & CEO", "Best of CES", "100+ founders guided"],
+    hostDesc: "I built and led an award-winning tech startup. I made costly mistakes and often felt alone. Shoulder to Shoulder is the room I wish I'd had.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Good questions.",
@@ -87,6 +94,9 @@ const copy = {
     heroSub: "Sneller groeien, met meer vertrouwen en meer plezier. Naast founders die er al geweest zijn.",
     freeNote: "Gratis · 30 min",
 
+    painEyebrow: "Herkenbaar?",
+    painLine: "Alleen bouwen is traag. Je loopt tegen dezelfde muren aan, twijfelt over de grote keuzes, en verliest weken die niemand je helpt voorkomen.",
+
     changeEyebrow: "Wat je krijgt",
     changeTitle: "Sneller groeien. Een echt team. Meer plezier.",
     changes: [
@@ -97,7 +107,7 @@ const copy = {
 
     roomEyebrow: "Wie er in de kamer zit",
     roomTitle: "De founders naast je.",
-    roomSub: "Echte ondernemers die echte bedrijven bouwen. Met hen groei je, elke week.",
+    roomSub: "Echte ondernemers die echte bedrijven bouwen. Founders zoals David, Zach, Samer en Kibet. Met hen groei je, elke week.",
 
     proofEyebrow: "Bewijs",
     proofTitle: "Wat het voor hen doet.",
@@ -110,13 +120,17 @@ const copy = {
     storyLine: "Ik bouwde de groep die ik zelf had willen hebben als founder.",
     storyName: "Lennart van der Ziel",
 
-    howEyebrow: "Hoe het werkt",
-    howTitle: "Simpel.",
-    how: [
-      "Wekelijkse kringsessie met je zes.",
-      "Maandelijkse 1-op-1 met Lennart.",
-      "Diners & activiteiten. De fun, offline.",
-    ],
+    ccEyebrow: "De circle & de club",
+    ccTitle: "Je staat er nooit alleen voor.",
+    ccCircleTitle: "Je circle",
+    ccCircleDesc: "Een wekelijkse sessie met je zes, plus een maandelijkse 1-op-1 met Lennart. Online, omdat members overal zitten.",
+    ccClubTitle: "De club",
+    ccClubDesc: "De hele community samen: events, diners en sidequests, in het echt.",
+
+    hostEyebrow: "Je host",
+    hostName: "Lennart van der Ziel",
+    hostChips: ["Founder & CEO", "Best of CES", "100+ founders begeleid"],
+    hostDesc: "Ik bouwde en leidde een bekroonde tech-startup. Ik maakte dure fouten en voelde me vaak alleen. Shoulder to Shoulder is de groep die ik zelf had willen hebben.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Goede vragen.",
@@ -196,8 +210,16 @@ export default function Join() {
         </div>
       </header>
 
+      {/* PAINPOINT */}
+      <section style={{ background: "#0f0e0b", padding: "80px 24px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
+          <span style={eyebrowS}>{t.painEyebrow}</span>
+          <p style={{ marginTop: 16, fontSize: "clamp(22px,3vw,30px)", fontWeight: 700, lineHeight: 1.35, letterSpacing: "-0.02em", color: "#fff" }}>{t.painLine}</p>
+        </div>
+      </section>
+
       {/* WHAT YOU GET */}
-      <section style={{ background: "#0f0e0b", padding: SEC, borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+      <section style={{ background: "#0f0e0b", padding: SEC }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Head eye={t.changeEyebrow} title={t.changeTitle} dark center />
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 18 }}>
@@ -258,23 +280,45 @@ export default function Join() {
               </div>
             ))}
           </div>
-          <p style={{ margin: "40px auto 0", maxWidth: 560, textAlign: "center", fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: "clamp(19px,2.4vw,24px)", lineHeight: 1.4, color: MUT_SOFT }}>
-            &ldquo;{t.storyLine}&rdquo;<span style={{ display: "block", marginTop: 10, fontStyle: "normal", fontFamily: "var(--font-sans), sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.04em", color: ACCENT }}>{t.storyName}</span>
-          </p>
         </div>
       </section>
 
-      {/* HOW IT WORKS — short */}
+      {/* CIRCLE & CLUB */}
       <section style={{ background: "#0f0e0b", padding: SEC }}>
-        <div style={{ maxWidth: 640, margin: "0 auto" }}>
-          <Head eye={t.howEyebrow} title={t.howTitle} dark center />
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {t.how.map((s, i) => (
-              <div key={s} style={{ display: "flex", gap: 15, alignItems: "center", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 12, padding: "16px 20px" }}>
-                <span style={{ flex: "0 0 auto", width: 32, height: 32, borderRadius: "50%", background: ACCENT, color: "#fff", fontWeight: 800, fontSize: 14, display: "flex", alignItems: "center", justifyContent: "center" }}>{i + 1}</span>
-                <span style={{ fontSize: 16.5, fontWeight: 600, color: "#f0ece4" }}>{s}</span>
-              </div>
-            ))}
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <Head eye={t.ccEyebrow} title={t.ccTitle} dark center />
+          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))", gap: 18 }}>
+            <div style={{ background: "rgba(232,116,43,0.08)", border: `1px solid ${ACCENT}`, borderRadius: 16, padding: "30px 28px" }}>
+              <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 44, height: 44, borderRadius: 12, background: ACCENT, color: "#fff", fontWeight: 800, fontSize: 19 }}>6</span>
+              <h3 style={{ marginTop: 16, fontSize: 21, fontWeight: 800, color: "#fff" }}>{t.ccCircleTitle}</h3>
+              <p style={{ marginTop: 10, fontSize: 15.5, lineHeight: 1.55, color: MUT_SOFT }}>{t.ccCircleDesc}</p>
+            </div>
+            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 16, padding: "30px 28px" }}>
+              <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 44, height: 44, borderRadius: 12, background: "rgba(255,255,255,0.1)", color: "#fff", fontWeight: 800, fontSize: 22 }}>∞</span>
+              <h3 style={{ marginTop: 16, fontSize: 21, fontWeight: 800, color: "#fff" }}>{t.ccClubTitle}</h3>
+              <p style={{ marginTop: 10, fontSize: 15.5, lineHeight: 1.55, color: MUT }}>{t.ccClubDesc}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* YOUR HOST */}
+      <section style={{ background: "#15130f", padding: SEC }}>
+        <div className="flex-wrap-col" style={{ maxWidth: 900, margin: "0 auto", display: "flex", gap: 44, alignItems: "center", flexWrap: "wrap" }}>
+          <div style={{ flex: "0 0 auto" }}>
+            <div style={{ position: "relative", width: 200, height: 240, borderRadius: 16, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)" }}>
+              <Image src="/lennart.jpg" alt={t.hostName} fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 20%" }} />
+            </div>
+          </div>
+          <div style={{ flex: "1 1 340px" }}>
+            <span style={eyebrowS}>{t.hostEyebrow}</span>
+            <h2 style={{ marginTop: 12, fontSize: "clamp(24px,3.2vw,34px)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.02em", color: "#fff" }}>{t.hostName}</h2>
+            <div style={{ marginTop: 14, display: "flex", flexWrap: "wrap", gap: 8 }}>
+              {t.hostChips.map((c) => (
+                <span key={c} style={{ fontSize: 12.5, fontWeight: 700, color: "#fff", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 100, padding: "6px 13px" }}>{c}</span>
+              ))}
+            </div>
+            <p style={{ marginTop: 18, fontSize: 16.5, lineHeight: 1.6, color: MUT_SOFT }}>{t.hostDesc}</p>
           </div>
         </div>
       </section>
