@@ -46,6 +46,13 @@ const copy = {
     roomEyebrow: "Who's in the room",
     roomTitle: "The founders beside you.",
     roomSub: "Just some examples of who you grow with, every week.",
+    selTitle: "Not your typical group.",
+    selSub: "Every circle is selected on more than track record.",
+    selItems: [
+      { title: "Different skill sets", desc: "Multifaceted by design, so someone always brings what you're missing." },
+      { title: "Team players, no ego", desc: "Chosen for character. People who lift the room, not dominate it." },
+      { title: "Real and open", desc: "Founders willing to show what's actually going on." },
+    ],
 
     proofEyebrow: "Proof",
     proofTitle: "What it does for them.",
@@ -73,6 +80,8 @@ const copy = {
     faqEyebrow: "FAQ",
     faqTitle: "Good questions.",
     faqs: [
+      { q: "Is it online or offline?", a: "Both. Your weekly circle meets online, so you join from anywhere. Dinners, events and sidequests happen in person with the whole club." },
+      { q: "What if I travel or don't live nearby?", a: "No problem. Members are spread across the world and circles are online, so location never gets in the way. The in-person events are a bonus, not a requirement." },
       { q: "I already have a strong network.", a: "Networks create conversations. A circle creates progress: the same people every week who know your business and hold you to your word." },
       { q: "I'm looking into a coach or mentor.", a: "This works alongside them. A coach gives one perspective. Here you get a whole circle plus weekly accountability." },
       { q: "Is this coaching?", a: "No. It's peers, not a coach talking at you." },
@@ -109,6 +118,13 @@ const copy = {
     roomEyebrow: "Wie er in de kamer zit",
     roomTitle: "De founders naast je.",
     roomSub: "Slechts een paar voorbeelden van met wie je groeit, elke week.",
+    selTitle: "Geen doorsnee groep.",
+    selSub: "Elke circle wordt geselecteerd op meer dan track record.",
+    selItems: [
+      { title: "Verschillende skill sets", desc: "Multifaceted by design, zodat iemand altijd brengt wat jij mist." },
+      { title: "Teamplayers, geen ego", desc: "Gekozen op karakter. Mensen die de groep optillen, niet domineren." },
+      { title: "Echt en open", desc: "Founders die durven laten zien wat er echt speelt." },
+    ],
 
     proofEyebrow: "Bewijs",
     proofTitle: "Wat het voor hen doet.",
@@ -136,6 +152,8 @@ const copy = {
     faqEyebrow: "FAQ",
     faqTitle: "Goede vragen.",
     faqs: [
+      { q: "Is het online of offline?", a: "Allebei. Je wekelijkse circle is online, dus je doet vanaf overal mee. Diners, events en sidequests zijn in het echt, met de hele club." },
+      { q: "Wat als ik reis of niet in de buurt woon?", a: "Geen probleem. Members zitten over de hele wereld en circles zijn online, dus locatie zit nooit in de weg. De events in het echt zijn een bonus, geen vereiste." },
       { q: "Ik heb al een sterk netwerk.", a: "Netwerken leveren gesprekken op. Een kring levert progressie op: dezelfde mensen elke week die je business kennen en je aan je woord houden." },
       { q: "Ik denk ook aan een coach of mentor.", a: "Dit werkt daarnaast. Een coach geeft één perspectief. Hier krijg je een hele kring plus wekelijkse accountability." },
       { q: "Is dit coaching?", a: "Nee. Het zijn peers, geen coach die tegen je praat." },
@@ -254,6 +272,22 @@ export default function Join() {
                 <p style={{ marginTop: 3, fontSize: 12.5, fontWeight: 600, color: INK_MUT, lineHeight: 1.35 }}>{m.tag}</p>
               </div>
             ))}
+          </div>
+
+          {/* Selected on more than track record */}
+          <div style={{ marginTop: 56, paddingTop: 44, borderTop: "1px solid rgba(0,0,0,0.1)" }}>
+            <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto 32px" }}>
+              <h3 style={{ fontSize: "clamp(23px,3.2vw,32px)", fontWeight: 800, letterSpacing: "-0.02em", color: INK }}>{t.selTitle}</h3>
+              <p style={{ marginTop: 10, fontSize: 16, lineHeight: 1.55, color: INK_MUT }}>{t.selSub}</p>
+            </div>
+            <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 16 }}>
+              {t.selItems.map((s) => (
+                <div key={s.title} style={{ background: "#f4f1ea", border: "1px solid rgba(0,0,0,0.07)", borderRadius: 14, padding: "24px 22px" }}>
+                  <h4 style={{ fontSize: 17, fontWeight: 800, color: INK, letterSpacing: "-0.01em" }}>{s.title}</h4>
+                  <p style={{ marginTop: 7, fontSize: 14.5, lineHeight: 1.5, color: INK_MUT }}>{s.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
