@@ -11,13 +11,14 @@ const MUT_SOFT = "#d8d2c7";
 const INK = "#15130f";
 const INK_MUT = "#57534c";
 
-const members = [
-  { name: "David", img: "/members/David.png" },
-  { name: "Zach", img: "/members/Zach.png" },
-  { name: "Kibet", img: "/members/Kibet.png" },
-  { name: "Dane", img: "/members/Dane.jpeg" },
-  { name: "Samer", img: "/members/Samer.png" },
-  { name: "Demian", img: "/members/Demian.jpeg" },
+type Member = { name: string; tag: string; img: string; pos?: string; scale?: number };
+const members: Member[] = [
+  { name: "Kibet", tag: "AgTech hardware · raising Series A", img: "/members/Kibet.png" },
+  { name: "David", tag: "Bali real estate investment", img: "/members/David.png" },
+  { name: "Samer", tag: "Airbnb · building a 16-unit project", img: "/members/Samer.png" },
+  { name: "Demian", tag: "2× AI-run B2B SaaS", img: "/members/Demian.jpeg", scale: 1.3 },
+  { name: "Dane", tag: "AI platform for filmmakers", img: "/members/Dane.jpeg" },
+  { name: "Zach", tag: "Health & wellbeing app", img: "/members/Zach.png", pos: "center 18%" },
 ];
 
 const copy = {
@@ -34,17 +35,17 @@ const copy = {
     painEyebrow: "Sound familiar?",
     painLine: "Building alone is slow. You hit the same walls, second-guess the big calls, and lose weeks no one helps you avoid.",
 
-    changeEyebrow: "What you get",
-    changeTitle: "Faster growth. A real team. More fun.",
+    changeEyebrow: "The outcome",
+    changeTitle: "Here's what changes.",
     changes: [
-      { title: "Exponential growth", desc: "You compound with the room, instead of growing alone, one linear step at a time." },
-      { title: "A real team", desc: "Six founders who know your business and have your back on every hard call." },
-      { title: "More fun", desc: "Wins shared, the journey lighter. You're not doing this alone anymore." },
+      { title: "Exponential growth", desc: "Normal founders grow linearly. Together we grow exponentially." },
+      { title: "A real team", desc: "A real team of founders around you, who know your business and back you on every call." },
+      { title: "Enjoy the journey", desc: "Fun stuff, dinners and activities. You're not doing this alone anymore." },
     ],
 
     roomEyebrow: "Who's in the room",
     roomTitle: "The founders beside you.",
-    roomSub: "Real operators building real businesses. Founders like David, Zach, Samer and Kibet. This is who you grow with, every week.",
+    roomSub: "Just some examples of who you grow with, every week.",
 
     proofEyebrow: "Proof",
     proofTitle: "What it does for them.",
@@ -53,21 +54,21 @@ const copy = {
       { quote: "I'd been stuck on a real estate idea for months. With the circle it became land I now own and a 14-unit project.", name: "Samer", type: "Member" },
       { quote: "I started thinking like the founder I need to become to raise €40M. It changed everything.", name: "Kibet", type: "Member" },
     ],
-    dinnerCaps: ["Founder dinner", "The club", "Together"],
-    storyLine: "I built the room I wish I'd had as a founder.",
-    storyName: "Lennart van der Ziel",
+    dinnerCaps: ["The club", "Founder dinner", "Together"],
 
-    ccEyebrow: "The circle & the club",
-    ccTitle: "You're never in it alone.",
-    ccCircleTitle: "Your circle",
-    ccCircleDesc: "A weekly session with your six, plus a monthly 1-on-1 with Lennart. Online, because members are everywhere.",
-    ccClubTitle: "The club",
-    ccClubDesc: "The whole community together: events, dinners and sidequests, in person.",
+    howEyebrow: "How it works",
+    howTitle: "Here's how it works.",
+    how: [
+      { n: "1", title: "You're selected into a circle", desc: "You fit into one of the weekly circles with your six. Just one hour a week, online, because members are everywhere." },
+      { n: "2", title: "Dinners & activities", desc: "The whole club comes together in person for dinners, events and sidequests." },
+      { n: "3", title: "Monthly 1-on-1 with Lennart", desc: "Personal strategy, just you and me." },
+    ],
+    howNote: "Every circle is personally facilitated by Lennart.",
 
     hostEyebrow: "Your host",
     hostName: "Lennart van der Ziel",
     hostChips: ["Founder & CEO", "Best of CES", "100+ founders guided"],
-    hostDesc: "I built and led an award-winning tech startup. I made costly mistakes and often felt alone. Shoulder to Shoulder is the room I wish I'd had.",
+    hostDesc: "I built and led an award-winning tech startup. I made costly mistakes and often felt alone, so I built the room I wish I'd had. I personally host every circle.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Good questions.",
@@ -97,17 +98,17 @@ const copy = {
     painEyebrow: "Herkenbaar?",
     painLine: "Alleen bouwen is traag. Je loopt tegen dezelfde muren aan, twijfelt over de grote keuzes, en verliest weken die niemand je helpt voorkomen.",
 
-    changeEyebrow: "Wat je krijgt",
-    changeTitle: "Sneller groeien. Een echt team. Meer plezier.",
+    changeEyebrow: "Het resultaat",
+    changeTitle: "Dit verandert er.",
     changes: [
-      { title: "Exponentiële groei", desc: "Je compound met de groep, in plaats van alleen, stap voor stap lineair." },
-      { title: "Een echt team", desc: "Zes founders die je business kennen en achter je staan bij elke lastige keuze." },
-      { title: "Meer plezier", desc: "Wins gedeeld, de reis lichter. Je doet dit niet langer alleen." },
+      { title: "Exponentiële groei", desc: "Normale founders groeien lineair. Samen groeien we exponentieel." },
+      { title: "Een echt team", desc: "Een echt team van founders om je heen, die je business kennen en achter je staan bij elke keuze." },
+      { title: "Geniet van de reis", desc: "Leuke dingen, diners en activiteiten. Je doet dit niet langer alleen." },
     ],
 
     roomEyebrow: "Wie er in de kamer zit",
     roomTitle: "De founders naast je.",
-    roomSub: "Echte ondernemers die echte bedrijven bouwen. Founders zoals David, Zach, Samer en Kibet. Met hen groei je, elke week.",
+    roomSub: "Slechts een paar voorbeelden van met wie je groeit, elke week.",
 
     proofEyebrow: "Bewijs",
     proofTitle: "Wat het voor hen doet.",
@@ -116,21 +117,21 @@ const copy = {
       { quote: "Ik zat al maanden vast op een vastgoedidee. Met de kring werd het grond die ik nu bezit en een project van 14 units.", name: "Samer", type: "Lid" },
       { quote: "Ik begon te denken als de founder die ik moet worden om €40M op te halen. Dat veranderde alles.", name: "Kibet", type: "Lid" },
     ],
-    dinnerCaps: ["Founder-diner", "De club", "Samen"],
-    storyLine: "Ik bouwde de groep die ik zelf had willen hebben als founder.",
-    storyName: "Lennart van der Ziel",
+    dinnerCaps: ["De club", "Founder-diner", "Samen"],
 
-    ccEyebrow: "De circle & de club",
-    ccTitle: "Je staat er nooit alleen voor.",
-    ccCircleTitle: "Je circle",
-    ccCircleDesc: "Een wekelijkse sessie met je zes, plus een maandelijkse 1-op-1 met Lennart. Online, omdat members overal zitten.",
-    ccClubTitle: "De club",
-    ccClubDesc: "De hele community samen: events, diners en sidequests, in het echt.",
+    howEyebrow: "Hoe het werkt",
+    howTitle: "Zo werkt het.",
+    how: [
+      { n: "1", title: "Je wordt geplaatst in een circle", desc: "Je komt in een van de wekelijkse circles met je zes. Eén uur per week, online, omdat members overal zitten." },
+      { n: "2", title: "Diners & activiteiten", desc: "De hele club komt in het echt samen voor diners, events en sidequests." },
+      { n: "3", title: "Maandelijkse 1-op-1 met Lennart", desc: "Persoonlijke strategie, alleen jij en ik." },
+    ],
+    howNote: "Elke circle wordt persoonlijk gefaciliteerd door Lennart.",
 
     hostEyebrow: "Je host",
     hostName: "Lennart van der Ziel",
     hostChips: ["Founder & CEO", "Best of CES", "100+ founders begeleid"],
-    hostDesc: "Ik bouwde en leidde een bekroonde tech-startup. Ik maakte dure fouten en voelde me vaak alleen. Shoulder to Shoulder is de groep die ik zelf had willen hebben.",
+    hostDesc: "Ik bouwde en leidde een bekroonde tech-startup. Ik maakte dure fouten en voelde me vaak alleen, dus bouwde ik de groep die ik zelf had willen hebben. Ik host elke circle persoonlijk.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Goede vragen.",
@@ -158,13 +159,13 @@ export default function Join() {
     document.getElementById("book")?.scrollIntoView({ behavior: "smooth" });
   }
 
-  const SEC = "100px 24px";
+  const SEC = "88px 24px";
   const btnLight = (extra: React.CSSProperties = {}): React.CSSProperties => ({ color: INK, background: "#fff", padding: "16px 32px", borderRadius: 100, fontSize: 15.5, fontWeight: 700, cursor: "pointer", border: "none", fontFamily: "inherit", ...extra });
   const eyebrowS: React.CSSProperties = { fontSize: 12, fontWeight: 800, letterSpacing: "0.18em", textTransform: "uppercase", color: ACCENT };
   const h2 = (dark: boolean): React.CSSProperties => ({ marginTop: 14, fontSize: "clamp(29px,3.7vw,40px)", fontWeight: 800, lineHeight: 1.12, letterSpacing: "-0.022em", color: dark ? "#fff" : INK });
   const mediaBox: React.CSSProperties = { position: "relative", width: "100%", borderRadius: 16, overflow: "hidden", background: "linear-gradient(135deg, #1c1915, #2e2820)", border: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center" };
   const Head = ({ eye, title, dark, center }: { eye: string; title: string; dark: boolean; center?: boolean }) => (
-    <div style={{ maxWidth: 640, margin: center ? "0 auto 48px" : "0 0 40px", textAlign: center ? "center" : "left" }}>
+    <div style={{ maxWidth: 640, margin: center ? "0 auto 44px" : "0 0 36px", textAlign: center ? "center" : "left" }}>
       <span style={eyebrowS}>{eye}</span>
       <h2 style={h2(dark)}>{title}</h2>
     </div>
@@ -191,10 +192,10 @@ export default function Join() {
       </nav>
 
       {/* HERO */}
-      <header style={{ position: "relative", width: "100%", minHeight: "94vh", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
+      <header style={{ position: "relative", width: "100%", minHeight: "90vh", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
         <Image src="/founders.jpg" alt="Founders together" fill className="ken-burns photo-grade" style={{ objectFit: "cover" }} priority />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,9,7,0.6) 0%, rgba(10,9,7,0.35) 40%, rgba(10,9,7,0.8) 74%, rgba(10,9,7,0.98) 100%)" }} />
-        <div className="fade-up" style={{ position: "relative", maxWidth: 1080, margin: "0 auto", width: "100%", padding: "0 24px 90px" }}>
+        <div className="fade-up" style={{ position: "relative", maxWidth: 1080, margin: "0 auto", width: "100%", padding: "0 24px 64px" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: "1px solid rgba(255,255,255,0.4)", borderRadius: 100, padding: "7px 15px", marginBottom: 24, backdropFilter: "blur(8px)", background: "rgba(255,255,255,0.14)" }}>
             <span className="pulse-dot" style={{ width: 7, height: 7, borderRadius: "50%", background: ACCENT }} />
             <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#fff" }}>{t.byInvite}</span>
@@ -202,7 +203,7 @@ export default function Join() {
           <h1 style={{ fontSize: "clamp(46px,7.6vw,88px)", fontWeight: 800, lineHeight: 0.98, letterSpacing: "-0.035em", color: "#fff", maxWidth: 820, marginBottom: 22, textShadow: "0 2px 30px rgba(0,0,0,0.5)" }}>
             {t.heroTitleA}<span style={{ color: ACCENT }}>{t.heroTitleB}</span>
           </h1>
-          <p style={{ maxWidth: 540, fontSize: "clamp(18px,2.2vw,22px)", lineHeight: 1.4, color: "#f0ece4", marginBottom: 34, fontWeight: 500, textShadow: "0 1px 16px rgba(0,0,0,0.6)" }}>{t.heroSub}</p>
+          <p style={{ maxWidth: 540, fontSize: "clamp(18px,2.2vw,22px)", lineHeight: 1.4, color: "#f0ece4", marginBottom: 32, fontWeight: 500, textShadow: "0 1px 16px rgba(0,0,0,0.6)" }}>{t.heroSub}</p>
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
             <button onClick={book} className="btn-light" style={btnLight({ padding: "17px 34px", fontSize: 16 })}>{t.applyArrow}</button>
             <span style={{ fontSize: 13.5, color: MUT, fontWeight: 600 }}>{t.freeNote}</span>
@@ -211,23 +212,22 @@ export default function Join() {
       </header>
 
       {/* PAINPOINT */}
-      <section style={{ background: "#0f0e0b", padding: "80px 24px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+      <section style={{ background: "#0f0e0b", padding: "58px 24px" }}>
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
           <span style={eyebrowS}>{t.painEyebrow}</span>
-          <p style={{ marginTop: 16, fontSize: "clamp(22px,3vw,30px)", fontWeight: 700, lineHeight: 1.35, letterSpacing: "-0.02em", color: "#fff" }}>{t.painLine}</p>
+          <p style={{ marginTop: 14, fontSize: "clamp(22px,3vw,30px)", fontWeight: 700, lineHeight: 1.35, letterSpacing: "-0.02em", color: "#fff" }}>{t.painLine}</p>
         </div>
       </section>
 
       {/* WHAT YOU GET */}
-      <section style={{ background: "#0f0e0b", padding: SEC }}>
+      <section style={{ background: "#0f0e0b", padding: `20px 24px ${SEC.split(" ")[0]}` }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Head eye={t.changeEyebrow} title={t.changeTitle} dark center />
-          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 18 }}>
-            {t.changes.map((b, i) => (
-              <div key={b.title} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 16, padding: "30px 26px" }}>
-                <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 40, height: 40, borderRadius: 10, background: `color-mix(in srgb, ${ACCENT} 18%, transparent)`, color: ACCENT, fontWeight: 800, fontSize: 15 }}>{String(i + 1).padStart(2, "0")}</span>
-                <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 16, letterSpacing: "-0.01em", color: "#fff" }}>{b.title}</h3>
-                <p style={{ marginTop: 8, fontSize: 15, lineHeight: 1.55, color: MUT }}>{b.desc}</p>
+          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 18 }}>
+            {t.changes.map((b) => (
+              <div key={b.title} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 18, padding: "38px 32px" }}>
+                <h3 style={{ fontSize: 25, fontWeight: 800, letterSpacing: "-0.02em", color: "#fff" }}>{b.title}</h3>
+                <p style={{ marginTop: 12, fontSize: 16.5, lineHeight: 1.55, color: MUT_SOFT }}>{b.desc}</p>
               </div>
             ))}
           </div>
@@ -237,20 +237,21 @@ export default function Join() {
       {/* WHO'S IN THE ROOM */}
       <section style={{ background: "#fff", color: INK, padding: SEC }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 48px" }}>
+          <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
             <span style={eyebrowS}>{t.roomEyebrow}</span>
             <h2 style={h2(false)}>{t.roomTitle}</h2>
             <p style={{ marginTop: 14, fontSize: 16.5, lineHeight: 1.55, color: INK_MUT }}>{t.roomSub}</p>
           </div>
-          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(150px,1fr))", gap: 16 }}>
+          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(160px,1fr))", gap: 18 }}>
             {members.map((m) => (
               <div key={m.name} style={{ textAlign: "center" }}>
-                <div style={{ position: "relative", width: 104, height: 104, borderRadius: "50%", margin: "0 auto", overflow: "hidden", background: `color-mix(in srgb, ${ACCENT} 20%, #e7e0d4)`, display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid rgba(0,0,0,0.05)" }}>
+                <div style={{ position: "relative", width: 108, height: 108, borderRadius: "50%", margin: "0 auto", overflow: "hidden", background: `color-mix(in srgb, ${ACCENT} 20%, #e7e0d4)`, display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid rgba(0,0,0,0.05)" }}>
                   <span style={{ fontSize: 34, fontWeight: 800, color: ACCENT }}>{m.name.slice(0, 1)}</span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={m.img} alt={m.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                  <img src={m.img} alt={m.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: m.pos || "center", transform: m.scale ? `scale(${m.scale})` : undefined }} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                 </div>
-                <h3 style={{ marginTop: 14, fontSize: 16.5, fontWeight: 800 }}>{m.name}</h3>
+                <h3 style={{ marginTop: 14, fontSize: 17, fontWeight: 800 }}>{m.name}</h3>
+                <p style={{ marginTop: 3, fontSize: 12.5, fontWeight: 600, color: INK_MUT, lineHeight: 1.35 }}>{m.tag}</p>
               </div>
             ))}
           </div>
@@ -274,7 +275,7 @@ export default function Join() {
             ))}
           </div>
           <div className="photo-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, marginTop: 18 }}>
-            {[{ src: "/dinner.jpg" }, { src: "/event-group.jpg" }, { src: "/mastermind.jpg" }].map((p, i) => (
+            {[{ src: "/event-group.jpg" }, { src: "/dinner.jpg" }, { src: "/mastermind.jpg" }].map((p, i) => (
               <div key={p.src} className="photo-zoom" style={{ position: "relative", aspectRatio: "1/1", borderRadius: 12, overflow: "hidden" }}>
                 <Image src={p.src} alt={t.dinnerCaps[i]} fill className="photo-grade" style={{ objectFit: "cover" }} />
               </div>
@@ -283,22 +284,20 @@ export default function Join() {
         </div>
       </section>
 
-      {/* CIRCLE & CLUB */}
+      {/* HOW IT WORKS */}
       <section style={{ background: "#0f0e0b", padding: SEC }}>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <Head eye={t.ccEyebrow} title={t.ccTitle} dark center />
-          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))", gap: 18 }}>
-            <div style={{ background: "rgba(232,116,43,0.08)", border: `1px solid ${ACCENT}`, borderRadius: 16, padding: "30px 28px" }}>
-              <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 44, height: 44, borderRadius: 12, background: ACCENT, color: "#fff", fontWeight: 800, fontSize: 19 }}>6</span>
-              <h3 style={{ marginTop: 16, fontSize: 21, fontWeight: 800, color: "#fff" }}>{t.ccCircleTitle}</h3>
-              <p style={{ marginTop: 10, fontSize: 15.5, lineHeight: 1.55, color: MUT_SOFT }}>{t.ccCircleDesc}</p>
-            </div>
-            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 16, padding: "30px 28px" }}>
-              <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 44, height: 44, borderRadius: 12, background: "rgba(255,255,255,0.1)", color: "#fff", fontWeight: 800, fontSize: 22 }}>∞</span>
-              <h3 style={{ marginTop: 16, fontSize: 21, fontWeight: 800, color: "#fff" }}>{t.ccClubTitle}</h3>
-              <p style={{ marginTop: 10, fontSize: 15.5, lineHeight: 1.55, color: MUT }}>{t.ccClubDesc}</p>
-            </div>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <Head eye={t.howEyebrow} title={t.howTitle} dark center />
+          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 18 }}>
+            {t.how.map((s) => (
+              <div key={s.n} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 16, padding: "28px 26px" }}>
+                <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 42, height: 42, borderRadius: "50%", background: ACCENT, color: "#fff", fontWeight: 800, fontSize: 18 }}>{s.n}</span>
+                <h3 style={{ fontSize: 19, fontWeight: 800, marginTop: 16, color: "#fff", letterSpacing: "-0.01em" }}>{s.title}</h3>
+                <p style={{ marginTop: 8, fontSize: 15, lineHeight: 1.55, color: MUT }}>{s.desc}</p>
+              </div>
+            ))}
           </div>
+          <p style={{ marginTop: 24, textAlign: "center", fontSize: 14.5, fontWeight: 700, color: ACCENT }}>{t.howNote}</p>
         </div>
       </section>
 
@@ -345,7 +344,7 @@ export default function Join() {
           <Image src="/event-group.jpg" alt="" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 60%" }} />
         </div>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,9,7,0.93)" }} />
-        <div style={{ position: "relative", maxWidth: 620, margin: "0 auto", padding: "100px 24px", textAlign: "center" }}>
+        <div style={{ position: "relative", maxWidth: 620, margin: "0 auto", padding: "96px 24px", textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(30px,4.4vw,48px)", fontWeight: 800, lineHeight: 1.08, letterSpacing: "-0.03em", color: "#fff" }}>{t.finalTitle}</h2>
           <p style={{ margin: "16px auto 0", maxWidth: 400, fontSize: 16.5, lineHeight: 1.5, color: MUT }}>{t.finalSub}</p>
           <div style={{ marginTop: 30, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
