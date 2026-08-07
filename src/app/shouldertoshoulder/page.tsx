@@ -32,8 +32,11 @@ const copy = {
     heroSub: "Grow faster, with more confidence and more fun. Beside founders who have been there.",
     freeNote: "Free · 30 min",
 
-    painEyebrow: "Sound familiar?",
-    painLine: "Building alone is slow. You hit the same walls, second-guess the big calls, and lose weeks no one helps you avoid.",
+    painEyebrow: "Why alone is slow",
+    painAloneTitle: "Alone",
+    painAlone: ["You make the big calls alone", "Fewer opportunities reach you", "No one keeps you accountable"],
+    painTogetherTitle: "Together",
+    painTogether: ["You decide with a team behind you", "Opportunities come from each other", "Support and accountability, every week"],
 
     changeEyebrow: "The outcome",
     changeTitle: "Here's what changes.",
@@ -44,7 +47,7 @@ const copy = {
     ],
 
     roomEyebrow: "Who's in the room",
-    roomTitle: "The founders beside you.",
+    roomTitle: "The founders who are in already.",
     roomSub: "Just some examples of who you grow with, every week.",
     selTitle: "Not your typical group.",
     selSub: "Every circle is selected on more than track record.",
@@ -66,9 +69,9 @@ const copy = {
     howEyebrow: "How it works",
     howTitle: "Here's how it works.",
     how: [
-      { n: "1", title: "You're selected into a circle", desc: "You fit into one of the weekly circles with your six. Just one hour a week, online, because members are everywhere." },
-      { n: "2", title: "Dinners & activities", desc: "The whole club comes together in person for dinners, events and sidequests." },
-      { n: "3", title: "Monthly 1-on-1 with Lennart", desc: "Personal strategy, just you and me." },
+      { n: "1", title: "You're selected into a circle", desc: "A weekly circle with your six. One hour, online." },
+      { n: "2", title: "Dinners & activities", desc: "The whole club, in person, for dinners, events and sidequests." },
+      { n: "3", title: "A monthly 30-min 1-on-1", desc: "A short personal check-in with Lennart. A bonus on top." },
     ],
     howNote: "Every circle is personally facilitated by Lennart.",
 
@@ -104,8 +107,11 @@ const copy = {
     heroSub: "Sneller groeien, met meer vertrouwen en meer plezier. Naast founders die er al geweest zijn.",
     freeNote: "Gratis · 30 min",
 
-    painEyebrow: "Herkenbaar?",
-    painLine: "Alleen bouwen is traag. Je loopt tegen dezelfde muren aan, twijfelt over de grote keuzes, en verliest weken die niemand je helpt voorkomen.",
+    painEyebrow: "Waarom alleen traag is",
+    painAloneTitle: "Alleen",
+    painAlone: ["Je maakt de grote keuzes alleen", "Minder kansen bereiken je", "Niemand houdt je accountable"],
+    painTogetherTitle: "Samen",
+    painTogether: ["Je beslist met een team achter je", "Kansen komen van elkaar", "Steun en accountability, elke week"],
 
     changeEyebrow: "Het resultaat",
     changeTitle: "Dit verandert er.",
@@ -116,7 +122,7 @@ const copy = {
     ],
 
     roomEyebrow: "Wie er in de kamer zit",
-    roomTitle: "De founders naast je.",
+    roomTitle: "De founders die er al in zitten.",
     roomSub: "Slechts een paar voorbeelden van met wie je groeit, elke week.",
     selTitle: "Geen doorsnee groep.",
     selSub: "Elke circle wordt geselecteerd op meer dan track record.",
@@ -138,9 +144,9 @@ const copy = {
     howEyebrow: "Hoe het werkt",
     howTitle: "Zo werkt het.",
     how: [
-      { n: "1", title: "Je wordt geplaatst in een circle", desc: "Je komt in een van de wekelijkse circles met je zes. Eén uur per week, online, omdat members overal zitten." },
-      { n: "2", title: "Diners & activiteiten", desc: "De hele club komt in het echt samen voor diners, events en sidequests." },
-      { n: "3", title: "Maandelijkse 1-op-1 met Lennart", desc: "Persoonlijke strategie, alleen jij en ik." },
+      { n: "1", title: "Je wordt geplaatst in een circle", desc: "Een wekelijkse circle met je zes. Eén uur, online." },
+      { n: "2", title: "Diners & activiteiten", desc: "De hele club, in het echt, voor diners, events en sidequests." },
+      { n: "3", title: "Maandelijkse 30-min 1-op-1", desc: "Een korte persoonlijke check-in met Lennart. Een bonus erbovenop." },
     ],
     howNote: "Elke circle wordt persoonlijk gefaciliteerd door Lennart.",
 
@@ -229,11 +235,34 @@ export default function Join() {
         </div>
       </header>
 
-      {/* PAINPOINT */}
-      <section style={{ background: "#0f0e0b", padding: "58px 24px" }}>
-        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
-          <span style={eyebrowS}>{t.painEyebrow}</span>
-          <p style={{ marginTop: 14, fontSize: "clamp(22px,3vw,30px)", fontWeight: 700, lineHeight: 1.35, letterSpacing: "-0.02em", color: "#fff" }}>{t.painLine}</p>
+      {/* PAINPOINT — alone vs together */}
+      <section style={{ background: "#0f0e0b", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 860, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 30 }}>
+            <span style={eyebrowS}>{t.painEyebrow}</span>
+          </div>
+          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 16 }}>
+            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 16, padding: "26px 26px" }}>
+              <p style={{ fontSize: 13, fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8f887c" }}>{t.painAloneTitle}</p>
+              <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 12 }}>
+                {t.painAlone.map((x) => (
+                  <div key={x} style={{ display: "flex", gap: 11, alignItems: "center", fontSize: 15.5, color: MUT }}>
+                    <span style={{ flex: "0 0 auto", width: 19, height: 19, borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.25)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, color: "#8f887c" }}>✕</span>{x}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div style={{ background: "rgba(232,116,43,0.08)", border: `1px solid ${ACCENT}`, borderRadius: 16, padding: "26px 26px" }}>
+              <p style={{ fontSize: 13, fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase", color: ACCENT }}>{t.painTogetherTitle}</p>
+              <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 12 }}>
+                {t.painTogether.map((x) => (
+                  <div key={x} style={{ display: "flex", gap: 11, alignItems: "center", fontSize: 15.5, color: "#fff", fontWeight: 500 }}>
+                    <span style={{ flex: "0 0 auto", width: 19, height: 19, borderRadius: "50%", background: ACCENT, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, color: "#fff", fontWeight: 800 }}>✓</span>{x}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -260,11 +289,11 @@ export default function Join() {
             <h2 style={h2(false)}>{t.roomTitle}</h2>
             <p style={{ marginTop: 14, fontSize: 16.5, lineHeight: 1.55, color: INK_MUT }}>{t.roomSub}</p>
           </div>
-          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(160px,1fr))", gap: 18 }}>
+          <div className="member-scroll" style={{ display: "flex", gap: 18, overflowX: "auto", scrollSnapType: "x mandatory", paddingBottom: 10, WebkitOverflowScrolling: "touch" }}>
             {members.map((m) => (
-              <div key={m.name} style={{ textAlign: "center" }}>
-                <div style={{ position: "relative", width: 108, height: 108, borderRadius: "50%", margin: "0 auto", overflow: "hidden", background: `color-mix(in srgb, ${ACCENT} 20%, #e7e0d4)`, display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid rgba(0,0,0,0.05)" }}>
-                  <span style={{ fontSize: 34, fontWeight: 800, color: ACCENT }}>{m.name.slice(0, 1)}</span>
+              <div key={m.name} style={{ flex: "0 0 auto", width: 170, textAlign: "center", scrollSnapAlign: "center" }}>
+                <div style={{ position: "relative", width: 118, height: 118, borderRadius: "50%", margin: "0 auto", overflow: "hidden", background: `color-mix(in srgb, ${ACCENT} 20%, #e7e0d4)`, display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid rgba(0,0,0,0.05)" }}>
+                  <span style={{ fontSize: 36, fontWeight: 800, color: ACCENT }}>{m.name.slice(0, 1)}</span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={m.img} alt={m.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: m.pos || "center", transform: m.scale ? `scale(${m.scale})` : undefined }} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                 </div>
@@ -273,6 +302,7 @@ export default function Join() {
               </div>
             ))}
           </div>
+          <p style={{ marginTop: 6, textAlign: "center", fontSize: 12, fontWeight: 600, color: "#a39d92", letterSpacing: "0.04em" }}>← scroll →</p>
 
           {/* Selected on more than track record */}
           <div style={{ marginTop: 56, paddingTop: 44, borderTop: "1px solid rgba(0,0,0,0.1)" }}>
@@ -319,7 +349,7 @@ export default function Join() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section style={{ background: "#0f0e0b", padding: SEC }}>
+      <section style={{ background: "#0f0e0b", padding: "52px 24px 88px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Head eye={t.howEyebrow} title={t.howTitle} dark center />
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 18 }}>
