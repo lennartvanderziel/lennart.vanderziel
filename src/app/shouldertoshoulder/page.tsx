@@ -29,7 +29,7 @@ const copy = {
 
     heroTitleA: "The founders who grow fastest ",
     heroTitleB: "never do it alone.",
-    heroSub: "Grow faster, with more confidence and more fun. Beside founders who have been there.",
+    heroSub: "A hand-picked circle that makes the big decisions with you.",
     freeNote: "Free · 30 min",
 
     painEyebrow: "Why alone is slow",
@@ -104,7 +104,7 @@ const copy = {
 
     heroTitleA: "De founders die het snelst groeien ",
     heroTitleB: "doen het nooit alleen.",
-    heroSub: "Sneller groeien, met meer vertrouwen en meer plezier. Naast founders die er al geweest zijn.",
+    heroSub: "Een zorgvuldig geselecteerde kring die de grote beslissingen mét je maakt.",
     freeNote: "Gratis · 30 min",
 
     painEyebrow: "Waarom alleen traag is",
