@@ -68,7 +68,7 @@ const copy = {
       { quote: "I'd been stuck on a real estate idea for months. With the circle it became land I now own and a 14-unit project.", name: "Samer", type: "member" },
       { quote: "I started thinking like the founder I need to become to raise €40M. It changed everything.", name: "Kibet", type: "member" },
     ],
-    dinnerCaps: ["The club", "Founder dinner", "Together"],
+    dinnerCaps: ["Weekly online call", "Founder dinner", "Founder event"],
 
     howEyebrow: "How it works",
     howTitle: "Here's how it works.",
@@ -94,6 +94,7 @@ const copy = {
       { q: "I'm too busy.", a: "It's one focused hour a week. It saves you the weeks you lose to the wrong priorities." },
     ],
 
+    eventLook: "This is what an STS event looks like.",
     finalTitle: "Ready to grow faster?",
     finalSub: "Apply for a fit call. 30 minutes, no pitch.",
     footer: "Shoulder to Shoulder · By invitation only",
@@ -146,7 +147,7 @@ const copy = {
       { quote: "Ik zat al maanden vast op een vastgoedidee. Met de kring werd het grond die ik nu bezit en een project van 14 units.", name: "Samer", type: "lid" },
       { quote: "Ik begon te denken als de founder die ik moet worden om €40M op te halen. Dat veranderde alles.", name: "Kibet", type: "lid" },
     ],
-    dinnerCaps: ["De club", "Founder-diner", "Samen"],
+    dinnerCaps: ["Wekelijkse online call", "Founder-diner", "Founder event"],
 
     howEyebrow: "Hoe het werkt",
     howTitle: "Zo werkt het.",
@@ -172,6 +173,7 @@ const copy = {
       { q: "Ik heb geen tijd.", a: "Het is één gefocust uur per week. Het bespaart je de weken die je verliest aan de verkeerde prioriteiten." },
     ],
 
+    eventLook: "Zo ziet een STS-event eruit.",
     finalTitle: "Klaar om sneller te groeien?",
     finalSub: "Meld je aan voor een fit call. 30 minuten, geen pitch.",
     footer: "Shoulder to Shoulder · Alleen op uitnodiging",
@@ -297,9 +299,12 @@ export default function Join() {
       {/* EXPERIENCE PHOTOS */}
       <section style={{ background: "#0f0e0b", padding: "0 24px 24px" }}>
         <div className="photo-grid" style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
-          {[{ src: "/event-group.jpg" }, { src: "/dinner.jpg" }, { src: "/mastermind.jpg" }].map((p, i) => (
+          {[{ src: "/session-meet.jpg" }, { src: "/dinner.jpg" }, { src: "/event-group.jpg" }].map((p, i) => (
             <div key={p.src} className="photo-zoom" style={{ position: "relative", aspectRatio: "1/1", borderRadius: 12, overflow: "hidden" }}>
               <Image src={p.src} alt={t.dinnerCaps[i]} fill className="photo-grade" style={{ objectFit: "cover" }} />
+              <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: "18px 14px 10px", background: "linear-gradient(to top, rgba(10,9,7,0.75), transparent)" }}>
+                <span style={{ fontSize: 11.5, fontWeight: 700, color: "#fff", letterSpacing: "0.02em" }}>{t.dinnerCaps[i]}</span>
+              </div>
             </div>
           ))}
         </div>
@@ -429,10 +434,18 @@ export default function Join() {
         </div>
       </section>
 
+      {/* EVENT LOOK */}
+      <section style={{ position: "relative", height: "clamp(240px,36vw,440px)", overflow: "hidden" }}>
+        <Image src="/event-group.jpg" alt="An STS event" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 45%" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,9,7,0.75), transparent 55%)", display: "flex", alignItems: "flex-end" }}>
+          <span style={{ maxWidth: 1000, margin: "0 auto", width: "100%", padding: "0 24px 22px", fontSize: 14, fontWeight: 700, color: "#fff" }}>{t.eventLook}</span>
+        </div>
+      </section>
+
       {/* FINAL CTA */}
       <section id="book" style={{ position: "relative", padding: 0 }}>
         <div style={{ position: "absolute", inset: 0 }}>
-          <Image src="/event-group.jpg" alt="" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 60%" }} />
+          <Image src="/mastermind.jpg" alt="" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 40%" }} />
         </div>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,9,7,0.93)" }} />
         <div style={{ position: "relative", maxWidth: 620, margin: "0 auto", padding: "96px 24px", textAlign: "center" }}>
