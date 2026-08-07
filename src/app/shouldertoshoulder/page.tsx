@@ -27,8 +27,8 @@ const copy = {
     applyArrow: "Apply for a fit call →",
     byInvite: "By invitation only",
 
-    heroTitleA: "Your weekly ",
-    heroTitleB: "board of founders.",
+    heroTitleA: "The founders who grow fastest ",
+    heroTitleB: "never do it alone.",
     heroSub: "Grow faster, with more confidence and more fun. Beside founders who have been there.",
     freeNote: "Free · 30 min",
 
@@ -90,8 +90,8 @@ const copy = {
     applyArrow: "Meld je aan voor een fit call →",
     byInvite: "Alleen op uitnodiging",
 
-    heroTitleA: "Je wekelijkse ",
-    heroTitleB: "raad van founders.",
+    heroTitleA: "De founders die het snelst groeien ",
+    heroTitleB: "doen het nooit alleen.",
     heroSub: "Sneller groeien, met meer vertrouwen en meer plezier. Naast founders die er al geweest zijn.",
     freeNote: "Gratis · 30 min",
 
@@ -200,7 +200,7 @@ export default function Join() {
             <span className="pulse-dot" style={{ width: 7, height: 7, borderRadius: "50%", background: ACCENT }} />
             <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#fff" }}>{t.byInvite}</span>
           </div>
-          <h1 style={{ fontSize: "clamp(46px,7.6vw,88px)", fontWeight: 800, lineHeight: 0.98, letterSpacing: "-0.035em", color: "#fff", maxWidth: 820, marginBottom: 22, textShadow: "0 2px 30px rgba(0,0,0,0.5)" }}>
+          <h1 style={{ fontSize: "clamp(38px,6vw,72px)", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#fff", maxWidth: 860, marginBottom: 22, textShadow: "0 2px 30px rgba(0,0,0,0.5)" }}>
             {t.heroTitleA}<span style={{ color: ACCENT }}>{t.heroTitleB}</span>
           </h1>
           <p style={{ maxWidth: 540, fontSize: "clamp(18px,2.2vw,22px)", lineHeight: 1.4, color: "#f0ece4", marginBottom: 32, fontWeight: 500, textShadow: "0 1px 16px rgba(0,0,0,0.6)" }}>{t.heroSub}</p>
