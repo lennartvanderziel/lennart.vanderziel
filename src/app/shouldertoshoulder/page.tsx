@@ -13,12 +13,12 @@ const INK_MUT = "#57534c";
 
 // Members shown in "Who's in the room". Replace img with /member-N.jpg and edit lines.
 const members = [
-  { name: "David", tag: "E-commerce · scaling", img: "/members/member-1.jpg" },
-  { name: "Zach", tag: "Agency · 7 figures", img: "/members/member-2.jpg" },
-  { name: "Kibet", tag: "Agritech · raising", img: "/members/member-3.jpg" },
-  { name: "Dane", tag: "SaaS · bootstrapping", img: "/members/member-4.jpg" },
-  { name: "Grisha", tag: "Real estate · developing", img: "/members/member-5.jpg" },
-  { name: "Alexander", tag: "Health · founder", img: "/members/member-6.jpg" },
+  { name: "David", tag: "", img: "/members/David.png" },
+  { name: "Zach", tag: "", img: "/members/Zach.png" },
+  { name: "Kibet", tag: "Agritech", img: "/members/Kibet.png" },
+  { name: "Dane", tag: "", img: "/members/Dane.jpeg" },
+  { name: "Samer", tag: "Real estate", img: "/members/Samer.png" },
+  { name: "Demian", tag: "", img: "/members/Demian.jpeg" },
 ];
 
 const copy = {
@@ -270,7 +270,7 @@ export default function Join() {
                     <img src={m.img} alt={m.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                   </div>
                   <h3 style={{ marginTop: 14, fontSize: 17, fontWeight: 800 }}>{m.name}</h3>
-                  <p style={{ marginTop: 3, fontSize: 13.5, fontWeight: 600, color: INK_MUT }}>{m.tag}</p>
+                  {m.tag && <p style={{ marginTop: 3, fontSize: 13.5, fontWeight: 600, color: INK_MUT }}>{m.tag}</p>}
                 </div>
               );
             })}
