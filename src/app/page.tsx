@@ -41,18 +41,14 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,8,6,0.25) 0%, rgba(10,8,6,0.1) 30%, rgba(10,8,6,0.6) 60%, rgba(10,8,6,0.92) 100%)" }} />
 
         <div className="fade-up" style={{ position: "relative", maxWidth: 1180, margin: "0 auto", width: "100%", padding: "0 32px 80px" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: "1px solid rgba(255,255,255,0.25)", borderRadius: 100, padding: "7px 16px", marginBottom: 28, backdropFilter: "blur(8px)", background: "rgba(255,255,255,0.08)" }}>
-            <span className="pulse-dot" style={{ width: 7, height: 7, borderRadius: "50%", background: ACCENT }} />
-            <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.85)" }}>Founder coaching · Masterminds · Mentoring</span>
-          </div>
-          <h1 style={{ fontSize: "clamp(42px,7vw,90px)", fontWeight: 800, lineHeight: 0.97, letterSpacing: "-0.035em", color: "#fff", maxWidth: 820, marginBottom: 28 }}>
+          <h1 style={{ fontSize: "clamp(42px,7vw,90px)", fontWeight: 800, lineHeight: 0.97, letterSpacing: "-0.035em", color: "#fff", maxWidth: 820, marginBottom: 26 }}>
             The man behind<br />the highest-performing<br /><span style={{ color: ACCENT }}>founders.</span>
           </h1>
-          <p style={{ maxWidth: 540, fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,0.75)", marginBottom: 40, fontWeight: 500 }}>
-            I spent 5 years building technology as a tech CEO. Now I develop people — the founders behind growing businesses.
+          <p style={{ maxWidth: 560, fontSize: 19, lineHeight: 1.55, color: "#f0ece4", marginBottom: 40, fontWeight: 500, textShadow: "0 1px 14px rgba(0,0,0,0.55)" }}>
+            Founder &amp; CEO of an award-winning tech company. Now I develop the people behind growing businesses.
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
-            <a href="#programs" className="btn-primary" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "17px 34px", borderRadius: 100, fontSize: 15, fontWeight: 700 }}>Explore the programs →</a>
+            <a href="#programs" className="btn-primary" style={{ textDecoration: "none", color: "#fff", background: ACCENT, padding: "17px 34px", borderRadius: 100, fontSize: 15, fontWeight: 700 }}>See what I do →</a>
             <a href="#story" className="btn-ghost" style={{ textDecoration: "none", color: "rgba(255,255,255,0.8)", fontSize: 14, fontWeight: 500, display: "flex", alignItems: "center", gap: 8, padding: "10px 16px", borderRadius: 100, border: "1px solid transparent" }}>
               <span style={{ width: 32, height: 32, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.3)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12 }}>↓</span>
               Read my story
@@ -61,13 +57,13 @@ export default function Home() {
 
           <div style={{ marginTop: 56, paddingTop: 28, borderTop: "1px solid rgba(255,255,255,0.12)", display: "flex", gap: 40, flexWrap: "wrap" }}>
             {[
-              { num: "€12M+", label: "Scaled as founder & CEO" },
-              { num: "50,000+", label: "Products sold worldwide" },
+              { num: "200,000+", label: "Products sold worldwide" },
+              { num: "Best of CES", label: "Award-winning startup" },
               { num: "100+", label: "Founders developed since 2020" },
             ].map((s) => (
               <div key={s.num}>
                 <div style={{ fontSize: 26, fontWeight: 800, color: "#fff", letterSpacing: "-0.02em" }}>{s.num}</div>
-                <div style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", marginTop: 2, fontWeight: 500 }}>{s.label}</div>
+                <div style={{ fontSize: 13, color: "rgba(255,255,255,0.68)", marginTop: 2, fontWeight: 500 }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -77,8 +73,8 @@ export default function Home() {
       {/* PRESS / AUTHORITY */}
       <section style={{ borderBottom: "1px solid rgba(0,0,0,0.07)", background: "#fbf9f5" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "28px 32px", display: "flex", alignItems: "center", justifyContent: "center", gap: 36, flexWrap: "wrap" }}>
-          <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#a39d92" }}>Ventures featured at</span>
-          {["CES Las Vegas", "TechRadar", "The Telegraph", "Indiegogo", "Venture Café"].map((brand) => (
+          <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#a39d92" }}>As featured in</span>
+          {["CES Las Vegas", "CNN", "TechRadar", "De Telegraaf", "AD"].map((brand) => (
             <span key={brand} style={{ fontSize: 16, fontWeight: 700, letterSpacing: "-0.01em", color: "#8a847a" }}>{brand}</span>
           ))}
         </div>
@@ -89,15 +85,15 @@ export default function Home() {
         <div className="flex-wrap-col" style={{ display: "flex", gap: 64, alignItems: "center", flexWrap: "wrap" }}>
           <div style={{ flex: "1 1 360px", minWidth: 300 }}>
             <div className="photo-zoom" style={{ position: "relative", aspectRatio: "4/5", borderRadius: 8, overflow: "hidden", background: "#e7e3db" }}>
-              <Image src="/coaching-portrait.jpg" alt="Lennart van der Ziel" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 20%" }} />
+              <Image src="/lennart.jpg" alt="Lennart van der Ziel" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 20%" }} />
             </div>
           </div>
           <div style={{ flex: "1 1 440px" }}>
             <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 23, color: ACCENT }}>My story</span>
             <h2 style={{ fontSize: "clamp(30px,4vw,48px)", fontWeight: 800, lineHeight: 1.06, letterSpacing: "-0.02em", marginTop: 10, color: INK }}>From building products to building people.</h2>
-            <p style={{ marginTop: 22, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>Ten years ago I co-founded <strong style={{ color: INK }}>Travis the Translator</strong> — an award-winning tech startup that sold 50,000+ devices in its first year, was featured at CES and covered by TechRadar and The Telegraph. I also co-founded <strong style={{ color: INK }}>Venture Café Rotterdam</strong>, one of the largest founder communities in the Netherlands.</p>
-            <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>In 2020 I made a decision: I&apos;d rather develop <strong style={{ color: INK }}>founders</strong> than technology. Developing people is simply more meaningful work.</p>
-            <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>Since then I&apos;ve worked with 100+ business owners on their strategy and their mental and physical well-being — and just as importantly, on who&apos;s around them. The right room and the right condition change everything.</p>
+            <p style={{ marginTop: 22, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>As founder &amp; CEO I built <strong style={{ color: INK }}>Travis the Translator</strong> — named <strong style={{ color: INK }}>Dutch Startup of the Year</strong>, winner of <strong style={{ color: INK }}>Best of CES</strong>, with 200,000+ devices sold worldwide and coverage across global media.</p>
+            <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>In 2020 I made a decision: I&apos;d rather develop <strong style={{ color: INK }}>founders</strong> than technology. Since then I&apos;ve worked with 100+ business owners and built the founder club I always wished I&apos;d had.</p>
+            <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>The work is simple: help founders grow as fast as their businesses do — through strategy, the right room around them, and their own performance.</p>
             <div style={{ marginTop: 26, display: "flex", alignItems: "center", gap: 12 }}>
               <span style={{ width: 30, height: 1, background: "rgba(0,0,0,0.25)" }} />
               <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 22, color: INK }}>Lennart van der Ziel</span>

@@ -13,12 +13,12 @@ const INK_MUT = "#57534c";
 
 // Members shown in "Who's in the room". Replace img with /member-N.jpg and edit lines.
 const members = [
-  { name: "David", tag: "E-commerce · scaling", img: "/member-1.jpg" },
-  { name: "Zach", tag: "Agency · 7 figures", img: "/member-2.jpg" },
-  { name: "Kibet", tag: "Agritech · raising", img: "/member-3.jpg" },
-  { name: "Dane", tag: "SaaS · bootstrapping", img: "/member-4.jpg" },
-  { name: "Grisha", tag: "Real estate · developing", img: "/member-5.jpg" },
-  { name: "Alexander", tag: "Health · founder", img: "/member-6.jpg" },
+  { name: "David", tag: "E-commerce · scaling", img: "/members/member-1.jpg" },
+  { name: "Zach", tag: "Agency · 7 figures", img: "/members/member-2.jpg" },
+  { name: "Kibet", tag: "Agritech · raising", img: "/members/member-3.jpg" },
+  { name: "Dane", tag: "SaaS · bootstrapping", img: "/members/member-4.jpg" },
+  { name: "Grisha", tag: "Real estate · developing", img: "/members/member-5.jpg" },
+  { name: "Alexander", tag: "Health · founder", img: "/members/member-6.jpg" },
 ];
 
 const copy = {
