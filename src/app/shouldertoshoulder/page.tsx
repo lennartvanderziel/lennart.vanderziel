@@ -73,14 +73,14 @@ const copy = {
     howTitle: "Everything a founder needs",
     how: [
       { n: "1", title: "You're selected into a circle", desc: "A weekly circle with your six. One hour, online, facilitated by Lennart." },
-      { n: "2", title: "Dinners & activities", desc: "The whole club in person: dinners, sidequests and global gatherings." },
-      { n: "3", title: "A monthly 30-min 1-on-1", desc: "A short personal check-in with Lennart. A bonus on top." },
+      { n: "2", title: "Meet the whole club", desc: "In person, you connect with every member of the club." },
+      { n: "3", title: "A personal 1-on-1 with Lennart", desc: "A short, personal session with your performance and business coach." },
     ],
 
     hostEyebrow: "Your host",
     hostName: "Lennart van der Ziel",
     hostChips: ["Former tech CEO", "200k+ products sold", "100+ founders guided"],
-    hostDesc: "As founder & CEO I built Travis the Translator, an award-winning startup named Dutch Startup of the Year, with 200,000+ devices sold worldwide and coverage across global media. I also helped start one of the largest founder communities in the Netherlands. Through it all I made costly mistakes and often felt alone, so I built the room I wish I'd had. Today I personally host every circle and global gathering.",
+    hostDesc: "As founder & CEO I built Travis the Translator, an award-winning startup named Dutch Startup of the Year, with 200,000+ devices sold worldwide. I also helped start one of the largest founder communities in the Netherlands. Along the way I made costly mistakes and often felt alone, so I built the environment I wish I'd had. Today I personally host everything inside Shoulder to Shoulder — every circle, dinner and gathering.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Good questions",
@@ -152,14 +152,14 @@ const copy = {
     howTitle: "Alles wat een founder nodig heeft",
     how: [
       { n: "1", title: "Je wordt geplaatst in een circle", desc: "Een wekelijkse circle met je zes. Eén uur, online, gefaciliteerd door Lennart." },
-      { n: "2", title: "Diners & activiteiten", desc: "De hele club in het echt: diners, sidequests en global gatherings." },
-      { n: "3", title: "Maandelijkse 30-min 1-op-1", desc: "Een korte persoonlijke check-in met Lennart. Een bonus erbovenop." },
+      { n: "2", title: "Ontmoet de hele club", desc: "In het echt connect je met elke member van de club." },
+      { n: "3", title: "Een persoonlijke 1-op-1 met Lennart", desc: "Een korte, persoonlijke sessie met je performance- en business-coach." },
     ],
 
     hostEyebrow: "Je host",
     hostName: "Lennart van der Ziel",
     hostChips: ["Voormalig tech-CEO", "200k+ producten verkocht", "100+ founders begeleid"],
-    hostDesc: "Als founder & CEO bouwde ik Travis the Translator, een bekroonde startup, uitgeroepen tot Dutch Startup of the Year, met 200.000+ verkochte apparaten wereldwijd en coverage in internationale media. Ik hielp ook een van de grootste foundercommunities van Nederland opstarten. Door dat alles maakte ik dure fouten en voelde ik me vaak alleen, dus bouwde ik de groep die ik zelf had willen hebben. Vandaag host ik elke circle en global gathering persoonlijk.",
+    hostDesc: "Als founder & CEO bouwde ik Travis the Translator, een bekroonde startup, uitgeroepen tot Dutch Startup of the Year, met 200.000+ verkochte apparaten wereldwijd. Ik hielp ook een van de grootste foundercommunities van Nederland opstarten. Onderweg maakte ik dure fouten en voelde ik me vaak alleen, dus bouwde ik de omgeving die ik zelf had willen hebben. Vandaag host ik alles binnen Shoulder to Shoulder persoonlijk — elke circle, elk diner en elke gathering.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Goede vragen",
@@ -381,7 +381,7 @@ export default function Join() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section style={{ background: "#0f0e0b", padding: "52px 24px 56px" }}>
+      <section style={{ background: "#0f0e0b", padding: "32px 24px 56px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Head eye={t.howEyebrow} title={t.howTitle} dark center />
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 18 }}>
