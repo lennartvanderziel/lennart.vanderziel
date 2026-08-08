@@ -42,7 +42,7 @@ const copy = {
     changeTitle: "What changes when you join a founder circle",
     changes: [
       { title: "Exponential growth", desc: "Normal founders grow linearly. Together we grow exponentially." },
-      { title: "A real team", desc: "A real team of founders around you, who know your business." },
+      { title: "Feeling supported", desc: "A real team of founders around you, who know your business." },
       { title: "Enjoy the journey", desc: "Side quests, dinners and activities. You're not alone anymore." },
     ],
 
@@ -67,7 +67,7 @@ const copy = {
       { quote: "I'd been stuck on a real estate idea for months. With the circle it became land I now own and a 14-unit project.", name: "Samer", type: "member" },
       { quote: "I started thinking like the founder I need to become to raise €40M. It changed everything.", name: "Kibet", type: "member" },
     ],
-    dinnerCaps: ["Weekly online call", "Founder dinner", "Founder event"],
+    dinnerCaps: ["Founder dinner", "Weekly online call", "Founder event"],
 
     howEyebrow: "How it works",
     howTitle: "Everything a founder needs",
@@ -121,7 +121,7 @@ const copy = {
     changeTitle: "Wat verandert als je in een founder circle komt",
     changes: [
       { title: "Exponentiële groei", desc: "Normale founders groeien lineair. Samen groeien we exponentieel." },
-      { title: "Een echt team", desc: "Een echt team van founders om je heen, die je business kennen." },
+      { title: "Gesteund voelen", desc: "Een echt team van founders om je heen, die je business kennen." },
       { title: "Geniet van de reis", desc: "Sidequests, diners en activiteiten. Je bent niet meer alleen." },
     ],
 
@@ -146,7 +146,7 @@ const copy = {
       { quote: "Ik zat al maanden vast op een vastgoedidee. Met de kring werd het grond die ik nu bezit en een project van 14 units.", name: "Samer", type: "lid" },
       { quote: "Ik begon te denken als de founder die ik moet worden om €40M op te halen. Dat veranderde alles.", name: "Kibet", type: "lid" },
     ],
-    dinnerCaps: ["Wekelijkse online call", "Founder-diner", "Founder event"],
+    dinnerCaps: ["Founder-diner", "Wekelijkse online call", "Founder event"],
 
     howEyebrow: "Hoe het werkt",
     howTitle: "Alles wat een founder nodig heeft",
@@ -299,7 +299,7 @@ export default function Join() {
       {/* EXPERIENCE PHOTOS */}
       <section style={{ background: "#0f0e0b", padding: "0 24px 24px" }}>
         <div className="photo-grid" style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
-          {[{ src: "/session-meet.jpg" }, { src: "/dinner.jpg" }, { src: "/event-group.jpg" }].map((p, i) => (
+          {[{ src: "/dinner.jpg" }, { src: "/session-meet.jpg" }, { src: "/event-group.jpg" }].map((p, i) => (
             <div key={p.src} className="photo-zoom" style={{ position: "relative", aspectRatio: "1/1", borderRadius: 12, overflow: "hidden" }}>
               <Image src={p.src} alt={t.dinnerCaps[i]} fill className="photo-grade" style={{ objectFit: "cover" }} />
               <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: "18px 14px 10px", background: "linear-gradient(to top, rgba(10,9,7,0.75), transparent)" }}>
