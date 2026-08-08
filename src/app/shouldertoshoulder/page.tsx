@@ -28,8 +28,8 @@ const copy = {
     byInvite: "By invitation only",
 
     heroTitleA: "The founders who grow fastest ",
-    heroTitleB: "never do it alone.",
-    heroSub: "A hand-picked circle that makes the big decisions with you.",
+    heroTitleB: "never do it alone",
+    heroSub: "A hand-picked circle that makes the big decisions with you",
     freeNote: "Free · 30 min",
 
     painEyebrow: "Why alone is slow",
@@ -39,22 +39,21 @@ const copy = {
     painTogether: ["You decide with a team behind you", "Opportunities come from each other", "Support and accountability, every week"],
 
     changeEyebrow: "The outcome",
-    changeTitle: "What a founder circle changes.",
-    changeSub: "You join a small circle of founders. This is what changes.",
+    changeTitle: "What changes when you join a founder circle",
     changes: [
       { title: "Exponential growth", desc: "Normal founders grow linearly. Together we grow exponentially." },
       { title: "A real team", desc: "A real team of founders around you, who know your business." },
-      { title: "Enjoy the journey", desc: "Fun stuff, dinners and activities. You're not alone anymore." },
+      { title: "Enjoy the journey", desc: "Side quests, dinners and activities. You're not alone anymore." },
     ],
 
     visionLine: "Imagine overcoming obstacles faster, and consistently acting on your highest-leverage opportunities.",
     visionQ: "How much further ahead would your business be in 12 months? And in 3 years?",
 
     roomEyebrow: "Who's in the room",
-    roomTitle: "Who's already in.",
-    roomSub: "Some of the members you grow with, every week — across 3 continents.",
-    selTitle: "Not a typical founder community.",
-    selSub: "Every member is selected on more than track record.",
+    roomTitle: "Who's in the room",
+    roomSub: "Some of our members, based across 3 continents",
+    selTitle: "Not a typical founder community",
+    selSub: "Every member is selected on more than track record",
     selItems: [
       { title: "Different skill sets", desc: "So someone always brings what you're missing." },
       { title: "Team players, no ego", desc: "People who lift the room, not dominate it." },
@@ -62,7 +61,7 @@ const copy = {
     ],
 
     proofEyebrow: "Proof",
-    proofTitle: "What it does for them.",
+    proofTitle: "What it does for them",
     videoCaption: "Zach · Member",
     testimonials: [
       { quote: "I'd been stuck on a real estate idea for months. With the circle it became land I now own and a 14-unit project.", name: "Samer", type: "member" },
@@ -71,31 +70,31 @@ const copy = {
     dinnerCaps: ["Weekly online call", "Founder dinner", "Founder event"],
 
     howEyebrow: "How it works",
-    howTitle: "Here's how it works.",
+    howTitle: "Everything a founder needs",
     how: [
       { n: "1", title: "You're selected into a circle", desc: "A weekly circle with your six. One hour, online, facilitated by Lennart." },
-      { n: "2", title: "Dinners & activities", desc: "The whole club, in person, for dinners, events and sidequests." },
+      { n: "2", title: "Dinners & activities", desc: "The whole club in person: dinners, sidequests and global gatherings." },
       { n: "3", title: "A monthly 30-min 1-on-1", desc: "A short personal check-in with Lennart. A bonus on top." },
     ],
 
     hostEyebrow: "Your host",
     hostName: "Lennart van der Ziel",
-    hostChips: ["Former tech CEO", "100+ founders guided"],
-    hostDesc: "I built and led an award-winning tech startup. I made costly mistakes and often felt alone, so I built the room I wish I'd had. I personally host every circle.",
+    hostChips: ["Former tech CEO", "200k+ products sold", "100+ founders guided"],
+    hostDesc: "As founder & CEO I built Travis the Translator, an award-winning startup named Dutch Startup of the Year, with 200,000+ devices sold worldwide and coverage across global media. I also helped start one of the largest founder communities in the Netherlands. Through it all I made costly mistakes and often felt alone, so I built the room I wish I'd had. Today I personally host every circle and global gathering.",
 
     faqEyebrow: "FAQ",
-    faqTitle: "Good questions.",
+    faqTitle: "Good questions",
     faqs: [
-      { q: "Is it online or offline?", a: "Both. Your weekly circle meets online, so you join from anywhere. Dinners, events and sidequests happen in person with the whole club." },
+      { q: "Is it online or offline?", a: "Both. Your weekly circle meets online, so you join from anywhere. Dinners, events and gatherings happen in person with the whole club." },
       { q: "What if I travel or don't live nearby?", a: "No problem. Members are spread across the world and circles are online, so location never gets in the way. The in-person events are a bonus, not a requirement." },
       { q: "I already have a strong network.", a: "Networks create conversations. A circle creates progress: the same people every week who know your business and hold you to your word." },
       { q: "I'm looking into a coach or mentor.", a: "This works alongside them. A coach gives one perspective. Here you get a whole circle plus weekly accountability." },
       { q: "Is this coaching?", a: "No. It's peers, not a coach talking at you." },
-      { q: "I'm too busy.", a: "It's one focused hour a week. It saves you the weeks you lose to the wrong priorities." },
+      { q: "I'm too busy.", a: "It's one focused hour a week, and it saves you far more. You set better priorities, make fewer bad decisions, and spend less time on things that don't matter." },
     ],
 
     eventEyebrow: "Our events",
-    eventLook: "This is what an STS event looks like.",
+    eventLook: "This is what an STS event looks like",
     finalTitle: "Ready to grow faster?",
     finalSub: "Apply for a fit call. 30 minutes, no pitch.",
     footer: "Shoulder to Shoulder · By invitation only",
@@ -108,8 +107,8 @@ const copy = {
     byInvite: "Alleen op uitnodiging",
 
     heroTitleA: "De founders die het snelst groeien ",
-    heroTitleB: "doen het nooit alleen.",
-    heroSub: "Een zorgvuldig geselecteerde kring die de grote beslissingen mét je maakt.",
+    heroTitleB: "doen het nooit alleen",
+    heroSub: "Een zorgvuldig geselecteerde kring die de grote beslissingen mét je maakt",
     freeNote: "Gratis · 30 min",
 
     painEyebrow: "Waarom alleen traag is",
@@ -119,22 +118,21 @@ const copy = {
     painTogether: ["Je beslist met een team achter je", "Kansen komen van elkaar", "Steun en accountability, elke week"],
 
     changeEyebrow: "Het resultaat",
-    changeTitle: "Wat een founder circle verandert.",
-    changeSub: "Je komt in een kleine kring founders. Dit verandert er.",
+    changeTitle: "Wat verandert als je in een founder circle komt",
     changes: [
       { title: "Exponentiële groei", desc: "Normale founders groeien lineair. Samen groeien we exponentieel." },
       { title: "Een echt team", desc: "Een echt team van founders om je heen, die je business kennen." },
-      { title: "Geniet van de reis", desc: "Leuke dingen, diners en activiteiten. Je bent niet meer alleen." },
+      { title: "Geniet van de reis", desc: "Sidequests, diners en activiteiten. Je bent niet meer alleen." },
     ],
 
     visionLine: "Stel je voor dat je obstakels sneller overwint, en consistent inzet op je kansen met de meeste impact.",
     visionQ: "Hoeveel verder zou je business zijn over 12 maanden? En over 3 jaar?",
 
     roomEyebrow: "Wie er in de kamer zit",
-    roomTitle: "Wie er al in zit.",
-    roomSub: "Een paar van de members met wie je groeit, elke week — verspreid over 3 continenten.",
-    selTitle: "Geen doorsnee foundercommunity.",
-    selSub: "Elke member wordt geselecteerd op meer dan track record.",
+    roomTitle: "Wie er in de kamer zit",
+    roomSub: "Een aantal van onze members, verspreid over 3 continenten",
+    selTitle: "Geen doorsnee foundercommunity",
+    selSub: "Elke member wordt geselecteerd op meer dan track record",
     selItems: [
       { title: "Verschillende skill sets", desc: "Zodat iemand altijd brengt wat jij mist." },
       { title: "Teamplayers, geen ego", desc: "Mensen die de groep optillen, niet domineren." },
@@ -142,7 +140,7 @@ const copy = {
     ],
 
     proofEyebrow: "Bewijs",
-    proofTitle: "Wat het voor hen doet.",
+    proofTitle: "Wat het voor hen doet",
     videoCaption: "Zach · Lid",
     testimonials: [
       { quote: "Ik zat al maanden vast op een vastgoedidee. Met de kring werd het grond die ik nu bezit en een project van 14 units.", name: "Samer", type: "lid" },
@@ -151,31 +149,31 @@ const copy = {
     dinnerCaps: ["Wekelijkse online call", "Founder-diner", "Founder event"],
 
     howEyebrow: "Hoe het werkt",
-    howTitle: "Zo werkt het.",
+    howTitle: "Alles wat een founder nodig heeft",
     how: [
       { n: "1", title: "Je wordt geplaatst in een circle", desc: "Een wekelijkse circle met je zes. Eén uur, online, gefaciliteerd door Lennart." },
-      { n: "2", title: "Diners & activiteiten", desc: "De hele club, in het echt, voor diners, events en sidequests." },
+      { n: "2", title: "Diners & activiteiten", desc: "De hele club in het echt: diners, sidequests en global gatherings." },
       { n: "3", title: "Maandelijkse 30-min 1-op-1", desc: "Een korte persoonlijke check-in met Lennart. Een bonus erbovenop." },
     ],
 
     hostEyebrow: "Je host",
     hostName: "Lennart van der Ziel",
-    hostChips: ["Voormalig tech-CEO", "100+ founders begeleid"],
-    hostDesc: "Ik bouwde en leidde een bekroonde tech-startup. Ik maakte dure fouten en voelde me vaak alleen, dus bouwde ik de groep die ik zelf had willen hebben. Ik host elke circle persoonlijk.",
+    hostChips: ["Voormalig tech-CEO", "200k+ producten verkocht", "100+ founders begeleid"],
+    hostDesc: "Als founder & CEO bouwde ik Travis the Translator, een bekroonde startup, uitgeroepen tot Dutch Startup of the Year, met 200.000+ verkochte apparaten wereldwijd en coverage in internationale media. Ik hielp ook een van de grootste foundercommunities van Nederland opstarten. Door dat alles maakte ik dure fouten en voelde ik me vaak alleen, dus bouwde ik de groep die ik zelf had willen hebben. Vandaag host ik elke circle en global gathering persoonlijk.",
 
     faqEyebrow: "FAQ",
-    faqTitle: "Goede vragen.",
+    faqTitle: "Goede vragen",
     faqs: [
-      { q: "Is het online of offline?", a: "Allebei. Je wekelijkse circle is online, dus je doet vanaf overal mee. Diners, events en sidequests zijn in het echt, met de hele club." },
+      { q: "Is het online of offline?", a: "Allebei. Je wekelijkse circle is online, dus je doet vanaf overal mee. Diners, events en gatherings zijn in het echt, met de hele club." },
       { q: "Wat als ik reis of niet in de buurt woon?", a: "Geen probleem. Members zitten over de hele wereld en circles zijn online, dus locatie zit nooit in de weg. De events in het echt zijn een bonus, geen vereiste." },
       { q: "Ik heb al een sterk netwerk.", a: "Netwerken leveren gesprekken op. Een kring levert progressie op: dezelfde mensen elke week die je business kennen en je aan je woord houden." },
       { q: "Ik denk ook aan een coach of mentor.", a: "Dit werkt daarnaast. Een coach geeft één perspectief. Hier krijg je een hele kring plus wekelijkse accountability." },
       { q: "Is dit coaching?", a: "Nee. Het zijn peers, geen coach die tegen je praat." },
-      { q: "Ik heb geen tijd.", a: "Het is één gefocust uur per week. Het bespaart je de weken die je verliest aan de verkeerde prioriteiten." },
+      { q: "Ik heb geen tijd.", a: "Het is één gefocust uur per week, en het bespaart je veel meer. Je stelt betere prioriteiten, maakt minder verkeerde keuzes, en verliest minder tijd aan wat er niet toe doet." },
     ],
 
     eventEyebrow: "Onze events",
-    eventLook: "Zo ziet een STS-event eruit.",
+    eventLook: "Zo ziet een STS-event eruit",
     finalTitle: "Klaar om sneller te groeien?",
     finalSub: "Meld je aan voor een fit call. 30 minuten, geen pitch.",
     footer: "Shoulder to Shoulder · Alleen op uitnodiging",
@@ -281,18 +279,17 @@ export default function Join() {
       </section>
 
       {/* WHAT YOU GET */}
-      <section style={{ background: "#0f0e0b", padding: "20px 24px 64px" }}>
+      <section style={{ background: "#fff", color: INK, padding: "78px 24px 40px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 40px" }}>
+          <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}>
             <span style={eyebrowS}>{t.changeEyebrow}</span>
-            <h2 style={h2(true)}>{t.changeTitle}</h2>
-            <p style={{ marginTop: 12, fontSize: 16.5, lineHeight: 1.5, color: MUT_SOFT }}>{t.changeSub}</p>
+            <h2 style={h2(false)}>{t.changeTitle}</h2>
           </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 18 }}>
             {t.changes.map((b) => (
-              <div key={b.title} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 18, padding: "38px 32px" }}>
-                <h3 style={{ fontSize: 25, fontWeight: 800, letterSpacing: "-0.02em", color: "#fff" }}>{b.title}</h3>
-                <p style={{ marginTop: 12, fontSize: 16.5, lineHeight: 1.55, color: MUT_SOFT }}>{b.desc}</p>
+              <div key={b.title} style={{ background: "#f4f1ea", border: "1px solid rgba(0,0,0,0.07)", borderRadius: 18, padding: "38px 32px" }}>
+                <h3 style={{ fontSize: 25, fontWeight: 800, letterSpacing: "-0.02em", color: INK }}>{b.title}</h3>
+                <p style={{ marginTop: 12, fontSize: 16.5, lineHeight: 1.55, color: INK_MUT }}>{b.desc}</p>
               </div>
             ))}
           </div>
@@ -300,7 +297,7 @@ export default function Join() {
       </section>
 
       {/* EXPERIENCE PHOTOS */}
-      <section style={{ background: "#0f0e0b", padding: "0 24px 24px" }}>
+      <section style={{ background: "#fff", padding: "8px 24px 78px" }}>
         <div className="photo-grid" style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
           {[{ src: "/session-meet.jpg" }, { src: "/dinner.jpg" }, { src: "/event-group.jpg" }].map((p, i) => (
             <div key={p.src} className="photo-zoom" style={{ position: "relative", aspectRatio: "1/1", borderRadius: 12, overflow: "hidden" }}>
@@ -324,10 +321,9 @@ export default function Join() {
       {/* WHO'S IN THE ROOM */}
       <section style={{ background: "#fff", color: INK, padding: SEC }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
-            <span style={eyebrowS}>{t.roomEyebrow}</span>
-            <h2 style={h2(false)}>{t.roomTitle}</h2>
-            <p style={{ marginTop: 14, fontSize: 16.5, lineHeight: 1.55, color: INK_MUT }}>{t.roomSub}</p>
+          <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 40px" }}>
+            <h2 style={{ ...h2(false), marginTop: 0 }}>{t.roomTitle}</h2>
+            <p style={{ marginTop: 12, fontSize: 17, lineHeight: 1.5, color: INK, fontWeight: 700 }}>{t.roomSub}</p>
           </div>
           <div style={{ position: "relative" }}>
           <button aria-label="Previous" onClick={() => scrollMembers(-1)} style={arrowBtn("left")}>‹</button>
@@ -385,15 +381,15 @@ export default function Join() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section style={{ background: "#0f0e0b", padding: "52px 24px 56px" }}>
+      <section style={{ background: "#fff", color: INK, padding: "78px 24px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <Head eye={t.howEyebrow} title={t.howTitle} dark center />
+          <Head eye={t.howEyebrow} title={t.howTitle} dark={false} center />
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 18 }}>
             {t.how.map((s) => (
-              <div key={s.n} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 16, padding: "28px 26px" }}>
+              <div key={s.n} style={{ background: "#f4f1ea", border: "1px solid rgba(0,0,0,0.07)", borderRadius: 16, padding: "28px 26px" }}>
                 <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 42, height: 42, borderRadius: "50%", background: ACCENT, color: "#fff", fontWeight: 800, fontSize: 18 }}>{s.n}</span>
-                <h3 style={{ fontSize: 19, fontWeight: 800, marginTop: 16, color: "#fff", letterSpacing: "-0.01em" }}>{s.title}</h3>
-                <p style={{ marginTop: 8, fontSize: 15, lineHeight: 1.55, color: MUT }}>{s.desc}</p>
+                <h3 style={{ fontSize: 19, fontWeight: 800, marginTop: 16, color: INK, letterSpacing: "-0.01em" }}>{s.title}</h3>
+                <p style={{ marginTop: 8, fontSize: 15, lineHeight: 1.55, color: INK_MUT }}>{s.desc}</p>
               </div>
             ))}
           </div>
@@ -438,20 +434,21 @@ export default function Join() {
       </section>
 
       {/* EVENT VIDEO */}
-      <section style={{ background: "#0f0e0b", padding: "20px 24px 72px" }}>
+      <section style={{ background: "#0f0e0b", padding: "20px 24px 48px" }}>
         <div style={{ textAlign: "center", marginBottom: 26 }}>
           <span style={eyebrowS}>{t.eventEyebrow}</span>
           <h2 style={h2(true)}>{t.eventLook}</h2>
         </div>
         <div style={{ maxWidth: 360, margin: "0 auto" }}>
-          <div style={{ position: "relative", width: "100%", aspectRatio: "9/16", borderRadius: 18, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)", background: "#15130f" }}>
+          <div style={{ position: "relative", width: "100%", aspectRatio: "9/16", borderRadius: 18, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)", background: "#000" }}>
             {eventPlaying ? (
-              <iframe src="https://drive.google.com/file/d/1YGaVx7w8KNlEusDKk-oXqa0DNAdB5S-x/preview" allow="autoplay; fullscreen" allowFullScreen style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }} title="STS event" />
+              // eslint-disable-next-line jsx-a11y/media-has-caption
+              <video src="/event.mp4" autoPlay controls playsInline style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
             ) : (
               <button onClick={() => setEventPlaying(true)} aria-label="Play event video" style={{ position: "absolute", inset: 0, padding: 0, border: "none", background: "none", cursor: "pointer" }}>
                 <Image src="/event-live.jpg" alt="An STS event" fill className="photo-grade" style={{ objectFit: "cover" }} />
-                <span style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <span style={{ width: 66, height: 66, borderRadius: "50%", background: "rgba(255,255,255,0.92)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 20px rgba(0,0,0,0.35)" }}>
+                <span style={{ position: "absolute", left: 0, right: 0, bottom: "16%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <span style={{ width: 66, height: 66, borderRadius: "50%", background: "rgba(255,255,255,0.94)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 20px rgba(0,0,0,0.4)" }}>
                     <span style={{ marginLeft: 5, borderStyle: "solid", borderWidth: "11px 0 11px 18px", borderColor: `transparent transparent transparent ${INK}` }} />
                   </span>
                 </span>
@@ -467,7 +464,7 @@ export default function Join() {
           <Image src="/mastermind.jpg" alt="" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 40%" }} />
         </div>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,9,7,0.93)" }} />
-        <div style={{ position: "relative", maxWidth: 620, margin: "0 auto", padding: "96px 24px", textAlign: "center" }}>
+        <div style={{ position: "relative", maxWidth: 620, margin: "0 auto", padding: "62px 24px 92px", textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(30px,4.4vw,48px)", fontWeight: 800, lineHeight: 1.08, letterSpacing: "-0.03em", color: "#fff" }}>{t.finalTitle}</h2>
           <p style={{ margin: "16px auto 0", maxWidth: 400, fontSize: 16.5, lineHeight: 1.5, color: MUT }}>{t.finalSub}</p>
           <div style={{ marginTop: 30, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
