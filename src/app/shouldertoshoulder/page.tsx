@@ -94,6 +94,7 @@ const copy = {
       { q: "I'm too busy.", a: "It's one focused hour a week. It saves you the weeks you lose to the wrong priorities." },
     ],
 
+    eventEyebrow: "Our events",
     eventLook: "This is what an STS event looks like.",
     finalTitle: "Ready to grow faster?",
     finalSub: "Apply for a fit call. 30 minutes, no pitch.",
@@ -173,6 +174,7 @@ const copy = {
       { q: "Ik heb geen tijd.", a: "Het is één gefocust uur per week. Het bespaart je de weken die je verliest aan de verkeerde prioriteiten." },
     ],
 
+    eventEyebrow: "Onze events",
     eventLook: "Zo ziet een STS-event eruit.",
     finalTitle: "Klaar om sneller te groeien?",
     finalSub: "Meld je aan voor een fit call. 30 minuten, geen pitch.",
@@ -185,6 +187,7 @@ export default function Join() {
   const { lang } = useLang();
   const t = copy[lang];
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [eventPlaying, setEventPlaying] = useState(false);
   const scroller = useRef<HTMLDivElement>(null);
   const scrollMembers = (dir: number) => scroller.current?.scrollBy({ left: dir * 360, behavior: "smooth" });
 
@@ -434,11 +437,27 @@ export default function Join() {
         </div>
       </section>
 
-      {/* EVENT LOOK */}
-      <section style={{ position: "relative", height: "clamp(240px,36vw,440px)", overflow: "hidden" }}>
-        <Image src="/event-live.jpg" alt="An STS event" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 38%" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,9,7,0.75), transparent 55%)", display: "flex", alignItems: "flex-end" }}>
-          <span style={{ maxWidth: 1000, margin: "0 auto", width: "100%", padding: "0 24px 22px", fontSize: 14, fontWeight: 700, color: "#fff" }}>{t.eventLook}</span>
+      {/* EVENT VIDEO */}
+      <section style={{ background: "#0f0e0b", padding: "20px 24px 72px" }}>
+        <div style={{ textAlign: "center", marginBottom: 26 }}>
+          <span style={eyebrowS}>{t.eventEyebrow}</span>
+          <h2 style={h2(true)}>{t.eventLook}</h2>
+        </div>
+        <div style={{ maxWidth: 360, margin: "0 auto" }}>
+          <div style={{ position: "relative", width: "100%", aspectRatio: "9/16", borderRadius: 18, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)", background: "#15130f" }}>
+            {eventPlaying ? (
+              <iframe src="https://drive.google.com/file/d/1YGaVx7w8KNlEusDKk-oXqa0DNAdB5S-x/preview" allow="autoplay; fullscreen" allowFullScreen style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }} title="STS event" />
+            ) : (
+              <button onClick={() => setEventPlaying(true)} aria-label="Play event video" style={{ position: "absolute", inset: 0, padding: 0, border: "none", background: "none", cursor: "pointer" }}>
+                <Image src="/event-live.jpg" alt="An STS event" fill className="photo-grade" style={{ objectFit: "cover" }} />
+                <span style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <span style={{ width: 66, height: 66, borderRadius: "50%", background: "rgba(255,255,255,0.92)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 20px rgba(0,0,0,0.35)" }}>
+                    <span style={{ marginLeft: 5, borderStyle: "solid", borderWidth: "11px 0 11px 18px", borderColor: `transparent transparent transparent ${INK}` }} />
+                  </span>
+                </span>
+              </button>
+            )}
+          </div>
         </div>
       </section>
 
