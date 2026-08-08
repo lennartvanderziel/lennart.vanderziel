@@ -52,7 +52,7 @@ const copy = {
 
     roomEyebrow: "Who's in the room",
     roomTitle: "Who's already in.",
-    roomSub: "Some of the members you grow with, every week.",
+    roomSub: "Some of the members you grow with, every week — across 3 continents.",
     selTitle: "Not a typical founder community.",
     selSub: "Every member is selected on more than track record.",
     selItems: [
@@ -131,7 +131,7 @@ const copy = {
 
     roomEyebrow: "Wie er in de kamer zit",
     roomTitle: "Wie er al in zit.",
-    roomSub: "Een paar van de members met wie je groeit, elke week.",
+    roomSub: "Een paar van de members met wie je groeit, elke week — verspreid over 3 continenten.",
     selTitle: "Geen doorsnee foundercommunity.",
     selSub: "Elke member wordt geselecteerd op meer dan track record.",
     selItems: [
@@ -238,7 +238,7 @@ export default function Join() {
           <h1 style={{ fontSize: "clamp(38px,6vw,72px)", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#fff", maxWidth: 860, marginBottom: 22, textShadow: "0 2px 30px rgba(0,0,0,0.5)" }}>
             {t.heroTitleA}<span style={{ color: ACCENT }}>{t.heroTitleB}</span>
           </h1>
-          <p style={{ maxWidth: 720, fontSize: "clamp(17px,2vw,21px)", lineHeight: 1.4, color: ACCENT, marginBottom: 32, fontWeight: 600, textShadow: "0 1px 16px rgba(0,0,0,0.6)" }}>{t.heroSub}</p>
+          <p style={{ maxWidth: 720, fontSize: "clamp(17px,2vw,21px)", lineHeight: 1.4, color: "#efe9de", marginBottom: 32, fontWeight: 500, textShadow: "0 1px 16px rgba(0,0,0,0.6)" }}>{t.heroSub}</p>
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
             <button onClick={book} className="btn-light" style={btnLight({ padding: "17px 34px", fontSize: 16 })}>{t.applyArrow}</button>
             <span style={{ fontSize: 13.5, color: MUT, fontWeight: 600 }}>{t.freeNote}</span>
@@ -436,7 +436,7 @@ export default function Join() {
 
       {/* EVENT LOOK */}
       <section style={{ position: "relative", height: "clamp(240px,36vw,440px)", overflow: "hidden" }}>
-        <Image src="/event-group.jpg" alt="An STS event" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 45%" }} />
+        <Image src="/event-live.jpg" alt="An STS event" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 38%" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,9,7,0.75), transparent 55%)", display: "flex", alignItems: "flex-end" }}>
           <span style={{ maxWidth: 1000, margin: "0 auto", width: "100%", padding: "0 24px 22px", fontSize: 14, fontWeight: 700, color: "#fff" }}>{t.eventLook}</span>
         </div>
