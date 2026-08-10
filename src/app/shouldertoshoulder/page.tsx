@@ -38,7 +38,7 @@ const copy = {
     painTogetherTitle: "Together",
     painTogether: ["You decide with a team behind you", "Opportunities come from each other", "Support and accountability, every week"],
 
-    changeEyebrow: "The outcome",
+    changeEyebrow: "What you get",
     changeTitle: "What changes when you join a founder circle",
     changes: [
       { title: "Exponential growth", desc: "Normal founders grow linearly. Together we grow exponentially." },
@@ -46,12 +46,10 @@ const copy = {
       { title: "Enjoy the journey", desc: "Side quests, dinners and activities. You're not alone anymore." },
     ],
 
-    visionLine: "Imagine overcoming obstacles faster, and consistently acting on your highest-leverage opportunities.",
-    visionQ: "How much further ahead would your business be in 12 months? And in 3 years?",
+    visionLine: "Imagine overcoming obstacles faster and acting on your biggest opportunities.",
+    visionQ: "How much further ahead would your business be in a year?",
 
-    roomEyebrow: "Who's in the room",
-    roomTitle: "Who's in the room",
-    roomSub: "Some of our members, based across 3 continents",
+    roomTitle: "Some of our members, based across 3 continents",
     selTitle: "Not a typical founder community",
     selSub: "Every member is selected on more than track record",
     selItems: [
@@ -74,13 +72,13 @@ const copy = {
     how: [
       { n: "1", title: "You're selected into a circle", desc: "A weekly circle with your six. One hour, online, facilitated by Lennart." },
       { n: "2", title: "Meet the whole club", desc: "In person, you connect with every member of the club." },
-      { n: "3", title: "A personal 1-on-1 with Lennart", desc: "A short, personal session with your performance and business coach." },
+      { n: "3", title: "1-on-1 with Lennart", desc: "A short, personal session with your performance and business coach." },
     ],
 
     hostEyebrow: "Your host",
     hostName: "Lennart van der Ziel",
     hostChips: ["Former tech CEO", "200k+ products sold", "100+ founders guided"],
-    hostDesc: "As founder & CEO I built Travis the Translator, an award-winning startup named Dutch Startup of the Year, with 200,000+ devices sold worldwide. I also helped start one of the largest founder communities in the Netherlands. Along the way I made costly mistakes and often felt alone, so I built the environment I wish I'd had. Today I personally host everything inside Shoulder to Shoulder — every circle, dinner and gathering.",
+    hostDesc: "As founder & CEO I built Travis the Translator — an award-winning startup named Dutch Startup of the Year, with 200,000+ devices sold worldwide — and helped start one of the Netherlands' largest founder communities. Along the way I made costly mistakes and often felt alone, so I built the environment I wish I'd had. Today I personally host everything inside Shoulder to Shoulder.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Good questions",
@@ -117,7 +115,7 @@ const copy = {
     painTogetherTitle: "Samen",
     painTogether: ["Je beslist met een team achter je", "Kansen komen van elkaar", "Steun en accountability, elke week"],
 
-    changeEyebrow: "Het resultaat",
+    changeEyebrow: "Wat je krijgt",
     changeTitle: "Wat verandert als je in een founder circle komt",
     changes: [
       { title: "Exponentiële groei", desc: "Normale founders groeien lineair. Samen groeien we exponentieel." },
@@ -125,12 +123,10 @@ const copy = {
       { title: "Geniet van de reis", desc: "Sidequests, diners en activiteiten. Je bent niet meer alleen." },
     ],
 
-    visionLine: "Stel je voor dat je obstakels sneller overwint, en consistent inzet op je kansen met de meeste impact.",
-    visionQ: "Hoeveel verder zou je business zijn over 12 maanden? En over 3 jaar?",
+    visionLine: "Stel je voor: obstakels sneller overwinnen en inzetten op je grootste kansen.",
+    visionQ: "Hoeveel verder zou je business zijn over een jaar?",
 
-    roomEyebrow: "Wie er in de kamer zit",
-    roomTitle: "Wie er in de kamer zit",
-    roomSub: "Een aantal van onze members, verspreid over 3 continenten",
+    roomTitle: "Een aantal van onze members, verspreid over 3 continenten",
     selTitle: "Geen doorsnee foundercommunity",
     selSub: "Elke member wordt geselecteerd op meer dan track record",
     selItems: [
@@ -153,13 +149,13 @@ const copy = {
     how: [
       { n: "1", title: "Je wordt geplaatst in een circle", desc: "Een wekelijkse circle met je zes. Eén uur, online, gefaciliteerd door Lennart." },
       { n: "2", title: "Ontmoet de hele club", desc: "In het echt connect je met elke member van de club." },
-      { n: "3", title: "Een persoonlijke 1-op-1 met Lennart", desc: "Een korte, persoonlijke sessie met je performance- en business-coach." },
+      { n: "3", title: "1-op-1 met Lennart", desc: "Een korte, persoonlijke sessie met je performance- en business-coach." },
     ],
 
     hostEyebrow: "Je host",
     hostName: "Lennart van der Ziel",
     hostChips: ["Voormalig tech-CEO", "200k+ producten verkocht", "100+ founders begeleid"],
-    hostDesc: "Als founder & CEO bouwde ik Travis the Translator, een bekroonde startup, uitgeroepen tot Dutch Startup of the Year, met 200.000+ verkochte apparaten wereldwijd. Ik hielp ook een van de grootste foundercommunities van Nederland opstarten. Onderweg maakte ik dure fouten en voelde ik me vaak alleen, dus bouwde ik de omgeving die ik zelf had willen hebben. Vandaag host ik alles binnen Shoulder to Shoulder persoonlijk — elke circle, elk diner en elke gathering.",
+    hostDesc: "Als founder & CEO bouwde ik Travis the Translator — een bekroonde startup, uitgeroepen tot Dutch Startup of the Year, met 200.000+ verkochte apparaten wereldwijd — en hielp ik een van de grootste foundercommunities van Nederland opstarten. Onderweg maakte ik dure fouten en voelde ik me vaak alleen, dus bouwde ik de omgeving die ik zelf had willen hebben. Vandaag host ik alles binnen Shoulder to Shoulder persoonlijk.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Goede vragen",
@@ -248,9 +244,9 @@ export default function Join() {
       </header>
 
       {/* PAINPOINT — alone vs together */}
-      <section style={{ background: "#0f0e0b", padding: "40px 24px" }}>
+      <section style={{ background: "#0f0e0b", padding: "76px 24px 56px" }}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 30 }}>
+          <div style={{ textAlign: "center", marginBottom: 38 }}>
             <span style={eyebrowS}>{t.painEyebrow}</span>
           </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 16 }}>
@@ -279,15 +275,16 @@ export default function Join() {
       </section>
 
       {/* WHAT YOU GET */}
-      <section style={{ background: "#0f0e0b", padding: "56px 24px 64px" }}>
+      <section style={{ background: "#0f0e0b", padding: "80px 24px 88px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 40px" }}>
+          <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 48px" }}>
             <span style={eyebrowS}>{t.changeEyebrow}</span>
             <h2 style={h2(true)}>{t.changeTitle}</h2>
           </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 18 }}>
-            {t.changes.map((b) => (
-              <div key={b.title} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 18, padding: "38px 32px" }}>
+            {t.changes.map((b, i) => (
+              <div key={b.title} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 18, padding: "34px 32px 38px" }}>
+                <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 40, height: 40, borderRadius: "50%", background: "rgba(232,116,43,0.14)", border: `1px solid ${ACCENT}`, color: ACCENT, fontWeight: 800, fontSize: 17, marginBottom: 20 }}>{i + 1}</span>
                 <h3 style={{ fontSize: 25, fontWeight: 800, letterSpacing: "-0.02em", color: "#fff" }}>{b.title}</h3>
                 <p style={{ marginTop: 12, fontSize: 16.5, lineHeight: 1.55, color: MUT_SOFT }}>{b.desc}</p>
               </div>
@@ -323,7 +320,6 @@ export default function Join() {
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 40px" }}>
             <h2 style={{ ...h2(false), marginTop: 0 }}>{t.roomTitle}</h2>
-            <p style={{ marginTop: 12, fontSize: 17, lineHeight: 1.5, color: INK, fontWeight: 700 }}>{t.roomSub}</p>
           </div>
           <div style={{ position: "relative" }}>
           <button aria-label="Previous" onClick={() => scrollMembers(-1)} style={arrowBtn("left")}>‹</button>
