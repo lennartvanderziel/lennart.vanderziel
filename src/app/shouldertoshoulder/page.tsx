@@ -70,9 +70,9 @@ const copy = {
     howEyebrow: "How it works",
     howTitle: "Everything a founder needs",
     how: [
-      { n: "1", title: "You're selected into a circle", desc: "A weekly circle with your six. One hour, online, facilitated by Lennart." },
+      { n: "1", title: "Your own circle", desc: "A weekly circle with your six. One hour, online, facilitated by Lennart." },
       { n: "2", title: "Meet the whole club", desc: "In person, you connect with every member of the club." },
-      { n: "3", title: "Optional monthly 1-on-1", desc: "A short, personal coaching session with Lennart, your business coach." },
+      { n: "3", title: "Monthly 1-on-1", desc: "An optional, personal coaching session with Lennart, your business coach." },
     ],
 
     hostEyebrow: "Your host",
@@ -147,9 +147,9 @@ const copy = {
     howEyebrow: "Hoe het werkt",
     howTitle: "Alles wat een founder nodig heeft",
     how: [
-      { n: "1", title: "Je wordt geplaatst in een circle", desc: "Een wekelijkse circle met je zes. Eén uur, online, gefaciliteerd door Lennart." },
+      { n: "1", title: "Je eigen circle", desc: "Een wekelijkse circle met je zes. Eén uur, online, gefaciliteerd door Lennart." },
       { n: "2", title: "Ontmoet de hele club", desc: "In het echt connect je met elke member van de club." },
-      { n: "3", title: "Optioneel maandelijks 1-op-1", desc: "Een korte, persoonlijke coachingsessie met Lennart, je business coach." },
+      { n: "3", title: "Maandelijks 1-op-1", desc: "Een optionele, persoonlijke coachingsessie met Lennart, je business coach." },
     ],
 
     hostEyebrow: "Je host",
