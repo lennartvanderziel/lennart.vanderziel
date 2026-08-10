@@ -72,7 +72,7 @@ const copy = {
     how: [
       { n: "1", title: "You're selected into a circle", desc: "A weekly circle with your six. One hour, online, facilitated by Lennart." },
       { n: "2", title: "Meet the whole club", desc: "In person, you connect with every member of the club." },
-      { n: "3", title: "1-on-1 with Lennart", desc: "A short, personal session with your performance and business coach." },
+      { n: "3", title: "Optional monthly 1-on-1", desc: "A short, personal coaching session with Lennart, your business coach." },
     ],
 
     hostEyebrow: "Your host",
@@ -149,7 +149,7 @@ const copy = {
     how: [
       { n: "1", title: "Je wordt geplaatst in een circle", desc: "Een wekelijkse circle met je zes. Eén uur, online, gefaciliteerd door Lennart." },
       { n: "2", title: "Ontmoet de hele club", desc: "In het echt connect je met elke member van de club." },
-      { n: "3", title: "1-op-1 met Lennart", desc: "Een korte, persoonlijke sessie met je performance- en business-coach." },
+      { n: "3", title: "Optioneel maandelijks 1-op-1", desc: "Een korte, persoonlijke coachingsessie met Lennart, je business coach." },
     ],
 
     hostEyebrow: "Je host",
