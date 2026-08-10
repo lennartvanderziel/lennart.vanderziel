@@ -109,7 +109,7 @@ const copy = {
     heroSub: "Een zorgvuldig geselecteerde kring die de grote beslissingen mét je maakt",
     freeNote: "Gratis · 30 min",
 
-    painEyebrow: "Waarom alleen traag is",
+    painEyebrow: "Waarom je alleen langzamer gaat",
     painAloneTitle: "Alleen",
     painAlone: ["Je maakt de grote keuzes alleen", "Minder kansen bereiken je", "Niemand houdt je accountable"],
     painTogetherTitle: "Samen",
@@ -130,7 +130,7 @@ const copy = {
     selTitle: "Geen doorsnee foundercommunity",
     selSub: "Elke member wordt geselecteerd op meer dan track record",
     selItems: [
-      { title: "Verschillende skill sets", desc: "Zodat iemand altijd brengt wat jij mist." },
+      { title: "Verschillende skill sets", desc: "Zodat er altijd iemand is die inbrengt wat jij mist." },
       { title: "Teamplayers, geen ego", desc: "Mensen die de groep optillen, niet domineren." },
       { title: "Echt en open", desc: "Durven laten zien wat er echt speelt." },
     ],
