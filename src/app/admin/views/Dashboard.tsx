@@ -4,7 +4,7 @@ import type { View } from "../components/Sidebar";
 import { Card, EmptyState, Pill, SectionTitle, StatRow, StatTile } from "../components/ui";
 import { leadStatusConfig, PIPELINE_ORDER } from "../statuses";
 import { ACCENT, ACCENT_TEXT, BLUE, BORDER, FAINT, FILL, GREEN, INK, MUTED, RED, ghostS } from "../theme";
-import { DAY, formatEuro, priceToNumber } from "../types";
+import { DAY, formatEuro, isActiveLead, priceToNumber } from "../types";
 
 const STALE_AFTER_DAYS = 7;
 
@@ -13,7 +13,7 @@ export function Dashboard({ crm, onNavigate }: { crm: Crm; onNavigate: (v: View)
 
   const active = members.filter((m) => m.status === "active");
   const mrr = active.reduce((sum, m) => sum + priceToNumber(m.price), 0);
-  const openLeads = leads.filter((l) => l.status !== "member" && l.status !== "declined");
+  const openLeads = leads.filter((l) => isActiveLead(l.status));
 
   // Leads with no contact in a week. This is the "who am I dropping?" list.
   const stale = now

@@ -1,13 +1,22 @@
 "use client";
+import { useState } from "react";
 import type { Crm } from "../useCrm";
 import { EmptyState, PageHeader } from "../components/ui";
 import { PIPELINE_ORDER, leadStatusConfig } from "../statuses";
+import { SegmentTabs, type SegmentFilter } from "../components/SegmentTabs";
+import { DEFAULT_SEGMENT, SEGMENTS, segmentMeta } from "../segments";
 import { BORDER, CARD, FAINT, FILL, INK, MUTED, RADIUS, SHADOW } from "../theme";
 import { DAY, type LeadStatus } from "../types";
 
 /** Board view of every lead, one column per stage. */
 export function Pipeline({ crm }: { crm: Crm }) {
   const { leads, saveLeads, notify, now } = crm;
+  const [seg, setSeg] = useState<SegmentFilter>("all");
+
+  const segOf = (l: (typeof leads)[number]) => l.segment ?? DEFAULT_SEGMENT;
+  const counts = { all: leads.length } as Record<SegmentFilter, number>;
+  for (const s of SEGMENTS) counts[s.id] = leads.filter((l) => segOf(l) === s.id).length;
+  const visible = seg === "all" ? leads : leads.filter((l) => segOf(l) === seg);
 
   function move(id: string, status: LeadStatus) {
     saveLeads(
@@ -20,12 +29,18 @@ export function Pipeline({ crm }: { crm: Crm }) {
     <>
       <PageHeader title="Pipeline." subtitle="Every lead by stage. Move a card with the arrows to advance or send it back." />
 
-      {leads.length === 0 ? (
-        <EmptyState>No leads yet. Add one under Leads and it appears here.</EmptyState>
+      <SegmentTabs value={seg} onChange={setSeg} counts={counts} />
+
+      {visible.length === 0 ? (
+        <EmptyState>
+          {leads.length === 0
+            ? "No leads yet. Add one under Leads and it appears here."
+            : "No leads in this segment yet."}
+        </EmptyState>
       ) : (
         <div style={{ display: "grid", gridTemplateColumns: `repeat(${PIPELINE_ORDER.length}, minmax(190px, 1fr))`, gap: 14, overflowX: "auto", paddingBottom: 8 }}>
           {PIPELINE_ORDER.map((status, colIndex) => {
-            const column = leads.filter((l) => l.status === status);
+            const column = visible.filter((l) => l.status === status);
             const cfg = leadStatusConfig[status];
             return (
               <div key={status} style={{ background: FILL, borderRadius: RADIUS, padding: 12, minWidth: 190 }}>
@@ -51,7 +66,15 @@ export function Pipeline({ crm }: { crm: Crm }) {
                         }}
                       >
                         <div style={{ fontSize: 13.5, fontWeight: 700, color: INK, lineHeight: 1.35 }}>{lead.name}</div>
-                        <div style={{ fontSize: 11.5, color: MUTED, marginTop: 3 }}>{lead.revenue || lead.source}</div>
+                        <div style={{ fontSize: 11.5, color: MUTED, marginTop: 3 }}>
+                          {seg === "all" && (
+                            <span style={{ color: segmentMeta(lead.segment).color, fontWeight: 700 }}>
+                              {segmentMeta(lead.segment).short}
+                              {" · "}
+                            </span>
+                          )}
+                          {lead.revenue || lead.source}
+                        </div>
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 10 }}>
                           <span style={{ fontSize: 11, color: FAINT }}>{age}d old</span>
                           <span style={{ display: "flex", gap: 4 }}>

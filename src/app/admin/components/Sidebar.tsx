@@ -192,7 +192,10 @@ export function Sidebar({
         ))}
       </nav>
 
-      <div className="os-back" style={{ marginTop: "auto", paddingTop: 20 }}>
+      <div
+        className="os-back"
+        style={{ marginTop: "auto", paddingTop: 20, display: "flex", flexDirection: "column", gap: 12 }}
+      >
         <Link
           href="/"
           style={{
@@ -205,6 +208,25 @@ export function Sidebar({
         >
           ← Back to website
         </Link>
+        <button
+          onClick={async () => {
+            await fetch("/api/admin/logout", { method: "POST" });
+            window.location.href = "/admin/login";
+          }}
+          style={{
+            fontSize: 12.5,
+            color: FAINT,
+            background: "transparent",
+            border: "none",
+            fontWeight: 600,
+            padding: "0 10px",
+            cursor: "pointer",
+            textAlign: "left",
+            fontFamily: "inherit",
+          }}
+        >
+          Log out
+        </button>
       </div>
     </aside>
   );

@@ -1,5 +1,21 @@
-export type LeadStatus = "new" | "reviewing" | "call_booked" | "member" | "declined";
+export type LeadStatus =
+  | "new" // identified, not yet contacted
+  | "contacted" // first message sent
+  | "warming" // invited to a dinner/event and/or sent info
+  | "exploratory" // exploratory call (verkennend gesprek)
+  | "decision" // decision call (beslissingsgesprek)
+  | "member" // paid & committed — converts to a Member
+  | "later" // wants to join later — stays in nurture
+  | "declined"; // not a fit / said no
 export type MemberStatus = "active" | "paused" | "churned";
+
+/** Which business/circle a lead belongs to. One CRM, filtered per segment. */
+export type Segment = "shoulder_to_shoulder" | "one_on_one" | "womens_circle";
+
+/** Stages that still need active pipeline work — excludes won (member), lost
+ * (declined) and the later-nurture bucket. Drives the "open leads" counts. */
+export const ACTIVE_STAGES: LeadStatus[] = ["new", "contacted", "warming", "exploratory", "decision"];
+export const isActiveLead = (s: LeadStatus): boolean => ACTIVE_STAGES.includes(s);
 
 export interface Lead {
   id: string;
@@ -10,6 +26,7 @@ export interface Lead {
   business: string;
   revenue: string;
   source: string;
+  segment: Segment;
   status: LeadStatus;
   notes: string;
   createdAt: number;

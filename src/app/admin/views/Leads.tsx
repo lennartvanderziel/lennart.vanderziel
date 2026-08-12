@@ -4,12 +4,20 @@ import type { Crm } from "../useCrm";
 import { Card, EmptyState, PageHeader, Pill } from "../components/ui";
 import { LeadForm } from "../forms/LeadForm";
 import { leadStatusConfig } from "../statuses";
+import { SegmentTabs, type SegmentFilter } from "../components/SegmentTabs";
+import { DEFAULT_SEGMENT, SEGMENTS, segmentMeta } from "../segments";
 import { ACCENT_TEXT, BORDER, INK, MUTED, RED, btnS, ghostS, inputS } from "../theme";
 import { formatDate, uid, type LeadStatus } from "../types";
 
 export function Leads({ crm }: { crm: Crm }) {
   const { leads, saveLeads, notify, dueEmails, sendDue, sending, sequence } = crm;
   const [showAdd, setShowAdd] = useState(false);
+  const [seg, setSeg] = useState<SegmentFilter>("all");
+
+  const segOf = (l: (typeof leads)[number]) => l.segment ?? DEFAULT_SEGMENT;
+  const counts = { all: leads.length } as Record<SegmentFilter, number>;
+  for (const s of SEGMENTS) counts[s.id] = leads.filter((l) => segOf(l) === s.id).length;
+  const visible = seg === "all" ? leads : leads.filter((l) => segOf(l) === seg);
 
   return (
     <>
@@ -25,6 +33,7 @@ export function Leads({ crm }: { crm: Crm }) {
 
       {showAdd && (
         <LeadForm
+          defaultSegment={seg === "all" ? DEFAULT_SEGMENT : seg}
           onAdd={(l) => {
             saveLeads([
               {
@@ -45,15 +54,20 @@ export function Leads({ crm }: { crm: Crm }) {
         />
       )}
 
-      <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 12 }}>
-        {leads.length === 0 && (
+      <div style={{ marginTop: 20 }}>
+        <SegmentTabs value={seg} onChange={setSeg} counts={counts} />
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+        {visible.length === 0 && (
           <EmptyState>
-            No leads yet. Add applications here as they arrive in your inbox and the nurture sequence starts
-            automatically.
+            {leads.length === 0
+              ? "No leads yet. Add applications here as they arrive in your inbox and the nurture sequence starts automatically."
+              : "No leads in this segment yet. Switch to another tab or add one."}
           </EmptyState>
         )}
 
-        {leads.map((lead) => {
+        {visible.map((lead) => {
           const isDue = dueEmails.some((d) => d.lead.id === lead.id);
           return (
             <Card key={lead.id}>
@@ -62,6 +76,7 @@ export function Leads({ crm }: { crm: Crm }) {
                   <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
                     <h3 style={{ fontSize: 16, fontWeight: 800, color: INK, margin: 0 }}>{lead.name}</h3>
                     <Pill label={leadStatusConfig[lead.status].label} color={leadStatusConfig[lead.status].color} />
+                    <Pill label={segmentMeta(lead.segment).short} color={segmentMeta(lead.segment).color} />
                   </div>
                   <p style={{ fontSize: 12.5, color: MUTED, margin: "5px 0 0" }}>
                     {[lead.email, lead.whatsapp && `WA ${lead.whatsapp}`, lead.instagram && `IG ${lead.instagram}`]

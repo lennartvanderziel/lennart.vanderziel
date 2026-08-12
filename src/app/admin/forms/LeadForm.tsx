@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 import { BORDER, CARD, RADIUS, SHADOW, btnS, inputS } from "../theme";
-import { LEAD_SOURCES, REVENUE_BRACKETS } from "../types";
+import { LEAD_SOURCES, REVENUE_BRACKETS, type Segment } from "../types";
+import { SEGMENTS } from "../segments";
 
 export interface NewLead {
   name: string;
@@ -11,9 +12,10 @@ export interface NewLead {
   business: string;
   revenue: string;
   source: string;
+  segment: Segment;
 }
 
-export function LeadForm({ onAdd }: { onAdd: (l: NewLead) => void }) {
+export function LeadForm({ onAdd, defaultSegment }: { onAdd: (l: NewLead) => void; defaultSegment?: Segment }) {
   const [f, setF] = useState<NewLead>({
     name: "",
     email: "",
@@ -22,6 +24,7 @@ export function LeadForm({ onAdd }: { onAdd: (l: NewLead) => void }) {
     business: "",
     revenue: "€10k – €25k / month",
     source: "Application form",
+    segment: defaultSegment ?? SEGMENTS[0].id,
   });
 
   const hasContact = Boolean(f.email || f.whatsapp || f.instagram);
@@ -44,6 +47,13 @@ export function LeadForm({ onAdd }: { onAdd: (l: NewLead) => void }) {
         gap: 10,
       }}
     >
+      <select aria-label="Segment" value={f.segment} onChange={(e) => setF({ ...f, segment: e.target.value as Segment })} style={inputS}>
+        {SEGMENTS.map((s) => (
+          <option key={s.id} value={s.id}>
+            {s.label}
+          </option>
+        ))}
+      </select>
       <input placeholder="Full name" value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} style={inputS} required />
       <input type="email" placeholder="Email (optional if WA/IG)" value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} style={inputS} />
       <input placeholder="WhatsApp (optional)" value={f.whatsapp} onChange={(e) => setF({ ...f, whatsapp: e.target.value })} style={inputS} />

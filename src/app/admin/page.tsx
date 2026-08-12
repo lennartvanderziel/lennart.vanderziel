@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Sidebar, type View } from "./components/Sidebar";
 import { useCrm } from "./useCrm";
+import { isActiveLead } from "./types";
 import { BORDER, CARD, INK, PAGE, SHADOW } from "./theme";
 import { Dashboard } from "./views/Dashboard";
 import { Leads } from "./views/Leads";
@@ -13,15 +14,15 @@ import { Sessions } from "./views/Sessions";
 import { Revenue } from "./views/Revenue";
 import { Accountability } from "./views/Accountability";
 
-// TODO(auth): the CRM is intentionally ungated during the build phase.
-// Before this goes to production it needs real server-side auth, not a
-// client-side passcode. Until then /admin stays noindex (see layout.tsx).
+// Auth: /admin is gated by server-side middleware (src/middleware.ts) — a
+// password unlocks it and a signed httpOnly cookie keeps the session. The page
+// also stays noindex (see layout.tsx). Data persistence moves to Supabase next.
 
 export default function Admin() {
   const crm = useCrm();
   const [view, setView] = useState<View>("dashboard");
 
-  const openLeads = crm.leads.filter((l) => l.status !== "member" && l.status !== "declined").length;
+  const openLeads = crm.leads.filter((l) => isActiveLead(l.status)).length;
   const activeMembers = crm.members.filter((m) => m.status === "active").length;
 
   return (

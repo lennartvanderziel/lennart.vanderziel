@@ -1,26 +1,76 @@
 "use client";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { DAY, type Lead, type Member, type SeqStep, type Session } from "./types";
 import { defaultSequence } from "./defaultSequence";
-import { seedMembers } from "./seedMembers";
-import { useLocalStore, useNow } from "@/lib/useLocalStore";
+import { useNow } from "@/lib/useLocalStore";
 
 const NO_LEADS: Lead[] = [];
+const NO_MEMBERS: Member[] = [];
 const NO_SESSIONS: Session[] = [];
 
 /**
- * Owns every piece of CRM state plus its persistence.
+ * A CRM collection backed by Supabase (via /api/crm/:name).
  *
- * NOTE: this is localStorage-backed, so the data lives in one browser on one
- * device and does not sync or survive a cache clear. Moving it behind an API
- * is the next structural step.
+ * Loads once on mount; `save(next)` optimistically updates local state and
+ * persists the whole array to the server (which upserts and prunes). Because
+ * every view already calls `saveX(nextArray)`, swapping the storage engine
+ * here left the rest of the CRM untouched.
+ *
+ * `fallback` is shown only until the first load returns AND only when the
+ * server is empty (used to surface the default email sequence). It is never
+ * auto-persisted, so clearing a collection stays cleared after a real save.
+ */
+function useCollection<T extends { id: string }>(name: string, fallback: T[]): [T[], (next: T[]) => void, boolean] {
+  const [items, setItems] = useState<T[]>(fallback);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let alive = true;
+    fetch(`/api/crm/${name}`)
+      .then((r) => r.json())
+      .then((j) => {
+        if (!alive || !j.ok) return;
+        const recs = j.records as T[];
+        setItems(recs.length === 0 && fallback.length > 0 ? fallback : recs);
+      })
+      .catch(() => {})
+      .finally(() => alive && setLoading(false));
+    return () => {
+      alive = false;
+    };
+    // fallback is a stable module constant; name is the real dependency.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [name]);
+
+  const save = useCallback(
+    (next: T[]) => {
+      setItems(next);
+      fetch(`/api/crm/${name}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(next),
+      })
+        .then((r) => r.json())
+        .then((j) => {
+          if (!j.ok) console.error(`Save failed for ${name}:`, j.error);
+        })
+        .catch((e) => console.error(`Save failed for ${name}:`, e));
+    },
+    [name]
+  );
+
+  return [items, save, loading];
+}
+
+/**
+ * Owns every piece of CRM state plus its persistence, now backed by Supabase.
  */
 export function useCrm() {
   const now = useNow();
-  const [leads, saveLeads] = useLocalStore<Lead[]>("crm-leads", NO_LEADS);
-  const [members, saveMembers] = useLocalStore<Member[]>("crm-members", seedMembers);
-  const [sequence, saveSequence] = useLocalStore<SeqStep[]>("crm-sequence", defaultSequence);
-  const [sessions, saveSessions] = useLocalStore<Session[]>("crm-sessions", NO_SESSIONS);
+  const [leads, saveLeads, leadsLoading] = useCollection<Lead>("leads", NO_LEADS);
+  const [members, saveMembers] = useCollection<Member>("members", NO_MEMBERS);
+  const [sequence, saveSequence] = useCollection<SeqStep>("sequence", defaultSequence);
+  const [sessions, saveSessions] = useCollection<Session>("sessions", NO_SESSIONS);
 
   const [toast, setToast] = useState("");
   const [sending, setSending] = useState<string | null>(null);
@@ -92,6 +142,7 @@ export function useCrm() {
     sequence,
     sessions,
     dueEmails,
+    loading: leadsLoading,
     toast,
     sending,
     notify,
