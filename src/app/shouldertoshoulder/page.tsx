@@ -363,14 +363,14 @@ export default function Join() {
       <section style={{ background: "#15130f", padding: SEC }}>
         <div style={{ maxWidth: 940, margin: "0 auto" }}>
           <Head eye={t.proofEyebrow} title={t.proofTitle} dark center />
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 20, justifyContent: "center", alignItems: "center", margin: "0 auto 26px" }}>
-            <div style={{ flex: "1 1 380px", maxWidth: 560 }}>
-              <div style={{ ...mediaBox, aspectRatio: "16/9" }}>
-                <iframe src="https://drive.google.com/file/d/144mWmikXCAq_pEbl_U1d19YJ33m62y55/preview" allow="autoplay; fullscreen" allowFullScreen style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }} title="Member testimonial — Zach" />
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 24, justifyContent: "center", alignItems: "flex-start", margin: "0 auto 26px" }}>
+            <div style={{ flex: "0 1 300px", maxWidth: 300 }}>
+              <div style={{ ...mediaBox, aspectRatio: "9/16" }}>
+                <video src="/zachreview.mp4" controls playsInline preload="metadata" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
               </div>
               <p style={{ textAlign: "center", fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 10 }}>{t.videoCaption}</p>
             </div>
-            <div style={{ flex: "0 1 260px", maxWidth: 260 }}>
+            <div style={{ flex: "0 1 300px", maxWidth: 300 }}>
               <div style={{ ...mediaBox, aspectRatio: "9/16" }}>
                 <video src="/davidreview.mp4" controls playsInline preload="metadata" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
               </div>
