@@ -197,7 +197,7 @@ export default function Join() {
   const eyebrowS: React.CSSProperties = { fontSize: 12, fontWeight: 800, letterSpacing: "0.18em", textTransform: "uppercase", color: ACCENT };
   const h2 = (dark: boolean): React.CSSProperties => ({ marginTop: 14, fontSize: "clamp(29px,3.7vw,40px)", fontWeight: 800, lineHeight: 1.12, letterSpacing: "-0.022em", color: dark ? "#fff" : INK });
   const mediaBox: React.CSSProperties = { position: "relative", width: "100%", borderRadius: 16, overflow: "hidden", background: "linear-gradient(135deg, #1c1915, #2e2820)", border: "1px solid rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center" };
-  const arrowBtn = (side: "left" | "right"): React.CSSProperties => ({ position: "absolute", top: 59, [side]: -8, transform: "translateY(-50%)", zIndex: 3, width: 46, height: 46, borderRadius: "50%", background: INK, color: "#fff", border: "none", fontSize: 26, lineHeight: 1, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 18px rgba(0,0,0,0.22)", paddingBottom: 4 });
+  const arrowBtn = (side: "left" | "right"): React.CSSProperties => ({ position: "absolute", top: 59, [side]: -8, transform: "translateY(-50%)", zIndex: 3, width: 46, height: 46, borderRadius: "50%", background: "#fff", color: INK, border: "none", fontSize: 26, lineHeight: 1, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 18px rgba(0,0,0,0.22)", paddingBottom: 4 });
   const Head = ({ eye, title, dark, center }: { eye: string; title: string; dark: boolean; center?: boolean }) => (
     <div style={{ maxWidth: 640, margin: center ? "0 auto 44px" : "0 0 36px", textAlign: center ? "center" : "left" }}>
       <span style={eyebrowS}>{eye}</span>
@@ -318,9 +318,9 @@ export default function Join() {
       </section>
 
       {/* PROOF */}
-      <section style={{ background: "#15130f", padding: SEC }}>
+      <section style={{ background: "#fff", color: INK, padding: SEC }}>
         <div style={{ maxWidth: 940, margin: "0 auto" }}>
-          <Head eye={t.proofEyebrow} title={t.proofTitle} dark center />
+          <Head eye={t.proofEyebrow} title={t.proofTitle} dark={false} center />
           <div style={{ display: "flex", flexWrap: "wrap", gap: 24, justifyContent: "center", alignItems: "flex-start", margin: "0 auto 26px" }}>
             <div style={{ flex: "0 1 300px", maxWidth: 300 }}>
               <div style={{ ...mediaBox, aspectRatio: "9/16" }}>
@@ -338,7 +338,7 @@ export default function Join() {
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: 18 }}>
             {t.testimonials.map((tt) => (
               <div key={tt.name} style={{ background: "rgba(232,116,43,0.07)", border: "1px solid rgba(232,116,43,0.35)", borderRadius: 16, padding: "26px 28px" }}>
-                <p style={{ fontSize: 16, lineHeight: 1.5, fontWeight: 500, color: "#f0ece4" }}>{tt.quote}</p>
+                <p style={{ fontSize: 16, lineHeight: 1.5, fontWeight: 500, color: INK }}>{tt.quote}</p>
                 <div style={{ display: "flex", alignItems: "center", gap: 11, marginTop: 16 }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`/members/${tt.name}.png`} alt={tt.name} style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover", border: "1px solid rgba(232,116,43,0.45)", flexShrink: 0 }} />
@@ -351,10 +351,10 @@ export default function Join() {
       </section>
 
       {/* WHO'S IN THE ROOM */}
-      <section style={{ background: "#fff", color: INK, padding: SEC }}>
+      <section style={{ background: "#15130f", color: "#f0ece4", padding: SEC }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 40px" }}>
-            <h2 style={{ ...h2(false), marginTop: 0 }}>{t.roomTitle}</h2>
+            <h2 style={{ ...h2(true), marginTop: 0 }}>{t.roomTitle}</h2>
           </div>
           <div style={{ position: "relative" }}>
           <button aria-label="Previous" onClick={() => scrollMembers(-1)} style={arrowBtn("left")}>‹</button>
@@ -368,23 +368,23 @@ export default function Join() {
                   <img src={m.img} alt={m.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: m.pos || "center", transform: m.scale ? `scale(${m.scale})` : undefined }} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                 </div>
                 <h3 style={{ marginTop: 14, fontSize: 17, fontWeight: 800 }}>{m.name}</h3>
-                <p style={{ marginTop: 3, fontSize: 12.5, fontWeight: 600, color: INK_MUT, lineHeight: 1.35 }}>{m.tag}</p>
+                <p style={{ marginTop: 3, fontSize: 12.5, fontWeight: 600, color: MUT, lineHeight: 1.35 }}>{m.tag}</p>
               </div>
             ))}
           </div>
           </div>
 
           {/* Selected on more than track record */}
-          <div style={{ marginTop: 56, paddingTop: 44, borderTop: "1px solid rgba(0,0,0,0.1)" }}>
+          <div style={{ marginTop: 56, paddingTop: 44, borderTop: "1px solid rgba(255,255,255,0.12)" }}>
             <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto 32px" }}>
-              <h3 style={{ fontSize: "clamp(23px,3.2vw,32px)", fontWeight: 800, letterSpacing: "-0.02em", color: INK }}>{t.selTitle}</h3>
-              <p style={{ marginTop: 10, fontSize: 16, lineHeight: 1.55, color: INK_MUT }}>{t.selSub}</p>
+              <h3 style={{ fontSize: "clamp(23px,3.2vw,32px)", fontWeight: 800, letterSpacing: "-0.02em", color: "#fff" }}>{t.selTitle}</h3>
+              <p style={{ marginTop: 10, fontSize: 16, lineHeight: 1.55, color: MUT }}>{t.selSub}</p>
             </div>
             <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 16 }}>
               {t.selItems.map((s) => (
-                <div key={s.title} style={{ background: "#f4f1ea", border: "1px solid rgba(0,0,0,0.07)", borderRadius: 14, padding: "24px 22px" }}>
-                  <h4 style={{ fontSize: 17, fontWeight: 800, color: INK, letterSpacing: "-0.01em" }}>{s.title}</h4>
-                  <p style={{ marginTop: 7, fontSize: 14.5, lineHeight: 1.5, color: INK_MUT }}>{s.desc}</p>
+                <div key={s.title} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 14, padding: "24px 22px" }}>
+                  <h4 style={{ fontSize: 17, fontWeight: 800, color: "#fff", letterSpacing: "-0.01em" }}>{s.title}</h4>
+                  <p style={{ marginTop: 7, fontSize: 14.5, lineHeight: 1.5, color: MUT }}>{s.desc}</p>
                 </div>
               ))}
             </div>
