@@ -59,7 +59,7 @@ const copy = {
     ],
 
     proofEyebrow: "Proof",
-    proofTitle: "What it does for them",
+    proofTitle: "Why they joined",
     videoCaption: "Zach · Member",
     videoCaptionDavid: "David · Member",
     testimonials: [
@@ -137,7 +137,7 @@ const copy = {
     ],
 
     proofEyebrow: "Bewijs",
-    proofTitle: "Wat het voor hen doet",
+    proofTitle: "Waarom zij zich aansloten",
     videoCaption: "Zach · Lid",
     videoCaptionDavid: "David · Lid",
     testimonials: [
