@@ -33,7 +33,16 @@ export interface Lead {
   sequenceStep: number;
   lastEmailAt: number | null;
   sequenceActive: boolean;
+  // Optional, contact-card fields (tolerated by the jsonb store; may be absent
+  // on older/imported records).
+  rating?: number | null;
+  role?: string;
+  website?: string;
+  priority?: LeadPriority;
+  lastActivityAt?: number | null;
 }
+
+export type LeadPriority = "high" | "medium" | "low" | null;
 
 export interface Member {
   id: string;

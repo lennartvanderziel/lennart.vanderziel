@@ -3,20 +3,32 @@ import { useState } from "react";
 import { Sidebar, type View } from "./components/Sidebar";
 import { useCrm } from "./useCrm";
 import { isActiveLead } from "./types";
-import { BORDER, CARD, INK, PAGE, SHADOW } from "./theme";
+import { BORDER, CARD, FAINT, INK, MUTED, PAGE, SHADOW } from "./theme";
 import { Dashboard } from "./views/Dashboard";
-import { Leads } from "./views/Leads";
 import { Pipeline } from "./views/Pipeline";
 import { Emails } from "./views/Emails";
 import { Members } from "./views/Members";
 import { Circles } from "./views/Circles";
 import { Sessions } from "./views/Sessions";
-import { Revenue } from "./views/Revenue";
 import { Accountability } from "./views/Accountability";
 
-// Auth: /admin is gated by server-side middleware (src/middleware.ts) — a
-// password unlocks it and a signed httpOnly cookie keeps the session. The page
-// also stays noindex (see layout.tsx). Data persistence moves to Supabase next.
+// Auth: /admin is gated by server-side middleware (src/middleware.ts). Dark
+// "Command Center" theme lives in ./theme (separate from the public palette).
+
+function ComingSoon({ title, note }: { title: string; note: string }) {
+  return (
+    <div style={{ display: "grid", placeItems: "center", minHeight: "60vh", textAlign: "center" }}>
+      <div style={{ maxWidth: 420 }}>
+        <div style={{ fontSize: 34, marginBottom: 14 }}>✦</div>
+        <h1 style={{ fontSize: 26, fontWeight: 800, color: INK, letterSpacing: "-0.02em", margin: 0 }}>{title}</h1>
+        <p style={{ marginTop: 10, fontSize: 14.5, color: MUTED, lineHeight: 1.6 }}>{note}</p>
+        <span style={{ display: "inline-block", marginTop: 16, fontSize: 11, fontWeight: 800, color: FAINT, letterSpacing: "0.14em", textTransform: "uppercase", border: BORDER, borderRadius: 100, padding: "6px 14px" }}>
+          Coming in the next phase
+        </span>
+      </div>
+    </div>
+  );
+}
 
 export default function Admin() {
   const crm = useCrm();
@@ -30,7 +42,7 @@ export default function Admin() {
       className="os-shell"
       style={{
         minHeight: "100vh",
-        background: PAGE,
+        background: `radial-gradient(1100px 600px at 78% -8%, rgba(99,102,241,0.10), transparent 60%), ${PAGE}`,
         color: INK,
         fontFamily: "var(--font-sans), sans-serif",
         display: "flex",
@@ -40,19 +52,21 @@ export default function Admin() {
       <Sidebar
         view={view}
         onSelect={setView}
-        counts={{ dueEmails: crm.dueEmails.length, openLeads, members: activeMembers }}
+        counts={{ dueEmails: crm.dueEmails.length, openLeads, contacts: crm.leads.length, members: activeMembers }}
       />
 
-      <main className="os-main" style={{ flex: 1, minWidth: 0, padding: "36px 34px 90px", maxWidth: 1320, width: "100%" }}>
+      <main className="os-main" style={{ flex: 1, minWidth: 0, padding: "34px 36px 90px", maxWidth: 1400, width: "100%" }}>
         {view === "dashboard" && <Dashboard crm={crm} onNavigate={setView} />}
-        {view === "leads" && <Leads crm={crm} />}
-        {view === "pipeline" && <Pipeline crm={crm} />}
+        {view === "leads" && <Pipeline crm={crm} />}
         {view === "emails" && <Emails crm={crm} />}
         {view === "members" && <Members crm={crm} />}
         {view === "accountability" && <Accountability crm={crm} />}
         {view === "circles" && <Circles crm={crm} />}
         {view === "sessions" && <Sessions crm={crm} />}
-        {view === "revenue" && <Revenue crm={crm} />}
+        {view === "contacts" && <ComingSoon title="Contacts" note="Every person you know — leads and not-yet-leads — with full contact cards. Building this next." />}
+        {view === "proposals" && <ComingSoon title="Proposals" note="Send proposals, track pipeline value, and see what's signed. Part of the Get-Paid phase." />}
+        {view === "invoices" && <ComingSoon title="Invoices" note="Invoicing through Stripe, with payment status synced back here." />}
+        {view === "finance" && <ComingSoon title="Finance" note="Revenue, costs and profit at a glance, feeding your dashboard." />}
       </main>
 
       {crm.toast && (

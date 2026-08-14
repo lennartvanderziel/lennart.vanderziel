@@ -67,7 +67,7 @@ export function Dashboard({ crm, onNavigate }: { crm: Crm; onNavigate: (v: View)
       <Card style={{ marginBottom: 20 }}>
         <SectionTitle
           action={
-            <button onClick={() => onNavigate("pipeline")} style={ghostS}>
+            <button onClick={() => onNavigate("leads")} style={ghostS}>
               Open pipeline
             </button>
           }
@@ -161,7 +161,7 @@ export function Dashboard({ crm, onNavigate }: { crm: Crm; onNavigate: (v: View)
         <Card>
           <SectionTitle
             action={
-              <button onClick={() => onNavigate("revenue")} style={ghostS}>
+              <button onClick={() => onNavigate("finance")} style={ghostS}>
                 All renewals
               </button>
             }
