@@ -317,6 +317,39 @@ export default function Join() {
         </div>
       </section>
 
+      {/* PROOF */}
+      <section style={{ background: "#15130f", padding: SEC }}>
+        <div style={{ maxWidth: 940, margin: "0 auto" }}>
+          <Head eye={t.proofEyebrow} title={t.proofTitle} dark center />
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 24, justifyContent: "center", alignItems: "flex-start", margin: "0 auto 26px" }}>
+            <div style={{ flex: "0 1 300px", maxWidth: 300 }}>
+              <div style={{ ...mediaBox, aspectRatio: "9/16" }}>
+                <video src="/zachreview.mp4" controls playsInline preload="metadata" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
+              </div>
+              <p style={{ textAlign: "center", fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 10 }}>{t.videoCaption}</p>
+            </div>
+            <div style={{ flex: "0 1 300px", maxWidth: 300 }}>
+              <div style={{ ...mediaBox, aspectRatio: "9/16" }}>
+                <video src="/davidreview.mp4" controls playsInline preload="metadata" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
+              </div>
+              <p style={{ textAlign: "center", fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 10 }}>{t.videoCaptionDavid}</p>
+            </div>
+          </div>
+          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: 18 }}>
+            {t.testimonials.map((tt) => (
+              <div key={tt.name} style={{ background: "rgba(232,116,43,0.07)", border: "1px solid rgba(232,116,43,0.35)", borderRadius: 16, padding: "26px 28px" }}>
+                <p style={{ fontSize: 16, lineHeight: 1.5, fontWeight: 500, color: "#f0ece4" }}>{tt.quote}</p>
+                <div style={{ display: "flex", alignItems: "center", gap: 11, marginTop: 16 }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={`/members/${tt.name}.png`} alt={tt.name} style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover", border: "1px solid rgba(232,116,43,0.45)", flexShrink: 0 }} />
+                  <span style={{ fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.04em" }}>{tt.name.toUpperCase()} · {tt.type}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* WHO'S IN THE ROOM */}
       <section style={{ background: "#fff", color: INK, padding: SEC }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
@@ -355,35 +388,6 @@ export default function Join() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PROOF */}
-      <section style={{ background: "#15130f", padding: SEC }}>
-        <div style={{ maxWidth: 940, margin: "0 auto" }}>
-          <Head eye={t.proofEyebrow} title={t.proofTitle} dark center />
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 24, justifyContent: "center", alignItems: "flex-start", margin: "0 auto 26px" }}>
-            <div style={{ flex: "0 1 300px", maxWidth: 300 }}>
-              <div style={{ ...mediaBox, aspectRatio: "9/16" }}>
-                <video src="/zachreview.mp4" controls playsInline preload="metadata" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
-              </div>
-              <p style={{ textAlign: "center", fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 10 }}>{t.videoCaption}</p>
-            </div>
-            <div style={{ flex: "0 1 300px", maxWidth: 300 }}>
-              <div style={{ ...mediaBox, aspectRatio: "9/16" }}>
-                <video src="/davidreview.mp4" controls playsInline preload="metadata" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
-              </div>
-              <p style={{ textAlign: "center", fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 10 }}>{t.videoCaptionDavid}</p>
-            </div>
-          </div>
-          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: 18 }}>
-            {t.testimonials.map((tt) => (
-              <div key={tt.name} style={{ background: "rgba(232,116,43,0.07)", border: "1px solid rgba(232,116,43,0.35)", borderRadius: 16, padding: "26px 28px" }}>
-                <p style={{ fontSize: 16, lineHeight: 1.5, fontWeight: 500, color: "#f0ece4" }}>{tt.quote}</p>
-                <p style={{ marginTop: 14, fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.04em" }}>{tt.name.toUpperCase()} · {tt.type}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
