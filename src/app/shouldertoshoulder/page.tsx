@@ -379,21 +379,49 @@ export default function Join() {
           </div>
           </div>
 
-          {/* Selected on more than track record */}
-          <div style={{ marginTop: 56, paddingTop: 44, borderTop: "1px solid rgba(255,255,255,0.12)" }}>
-            <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto 32px" }}>
-              <span style={eyebrowS}>{t.selEyebrow}</span>
-              <h3 style={{ marginTop: 14, fontSize: "clamp(23px,3.2vw,32px)", fontWeight: 800, letterSpacing: "-0.02em", color: "#fff" }}>{t.selTitle}</h3>
-              <p style={{ marginTop: 10, fontSize: 16, lineHeight: 1.55, color: MUT }}>{t.selSub}</p>
-            </div>
-            <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 16 }}>
-              {t.selItems.map((s) => (
-                <div key={s.title} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 14, padding: "24px 22px" }}>
-                  <h4 style={{ fontSize: 17, fontWeight: 800, color: "#fff", letterSpacing: "-0.01em" }}>{s.title}</h4>
-                  <p style={{ marginTop: 7, fontSize: 14.5, lineHeight: 1.5, color: MUT }}>{s.desc}</p>
-                </div>
-              ))}
-            </div>
+        </div>
+      </section>
+
+      {/* SELECTION (white) */}
+      <section style={{ background: "#fff", color: INK, padding: SEC }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto 32px" }}>
+            <span style={eyebrowS}>{t.selEyebrow}</span>
+            <h2 style={h2(false)}>{t.selTitle}</h2>
+            <p style={{ marginTop: 10, fontSize: 16, lineHeight: 1.55, color: INK_MUT }}>{t.selSub}</p>
+          </div>
+          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 16 }}>
+            {t.selItems.map((s) => (
+              <div key={s.title} style={{ background: "#f4f1ea", border: "1px solid rgba(0,0,0,0.07)", borderRadius: 14, padding: "24px 22px" }}>
+                <h4 style={{ fontSize: 17, fontWeight: 800, color: INK, letterSpacing: "-0.01em" }}>{s.title}</h4>
+                <p style={{ marginTop: 7, fontSize: 14.5, lineHeight: 1.5, color: INK_MUT }}>{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OUR EVENTS (white) */}
+      <section style={{ background: "#fff", color: INK, padding: "0 24px 88px" }}>
+        <div style={{ textAlign: "center", marginBottom: 26 }}>
+          <span style={eyebrowS}>{t.eventEyebrow}</span>
+          <h2 style={h2(false)}>{t.eventLook}</h2>
+        </div>
+        <div style={{ maxWidth: 360, margin: "0 auto" }}>
+          <div style={{ position: "relative", width: "100%", aspectRatio: "9/16", borderRadius: 18, overflow: "hidden", border: "1px solid rgba(0,0,0,0.1)", background: "#000" }}>
+            {eventPlaying ? (
+              // eslint-disable-next-line jsx-a11y/media-has-caption
+              <video src="/event.mp4" autoPlay controls playsInline style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
+            ) : (
+              <button onClick={() => setEventPlaying(true)} aria-label="Play event video" style={{ position: "absolute", inset: 0, padding: 0, border: "none", background: "none", cursor: "pointer" }}>
+                <Image src="/event-live.jpg" alt="An STS event" fill className="photo-grade" style={{ objectFit: "cover" }} />
+                <span style={{ position: "absolute", left: 0, right: 0, bottom: "16%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <span style={{ width: 66, height: 66, borderRadius: "50%", background: "rgba(255,255,255,0.94)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 20px rgba(0,0,0,0.4)" }}>
+                    <span style={{ marginLeft: 5, borderStyle: "solid", borderWidth: "11px 0 11px 18px", borderColor: `transparent transparent transparent ${INK}` }} />
+                  </span>
+                </span>
+              </button>
+            )}
           </div>
         </div>
       </section>
@@ -415,7 +443,7 @@ export default function Join() {
       </section>
 
       {/* YOUR HOST */}
-      <section style={{ background: "#15130f", padding: "56px 24px 88px" }}>
+      <section style={{ background: "#0f0e0b", padding: "56px 24px 88px" }}>
         <div className="flex-wrap-col" style={{ maxWidth: 900, margin: "0 auto", display: "flex", gap: 44, alignItems: "center", flexWrap: "wrap" }}>
           <div style={{ flex: "0 0 auto" }}>
             <div style={{ position: "relative", width: 200, height: 240, borderRadius: 16, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)" }}>
@@ -436,57 +464,28 @@ export default function Join() {
       </section>
 
       {/* FAQ */}
-      <section style={{ background: "#fff", color: INK, padding: SEC }}>
+      <section style={{ background: "#0f0e0b", color: "#f0ece4", padding: SEC }}>
         <div style={{ maxWidth: 680, margin: "0 auto" }}>
-          <Head eye={t.faqEyebrow} title={t.faqTitle} dark={false} center />
+          <Head eye={t.faqEyebrow} title={t.faqTitle} dark center />
           {t.faqs.map((f, i) => (
-            <div key={i} style={{ borderBottom: "1px solid rgba(0,0,0,0.1)" }}>
+            <div key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
               <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ width: "100%", background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, padding: "20px 4px", textAlign: "left", fontFamily: "inherit" }}>
-                <span style={{ fontSize: 16.5, fontWeight: 700, color: INK }}>{f.q}</span>
-                <span style={{ flex: "0 0 auto", width: 27, height: 27, borderRadius: "50%", border: "1px solid rgba(0,0,0,0.2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 17, color: ACCENT, fontWeight: 600 }}>{openFaq === i ? "–" : "+"}</span>
+                <span style={{ fontSize: 16.5, fontWeight: 700, color: "#f0ece4" }}>{f.q}</span>
+                <span style={{ flex: "0 0 auto", width: 27, height: 27, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 17, color: ACCENT, fontWeight: 600 }}>{openFaq === i ? "–" : "+"}</span>
               </button>
-              {openFaq === i && <p style={{ padding: "0 4px 20px", maxWidth: 600, fontSize: 15.5, lineHeight: 1.55, color: INK_MUT }}>{f.a}</p>}
+              {openFaq === i && <p style={{ padding: "0 4px 20px", maxWidth: 600, fontSize: 15.5, lineHeight: 1.55, color: MUT }}>{f.a}</p>}
             </div>
           ))}
         </div>
       </section>
 
-      {/* EVENT VIDEO */}
-      <section style={{ background: "#0f0e0b", padding: "20px 24px 48px" }}>
-        <div style={{ textAlign: "center", marginBottom: 26 }}>
-          <span style={eyebrowS}>{t.eventEyebrow}</span>
-          <h2 style={h2(true)}>{t.eventLook}</h2>
-        </div>
-        <div style={{ maxWidth: 360, margin: "0 auto" }}>
-          <div style={{ position: "relative", width: "100%", aspectRatio: "9/16", borderRadius: 18, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)", background: "#000" }}>
-            {eventPlaying ? (
-              // eslint-disable-next-line jsx-a11y/media-has-caption
-              <video src="/event.mp4" autoPlay controls playsInline style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
-            ) : (
-              <button onClick={() => setEventPlaying(true)} aria-label="Play event video" style={{ position: "absolute", inset: 0, padding: 0, border: "none", background: "none", cursor: "pointer" }}>
-                <Image src="/event-live.jpg" alt="An STS event" fill className="photo-grade" style={{ objectFit: "cover" }} />
-                <span style={{ position: "absolute", left: 0, right: 0, bottom: "16%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <span style={{ width: 66, height: 66, borderRadius: "50%", background: "rgba(255,255,255,0.94)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 20px rgba(0,0,0,0.4)" }}>
-                    <span style={{ marginLeft: 5, borderStyle: "solid", borderWidth: "11px 0 11px 18px", borderColor: `transparent transparent transparent ${INK}` }} />
-                  </span>
-                </span>
-              </button>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section id="book" style={{ position: "relative", padding: 0 }}>
-        <div style={{ position: "absolute", inset: 0 }}>
-          <Image src="/mastermind.jpg" alt="" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 40%" }} />
-        </div>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(10,9,7,0.93)" }} />
-        <div style={{ position: "relative", maxWidth: 620, margin: "0 auto", padding: "62px 24px 92px", textAlign: "center" }}>
-          <h2 style={{ fontSize: "clamp(30px,4.4vw,48px)", fontWeight: 800, lineHeight: 1.08, letterSpacing: "-0.03em", color: "#fff" }}>{t.finalTitle}</h2>
-          <p style={{ margin: "16px auto 0", maxWidth: 400, fontSize: 16.5, lineHeight: 1.5, color: MUT }}>{t.finalSub}</p>
+      {/* FINAL CTA (white) */}
+      <section id="book" style={{ background: "#fff", color: INK }}>
+        <div style={{ maxWidth: 620, margin: "0 auto", padding: "80px 24px 92px", textAlign: "center" }}>
+          <h2 style={{ fontSize: "clamp(30px,4.4vw,48px)", fontWeight: 800, lineHeight: 1.08, letterSpacing: "-0.03em", color: INK }}>{t.finalTitle}</h2>
+          <p style={{ margin: "16px auto 0", maxWidth: 400, fontSize: 16.5, lineHeight: 1.5, color: INK_MUT }}>{t.finalSub}</p>
           <div style={{ marginTop: 30, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
-            <button onClick={book} className="btn-light" style={btnLight({ padding: "17px 34px", fontSize: 16 })}>{t.applyArrow}</button>
+            <button onClick={book} className="btn-primary" style={{ background: ACCENT, color: "#fff", border: "none", padding: "17px 34px", fontSize: 16, fontWeight: 700, borderRadius: 100, cursor: "pointer", fontFamily: "inherit" }}>{t.applyArrow}</button>
           </div>
         </div>
       </section>
