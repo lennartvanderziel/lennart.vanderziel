@@ -39,7 +39,7 @@ const copy = {
     painTogether: ["You decide with a team behind you", "Opportunities come from each other", "Support and accountability, every week"],
 
     changeEyebrow: "What you get",
-    changeTitle: "What changes when you join a founder circle",
+    changeTitle: "What joining a circle changes",
     changes: [
       { title: "Exponential growth", desc: "Normal founders grow linearly. Together we grow exponentially." },
       { title: "Feeling supported", desc: "A real team of founders around you, who know your business." },
@@ -49,7 +49,9 @@ const copy = {
     visionLine: "Imagine overcoming obstacles faster and acting on your biggest opportunities.",
     visionQ: "How much further ahead would your business be in a year?",
 
+    roomEyebrow: "The members",
     roomTitle: "Some of our members, based across 3 continents",
+    selEyebrow: "Selection",
     selTitle: "Not a typical founder community",
     selSub: "Every member is selected on more than track record",
     selItems: [
@@ -127,7 +129,9 @@ const copy = {
     visionLine: "Stel je voor: obstakels sneller overwinnen en inzetten op je grootste kansen.",
     visionQ: "Hoeveel verder zou je business zijn over een jaar?",
 
+    roomEyebrow: "De members",
     roomTitle: "Een aantal van onze members, verspreid over 3 continenten",
+    selEyebrow: "Selectie",
     selTitle: "Geen doorsnee foundercommunity",
     selSub: "Elke member wordt geselecteerd op meer dan track record",
     selItems: [
@@ -353,8 +357,9 @@ export default function Join() {
       {/* WHO'S IN THE ROOM */}
       <section style={{ background: "#15130f", color: "#f0ece4", padding: SEC }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 40px" }}>
-            <h2 style={{ ...h2(true), marginTop: 0 }}>{t.roomTitle}</h2>
+          <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}>
+            <span style={eyebrowS}>{t.roomEyebrow}</span>
+            <h2 style={h2(true)}>{t.roomTitle}</h2>
           </div>
           <div style={{ position: "relative" }}>
           <button aria-label="Previous" onClick={() => scrollMembers(-1)} style={arrowBtn("left")}>‹</button>
@@ -377,7 +382,8 @@ export default function Join() {
           {/* Selected on more than track record */}
           <div style={{ marginTop: 56, paddingTop: 44, borderTop: "1px solid rgba(255,255,255,0.12)" }}>
             <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto 32px" }}>
-              <h3 style={{ fontSize: "clamp(23px,3.2vw,32px)", fontWeight: 800, letterSpacing: "-0.02em", color: "#fff" }}>{t.selTitle}</h3>
+              <span style={eyebrowS}>{t.selEyebrow}</span>
+              <h3 style={{ marginTop: 14, fontSize: "clamp(23px,3.2vw,32px)", fontWeight: 800, letterSpacing: "-0.02em", color: "#fff" }}>{t.selTitle}</h3>
               <p style={{ marginTop: 10, fontSize: 16, lineHeight: 1.55, color: MUT }}>{t.selSub}</p>
             </div>
             <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 16 }}>
