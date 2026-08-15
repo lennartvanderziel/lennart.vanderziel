@@ -26,15 +26,31 @@ function useCollection<T extends { id: string }>(name: string, fallback: T[]): [
 
   useEffect(() => {
     let alive = true;
-    fetch(`/api/crm/${name}`)
-      .then((r) => r.json())
-      .then((j) => {
-        if (!alive || !j.ok) return;
-        const recs = j.records as T[];
-        setItems(recs.length === 0 && fallback.length > 0 ? fallback : recs);
-      })
-      .catch(() => {})
-      .finally(() => alive && setLoading(false));
+    // Retry a couple of times: the first hit after the serverless function has
+    // gone cold can 500 on the Supabase connection, and we don't want that to
+    // leave the CRM showing an empty list until a manual reload.
+    const load = (attempt: number) => {
+      fetch(`/api/crm/${name}`)
+        .then((r) => r.json())
+        .then((j) => {
+          if (!alive) return;
+          if (j.ok) {
+            const recs = j.records as T[];
+            setItems(recs.length === 0 && fallback.length > 0 ? fallback : recs);
+            setLoading(false);
+          } else if (attempt < 3) {
+            setTimeout(() => load(attempt + 1), 700 * attempt);
+          } else {
+            setLoading(false);
+          }
+        })
+        .catch(() => {
+          if (!alive) return;
+          if (attempt < 3) setTimeout(() => load(attempt + 1), 700 * attempt);
+          else setLoading(false);
+        });
+    };
+    load(1);
     return () => {
       alive = false;
     };

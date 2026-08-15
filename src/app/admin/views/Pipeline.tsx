@@ -5,7 +5,7 @@ import { ContactCard } from "../components/ContactCard";
 import { PIPELINE_ORDER, leadStatusConfig } from "../statuses";
 import { DEFAULT_SEGMENT, SEGMENTS, segmentMeta } from "../segments";
 import { DAY, uid, type Lead, type LeadStatus } from "../types";
-import { BORDER, CARD, CARD_2, FAINT, FILL, GREEN, INK, LINE, MUTED, btnS, ghostS, inputS } from "../theme";
+import { ACCENT, BORDER, CARD, CARD_2, FAINT, FILL, GREEN, INK, LINE, MUTED, btnS, ghostS, inputS, labelS } from "../theme";
 
 type SegFilter = "all" | string;
 
@@ -13,6 +13,7 @@ export function Pipeline({ crm }: { crm: Crm }) {
   const { leads, saveLeads, now } = crm;
   const [seg, setSeg] = useState<SegFilter>("all");
   const [q, setQ] = useState("");
+  const [tab, setTab] = useState<"pipeline" | "table" | "insights">("pipeline");
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const segOf = (l: Lead) => l.segment ?? DEFAULT_SEGMENT;
@@ -59,6 +60,18 @@ export function Pipeline({ crm }: { crm: Crm }) {
         </div>
       </header>
 
+      {/* Tabs — Pipeline (kanban) · Table (list) · Insights (numbers) */}
+      <div style={{ display: "flex", gap: 2, marginBottom: 16, borderBottom: BORDER }}>
+        {([["pipeline", "Pipeline"], ["table", "Table"], ["insights", "Insights"]] as const).map(([id, label]) => {
+          const on = tab === id;
+          return (
+            <button key={id} onClick={() => setTab(id)} style={{ background: "transparent", border: "none", borderBottom: on ? `2px solid ${ACCENT}` : "2px solid transparent", color: on ? "#fff" : MUTED, fontWeight: on ? 800 : 600, fontSize: 13.5, padding: "9px 14px", cursor: "pointer", fontFamily: "inherit", marginBottom: -1 }}>
+              {label}
+            </button>
+          );
+        })}
+      </div>
+
       {/* Toolbar: search + segment chips */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 14, flexWrap: "wrap", marginBottom: 16 }}>
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
@@ -74,30 +87,35 @@ export function Pipeline({ crm }: { crm: Crm }) {
         <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search contacts…" style={{ ...inputS, width: 240 }} />
       </div>
 
-      {/* Kanban board */}
-      <div style={{ display: "flex", gap: 14, overflowX: "auto", paddingBottom: 12, alignItems: "flex-start" }}>
-        {PIPELINE_ORDER.map((status) => {
-          const cfg = leadStatusConfig[status];
-          const column = visible.filter((l) => l.status === status);
-          return (
-            <div key={status} style={{ flex: "0 0 288px", width: 288 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "0 4px 12px" }}>
-                <span style={{ width: 7, height: 7, borderRadius: "50%", background: cfg.color }} />
-                <span style={{ fontSize: 12, fontWeight: 800, color: INK, textTransform: "uppercase", letterSpacing: "0.04em" }}>{cfg.label}</span>
-                <span style={{ fontSize: 11, fontWeight: 800, color: FAINT, background: FILL, borderRadius: 100, padding: "1px 8px" }}>{column.length}</span>
+      {/* Pipeline — kanban board */}
+      {tab === "pipeline" && (
+        <div style={{ display: "flex", gap: 14, overflowX: "auto", paddingBottom: 12, alignItems: "flex-start" }}>
+          {PIPELINE_ORDER.map((status) => {
+            const cfg = leadStatusConfig[status];
+            const column = visible.filter((l) => l.status === status);
+            return (
+              <div key={status} style={{ flex: "0 0 288px", width: 288 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "0 4px 12px" }}>
+                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: cfg.color }} />
+                  <span style={{ fontSize: 12, fontWeight: 800, color: INK, textTransform: "uppercase", letterSpacing: "0.04em" }}>{cfg.label}</span>
+                  <span style={{ fontSize: 11, fontWeight: 800, color: FAINT, background: FILL, borderRadius: 100, padding: "1px 8px" }}>{column.length}</span>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: 10, minHeight: 60 }}>
+                  {column.length === 0 && (
+                    <div style={{ border: `1px dashed ${LINE}`, borderRadius: 14, padding: "18px 12px", textAlign: "center", fontSize: 12, color: FAINT }}>Empty</div>
+                  )}
+                  {column.map((lead) => (
+                    <LeadCard key={lead.id} lead={lead} now={now} onOpen={() => setSelectedId(lead.id)} />
+                  ))}
+                </div>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10, minHeight: 60 }}>
-                {column.length === 0 && (
-                  <div style={{ border: `1px dashed ${LINE}`, borderRadius: 14, padding: "18px 12px", textAlign: "center", fontSize: 12, color: FAINT }}>Empty</div>
-                )}
-                {column.map((lead) => (
-                  <LeadCard key={lead.id} lead={lead} now={now} onOpen={() => setSelectedId(lead.id)} />
-                ))}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
+
+      {tab === "table" && <LeadTable rows={visible} now={now} onOpen={setSelectedId} />}
+      {tab === "insights" && <Insights rows={visible} />}
 
       {selected && <ContactCard lead={selected} onSave={update} onClose={() => setSelectedId(null)} onDelete={remove} />}
     </>
@@ -157,4 +175,96 @@ const miniBtn: React.CSSProperties = { background: CARD_2, border: BORDER, color
 
 function Tag({ label, color }: { label: string; color: string }) {
   return <span style={{ fontSize: 10.5, fontWeight: 700, color, background: `${color}1e`, border: `1px solid ${color}33`, borderRadius: 100, padding: "2px 8px" }}>{label}</span>;
+}
+
+const COLS = "1.8fr 1fr 0.8fr 1fr 1.4fr 0.5fr";
+function LeadTable({ rows, now, onOpen }: { rows: Lead[]; now: number; onOpen: (id: string) => void }) {
+  return (
+    <div style={{ background: CARD, border: BORDER, borderRadius: 16, overflow: "hidden" }}>
+      <div style={{ display: "grid", gridTemplateColumns: COLS, gap: 12, padding: "11px 18px", borderBottom: BORDER }}>
+        {["Contact", "Stage", "Segment", "Revenue", "Email / phone", "Age"].map((h) => (
+          <span key={h} style={{ ...labelS, fontSize: 9.5 }}>{h}</span>
+        ))}
+      </div>
+      {rows.length === 0 && <div style={{ padding: "26px 18px", color: FAINT, fontSize: 13 }}>No contacts in this view.</div>}
+      {rows.map((l) => {
+        const meta = segmentMeta(l.segment);
+        const cfg = leadStatusConfig[l.status];
+        const age = now ? Math.max(0, Math.floor((now - l.createdAt) / DAY)) : 0;
+        const initials = l.name.split(" ").map((p) => p[0]).slice(0, 2).join("").toUpperCase();
+        return (
+          <button key={l.id} onClick={() => onOpen(l.id)} style={{ width: "100%", display: "grid", gridTemplateColumns: COLS, gap: 12, alignItems: "center", padding: "11px 18px", borderBottom: BORDER, background: "transparent", cursor: "pointer", fontFamily: "inherit", textAlign: "left" }}>
+            <span style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
+              <span style={{ width: 28, height: 28, borderRadius: 8, background: `${meta.color}26`, color: meta.color, display: "grid", placeItems: "center", fontSize: 11, fontWeight: 800, flexShrink: 0 }}>{initials || "?"}</span>
+              <span style={{ minWidth: 0 }}>
+                <span style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#fff", ...ellip }}>{l.name}</span>
+                <span style={{ display: "block", fontSize: 11, color: FAINT, ...ellip }}>{l.role || l.business || meta.label}</span>
+              </span>
+            </span>
+            <span><Tag label={cfg.label} color={cfg.color} /></span>
+            <span style={{ fontSize: 12, color: MUTED }}>{meta.short}</span>
+            <span style={{ fontSize: 12.5, color: l.revenue ? INK : FAINT, ...ellip }}>{l.revenue || "—"}</span>
+            <span style={{ fontSize: 12, color: MUTED, ...ellip }}>{l.email || l.whatsapp || "—"}</span>
+            <span style={{ fontSize: 12, color: FAINT }}>{age}d</span>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+function Insights({ rows }: { rows: Lead[] }) {
+  const total = rows.length;
+  const byStage = PIPELINE_ORDER.map((s) => ({ s, n: rows.filter((l) => l.status === s).length }));
+  const bySeg = SEGMENTS.map((s) => ({ s, n: rows.filter((l) => (l.segment ?? "shoulder_to_shoulder") === s.id).length }));
+  const members = rows.filter((l) => l.status === "member").length;
+  const active = rows.filter((l) => ["new", "contacted", "warming", "exploratory", "decision"].includes(l.status)).length;
+  const withContact = rows.filter((l) => l.email || l.whatsapp).length;
+  const max = Math.max(1, ...byStage.map((x) => x.n));
+
+  const stat = (label: string, value: string | number, color = INK) => (
+    <div style={{ background: CARD, border: BORDER, borderRadius: 14, padding: "18px 20px" }}>
+      <div style={{ ...labelS, fontSize: 10 }}>{label}</div>
+      <div style={{ fontSize: 30, fontWeight: 800, color, marginTop: 8, letterSpacing: "-0.02em" }}>{value}</div>
+    </div>
+  );
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(160px,1fr))", gap: 14 }}>
+        {stat("Total contacts", total)}
+        {stat("Active in pipeline", active, ACCENT)}
+        {stat("Members won", members, GREEN)}
+        {stat("With contact info", `${total ? Math.round((withContact / total) * 100) : 0}%`)}
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 18 }}>
+        <div style={{ background: CARD, border: BORDER, borderRadius: 16, padding: "22px 24px" }}>
+          <div style={{ fontSize: 15, fontWeight: 800, color: "#fff", marginBottom: 16 }}>By stage</div>
+          {byStage.map(({ s, n }) => {
+            const cfg = leadStatusConfig[s];
+            return (
+              <div key={s} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
+                <span style={{ width: 110, fontSize: 12.5, color: MUTED }}>{cfg.label}</span>
+                <span style={{ flex: 1, height: 8, background: FILL, borderRadius: 100, overflow: "hidden" }}>
+                  <span style={{ display: "block", height: "100%", width: `${(n / max) * 100}%`, background: cfg.color, borderRadius: 100 }} />
+                </span>
+                <span style={{ width: 34, textAlign: "right", fontSize: 13, fontWeight: 800, color: INK }}>{n}</span>
+              </div>
+            );
+          })}
+        </div>
+        <div style={{ background: CARD, border: BORDER, borderRadius: 16, padding: "22px 24px" }}>
+          <div style={{ fontSize: 15, fontWeight: 800, color: "#fff", marginBottom: 16 }}>By segment</div>
+          {bySeg.map(({ s, n }) => (
+            <div key={s.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 0", borderBottom: BORDER }}>
+              <span style={{ display: "flex", alignItems: "center", gap: 9, fontSize: 13, color: INK }}>
+                <span style={{ width: 9, height: 9, borderRadius: "50%", background: s.color }} />{s.label}
+              </span>
+              <span style={{ fontSize: 14, fontWeight: 800, color: INK }}>{n}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
