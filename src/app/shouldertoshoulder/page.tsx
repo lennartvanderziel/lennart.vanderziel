@@ -364,7 +364,7 @@ export default function Join() {
           <div style={{ position: "relative" }}>
           <button aria-label="Previous" onClick={() => scrollMembers(-1)} style={arrowBtn("left")}>‹</button>
           <button aria-label="Next" onClick={() => scrollMembers(1)} style={arrowBtn("right")}>›</button>
-          <div ref={scroller} className="member-scroll" style={{ display: "flex", gap: 18, overflowX: "auto", scrollSnapType: "x mandatory", padding: "4px 8px 12px", WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}>
+          <div ref={scroller} className="member-scroll" style={{ display: "flex", gap: 18, overflowX: "auto", scrollSnapType: "x mandatory", padding: "4px 8px 12px", WebkitOverflowScrolling: "touch", scrollbarWidth: "none", maskImage: "linear-gradient(to right, transparent 0, #000 30px, #000 calc(100% - 30px), transparent 100%)", WebkitMaskImage: "linear-gradient(to right, transparent 0, #000 30px, #000 calc(100% - 30px), transparent 100%)" }}>
             {members.map((m) => (
               <div key={m.name} style={{ flex: "0 0 auto", width: 170, textAlign: "center", scrollSnapAlign: "center" }}>
                 <div style={{ position: "relative", width: 118, height: 118, borderRadius: "50%", margin: "0 auto", overflow: "hidden", background: `color-mix(in srgb, ${ACCENT} 20%, #e7e0d4)`, display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid rgba(0,0,0,0.05)" }}>
