@@ -2,9 +2,9 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { useLang, LanguageToggle } from "@/components/i18n";
+import ApplyModal from "@/components/ApplyModal";
 
 const ACCENT = "#E8742B";
-const CAL_LINK = "https://calendar.app.google/wguaVQyvxW8Rbsxx9";
 
 const MUT = "#c2bbae";
 const MUT_SOFT = "#d8d2c7";
@@ -188,12 +188,12 @@ export default function Join() {
   const t = copy[lang];
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [eventPlaying, setEventPlaying] = useState(false);
+  const [applyOpen, setApplyOpen] = useState(false);
   const scroller = useRef<HTMLDivElement>(null);
   const scrollMembers = (dir: number) => scroller.current?.scrollBy({ left: dir * 360, behavior: "smooth" });
 
   function book() {
-    if (CAL_LINK) { window.open(CAL_LINK, "_blank"); return; }
-    document.getElementById("book")?.scrollIntoView({ behavior: "smooth" });
+    setApplyOpen(true);
   }
 
   const SEC = "88px 24px";
@@ -505,6 +505,8 @@ export default function Join() {
           </div>
         </div>
       </footer>
+
+      <ApplyModal open={applyOpen} onClose={() => setApplyOpen(false)} />
     </div>
   );
 }
