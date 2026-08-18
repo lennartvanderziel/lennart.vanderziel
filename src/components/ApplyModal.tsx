@@ -11,10 +11,10 @@ const copy = {
     name: "Full name",
     email: "Email address",
     whatsapp: "WhatsApp (incl. country code)",
-    instagram: "Instagram (optional)",
+    instagram: "Instagram / LinkedIn",
     business: "What does your business do?",
     revenueLabel: "Monthly revenue",
-    revenue: ["Pre-revenue / early stage", "Less than €10k / month", "€10k – €25k / month", "€25k+ / month"],
+    revenue: ["Pre-revenue / early stage", "Less than €10k / month", "€10k – €25k / month", "€25k – €50k / month", "€50k – €100k / month", "€100k+ / month"],
     why: "Why do you want to join, and what would make it valuable?",
     sourceLabel: "How did you hear about us?",
     source: ["Lennart", "A member or referral", "A friend", "Instagram", "Somewhere else"],
@@ -31,10 +31,10 @@ const copy = {
     name: "Volledige naam",
     email: "E-mailadres",
     whatsapp: "WhatsApp (incl. landcode)",
-    instagram: "Instagram (optioneel)",
+    instagram: "Instagram / LinkedIn",
     business: "Wat doet je bedrijf?",
     revenueLabel: "Maandelijkse omzet",
-    revenue: ["Pre-revenue / vroege fase", "Minder dan €10k / maand", "€10k – €25k / maand", "€25k+ / maand"],
+    revenue: ["Pre-revenue / vroege fase", "Minder dan €10k / maand", "€10k – €25k / maand", "€25k – €50k / maand", "€50k – €100k / maand", "€100k+ / maand"],
     why: "Waarom wil je meedoen, en wat maakt het waardevol voor jou?",
     sourceLabel: "Hoe hoorde je van ons?",
     source: ["Lennart", "Een lid of doorverwijzing", "Een vriend", "Instagram", "Ergens anders"],
@@ -61,7 +61,7 @@ export default function ApplyModal({ open, onClose }: { open: boolean; onClose: 
   if (!open) return null;
 
   const set = (k: keyof typeof d) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => setD({ ...d, [k]: e.target.value });
-  const valid = d.name.trim().length > 1 && /.+@.+\..+/.test(d.email) && d.business.trim().length > 1 && d.revenue && d.why.trim().length > 1;
+  const valid = d.name.trim().length > 1 && /.+@.+\..+/.test(d.email) && d.whatsapp.trim().length > 4 && d.instagram.trim().length > 1 && d.business.trim().length > 1 && Boolean(d.revenue) && d.why.trim().length > 1 && Boolean(d.source);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -103,15 +103,15 @@ export default function ApplyModal({ open, onClose }: { open: boolean; onClose: 
               <input type="text" name="company_website" tabIndex={-1} autoComplete="off" value={hp} onChange={(e) => setHp(e.target.value)} style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }} aria-hidden="true" />
               <input required placeholder={t.name} value={d.name} onChange={set("name")} style={field} />
               <input required type="email" placeholder={t.email} value={d.email} onChange={set("email")} style={field} />
-              <input type="tel" placeholder={t.whatsapp} value={d.whatsapp} onChange={set("whatsapp")} style={field} />
-              <input placeholder={t.instagram} value={d.instagram} onChange={set("instagram")} style={field} />
+              <input required type="tel" placeholder={t.whatsapp} value={d.whatsapp} onChange={set("whatsapp")} style={field} />
+              <input required placeholder={t.instagram} value={d.instagram} onChange={set("instagram")} style={field} />
               <textarea required rows={2} placeholder={t.business} value={d.business} onChange={set("business")} style={{ ...field, resize: "vertical" }} />
               <select required value={d.revenue} onChange={set("revenue")} style={{ ...field, color: d.revenue ? "#15130f" : "#8a847a" }}>
                 <option value="" disabled>{t.revenueLabel}</option>
                 {t.revenue.map((r) => <option key={r} value={r}>{r}</option>)}
               </select>
               <textarea required rows={3} placeholder={t.why} value={d.why} onChange={set("why")} style={{ ...field, resize: "vertical" }} />
-              <select value={d.source} onChange={set("source")} style={{ ...field, color: d.source ? "#15130f" : "#8a847a" }}>
+              <select required value={d.source} onChange={set("source")} style={{ ...field, color: d.source ? "#15130f" : "#8a847a" }}>
                 <option value="" disabled>{t.sourceLabel}</option>
                 {t.source.map((s) => <option key={s} value={s}>{s}</option>)}
               </select>

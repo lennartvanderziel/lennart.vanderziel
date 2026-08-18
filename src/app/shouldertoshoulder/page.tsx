@@ -98,7 +98,7 @@ const copy = {
     eventLook: "Bringing the members together",
     finalTitle: "Ready to grow faster?",
     finalSub: "Apply for a fit call. 30 minutes, no pitch.",
-    footer: "Shoulder to Shoulder · By invitation only",
+    footer: "Shoulder to Shoulder",
     fullDetails: "Full details",
   },
 
@@ -178,7 +178,7 @@ const copy = {
     eventLook: "De members samenbrengen",
     finalTitle: "Klaar om sneller te groeien?",
     finalSub: "Meld je aan voor een fit call. 30 minuten, geen pitch.",
-    footer: "Shoulder to Shoulder · Alleen op uitnodiging",
+    footer: "Shoulder to Shoulder",
     fullDetails: "Alle details",
   },
 };
@@ -234,10 +234,6 @@ export default function Join() {
         <Image src="/founders.jpg" alt="Founders together" fill className="ken-burns photo-grade" style={{ objectFit: "cover" }} priority />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,9,7,0.6) 0%, rgba(10,9,7,0.35) 40%, rgba(10,9,7,0.8) 74%, rgba(10,9,7,0.98) 100%)" }} />
         <div className="fade-up" style={{ position: "relative", maxWidth: 1080, margin: "0 auto", width: "100%", padding: "0 24px 56px" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: "1px solid rgba(255,255,255,0.4)", borderRadius: 100, padding: "7px 15px", marginBottom: 24, backdropFilter: "blur(8px)", background: "rgba(255,255,255,0.14)" }}>
-            <span className="pulse-dot" style={{ width: 7, height: 7, borderRadius: "50%", background: ACCENT }} />
-            <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#fff" }}>{t.byInvite}</span>
-          </div>
           <h1 style={{ fontSize: "clamp(38px,6vw,72px)", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#fff", maxWidth: 860, marginBottom: 22, textShadow: "0 2px 30px rgba(0,0,0,0.5)" }}>
             {t.heroTitleA}<span style={{ color: ACCENT }}>{t.heroTitleB}</span>
           </h1>
@@ -447,7 +443,7 @@ export default function Join() {
         <div className="flex-wrap-col" style={{ maxWidth: 900, margin: "0 auto", display: "flex", gap: 44, alignItems: "center", flexWrap: "wrap" }}>
           <div style={{ flex: "0 0 auto" }}>
             <div style={{ position: "relative", width: 200, height: 240, borderRadius: 16, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)" }}>
-              <Image src="/lennart.jpg" alt={t.hostName} fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 20%" }} />
+              <Image src="/coaching-portrait.jpg" alt={t.hostName} fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 15%" }} />
             </div>
           </div>
           <div style={{ flex: "1 1 340px" }}>
@@ -501,7 +497,6 @@ export default function Join() {
           <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
             <LanguageToggle dark />
             <a href="https://www.instagram.com/lennartvanderziel/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "#9a9389", fontSize: 13 }}>Instagram</a>
-            <a href="/shoulder-to-shoulder" style={{ textDecoration: "none", color: "#9a9389", fontSize: 13 }}>{t.fullDetails}</a>
           </div>
         </div>
       </footer>
