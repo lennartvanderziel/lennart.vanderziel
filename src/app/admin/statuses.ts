@@ -30,3 +30,7 @@ export const memberStatusColor: Record<MemberStatus, string> = {
   paused: ACCENT_TEXT,
   churned: RED,
 };
+
+/** The active deal-flow shown on the Leads board (Contacts holds everyone,
+ * including "wants later" and "declined"). Ends at member = won. */
+export const BOARD_STAGES: LeadStatus[] = ["new", "contacted", "warming", "exploratory", "decision", "member"];

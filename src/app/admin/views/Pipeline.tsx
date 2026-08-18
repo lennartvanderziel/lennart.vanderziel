@@ -2,7 +2,7 @@
 import { useMemo, useState } from "react";
 import type { Crm } from "../useCrm";
 import { ContactCard } from "../components/ContactCard";
-import { PIPELINE_ORDER, leadStatusConfig } from "../statuses";
+import { BOARD_STAGES, leadStatusConfig } from "../statuses";
 import { DEFAULT_SEGMENT, SEGMENTS, segmentMeta } from "../segments";
 import { DAY, uid, type Lead, type LeadStatus } from "../types";
 import { ACCENT, BORDER, CARD, CARD_2, FAINT, FILL, GREEN, INK, LINE, MUTED, btnS, ghostS, inputS, labelS } from "../theme";
@@ -17,18 +17,19 @@ export function Pipeline({ crm }: { crm: Crm }) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const segOf = (l: Lead) => l.segment ?? DEFAULT_SEGMENT;
+  const pipelineLeads = useMemo(() => leads.filter((l) => BOARD_STAGES.includes(l.status)), [leads]);
   const visible = useMemo(() => {
     const query = q.trim().toLowerCase();
-    return leads.filter(
+    return pipelineLeads.filter(
       (l) =>
         (seg === "all" || segOf(l) === seg) &&
         (!query || `${l.name} ${l.email} ${l.business} ${l.whatsapp}`.toLowerCase().includes(query))
     );
-  }, [leads, seg, q]);
+  }, [pipelineLeads, seg, q]);
 
   const activeCount = visible.filter((l) => ["new", "contacted", "warming", "exploratory", "decision"].includes(l.status)).length;
-  const segCounts: Record<string, number> = { all: leads.length };
-  for (const s of SEGMENTS) segCounts[s.id] = leads.filter((l) => segOf(l) === s.id).length;
+  const segCounts: Record<string, number> = { all: pipelineLeads.length };
+  for (const s of SEGMENTS) segCounts[s.id] = pipelineLeads.filter((l) => segOf(l) === s.id).length;
 
   const update = (next: Lead) => saveLeads(leads.map((l) => (l.id === next.id ? next : l)));
   const remove = (id: string) => { saveLeads(leads.filter((l) => l.id !== id)); setSelectedId(null); };
@@ -90,7 +91,7 @@ export function Pipeline({ crm }: { crm: Crm }) {
       {/* Pipeline — kanban board */}
       {tab === "pipeline" && (
         <div style={{ display: "flex", gap: 14, overflowX: "auto", paddingBottom: 12, alignItems: "flex-start" }}>
-          {PIPELINE_ORDER.map((status) => {
+          {BOARD_STAGES.map((status) => {
             const cfg = leadStatusConfig[status];
             const column = visible.filter((l) => l.status === status);
             return (
@@ -215,7 +216,7 @@ function LeadTable({ rows, now, onOpen }: { rows: Lead[]; now: number; onOpen: (
 
 function Insights({ rows }: { rows: Lead[] }) {
   const total = rows.length;
-  const byStage = PIPELINE_ORDER.map((s) => ({ s, n: rows.filter((l) => l.status === s).length }));
+  const byStage = BOARD_STAGES.map((s) => ({ s, n: rows.filter((l) => l.status === s).length }));
   const bySeg = SEGMENTS.map((s) => ({ s, n: rows.filter((l) => (l.segment ?? "shoulder_to_shoulder") === s.id).length }));
   const members = rows.filter((l) => l.status === "member").length;
   const active = rows.filter((l) => ["new", "contacted", "warming", "exploratory", "decision"].includes(l.status)).length;

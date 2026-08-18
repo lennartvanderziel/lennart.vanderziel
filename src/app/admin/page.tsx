@@ -11,6 +11,7 @@ import { Members } from "./views/Members";
 import { Circles } from "./views/Circles";
 import { Sessions } from "./views/Sessions";
 import { Accountability } from "./views/Accountability";
+import { Contacts } from "./views/Contacts";
 
 // Auth: /admin is gated by server-side middleware (src/middleware.ts). Dark
 // "Command Center" theme lives in ./theme (separate from the public palette).
@@ -63,7 +64,7 @@ export default function Admin() {
         {view === "accountability" && <Accountability crm={crm} />}
         {view === "circles" && <Circles crm={crm} />}
         {view === "sessions" && <Sessions crm={crm} />}
-        {view === "contacts" && <ComingSoon title="Contacts" note="Every person you know — leads and not-yet-leads — with full contact cards. Building this next." />}
+        {view === "contacts" && <Contacts crm={crm} />}
         {view === "proposals" && <ComingSoon title="Proposals" note="Send proposals, track pipeline value, and see what's signed. Part of the Get-Paid phase." />}
         {view === "invoices" && <ComingSoon title="Invoices" note="Invoicing through Stripe, with payment status synced back here." />}
         {view === "finance" && <ComingSoon title="Finance" note="Revenue, costs and profit at a glance, feeding your dashboard." />}

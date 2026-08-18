@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { submitToInbox } from "@/lib/submit";
 
 const ACCENT = "#E8742B";
 
@@ -62,20 +61,30 @@ export default function ApplicationForm() {
 
   async function submit() {
     setStatus("sending");
-    const ok = await submitToInbox(
-      `New STS application — ${data.firstName} ${data.lastName}`,
-      {
-        Name: `${data.firstName} ${data.lastName}`,
-        Email: data.email,
-        WhatsApp: data.whatsapp,
-        Instagram: data.instagram || "—",
-        Business: data.business,
-        "Monthly revenue": data.revenue,
-        "Why join / what would make it valuable": data.why,
-        "How did you hear about us": data.source,
-      },
-      hp
-    );
+    let ok = false;
+    try {
+      // /api/apply stores the applicant straight into the CRM (as a new lead)
+      // and emails Lennart a one-click "approve & send call link" button.
+      const res = await fetch("/api/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          whatsapp: data.whatsapp,
+          instagram: data.instagram,
+          business: data.business,
+          revenue: data.revenue,
+          why: data.why,
+          source: data.source,
+          company_website: hp, // honeypot — bots fill this, humans never do
+        }),
+      });
+      ok = !!(await res.json().catch(() => ({ ok: false }))).ok;
+    } catch {
+      ok = false;
+    }
     setStatus(ok ? "done" : "error");
   }
 
