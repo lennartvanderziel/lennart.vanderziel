@@ -7,7 +7,7 @@ import { getSupabase } from "@/lib/supabaseServer";
 // Lennart a notification with a one-click "Approve & send call link" button.
 
 const SITE = "https://www.lennartvanderziel.com";
-const NOTIFY_TO = "l.vanderziel@gmail.com";
+const NOTIFY_TO = "lennart@shouldertoshoulder.club";
 
 export function signId(id: string): string {
   return createHmac("sha256", process.env.APPROVE_SECRET || "sts-dev-secret")
