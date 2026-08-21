@@ -189,7 +189,7 @@ export default function ApplicationForm() {
       )}
 
       {status === "error" && (
-        <p style={{ marginTop: 16, fontSize: 13.5, color: "#c0392b" }}>Something went wrong sending your application. Please email l.vanderziel@gmail.com directly.</p>
+        <p style={{ marginTop: 16, fontSize: 13.5, color: "#c0392b" }}>Something went wrong sending your application. Please email lennart@shouldertoshoulder.club directly.</p>
       )}
 
       {/* Nav buttons (radio steps 4 auto-advance, step 6 needs submit) */}

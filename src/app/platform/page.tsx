@@ -75,7 +75,7 @@ export default function PlatformLogin() {
               </button>
             </form>
             <p style={{ marginTop: 18, textAlign: "center", fontSize: 13, color: "#8a847a" }}>
-              Forgot your password? <a href="mailto:l.vanderziel@gmail.com" style={{ color: ACCENT, fontWeight: 600, textDecoration: "none" }}>Contact us</a>
+              Forgot your password? <a href="mailto:lennart@shouldertoshoulder.club" style={{ color: ACCENT, fontWeight: 600, textDecoration: "none" }}>Contact us</a>
             </p>
           </div>
           <p style={{ marginTop: 22, textAlign: "center", fontSize: 12.5, color: "rgba(255,255,255,0.45)" }}>

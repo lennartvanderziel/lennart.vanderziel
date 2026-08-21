@@ -23,7 +23,7 @@ const copy = {
     doneTitle: "Application received",
     doneBody: "We review every application personally. If it's a strong fit, you'll get an email with a link to book your call.",
     close: "Close",
-    err: "Something went wrong. Please email l.vanderziel@gmail.com.",
+    err: "Something went wrong. Please email lennart@shouldertoshoulder.club.",
   },
   nl: {
     title: "Meld je aan voor een fit call",
@@ -43,7 +43,7 @@ const copy = {
     doneTitle: "Aanmelding ontvangen",
     doneBody: "We bekijken elke aanmelding persoonlijk. Bij een sterke match krijg je een e-mail met een link om je call te boeken.",
     close: "Sluiten",
-    err: "Er ging iets mis. Mail l.vanderziel@gmail.com.",
+    err: "Er ging iets mis. Mail lennart@shouldertoshoulder.club.",
   },
 };
 

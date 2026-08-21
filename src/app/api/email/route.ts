@@ -25,7 +25,7 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         from: "Lennart van der Ziel <lennart@shouldertoshoulder.club>",
         to: [to],
-        reply_to: "l.vanderziel@gmail.com",
+        reply_to: "lennart@shouldertoshoulder.club",
         subject,
         text: body,
       }),

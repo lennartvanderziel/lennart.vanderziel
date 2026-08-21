@@ -41,7 +41,7 @@ export async function POST(req: Request) {
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
       body: JSON.stringify({
         from: "Website <lennart@shouldertoshoulder.club>",
-        to: ["l.vanderziel@gmail.com"],
+        to: ["lennart@shouldertoshoulder.club"],
         subject: data.subject,
         text: lines,
       }),
@@ -50,7 +50,7 @@ export async function POST(req: Request) {
   }
 
   // Fallback: FormSubmit (until Resend is configured)
-  const res = await fetch("https://formsubmit.co/ajax/l.vanderziel@gmail.com", {
+  const res = await fetch("https://formsubmit.co/ajax/lennart@shouldertoshoulder.club", {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },
     body: JSON.stringify({ _subject: data.subject, _template: "table", ...data.payload }),
