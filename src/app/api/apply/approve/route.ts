@@ -9,8 +9,8 @@ const CAL_URL = process.env.CAL_BOOKING_URL || "https://calendar.app.google/wgua
 
 function page(title: string, body: string) {
   return new NextResponse(
-    `<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><body style="font-family:system-ui,sans-serif;background:#0f0e0b;color:#f0ece4;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center;margin:0"><div style="max-width:420px;padding:24px"><h1 style="color:#E8742B;font-size:22px">${title}</h1><p style="color:#c2bbae;line-height:1.5">${body}</p></div></body>`,
-    { headers: { "Content-Type": "text/html" } }
+    `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><body style="font-family:system-ui,sans-serif;background:#0f0e0b;color:#f0ece4;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center;margin:0"><div style="max-width:420px;padding:24px"><h1 style="color:#E8742B;font-size:22px">${title}</h1><p style="color:#c2bbae;line-height:1.5">${body}</p></div></body>`,
+    { headers: { "Content-Type": "text/html; charset=utf-8" } }
   );
 }
 
