@@ -41,8 +41,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "Bad request" }, { status: 400 });
   }
 
-  // Honeypot — bots fill this hidden field, humans never do.
-  if (b.company_website) return NextResponse.json({ ok: true });
+  // Honeypot — bots (and occasionally an overzealous autofill) fill this
+  // hidden field. We never silently drop a submission on this alone: a false
+  // positive here would mean losing a real applicant with no trace. Instead
+  // we flag it in the source so it still shows up for manual review.
+  const flaggedAsSpam = Boolean(b.hp_field_sts);
 
   const name = (b.name || `${b.firstName || ""} ${b.lastName || ""}`).trim();
   const email = (b.email || "").trim();
@@ -60,7 +63,7 @@ export async function POST(req: Request) {
     instagram: (b.instagram || "").trim(),
     business: (b.business || "").trim(),
     revenue: (b.revenue || "").trim(),
-    source: (b.source || "Landing page").trim(),
+    source: (flaggedAsSpam ? "⚠️ Flagged (honeypot) — " : "") + (b.source || "Landing page").trim(),
     segment: "shoulder_to_shoulder",
     status: "new",
     notes: (b.why || "").trim() ? `Why join: ${(b.why || "").trim()}` : "",

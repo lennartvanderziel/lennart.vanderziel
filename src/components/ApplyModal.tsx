@@ -71,7 +71,7 @@ export default function ApplyModal({ open, onClose }: { open: boolean; onClose: 
       const res = await fetch("/api/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...d, company_website: hp }),
+        body: JSON.stringify({ ...d, hp_field_sts: hp }),
       });
       const j = await res.json().catch(() => ({ ok: false }));
       setStatus(j.ok ? "done" : "error");
@@ -100,7 +100,7 @@ export default function ApplyModal({ open, onClose }: { open: boolean; onClose: 
               <button type="button" onClick={onClose} aria-label="Close" style={{ flex: "0 0 auto", background: "none", border: "none", fontSize: 24, color: "#8a847a", cursor: "pointer", lineHeight: 1 }}>×</button>
             </div>
             <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 11 }}>
-              <input type="text" name="company_website" tabIndex={-1} autoComplete="off" value={hp} onChange={(e) => setHp(e.target.value)} style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }} aria-hidden="true" />
+              <input type="text" name="hp_field_sts" autoComplete="off" tabIndex={-1} value={hp} onChange={(e) => setHp(e.target.value)} style={{ position: "absolute", left: "-9999px", top: "auto", width: 1, height: 1, overflow: "hidden" }} aria-hidden="true" />
               <input required placeholder={t.name} value={d.name} onChange={set("name")} style={field} />
               <input required type="email" placeholder={t.email} value={d.email} onChange={set("email")} style={field} />
               <input required type="tel" placeholder={t.whatsapp} value={d.whatsapp} onChange={set("whatsapp")} style={field} />

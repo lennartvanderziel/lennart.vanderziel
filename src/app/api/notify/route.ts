@@ -28,11 +28,15 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
 
-  // Honeypot: real users never fill this hidden field. Pretend success for bots.
-  if (data.hp) return NextResponse.json({ ok: true });
+  // Honeypot: bots (and occasionally an overzealous browser autofill) fill
+  // this hidden field. We never silently drop on this alone — a false
+  // positive would mean losing a real submission with no trace. Flag it in
+  // the subject instead so it still reaches the inbox for manual review.
+  const flaggedAsSpam = Boolean(data.hp);
   if (!data.subject || !data.payload) return NextResponse.json({ ok: false }, { status: 400 });
 
   const apiKey = process.env.RESEND_API_KEY;
+  const subject = (flaggedAsSpam ? "⚠️ Flagged — " : "") + data.subject;
   const lines = Object.entries(data.payload).map(([k, v]) => `${k}: ${v}`).join("\n");
 
   if (apiKey) {
@@ -42,7 +46,7 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         from: "Website <lennart@shouldertoshoulder.club>",
         to: ["lennart@shouldertoshoulder.club"],
-        subject: data.subject,
+        subject,
         text: lines,
       }),
     });
@@ -53,7 +57,7 @@ export async function POST(req: Request) {
   const res = await fetch("https://formsubmit.co/ajax/lennart@shouldertoshoulder.club", {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({ _subject: data.subject, _template: "table", ...data.payload }),
+    body: JSON.stringify({ _subject: subject, _template: "table", ...data.payload }),
   });
   return NextResponse.json({ ok: res.ok });
 }
