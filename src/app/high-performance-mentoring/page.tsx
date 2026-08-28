@@ -110,20 +110,9 @@ export default function HighPerformanceMentoring() {
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 18 }}>
             {system.map((s) => (
               <div key={s.n} className="card-lift" style={{ border: "1px solid rgba(0,0,0,0.08)", borderRadius: 14, overflow: "hidden", background: "#fff" }}>
-                {s.img2 ? (
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "rgba(0,0,0,0.08)" }}>
-                    <div style={{ position: "relative", width: "100%", aspectRatio: "3/4" }}>
-                      <Image src={s.img} alt={s.alt} fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 30%" }} />
-                    </div>
-                    <div style={{ position: "relative", width: "100%", aspectRatio: "3/4" }}>
-                      <Image src={s.img2} alt="Reviewing the data" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 25%" }} />
-                    </div>
-                  </div>
-                ) : (
-                  <div style={{ position: "relative", width: "100%", aspectRatio: "4/3" }}>
-                    <Image src={s.img} alt={s.alt} fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 30%" }} />
-                  </div>
-                )}
+                <div style={{ position: "relative", width: "100%", aspectRatio: "4/3" }}>
+                  <Image src={s.img} alt={s.alt} fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 30%" }} />
+                </div>
                 <div style={{ padding: "30px 28px" }}>
                   <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 40, height: 40, borderRadius: "50%", background: ACCENT, color: "#fff", fontWeight: 800, fontSize: 16 }}>{s.n}</span>
                   <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 18, letterSpacing: "-0.01em", color: INK }}>{s.title}</h3>
