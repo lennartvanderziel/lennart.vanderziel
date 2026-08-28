@@ -82,24 +82,6 @@ export default function HighPerformanceMentoring() {
         </div>
       </section>
 
-      {/* RESULTS */}
-      <section style={{ background: "#fbf9f5", padding: SEC }}>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto 40px" }}>
-            <span style={eyebrow}>What to expect</span>
-            <h2 style={h2(false)}>The results.</h2>
-          </div>
-          <div className="grid-auto-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-            {["Double your energy and focus", "Boost hormones and longevity", "A mind that matches your ambition", "Explosive growth in business and life"].map((r) => (
-              <div key={r} style={{ display: "flex", gap: 13, alignItems: "center", background: "#fff", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 12, padding: "18px 20px" }}>
-                <span style={{ flex: "0 0 auto", color: ACCENT, fontSize: 17, fontWeight: 800 }}>+</span>
-                <span style={{ fontSize: 15.5, fontWeight: 600, color: INK }}>{r}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* SYSTEM */}
       <section style={{ background: "#fbf9f5", padding: SEC }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
@@ -118,6 +100,24 @@ export default function HighPerformanceMentoring() {
                   <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 18, letterSpacing: "-0.01em", color: INK }}>{s.title}</h3>
                   <p style={{ marginTop: 8, fontSize: 15, lineHeight: 1.55, color: INK_MUT }}>{s.desc}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RESULTS */}
+      <section style={{ background: "#fbf9f5", padding: SEC }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto 40px" }}>
+            <span style={eyebrow}>What to expect</span>
+            <h2 style={h2(false)}>The results.</h2>
+          </div>
+          <div className="grid-auto-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+            {["Double your energy and focus", "Boost hormones and longevity", "A mind that matches your ambition", "Explosive growth in business and life"].map((r) => (
+              <div key={r} style={{ display: "flex", gap: 13, alignItems: "center", background: "#fff", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 12, padding: "18px 20px" }}>
+                <span style={{ flex: "0 0 auto", color: ACCENT, fontSize: 17, fontWeight: 800 }}>+</span>
+                <span style={{ fontSize: 15.5, fontWeight: 600, color: INK }}>{r}</span>
               </div>
             ))}
           </div>
