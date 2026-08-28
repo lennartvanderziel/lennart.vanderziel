@@ -77,7 +77,7 @@ export default function HighPerformanceMentoring() {
           <span style={eyebrow}>Why</span>
           <h2 style={h2(true)}>To take your business to the next level, you have to reach your own highest level first.</h2>
           <p style={{ marginTop: 22, fontSize: 17, lineHeight: 1.6, color: MUT_SOFT }}>
-            I help you turn your health and mindset into your competitive advantage. Call it <span style={{ color: ACCENT, fontWeight: 700 }}>Million Dollar Performance</span>.
+            I help you turn your health and mindset into your competitive advantage.
           </p>
         </div>
       </section>
