@@ -71,11 +71,32 @@ export default function HighPerformanceMentoring() {
         </div>
       </header>
 
-      {/* WHY */}
+      {/* WHY + RESULTS */}
       <section style={{ background: INK, padding: SEC }}>
-        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
+        <div style={{ maxWidth: 720, margin: "0 auto 40px", textAlign: "center" }}>
           <span style={eyebrow}>Why</span>
           <h2 style={h2(true)}>To take your business to the next level, you have to reach your own highest level first.</h2>
+        </div>
+        <div className="flex-wrap-col" style={{ maxWidth: 980, margin: "0 auto", display: "flex", gap: 20, alignItems: "stretch", flexWrap: "wrap" }}>
+          <div style={{ flex: "1 1 320px", minWidth: 280, position: "relative", aspectRatio: "4/5", borderRadius: 16, overflow: "hidden" }}>
+            <Image src="/hpm-results.jpg" alt="The result" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 25%" }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(10,9,7,0.35), rgba(10,9,7,0.65))" }} />
+            <div style={{ position: "relative", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 28px", gap: 16 }}>
+              <p style={{ fontSize: 13, fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: "#fff" }}>The result?</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {["Double your energy and focus", "Boost hormones and longevity", "A mind that matches your ambition", "Explosive growth in business and life"].map((r) => (
+                  <p key={r} style={{ fontSize: 15.5, fontWeight: 700, color: "#fff", lineHeight: 1.4 }}>{r}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div style={{ flex: "1 1 320px", minWidth: 280, background: "rgba(232,116,43,0.07)", border: `1px solid ${ACCENT}`, borderRadius: 16, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 28px", gap: 18 }}>
+            <p style={{ fontSize: 19, fontWeight: 800, color: "#fff", lineHeight: 1.35 }}>I turn your health and mindset into your competitive advantage.</p>
+            <p style={{ fontSize: 22, fontWeight: 800, color: ACCENT, lineHeight: 1.2 }}>Million Dollar Performance.</p>
+            <p style={{ fontSize: 15, color: MUT_SOFT, lineHeight: 1.55 }}>Tailored training, nutrition and mindset coaching, based on real data and testing.</p>
+            <p style={{ fontSize: 15, fontWeight: 700, color: "#fff" }}>A superhuman body and mind.</p>
+            <p style={{ fontSize: 12, fontWeight: 700, color: MUT, letterSpacing: "0.06em", textTransform: "uppercase" }}>Backed by real medical testing</p>
+          </div>
         </div>
       </section>
 
