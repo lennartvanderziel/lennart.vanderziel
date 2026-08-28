@@ -77,7 +77,7 @@ export default function HighPerformanceMentoring() {
           <span style={eyebrow}>Why</span>
           <h2 style={h2(true)}>To take your business to the next level, you have to reach your own highest level first.</h2>
           <p style={{ marginTop: 22, fontSize: 17, lineHeight: 1.6, color: MUT_SOFT }}>
-            I help you turn your health and mindset into your competitive advantage. Call it <span style={{ color: ACCENT, fontWeight: 700 }}>Million Dollar Performance</span>: getting your mindset and physical health into the best state possible, backed by real medical testing.
+            I help you turn your health and mindset into your competitive advantage. Call it <span style={{ color: ACCENT, fontWeight: 700 }}>Million Dollar Performance</span>.
           </p>
         </div>
       </section>
@@ -180,15 +180,15 @@ export default function HighPerformanceMentoring() {
               </div>
               <p style={{ fontSize: 12.5, fontWeight: 700, color: MUT, letterSpacing: "0.04em" }}>MATEJ · ECOMMERCE FOUNDER</p>
             </div>
-            <div style={{ flex: "1 1 380px", minWidth: 260, background: "rgba(232,116,43,0.07)", border: `1px solid ${ACCENT}`, borderRadius: 16, padding: "30px 30px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <p style={{ fontSize: 16, lineHeight: 1.62, fontWeight: 500, color: "#f0ece4", fontStyle: "italic" }}>
-                &ldquo;As a personal trainer, I&apos;ve looked after my health for 15 years, but only in the last two did I go deeper into optimisation. The data and protocols from Lennart helped me understand the pieces I was missing. I&apos;m following my personalised supplement protocol, and it&apos;s already improving my sleep and giving me more energy. I thought I needed more discipline and to be stricter with myself. In reality, I needed more recovery and to be kinder to my body, and that pivot is making a huge difference to my health, long term.&rdquo;
-              </p>
-              <div style={{ marginTop: 20, display: "flex", alignItems: "center", gap: 12 }}>
-                <div style={{ position: "relative", width: 44, height: 44, borderRadius: "50%", overflow: "hidden", flex: "0 0 auto", border: `1px solid ${ACCENT}` }}>
-                  <Image src="/hpm-teodora.jpg" alt="Teodora Sklayne" fill style={{ objectFit: "cover", objectPosition: "center 15%" }} />
-                </div>
-                <p style={{ fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.04em" }}>TEODORA SKLAYNE · OWNER, ATTIKA FITNESS BARCELONA</p>
+            <div style={{ flex: "1 1 380px", minWidth: 260, background: "rgba(232,116,43,0.07)", border: `1px solid ${ACCENT}`, borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
+              <div style={{ position: "relative", width: "100%", aspectRatio: "16/10" }}>
+                <Image src="/hpm-teodora.jpg" alt="Lennart with Teodora Sklayne" fill style={{ objectFit: "cover", objectPosition: "center 20%" }} />
+              </div>
+              <div style={{ padding: "26px 28px" }}>
+                <p style={{ fontSize: 15.5, lineHeight: 1.6, fontWeight: 500, color: "#f0ece4", fontStyle: "italic" }}>
+                  &ldquo;As a personal trainer, I&apos;ve looked after my health for 15 years, but only in the last two did I go deeper into optimisation. The data and protocols from Lennart helped me understand the pieces I was missing. I&apos;m following my personalised supplement protocol, and it&apos;s already improving my sleep and giving me more energy. I thought I needed more discipline and to be stricter with myself. In reality, I needed more recovery and to be kinder to my body, and that pivot is making a huge difference to my health, long term.&rdquo;
+                </p>
+                <p style={{ marginTop: 16, fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.04em" }}>TEODORA SKLAYNE · OWNER, ATTIKA FITNESS BARCELONA</p>
               </div>
             </div>
           </div>
