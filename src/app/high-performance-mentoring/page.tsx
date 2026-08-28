@@ -10,9 +10,9 @@ const MUT = "#c2bbae";
 const MUT_SOFT = "#d8d2c7";
 
 const system = [
-  { n: "1", title: "Assess", desc: "A full intake into your lifestyle and health, with multiple real tests. No guessing where you stand.", img: "/hpm-assess.jpg", alt: "Real health data being collected" },
-  { n: "2", title: "Plan", desc: "A specific plan for your body and mind, built around your business.", img: "/hpm-plan.jpg", alt: "Lennart explaining the plan to a group" },
-  { n: "3", title: "Coach", desc: "Ongoing 1-on-1 coaching. We measure, adjust, and keep raising the bar.", img: "/hpm-coach.jpg", alt: "Lennart coaching someone one-on-one" },
+  { n: "1", title: "Assess", desc: "A full intake into your lifestyle and health, with multiple real tests. No guessing where you stand.", img: "/hpm-assess.jpg", img2: "/hpm-assess-2.jpg", alt: "Real health data being collected" },
+  { n: "2", title: "Plan", desc: "A specific plan for your body and mind, built around your business.", img: "/hpm-plan.jpg", alt: "Lennart going through the plan with a client" },
+  { n: "3", title: "Coach", desc: "Ongoing 1-on-1 coaching. We measure, adjust, and keep raising the bar.", img: "/hpm-coach.jpg", alt: "Lennart coaching in front of a group" },
 ];
 
 const fitItems = [
@@ -71,31 +71,31 @@ export default function HighPerformanceMentoring() {
         </div>
       </header>
 
-      {/* WHY + RESULTS */}
+      {/* WHY */}
       <section style={{ background: INK, padding: SEC }}>
-        <div style={{ maxWidth: 720, margin: "0 auto 40px", textAlign: "center" }}>
+        <div style={{ maxWidth: 680, margin: "0 auto", textAlign: "center" }}>
           <span style={eyebrow}>Why</span>
           <h2 style={h2(true)}>To take your business to the next level, you have to reach your own highest level first.</h2>
+          <p style={{ marginTop: 22, fontSize: 17, lineHeight: 1.6, color: MUT_SOFT }}>
+            I help you turn your health and mindset into your competitive advantage. Call it <span style={{ color: ACCENT, fontWeight: 700 }}>Million Dollar Performance</span>: getting your mindset and physical health into the best state possible, backed by real medical testing.
+          </p>
         </div>
-        <div className="flex-wrap-col" style={{ maxWidth: 980, margin: "0 auto", display: "flex", gap: 20, alignItems: "stretch", flexWrap: "wrap" }}>
-          <div style={{ flex: "1 1 320px", minWidth: 280, position: "relative", aspectRatio: "4/5", borderRadius: 16, overflow: "hidden" }}>
-            <Image src="/hpm-results.jpg" alt="The result" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 25%" }} />
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(10,9,7,0.35), rgba(10,9,7,0.65))" }} />
-            <div style={{ position: "relative", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 28px", gap: 16 }}>
-              <p style={{ fontSize: 13, fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: "#fff" }}>The result?</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {["Double your energy and focus", "Boost hormones and longevity", "A mind that matches your ambition", "Explosive growth in business and life"].map((r) => (
-                  <p key={r} style={{ fontSize: 15.5, fontWeight: 700, color: "#fff", lineHeight: 1.4 }}>{r}</p>
-                ))}
-              </div>
-            </div>
+      </section>
+
+      {/* RESULTS */}
+      <section style={{ background: "#fbf9f5", padding: SEC }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto 40px" }}>
+            <span style={eyebrow}>What to expect</span>
+            <h2 style={h2(false)}>The results.</h2>
           </div>
-          <div style={{ flex: "1 1 320px", minWidth: 280, background: "rgba(232,116,43,0.07)", border: `1px solid ${ACCENT}`, borderRadius: 16, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 28px", gap: 18 }}>
-            <p style={{ fontSize: 19, fontWeight: 800, color: "#fff", lineHeight: 1.35 }}>I turn your health and mindset into your competitive advantage.</p>
-            <p style={{ fontSize: 22, fontWeight: 800, color: ACCENT, lineHeight: 1.2 }}>Million Dollar Performance.</p>
-            <p style={{ fontSize: 15, color: MUT_SOFT, lineHeight: 1.55 }}>Tailored training, nutrition and mindset coaching, based on real data and testing.</p>
-            <p style={{ fontSize: 15, fontWeight: 700, color: "#fff" }}>A superhuman body and mind.</p>
-            <p style={{ fontSize: 12, fontWeight: 700, color: MUT, letterSpacing: "0.06em", textTransform: "uppercase" }}>Backed by real medical testing</p>
+          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 14 }}>
+            {["Double your energy and focus", "Boost hormones and longevity", "A mind that matches your ambition", "Explosive growth in business and life"].map((r) => (
+              <div key={r} style={{ display: "flex", gap: 13, alignItems: "center", background: "#fff", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 12, padding: "18px 20px" }}>
+                <span style={{ flex: "0 0 auto", color: ACCENT, fontSize: 17, fontWeight: 800 }}>+</span>
+                <span style={{ fontSize: 15.5, fontWeight: 600, color: INK }}>{r}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -110,9 +110,20 @@ export default function HighPerformanceMentoring() {
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 18 }}>
             {system.map((s) => (
               <div key={s.n} className="card-lift" style={{ border: "1px solid rgba(0,0,0,0.08)", borderRadius: 14, overflow: "hidden", background: "#fff" }}>
-                <div style={{ position: "relative", width: "100%", aspectRatio: "4/3" }}>
-                  <Image src={s.img} alt={s.alt} fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 30%" }} />
-                </div>
+                {s.img2 ? (
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "rgba(0,0,0,0.08)" }}>
+                    <div style={{ position: "relative", width: "100%", aspectRatio: "3/4" }}>
+                      <Image src={s.img} alt={s.alt} fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 30%" }} />
+                    </div>
+                    <div style={{ position: "relative", width: "100%", aspectRatio: "3/4" }}>
+                      <Image src={s.img2} alt="Reviewing the data" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 25%" }} />
+                    </div>
+                  </div>
+                ) : (
+                  <div style={{ position: "relative", width: "100%", aspectRatio: "4/3" }}>
+                    <Image src={s.img} alt={s.alt} fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 30%" }} />
+                  </div>
+                )}
                 <div style={{ padding: "30px 28px" }}>
                   <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 40, height: 40, borderRadius: "50%", background: ACCENT, color: "#fff", fontWeight: 800, fontSize: 16 }}>{s.n}</span>
                   <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 18, letterSpacing: "-0.01em", color: INK }}>{s.title}</h3>
