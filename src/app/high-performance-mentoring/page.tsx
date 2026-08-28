@@ -10,8 +10,8 @@ const MUT = "#c2bbae";
 const MUT_SOFT = "#d8d2c7";
 
 const system = [
-  { n: "1", title: "Assess", desc: "A full intake into your lifestyle and health, with multiple real tests. No guessing where you stand.", img: "/hpm-assess.jpg", img2: "/hpm-assess-2.jpg", alt: "Real health data being collected" },
-  { n: "2", title: "Plan", desc: "A specific plan for your body and mind, built around your business.", img: "/hpm-plan.jpg", alt: "Lennart going through the plan with a client" },
+  { n: "1", title: "Assess", desc: "A full intake into your lifestyle and health, with multiple real tests. No guessing where you stand.", img: "/hpm-assess.jpg", alt: "Real health data being collected" },
+  { n: "2", title: "Plan", desc: "A specific plan for your body and mind, built around your business.", img: "/hpm-assess-2.jpg", alt: "Lennart reviewing the data" },
   { n: "3", title: "Coach", desc: "Ongoing 1-on-1 coaching. We measure, adjust, and keep raising the bar.", img: "/hpm-coach.jpg", alt: "Lennart coaching in front of a group" },
 ];
 
@@ -141,6 +141,7 @@ export default function HighPerformanceMentoring() {
           <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}>
             <span style={eyebrow}>In the room</span>
             <h2 style={h2(true)}>Working with founders.</h2>
+            <p style={{ marginTop: 14, fontSize: 16, lineHeight: 1.5, color: MUT }}>Real sessions, real founders.</p>
           </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 18 }}>
             {["/hpm-client-1.jpg", "/hpm-client-2.jpg", "/hpm-client-3.jpg"].map((src) => (
@@ -181,20 +182,27 @@ export default function HighPerformanceMentoring() {
       {/* TESTIMONIAL */}
       <section style={{ background: INK, padding: SEC }}>
         <div style={{ maxWidth: 960, margin: "0 auto", textAlign: "center" }}>
-          <span style={eyebrow}>Results</span>
+          <span style={eyebrow}>Proof</span>
           <h2 style={h2(true)}>What it does for them.</h2>
           <div className="flex-wrap-col" style={{ marginTop: 36, display: "flex", gap: 22, alignItems: "stretch", flexWrap: "wrap", textAlign: "left" }}>
-            <div style={{ flex: "1 1 260px", minWidth: 240, position: "relative", aspectRatio: "9/16", borderRadius: 16, overflow: "hidden", border: `1px solid ${ACCENT}` }}>
-              <video src="/hpm-testimonial-matej.mp4" controls playsInline preload="metadata" style={{ width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
+            <div style={{ flex: "1 1 260px", minWidth: 240, display: "flex", flexDirection: "column", gap: 10 }}>
+              <div style={{ position: "relative", flex: 1, aspectRatio: "9/16", borderRadius: 16, overflow: "hidden", border: `1px solid ${ACCENT}` }}>
+                <video src="/hpm-testimonial-matej.mp4" controls playsInline preload="metadata" style={{ width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
+              </div>
+              <p style={{ fontSize: 12.5, fontWeight: 700, color: MUT, letterSpacing: "0.04em" }}>MATEJ · ECOMMERCE FOUNDER</p>
             </div>
             <div style={{ flex: "1 1 380px", minWidth: 260, background: "rgba(232,116,43,0.07)", border: `1px solid ${ACCENT}`, borderRadius: 16, padding: "30px 30px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <p style={{ fontSize: 16, lineHeight: 1.62, fontWeight: 500, color: "#f0ece4", fontStyle: "italic" }}>
                 &ldquo;As a personal trainer, I&apos;ve looked after my health for 15 years, but only in the last two did I go deeper into optimisation. The data and protocols from Lennart helped me understand the pieces I was missing. I&apos;m following my personalised supplement protocol, and it&apos;s already improving my sleep and giving me more energy. I thought I needed more discipline and to be stricter with myself. In reality, I needed more recovery and to be kinder to my body, and that pivot is making a huge difference to my health, long term.&rdquo;
               </p>
-              <p style={{ marginTop: 16, fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.04em" }}>TEODORA SKLAYNE · OWNER, ATTIKA FITNESS BARCELONA</p>
+              <div style={{ marginTop: 20, display: "flex", alignItems: "center", gap: 12 }}>
+                <div style={{ position: "relative", width: 44, height: 44, borderRadius: "50%", overflow: "hidden", flex: "0 0 auto", border: `1px solid ${ACCENT}` }}>
+                  <Image src="/hpm-teodora.jpg" alt="Teodora Sklayne" fill style={{ objectFit: "cover", objectPosition: "center 15%" }} />
+                </div>
+                <p style={{ fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.04em" }}>TEODORA SKLAYNE · OWNER, ATTIKA FITNESS BARCELONA</p>
+              </div>
             </div>
           </div>
-          <p style={{ marginTop: 16, fontSize: 12.5, fontWeight: 700, color: MUT, letterSpacing: "0.04em", textAlign: "left" }}>VIDEO: MATEJ · ECOMMERCE FOUNDER</p>
         </div>
       </section>
 
