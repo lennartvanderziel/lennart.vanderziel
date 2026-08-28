@@ -130,7 +130,6 @@ export default function HighPerformanceMentoring() {
           <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}>
             <span style={eyebrow}>In the room</span>
             <h2 style={h2(true)}>Working with founders.</h2>
-            <p style={{ marginTop: 14, fontSize: 16, lineHeight: 1.5, color: MUT }}>Real sessions, real founders.</p>
           </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 18 }}>
             {["/hpm-client-1.jpg", "/hpm-client-2.jpg", "/hpm-client-3.jpg"].map((src) => (
@@ -181,8 +180,8 @@ export default function HighPerformanceMentoring() {
               <p style={{ fontSize: 12.5, fontWeight: 700, color: MUT, letterSpacing: "0.04em" }}>MATEJ · ECOMMERCE FOUNDER</p>
             </div>
             <div style={{ flex: "1 1 380px", minWidth: 260, background: "rgba(232,116,43,0.07)", border: `1px solid ${ACCENT}`, borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
-              <div style={{ position: "relative", width: "100%", aspectRatio: "16/10" }}>
-                <Image src="/hpm-teodora.jpg" alt="Lennart with Teodora Sklayne" fill style={{ objectFit: "cover", objectPosition: "center 20%" }} />
+              <div style={{ position: "relative", width: "100%", aspectRatio: "16/12" }}>
+                <Image src="/hpm-teodora.jpg" alt="Lennart with Teodora Sklayne" fill style={{ objectFit: "cover", objectPosition: "center 10%" }} />
               </div>
               <div style={{ padding: "26px 28px" }}>
                 <p style={{ fontSize: 15.5, lineHeight: 1.6, fontWeight: 500, color: "#f0ece4", fontStyle: "italic" }}>
