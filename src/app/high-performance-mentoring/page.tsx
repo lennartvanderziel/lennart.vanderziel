@@ -142,15 +142,21 @@ export default function HighPerformanceMentoring() {
 
       {/* TESTIMONIAL */}
       <section style={{ background: INK, padding: SEC }}>
-        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto", textAlign: "center" }}>
           <span style={eyebrow}>Results</span>
           <h2 style={h2(true)}>What it does for them.</h2>
-          <div style={{ marginTop: 32, background: "rgba(232,116,43,0.07)", border: `1px solid ${ACCENT}`, borderRadius: 16, padding: "34px 34px" }}>
-            <p style={{ fontSize: 16.5, lineHeight: 1.6, fontWeight: 500, color: "#f0ece4", fontStyle: "italic" }}>
-              &ldquo;I thought I needed more discipline, more strictness. In reality, I needed more recovery and to be kinder to my body. The data and protocols from Lennart gave me that deeper understanding — it&apos;s already improving my sleep and giving me more energy.&rdquo;
-            </p>
-            <p style={{ marginTop: 16, fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.04em" }}>TEODORA SKLAYNE · OWNER, ATTIKA FITNESS BARCELONA</p>
+          <div className="flex-wrap-col" style={{ marginTop: 36, display: "flex", gap: 22, alignItems: "stretch", flexWrap: "wrap", textAlign: "left" }}>
+            <div style={{ flex: "1 1 260px", minWidth: 240, position: "relative", aspectRatio: "9/16", borderRadius: 16, overflow: "hidden", border: `1px solid ${ACCENT}` }}>
+              <video src="/hpm-testimonial-matej.mp4" controls playsInline preload="metadata" style={{ width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
+            </div>
+            <div style={{ flex: "1 1 380px", minWidth: 260, background: "rgba(232,116,43,0.07)", border: `1px solid ${ACCENT}`, borderRadius: 16, padding: "30px 30px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <p style={{ fontSize: 16.5, lineHeight: 1.6, fontWeight: 500, color: "#f0ece4", fontStyle: "italic" }}>
+                &ldquo;I thought I needed more discipline, more strictness. In reality, I needed more recovery and to be kinder to my body. The data and protocols from Lennart gave me that deeper understanding — it&apos;s already improving my sleep and giving me more energy.&rdquo;
+              </p>
+              <p style={{ marginTop: 16, fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.04em" }}>TEODORA SKLAYNE · OWNER, ATTIKA FITNESS BARCELONA</p>
+            </div>
           </div>
+          <p style={{ marginTop: 16, fontSize: 12.5, fontWeight: 700, color: MUT, letterSpacing: "0.04em", textAlign: "left" }}>VIDEO: MATEJ · ECOMMERCE FOUNDER</p>
         </div>
       </section>
 
