@@ -12,7 +12,7 @@ const MUT_SOFT = "#d8d2c7";
 const system = [
   { n: "1", title: "Assess", desc: "A full intake into your lifestyle and health, with multiple real tests. No guessing where you stand.", img: "/hpm-assess.jpg", alt: "Real health data being collected" },
   { n: "2", title: "Plan", desc: "A specific plan for your body and mind, built around your business.", img: "/hpm-assess-2.jpg", alt: "Lennart reviewing the data" },
-  { n: "3", title: "Coach", desc: "Ongoing 1-on-1 coaching. We measure, adjust, and keep raising the bar.", img: "/hpm-coach.jpg", alt: "Lennart coaching in front of a group" },
+  { n: "3", title: "Coach", desc: "Ongoing 1-on-1 coaching. We measure, adjust, and keep raising the bar.", img: "/hpm-coach.jpg", alt: "Lennart speaking on stage" },
 ];
 
 const fitItems = [
@@ -89,7 +89,7 @@ export default function HighPerformanceMentoring() {
             <span style={eyebrow}>What to expect</span>
             <h2 style={h2(false)}>The results.</h2>
           </div>
-          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 14 }}>
+          <div className="grid-auto-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
             {["Double your energy and focus", "Boost hormones and longevity", "A mind that matches your ambition", "Explosive growth in business and life"].map((r) => (
               <div key={r} style={{ display: "flex", gap: 13, alignItems: "center", background: "#fff", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 12, padding: "18px 20px" }}>
                 <span style={{ flex: "0 0 auto", color: ACCENT, fontSize: 17, fontWeight: 800 }}>+</span>

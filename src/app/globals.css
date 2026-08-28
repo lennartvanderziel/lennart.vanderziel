@@ -167,6 +167,7 @@ body {
   .section-pad { padding: 64px 20px !important; }
   .section-pad-sm { padding: 48px 20px !important; }
   .grid-auto { grid-template-columns: 1fr !important; }
+  .grid-auto-2 { grid-template-columns: 1fr !important; }
   .flex-wrap-col { flex-direction: column !important; gap: 40px !important; }
   .about-grid { grid-template-columns: 1fr !important; }
   .photo-grid { grid-template-columns: 1fr !important; }
