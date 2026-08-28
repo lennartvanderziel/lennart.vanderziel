@@ -106,26 +106,50 @@ export default function HighPerformanceMentoring() {
           </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 18 }}>
             {system.map((s) => (
-              <div key={s.n} className="card-lift" style={{ border: "1px solid rgba(0,0,0,0.08)", borderRadius: 14, padding: "30px 28px", background: "#fff" }}>
-                <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 40, height: 40, borderRadius: "50%", background: ACCENT, color: "#fff", fontWeight: 800, fontSize: 16 }}>{s.n}</span>
-                <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 18, letterSpacing: "-0.01em", color: INK }}>{s.title}</h3>
-                <p style={{ marginTop: 8, fontSize: 15, lineHeight: 1.55, color: INK_MUT }}>{s.desc}</p>
+              <div key={s.n} className="card-lift" style={{ border: "1px solid rgba(0,0,0,0.08)", borderRadius: 14, overflow: "hidden", background: "#fff" }}>
+                {s.n === "1" && (
+                  <div style={{ position: "relative", width: "100%", aspectRatio: "4/3" }}>
+                    <Image src="/hpm-assess.jpg" alt="Real health data being collected" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 30%" }} />
+                  </div>
+                )}
+                <div style={{ padding: "30px 28px" }}>
+                  <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 40, height: 40, borderRadius: "50%", background: ACCENT, color: "#fff", fontWeight: 800, fontSize: 16 }}>{s.n}</span>
+                  <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 18, letterSpacing: "-0.01em", color: INK }}>{s.title}</h3>
+                  <p style={{ marginTop: 8, fontSize: 15, lineHeight: 1.55, color: INK_MUT }}>{s.desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIAL — placeholder, ready for real client quote */}
+      {/* WITH CLIENTS */}
+      <section style={{ background: "#fbf9f5", padding: SEC }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}>
+            <span style={eyebrow}>In the room</span>
+            <h2 style={h2(false)}>Working with founders.</h2>
+          </div>
+          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 18 }}>
+            {["/hpm-client-1.jpg", "/hpm-client-2.jpg", "/hpm-client-3.jpg"].map((src) => (
+              <div key={src} className="photo-zoom" style={{ position: "relative", aspectRatio: "4/5", borderRadius: 14, overflow: "hidden" }}>
+                <Image src={src} alt="Lennart with a client" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 20%" }} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIAL */}
       <section style={{ background: INK, padding: SEC }}>
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
           <span style={eyebrow}>Results</span>
           <h2 style={h2(true)}>What it does for them.</h2>
-          <div style={{ marginTop: 32, background: "rgba(232,116,43,0.07)", border: `1px solid ${ACCENT}`, borderRadius: 16, padding: "30px 30px" }}>
-            <p style={{ fontSize: 16.5, lineHeight: 1.55, fontWeight: 500, color: "#f0ece4", fontStyle: "italic" }}>
-              &ldquo;Client testimonial coming soon.&rdquo;
+          <div style={{ marginTop: 32, background: "rgba(232,116,43,0.07)", border: `1px solid ${ACCENT}`, borderRadius: 16, padding: "34px 34px" }}>
+            <p style={{ fontSize: 16.5, lineHeight: 1.6, fontWeight: 500, color: "#f0ece4", fontStyle: "italic" }}>
+              &ldquo;I thought I needed more discipline, more strictness. In reality, I needed more recovery and to be kinder to my body. The data and protocols from Lennart gave me that deeper understanding — it&apos;s already improving my sleep and giving me more energy.&rdquo;
             </p>
-            <p style={{ marginTop: 14, fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.04em" }}>YOUR NAME · MEMBER</p>
+            <p style={{ marginTop: 16, fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.04em" }}>TEODORA SKLAYNE · OWNER, ATTIKA FITNESS BARCELONA</p>
           </div>
         </div>
       </section>
