@@ -181,7 +181,7 @@ export default function HighPerformanceMentoring() {
             </div>
             <div style={{ flex: "1 1 380px", minWidth: 260, background: "rgba(232,116,43,0.07)", border: `1px solid ${ACCENT}`, borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
               <div style={{ position: "relative", width: "100%", aspectRatio: "16/12" }}>
-                <Image src="/hpm-teodora.jpg" alt="Lennart with Teodora Sklayne" fill style={{ objectFit: "cover", objectPosition: "center 10%" }} />
+                <Image src="/hpm-teodora.jpg" alt="Lennart with Teodora Sklayne" fill style={{ objectFit: "cover", objectPosition: "center 28%" }} />
               </div>
               <div style={{ padding: "26px 28px" }}>
                 <p style={{ fontSize: 15.5, lineHeight: 1.6, fontWeight: 500, color: "#f0ece4", fontStyle: "italic" }}>
