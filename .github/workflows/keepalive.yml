@@ -1,0 +1,32 @@
+name: Supabase keep-alive
+
+# Pings /api/keepalive weekly so the Supabase free-tier project never
+# auto-pauses from inactivity (that happens after 7+ days with no DB
+# activity). Runs on GitHub's own runners, which have real internet access —
+# unlike a Claude scheduled routine's sandboxed proxy, which cannot reach
+# this site at all.
+
+on:
+  schedule:
+    - cron: "0 3 * * 1" # every Monday, 03:00 UTC
+  workflow_dispatch: {} # allows a manual "Run workflow" test
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping keepalive endpoint
+        run: |
+          code=$(curl -sS -o /tmp/resp.json -w "%{http_code}" https://www.lennartvanderziel.com/api/keepalive)
+          echo "HTTP $code"
+          cat /tmp/resp.json
+          echo
+          if [ "$code" != "200" ]; then
+            echo "::error::Keep-alive request failed with HTTP $code"
+            exit 1
+          fi
+          if ! grep -q '"ok":true' /tmp/resp.json; then
+            echo "::error::Keep-alive response did not report ok:true"
+            exit 1
+          fi
+          echo "Keep-alive succeeded."
