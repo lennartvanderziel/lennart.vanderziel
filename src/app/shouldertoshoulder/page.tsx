@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useLang, LanguageToggle } from "@/components/i18n";
 import ApplyModal from "@/components/ApplyModal";
@@ -11,7 +11,7 @@ const MUT_SOFT = "#d8d2c7";
 const INK = "#15130f";
 const INK_MUT = "#57534c";
 
-type Member = { name: string; tag: string; img: string; pos?: string; scale?: number };
+type Member = { name: string; tag: string; img: string; pos?: string; scale?: number; note?: string };
 const members: Member[] = [
   { name: "Kibet", tag: "AgTech hardware · raising Series A", img: "/members/Kibet.png" },
   { name: "David", tag: "Bali real estate investment", img: "/members/David.png" },
@@ -33,6 +33,7 @@ const copy = {
     freeNote: "Free · 30 min",
 
     painEyebrow: "Why alone is slow",
+    painIntro: "This isn't about needing help. You already know what to do. It's about not doing it slower than you have to.",
     painAloneTitle: "Alone",
     painAlone: ["You make the big calls alone", "Fewer opportunities reach you", "No one keeps you accountable"],
     painTogetherTitle: "Together",
@@ -49,15 +50,21 @@ const copy = {
     visionLine: "Imagine overcoming obstacles faster and acting on your biggest opportunities.",
     visionQ: "How much further ahead would your business be in a year?",
 
+    globalEyebrow: "The bigger vision",
+    globalTitle: "One network, wherever you go.",
+    globalBody: "We're building toward a global founder network — so wherever you land, South Africa, Dubai, Bali, Europe, someone picks you up from the airport and you already have friends there. Our Summits happen in places like these, so if you want to live in a few different places each year, it works perfectly: you can spend a stretch of time in each, and always have the right people around you.",
+    globalPlaces: ["Bali", "South Africa", "Dubai", "Europe"],
+
     roomEyebrow: "The members",
     roomTitle: "Some of our members, based across 3 continents",
-    selEyebrow: "Selection",
-    selTitle: "Not a typical founder community",
-    selSub: "Every member is selected on more than track record",
+    selEyebrow: "Who we are",
+    selTitle: "Not a typical founder club",
+    selSub: "This is for a specific kind of entrepreneur: conscious, self-aware, and doing real inner work. It's not only about what you build — it's about who you become in the process, in every part of life: business, fitness, relationships, spirituality.",
     selItems: [
-      { title: "Different skill sets", desc: "So someone always brings what you're missing." },
-      { title: "Team players, no ego", desc: "People who lift the room, not dominate it." },
-      { title: "Real and open", desc: "Willing to show what's actually going on." },
+      { title: "Depth over ego", desc: "No masks, no performance. Founders who've done the inner work and can be honest about what's actually going on." },
+      { title: "Growth beyond the business", desc: "Fitness, relationships, spirituality, mindset — becoming the best version of yourself, not just growing revenue." },
+      { title: "Warm, not competitive", desc: "People who genuinely want to see each other win, and show up for it." },
+      { title: "Successful, not soft", desc: "Driven, ambitious men — just without the mask or the flex." },
     ],
 
     proofEyebrow: "Proof",
@@ -71,11 +78,15 @@ const copy = {
     dinnerCaps: ["Founder dinner", "Weekly online call", "Founder event"],
 
     howEyebrow: "How it works",
-    howTitle: "Everything a founder needs",
+    howTitle: "One hour a week. Never more.",
+    howNote: "Every circle session is capped at 60 minutes, online, every week.",
     how: [
-      { n: "1", title: "Your own circle", desc: "A weekly circle with your six. One hour, online, facilitated by Lennart." },
-      { n: "2", title: "Meet the whole club", desc: "In person, you connect with every member of the club." },
-      { n: "3", title: "Monthly 1-on-1", desc: "An optional, personal coaching session with Lennart, your business coach." },
+      { n: "1", title: "Hot-seat sessions", desc: "Twice a month, one member brings a real challenge and the circle solves it together — sharp, specific, no fluff." },
+      { n: "2", title: "Expert session", desc: "Once a month, a guest expert goes deep on what moves the needle — AI, team building, sales, whatever the group needs most." },
+      { n: "3", title: "Personal growth session", desc: "Once a month, the focus is on you — not just the business. Mindset, habits, relationships, the whole man." },
+      { n: "4", title: "Growth dashboard", desc: "A shared dashboard where everyone tracks where they stand, where they're headed, and holds each other accountable to it." },
+      { n: "5", title: "In person, together", desc: "Dinners, activities and side quests — offline, whenever the club gathers near you." },
+      { n: "6", title: "Monthly 1-on-1", desc: "An optional, personal coaching session with Lennart, your business coach." },
     ],
 
     hostEyebrow: "Your host",
@@ -92,10 +103,15 @@ const copy = {
       { q: "I'm looking into a coach or mentor.", a: "This works alongside them. A coach gives one perspective. Here you get a whole circle plus weekly accountability." },
       { q: "Is this coaching?", a: "No. It's peers, not a coach talking at you." },
       { q: "I'm too busy.", a: "It's one focused hour a week, and it saves you far more. You set better priorities, make fewer bad decisions, and spend less time on things that don't matter." },
+      { q: "How does the application actually work?", a: "We work in cohorts, not open enrollment. When you apply, we look at fit with the upcoming Circle specifically. If there's a potential match, you're invited to a call where we figure out together whether it's a real fit." },
+      { q: "What if I don't get into this cohort?", a: "If the current Circle is full or the timing isn't right yet, you'll be considered for the next cohort — we just can't promise exactly when that opens." },
     ],
 
     eventEyebrow: "Our events",
     eventLook: "Bringing the members together",
+    cohortLabel: "Next Founder Circle",
+    cohortDetail: "October 2026 · 6 founders · Applications close September 30",
+    cohortDays: (n: number) => `${n} day${n === 1 ? "" : "s"} left to apply`,
     finalTitle: "Ready to grow faster?",
     finalSub: "Apply for a fit call. 30 minutes, no pitch.",
     footer: "Shoulder to Shoulder",
@@ -113,6 +129,7 @@ const copy = {
     freeNote: "Gratis · 30 min",
 
     painEyebrow: "Waarom je alleen langzamer gaat",
+    painIntro: "Dit gaat niet om hulp nodig hebben. Je weet al wat je moet doen. Het gaat erom het niet langzamer te doen dan nodig is.",
     painAloneTitle: "Alleen",
     painAlone: ["Je maakt de grote keuzes alleen", "Minder kansen bereiken je", "Niemand houdt je accountable"],
     painTogetherTitle: "Samen",
@@ -129,15 +146,21 @@ const copy = {
     visionLine: "Stel je voor: obstakels sneller overwinnen en inzetten op je grootste kansen.",
     visionQ: "Hoeveel verder zou je business zijn over een jaar?",
 
+    globalEyebrow: "De grotere visie",
+    globalTitle: "Eén netwerk, waar je ook bent.",
+    globalBody: "We bouwen aan een wereldwijd foundernetwerk — dus waar je ook landt, Zuid-Afrika, Dubai, Bali, Europa, er staat iemand voor je klaar op het vliegveld en je hebt er al vrienden. Onze Summits vinden plaats op precies zulke plekken, dus als je meerdere plekken per jaar wil wonen, werkt dat perfect: je kan er telkens een tijd zitten en hebt altijd de juiste mensen om je heen.",
+    globalPlaces: ["Bali", "Zuid-Afrika", "Dubai", "Europa"],
+
     roomEyebrow: "De members",
     roomTitle: "Een aantal van onze members, verspreid over 3 continenten",
-    selEyebrow: "Selectie",
-    selTitle: "Geen doorsnee foundercommunity",
-    selSub: "Elke member wordt geselecteerd op meer dan track record",
+    selEyebrow: "Wie we zijn",
+    selTitle: "Geen doorsnee founderclub",
+    selSub: "Dit is voor een heel specifiek type ondernemer: bewust, zelfreflectief, en echt bezig met innerlijk werk. Het gaat niet alleen om wat je bouwt — het gaat om wie je wordt in het proces, op elk vlak van het leven: business, fitheid, relaties, spiritualiteit.",
     selItems: [
-      { title: "Verschillende skill sets", desc: "Zodat er altijd iemand is die inbrengt wat jij mist." },
-      { title: "Teamplayers, geen ego", desc: "Mensen die de groep optillen, niet domineren." },
-      { title: "Echt en open", desc: "Durven laten zien wat er echt speelt." },
+      { title: "Diepgang boven ego", desc: "Geen maskers, geen stoerdoenerij. Founders die het innerlijke werk hebben gedaan en eerlijk durven zijn over wat er echt speelt." },
+      { title: "Groei voorbij de business", desc: "Fitheid, relaties, spiritualiteit, mindset — de beste versie van jezelf worden, niet alleen omzet laten groeien." },
+      { title: "Warm, niet competitief", desc: "Mensen die elkaar oprecht winst gunnen, en daarvoor opstaan." },
+      { title: "Gedreven, niet soft", desc: "Succesvolle, ambitieuze mannen — gewoon zonder het masker of de show." },
     ],
 
     proofEyebrow: "Bewijs",
@@ -151,11 +174,15 @@ const copy = {
     dinnerCaps: ["Founder-diner", "Wekelijkse online call", "Founder event"],
 
     howEyebrow: "Hoe het werkt",
-    howTitle: "Alles wat een founder nodig heeft",
+    howTitle: "Eén uur per week. Nooit meer.",
+    howNote: "Elke circle-sessie duurt maximaal 60 minuten, online, elke week.",
     how: [
-      { n: "1", title: "Je eigen circle", desc: "Een wekelijkse circle met je zes. Eén uur, online, gefaciliteerd door Lennart." },
-      { n: "2", title: "Ontmoet de hele club", desc: "In het echt connect je met elke member van de club." },
-      { n: "3", title: "Maandelijks 1-op-1", desc: "Een optionele, persoonlijke coachingsessie met Lennart, je business coach." },
+      { n: "1", title: "Hotseat-sessies", desc: "Twee keer per maand brengt een member een echte uitdaging in, en de circle lost 'm samen op — scherp, specifiek, geen ruis." },
+      { n: "2", title: "Expert-sessie", desc: "Eén keer per maand duikt een gastexpert diep in wat het verschil maakt — AI, teambuilding, sales, wat de groep het hardst nodig heeft." },
+      { n: "3", title: "Personal growth-sessie", desc: "Eén keer per maand draait het om jou — niet alleen de business. Mindset, gewoontes, relaties, de hele man." },
+      { n: "4", title: "Growth dashboard", desc: "Een gedeeld dashboard waarin iedereen ziet waar hij staat, waar hij naartoe gaat, en elkaar daarop accountable houdt." },
+      { n: "5", title: "In het echt, samen", desc: "Diners, activiteiten en side quests — offline, wanneer de club bij elkaar komt in jouw buurt." },
+      { n: "6", title: "Maandelijks 1-op-1", desc: "Een optionele, persoonlijke coachingsessie met Lennart, je business coach." },
     ],
 
     hostEyebrow: "Je host",
@@ -172,10 +199,15 @@ const copy = {
       { q: "Ik denk ook aan een coach of mentor.", a: "Dit werkt daarnaast. Een coach geeft één perspectief. Hier krijg je een hele kring plus wekelijkse accountability." },
       { q: "Is dit coaching?", a: "Nee. Het zijn peers, geen coach die tegen je praat." },
       { q: "Ik heb geen tijd.", a: "Het is één gefocust uur per week, en het bespaart je veel meer. Je stelt betere prioriteiten, maakt minder verkeerde keuzes, en verliest minder tijd aan wat er niet toe doet." },
+      { q: "Hoe werkt de aanmelding precies?", a: "We werken met cohorten, niet met doorlopende inschrijving. Als je je aanmeldt, kijken we naar fit met de aankomende Circle specifiek. Bij een mogelijke match nodigen we je uit voor een gesprek waarin we samen bepalen of het een echte fit is." },
+      { q: "Wat als ik niet in dit cohort kom?", a: "Als de huidige Circle vol zit of het moment nog niet goed is, kom je in beeld voor het volgende cohort — we kunnen alleen niet precies zeggen wanneer dat opent." },
     ],
 
     eventEyebrow: "Onze events",
     eventLook: "De members samenbrengen",
+    cohortLabel: "Volgende Founder Circle",
+    cohortDetail: "Oktober 2026 · 6 founders · Aanmeldingen sluiten 30 september",
+    cohortDays: (n: number) => `Nog ${n} dag${n === 1 ? "" : "en"} om je aan te melden`,
     finalTitle: "Klaar om sneller te groeien?",
     finalSub: "Meld je aan voor een fit call. 30 minuten, geen pitch.",
     footer: "Shoulder to Shoulder",
@@ -191,6 +223,12 @@ export default function Join() {
   const [applyOpen, setApplyOpen] = useState(false);
   const scroller = useRef<HTMLDivElement>(null);
   const scrollMembers = (dir: number) => scroller.current?.scrollBy({ left: dir * 360, behavior: "smooth" });
+
+  const [daysLeft, setDaysLeft] = useState<number | null>(null);
+  useEffect(() => {
+    const deadline = new Date("2026-09-30T23:59:59+02:00").getTime();
+    setDaysLeft(Math.max(Math.ceil((deadline - Date.now()) / 86400000), 0));
+  }, []);
 
   function book() {
     setApplyOpen(true);
@@ -237,7 +275,11 @@ export default function Join() {
           <h1 style={{ fontSize: "clamp(38px,6vw,72px)", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.03em", color: "#fff", maxWidth: 860, marginBottom: 22, textShadow: "0 2px 30px rgba(0,0,0,0.5)" }}>
             {t.heroTitleA}<span style={{ color: ACCENT }}>{t.heroTitleB}</span>
           </h1>
-          <p style={{ maxWidth: 720, fontSize: "clamp(17px,2vw,21px)", lineHeight: 1.4, color: "#efe9de", marginBottom: 32, fontWeight: 500, textShadow: "0 1px 16px rgba(0,0,0,0.6)" }}>{t.heroSub}</p>
+          <p style={{ maxWidth: 720, fontSize: "clamp(17px,2vw,21px)", lineHeight: 1.4, color: "#efe9de", marginBottom: 20, fontWeight: 500, textShadow: "0 1px 16px rgba(0,0,0,0.6)" }}>{t.heroSub}</p>
+          <div style={{ marginBottom: 24, display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(232,116,43,0.14)", border: `1px solid ${ACCENT}`, borderRadius: 100, padding: "8px 16px" }}>
+            <span className="pulse-dot" style={{ width: 6, height: 6, borderRadius: "50%", background: ACCENT, display: "inline-block" }} />
+            <span style={{ fontSize: 12.5, fontWeight: 700, color: "#fff" }}>{t.cohortLabel}: {t.cohortDetail}</span>
+          </div>
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
             <button onClick={book} className="btn-light" style={btnLight({ padding: "17px 34px", fontSize: 16 })}>{t.applyArrow}</button>
             <span style={{ fontSize: 13.5, color: MUT, fontWeight: 600 }}>{t.freeNote}</span>
@@ -250,6 +292,7 @@ export default function Join() {
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 38 }}>
             <span style={eyebrowS}>{t.painEyebrow}</span>
+            <p style={{ marginTop: 14, fontSize: "clamp(19px,2.4vw,24px)", lineHeight: 1.45, color: "#f0ece4", fontWeight: 600, maxWidth: 620, marginLeft: "auto", marginRight: "auto" }}>{t.painIntro}</p>
           </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 16 }}>
             <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 16, padding: "26px 26px" }}>
@@ -317,6 +360,20 @@ export default function Join() {
         </div>
       </section>
 
+      {/* GLOBAL NETWORK */}
+      <section style={{ background: "#0f0e0b", padding: "88px 24px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+        <div style={{ maxWidth: 780, margin: "0 auto", textAlign: "center" }}>
+          <span style={eyebrowS}>{t.globalEyebrow}</span>
+          <h2 style={h2(true)}>{t.globalTitle}</h2>
+          <p style={{ marginTop: 18, fontSize: 16.5, lineHeight: 1.65, color: MUT_SOFT }}>{t.globalBody}</p>
+          <div style={{ marginTop: 30, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 10 }}>
+            {t.globalPlaces.map((place) => (
+              <span key={place} style={{ fontSize: 13, fontWeight: 700, color: "#fff", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 100, padding: "8px 16px" }}>{place}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PROOF */}
       <section style={{ background: "#fff", color: INK, padding: SEC }}>
         <div style={{ maxWidth: 940, margin: "0 auto" }}>
@@ -370,6 +427,7 @@ export default function Join() {
                 </div>
                 <h3 style={{ marginTop: 14, fontSize: 17, fontWeight: 800 }}>{m.name}</h3>
                 <p style={{ marginTop: 3, fontSize: 12.5, fontWeight: 600, color: MUT, lineHeight: 1.35 }}>{m.tag}</p>
+                {m.note && <p style={{ marginTop: 4, fontSize: 11.5, color: "#8f887c", lineHeight: 1.35 }}>{m.note}</p>}
               </div>
             ))}
           </div>
@@ -426,6 +484,11 @@ export default function Join() {
       <section style={{ background: "#fff", color: INK, padding: "78px 24px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Head eye={t.howEyebrow} title={t.howTitle} dark={false} center />
+          <div style={{ textAlign: "center", marginTop: -20, marginBottom: 40 }}>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 700, color: ACCENT, background: "rgba(232,116,43,0.08)", border: `1px solid ${ACCENT}`, borderRadius: 100, padding: "8px 18px" }}>
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: ACCENT, display: "inline-block" }} />{t.howNote}
+            </span>
+          </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 18 }}>
             {t.how.map((s) => (
               <div key={s.n} style={{ background: "#f4f1ea", border: "1px solid rgba(0,0,0,0.07)", borderRadius: 16, padding: "28px 26px" }}>
@@ -482,6 +545,13 @@ export default function Join() {
         </div>
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,9,7,0.93)" }} />
         <div style={{ position: "relative", maxWidth: 620, margin: "0 auto", padding: "80px 24px 92px", textAlign: "center" }}>
+          <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 6, background: "rgba(232,116,43,0.1)", border: `1px solid ${ACCENT}`, borderRadius: 16, padding: "14px 26px", marginBottom: 30 }}>
+            <span style={{ fontSize: 12, fontWeight: 800, letterSpacing: "0.14em", textTransform: "uppercase", color: ACCENT }}>{t.cohortLabel}</span>
+            <span style={{ fontSize: 15, fontWeight: 700, color: "#fff" }}>{t.cohortDetail}</span>
+            {daysLeft !== null && daysLeft > 0 && (
+              <span style={{ fontSize: 13, fontWeight: 600, color: MUT }}>{t.cohortDays(daysLeft)}</span>
+            )}
+          </div>
           <h2 style={{ fontSize: "clamp(30px,4.4vw,48px)", fontWeight: 800, lineHeight: 1.08, letterSpacing: "-0.03em", color: "#fff" }}>{t.finalTitle}</h2>
           <p style={{ margin: "16px auto 0", maxWidth: 400, fontSize: 16.5, lineHeight: 1.5, color: MUT }}>{t.finalSub}</p>
           <div style={{ marginTop: 30, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>

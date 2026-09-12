@@ -66,7 +66,14 @@ export async function POST(req: Request) {
     source: (flaggedAsSpam ? "⚠️ Flagged (honeypot) — " : "") + (b.source || "Landing page").trim(),
     segment: "shoulder_to_shoulder",
     status: "new",
-    notes: (b.why || "").trim() ? `Why join: ${(b.why || "").trim()}` : "",
+    notes: [
+      b.goals?.trim() && `6-12mo goals: ${b.goals.trim()}`,
+      b.challenge?.trim() && `Biggest challenge: ${b.challenge.trim()}`,
+      b.whereHelps?.trim() && `Where the group helps most: ${b.whereHelps.trim()}`,
+      b.why?.trim() && `What would make it valuable: ${b.why.trim()}`,
+      b.contribution?.trim() && `What they'd contribute: ${b.contribution.trim()}`,
+      b.whyNow?.trim() && `Why now: ${b.whyNow.trim()}`,
+    ].filter(Boolean).join("\n"),
     createdAt: now,
     sequenceStep: 0,
     lastEmailAt: null,
@@ -100,8 +107,9 @@ export async function POST(req: Request) {
       <table style="border-collapse:collapse">
         ${row("Name", name)}${row("Email", email)}${row("WhatsApp", lead.whatsapp)}
         ${row("Instagram", lead.instagram)}${row("Business", lead.business)}${row("Revenue", lead.revenue)}
-        ${row("Source", lead.source)}${row("Why join", (b.why || "").trim())}
+        ${row("Source", lead.source)}
       </table>
+      <div style="margin-top:16px;white-space:pre-wrap;line-height:1.6">${lead.notes.replace(/</g, "&lt;")}</div>
       <p style="margin:22px 0 0">
         <a href="${approveUrl}" style="background:#E8742B;color:#fff;text-decoration:none;padding:12px 22px;border-radius:100px;font-weight:700;display:inline-block">✅ Approve &amp; send call link</a>
       </p>

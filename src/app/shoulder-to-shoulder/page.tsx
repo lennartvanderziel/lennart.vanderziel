@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import ApplicationForm from "@/components/ApplicationForm";
 
@@ -14,10 +14,10 @@ const included = [
 ];
 
 const fitFor = [
-  "Want to raise their standards so they can scale faster.",
-  "Realize they are the bottleneck — and value honest feedback over protecting their ego.",
+  "Already know what to do — and want to get the most out of themselves.",
+  "Are conscious, self-aware, and have done real inner work — no masks, no performance.",
   "Believe the most exceptional businesses are never built alone.",
-  "Have the do-what-it-takes attitude to match the room.",
+  "Want to grow as a whole man — business, fitness, relationships, mindset — not just revenue.",
 ];
 
 const steps = [
@@ -34,10 +34,16 @@ const faqs = [
   { q: "Is it only for male founders?", a: "Yes — Shoulder to Shoulder is built around male founders working in small, tight circles. It keeps the dynamic honest and direct. Reach out if you have questions about fit." },
   { q: "What is the time commitment?", a: "Built for busy founders: regular circle sessions online, offline gatherings you choose to attend, and two Summits a year. Intentional, never noise." },
   { q: "What happens after I apply?", a: "Every application is reviewed personally. If there's a potential fit, you're invited to a short Founder Fit Conversation — and from there, matched into your circle." },
+  { q: "How does the cohort system work?", a: "We build new Founder Circles as cohorts, not open enrollment. Your application is reviewed for fit with the upcoming Circle specifically. If it's not the right fit or the Circle is full, you're considered for the next cohort — we just can't promise exactly when that opens." },
 ];
 
 export default function ShoulderToShoulder() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [daysLeft, setDaysLeft] = useState<number | null>(null);
+  useEffect(() => {
+    const deadline = new Date("2026-09-30T23:59:59+02:00").getTime();
+    setDaysLeft(Math.max(Math.ceil((deadline - Date.now()) / 86400000), 0));
+  }, []);
 
   return (
     <div style={{ background: "#0f0e0b", color: "#15130f", fontFamily: "var(--font-sans), ui-sans-serif, sans-serif", minHeight: "100vh", overflowX: "hidden", WebkitFontSmoothing: "antialiased" }}>
@@ -81,10 +87,10 @@ export default function ShoulderToShoulder() {
       <section style={{ background: "#15130f", padding: "110px 28px" }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <p style={{ fontWeight: 800, fontSize: "clamp(28px,4vw,44px)", lineHeight: 1.2, letterSpacing: "-0.02em", color: "#fff", textAlign: "center" }}>
-            Every founder knows the feeling.
+            This isn&apos;t for founders who don&apos;t know what to do.
           </p>
-          <p style={{ marginTop: 26, fontSize: 17, lineHeight: 1.65, color: "#a59e93", textAlign: "center" }}>Some weeks you&apos;re on fire, solving big problems. Other weeks you&apos;re <span style={{ color: ACCENT, fontWeight: 700 }}>stuck</span>. And that&apos;s frustrating — because you&apos;re losing momentum, money and growth.</p>
-          <p style={{ marginTop: 18, fontSize: 17, lineHeight: 1.65, color: "#f0ece4", textAlign: "center", fontWeight: 600 }}>But there&apos;s another way. The fastest-growing entrepreneurs have a few things in common:</p>
+          <p style={{ marginTop: 26, fontSize: 17, lineHeight: 1.65, color: "#a59e93", textAlign: "center" }}>You already know. You move, you build, you figure it out. This is for founders who want to get the <span style={{ color: ACCENT, fontWeight: 700 }}>most</span> out of themselves — because alone you go fast, but together you go further.</p>
+          <p style={{ marginTop: 18, fontSize: 17, lineHeight: 1.65, color: "#f0ece4", textAlign: "center", fontWeight: 600 }}>The fastest-growing entrepreneurs have a few things in common:</p>
           <div style={{ marginTop: 34, display: "flex", flexDirection: "column", gap: 14, maxWidth: 560, marginLeft: "auto", marginRight: "auto" }}>
             {[
               "They collaborate with exceptional founders who have been there.",
@@ -321,8 +327,15 @@ export default function ShoulderToShoulder() {
         <div style={{ position: "absolute", inset: 0, background: "rgba(10,9,7,0.9)", pointerEvents: "none" }} />
         <div style={{ position: "relative", maxWidth: 620, margin: "0 auto", padding: "110px 28px" }}>
           <div style={{ textAlign: "center", marginBottom: 36 }}>
+            <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 6, background: "rgba(232,116,43,0.1)", border: `1px solid ${ACCENT}`, borderRadius: 16, padding: "14px 26px", marginBottom: 24 }}>
+              <span style={{ fontSize: 12, fontWeight: 800, letterSpacing: "0.14em", textTransform: "uppercase", color: ACCENT }}>Next Founder Circle</span>
+              <span style={{ fontSize: 15, fontWeight: 700, color: "#fff" }}>October 2026 · 6 founders · Applications close September 30</span>
+              {daysLeft !== null && daysLeft > 0 && (
+                <span style={{ fontSize: 13, fontWeight: 600, color: "#a59e93" }}>{daysLeft} day{daysLeft === 1 ? "" : "s"} left to apply</span>
+              )}
+            </div>
             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>Join the next Founder Circle</span>
-            <h2 style={{ marginTop: 8, fontSize: "clamp(28px,4.4vw,46px)", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-0.025em", color: "#fff" }}>Start with a two-minute application.</h2>
+            <h2 style={{ marginTop: 8, fontSize: "clamp(28px,4.4vw,46px)", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-0.025em", color: "#fff" }}>Start with a four-minute application.</h2>
             <p style={{ marginTop: 16, fontSize: 16.5, lineHeight: 1.55, color: "#a59e93" }}>Applications are reviewed personally. If there&apos;s a strong mutual fit, we&apos;ll invite you to a short Founder Fit Conversation.</p>
             <p style={{ marginTop: 22, fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 17.5, lineHeight: 1.5, color: "#cfc8bd" }}>&quot;Worth your time. You will meet new people — people you always wished to be surrounded by, with high energy — and you will expand your knowledge.&quot;</p>
           </div>

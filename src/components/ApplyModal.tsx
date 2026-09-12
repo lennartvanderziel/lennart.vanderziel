@@ -12,16 +12,21 @@ const copy = {
     email: "Email address",
     whatsapp: "WhatsApp (incl. country code)",
     instagram: "Instagram / LinkedIn",
-    business: "What does your business do?",
+    business: "What are you building?",
     revenueLabel: "Monthly revenue",
     revenue: ["Pre-revenue / early stage", "Less than €10k / month", "€10k – €25k / month", "€25k – €50k / month", "€50k – €100k / month", "€100k+ / month"],
-    why: "Why do you want to join, and what would make it valuable?",
+    goals: "What are you trying to achieve over the next 6–12 months?",
+    challenge: "What is currently holding you back the most?",
+    whereHelps: "Where would having the right group of founders around you make the biggest difference?",
+    why: "What would make this Circle extremely valuable for you?",
+    contribution: "What do you think you could contribute to the group?",
+    whyNow: "Why are you interested in joining now?",
     sourceLabel: "How did you hear about us?",
     source: ["Lennart", "A member or referral", "A friend", "Instagram", "Somewhere else"],
     submit: "Submit application →",
     sending: "Sending…",
     doneTitle: "Application received",
-    doneBody: "We review every application personally. If it's a strong fit, you'll get an email with a link to book your call.",
+    doneBody: "We review every application personally. If it's a strong fit, you'll get an email with a link to book your call — and if we invite you, it's because we think you belong in this Circle.",
     close: "Close",
     err: "Something went wrong. Please email lennart@shouldertoshoulder.club.",
   },
@@ -32,16 +37,21 @@ const copy = {
     email: "E-mailadres",
     whatsapp: "WhatsApp (incl. landcode)",
     instagram: "Instagram / LinkedIn",
-    business: "Wat doet je bedrijf?",
+    business: "Wat ben je aan het bouwen?",
     revenueLabel: "Maandelijkse omzet",
     revenue: ["Pre-revenue / vroege fase", "Minder dan €10k / maand", "€10k – €25k / maand", "€25k – €50k / maand", "€50k – €100k / maand", "€100k+ / maand"],
-    why: "Waarom wil je meedoen, en wat maakt het waardevol voor jou?",
+    goals: "Wat wil je de komende 6–12 maanden bereiken?",
+    challenge: "Wat houdt je nu het meest tegen?",
+    whereHelps: "Waar zou de juiste groep founders om je heen het grootste verschil maken?",
+    why: "Wat zou deze Circle extreem waardevol maken voor jou?",
+    contribution: "Wat denk je dat jij kan bijdragen aan de groep?",
+    whyNow: "Waarom wil je nu meedoen?",
     sourceLabel: "Hoe hoorde je van ons?",
     source: ["Lennart", "Een lid of doorverwijzing", "Een vriend", "Instagram", "Ergens anders"],
     submit: "Aanmelding versturen →",
     sending: "Versturen…",
     doneTitle: "Aanmelding ontvangen",
-    doneBody: "We bekijken elke aanmelding persoonlijk. Bij een sterke match krijg je een e-mail met een link om je call te boeken.",
+    doneBody: "We bekijken elke aanmelding persoonlijk. Bij een sterke match krijg je een e-mail met een link om je call te boeken — en als we je uitnodigen, is dat omdat we denken dat je in deze Circle thuishoort.",
     close: "Sluiten",
     err: "Er ging iets mis. Mail lennart@shouldertoshoulder.club.",
   },
@@ -55,13 +65,21 @@ const field: React.CSSProperties = {
 export default function ApplyModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { lang } = useLang();
   const t = copy[lang];
-  const [d, setD] = useState({ name: "", email: "", whatsapp: "", instagram: "", business: "", revenue: "", why: "", source: "" });
+  const [d, setD] = useState({
+    name: "", email: "", whatsapp: "", instagram: "", business: "", revenue: "",
+    goals: "", challenge: "", whereHelps: "", why: "", contribution: "", whyNow: "",
+    source: "",
+  });
   const [hp, setHp] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   if (!open) return null;
 
   const set = (k: keyof typeof d) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => setD({ ...d, [k]: e.target.value });
-  const valid = d.name.trim().length > 1 && /.+@.+\..+/.test(d.email) && d.whatsapp.trim().length > 4 && d.instagram.trim().length > 1 && d.business.trim().length > 1 && Boolean(d.revenue) && d.why.trim().length > 1 && Boolean(d.source);
+  const valid = d.name.trim().length > 1 && /.+@.+\..+/.test(d.email) && d.whatsapp.trim().length > 4 && d.instagram.trim().length > 1
+    && d.business.trim().length > 1 && Boolean(d.revenue)
+    && d.goals.trim().length > 1 && d.challenge.trim().length > 1 && d.whereHelps.trim().length > 1
+    && d.why.trim().length > 1 && d.contribution.trim().length > 1 && d.whyNow.trim().length > 1
+    && Boolean(d.source);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -110,7 +128,12 @@ export default function ApplyModal({ open, onClose }: { open: boolean; onClose: 
                 <option value="" disabled>{t.revenueLabel}</option>
                 {t.revenue.map((r) => <option key={r} value={r}>{r}</option>)}
               </select>
-              <textarea required rows={3} placeholder={t.why} value={d.why} onChange={set("why")} style={{ ...field, resize: "vertical" }} />
+              <textarea required rows={2} placeholder={t.goals} value={d.goals} onChange={set("goals")} style={{ ...field, resize: "vertical" }} />
+              <textarea required rows={2} placeholder={t.challenge} value={d.challenge} onChange={set("challenge")} style={{ ...field, resize: "vertical" }} />
+              <textarea required rows={2} placeholder={t.whereHelps} value={d.whereHelps} onChange={set("whereHelps")} style={{ ...field, resize: "vertical" }} />
+              <textarea required rows={2} placeholder={t.why} value={d.why} onChange={set("why")} style={{ ...field, resize: "vertical" }} />
+              <textarea required rows={2} placeholder={t.contribution} value={d.contribution} onChange={set("contribution")} style={{ ...field, resize: "vertical" }} />
+              <textarea required rows={2} placeholder={t.whyNow} value={d.whyNow} onChange={set("whyNow")} style={{ ...field, resize: "vertical" }} />
               <select required value={d.source} onChange={set("source")} style={{ ...field, color: d.source ? "#15130f" : "#8a847a" }}>
                 <option value="" disabled>{t.sourceLabel}</option>
                 {t.source.map((s) => <option key={s} value={s}>{s}</option>)}

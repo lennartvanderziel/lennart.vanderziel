@@ -38,7 +38,9 @@ const optionStyle = (selected: boolean): React.CSSProperties => ({
 
 const emptyData = {
   firstName: "", lastName: "", email: "", whatsapp: "", instagram: "",
-  business: "", revenue: "", why: "", source: "",
+  business: "", revenue: "",
+  goals: "", challenge: "", whereHelps: "", why: "", contribution: "", whyNow: "",
+  source: "",
 };
 
 export default function ApplicationForm() {
@@ -53,8 +55,13 @@ export default function ApplicationForm() {
     { valid: /.+@.+\..+/.test(data.email) && data.whatsapp.trim().length > 4 }, // 2 contact
     { valid: data.business.trim().length > 2 }, // 3 business
     { valid: data.revenue !== "" }, // 4 revenue
-    { valid: data.why.trim().length > 2 }, // 5 why
-    { valid: data.source !== "" }, // 6 source
+    { valid: data.goals.trim().length > 2 }, // 5 goals (6-12mo)
+    { valid: data.challenge.trim().length > 2 }, // 6 biggest challenge
+    { valid: data.whereHelps.trim().length > 2 }, // 7 where the group helps most
+    { valid: data.why.trim().length > 2 }, // 8 what would make it valuable
+    { valid: data.contribution.trim().length > 2 }, // 9 what you'd bring
+    { valid: data.whyNow.trim().length > 2 }, // 10 why now
+    { valid: data.source !== "" }, // 11 source
   ];
   const total = steps.length - 1;
   const progress = Math.min(step / total, 1) * 100;
@@ -76,7 +83,12 @@ export default function ApplicationForm() {
           instagram: data.instagram,
           business: data.business,
           revenue: data.revenue,
+          goals: data.goals,
+          challenge: data.challenge,
+          whereHelps: data.whereHelps,
           why: data.why,
+          contribution: data.contribution,
+          whyNow: data.whyNow,
           source: data.source,
           company_website: hp, // honeypot — bots fill this, humans never do
         }),
@@ -100,7 +112,7 @@ export default function ApplicationForm() {
         <span style={{ display: "inline-flex", width: 54, height: 54, borderRadius: "50%", background: `color-mix(in srgb, ${ACCENT} 14%, transparent)`, alignItems: "center", justifyContent: "center", fontSize: 24, color: ACCENT, fontWeight: 800 }}>✓</span>
         <p style={{ marginTop: 16, fontSize: 24, fontWeight: 800, color: "#15130f" }}>Application received.</p>
         <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#6b665d", maxWidth: 400, marginLeft: "auto", marginRight: "auto" }}>
-          Every application is reviewed personally. If there&apos;s a strong mutual fit, you&apos;ll be invited to a short <strong style={{ color: "#15130f" }}>Founder Fit Conversation</strong> — a personal call, no pitch, no pressure.
+          Every application is reviewed personally. If there&apos;s a strong mutual fit, you&apos;ll be invited to a short <strong style={{ color: "#15130f" }}>Founder Fit Conversation</strong> — a personal call, no pitch, no pressure. If we invite you, it&apos;s because we already think you belong in this Circle.
         </p>
       </div>
     );
@@ -112,7 +124,7 @@ export default function ApplicationForm() {
         <div style={{ marginBottom: 26 }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
             <span style={{ fontSize: 12, fontWeight: 700, color: "#8a847a", letterSpacing: "0.06em" }}>STEP {step} OF {total}</span>
-            <span style={{ fontSize: 12, fontWeight: 700, color: ACCENT }}>~2 minutes</span>
+            <span style={{ fontSize: 12, fontWeight: 700, color: ACCENT }}>~4 minutes</span>
           </div>
           <div style={{ height: 4, borderRadius: 2, background: "rgba(0,0,0,0.08)", overflow: "hidden" }}>
             <div style={{ width: `${progress}%`, height: "100%", background: ACCENT, borderRadius: 2, transition: "width .35s cubic-bezier(0.22,1,0.36,1)" }} />
@@ -123,7 +135,7 @@ export default function ApplicationForm() {
       {step === 0 && (
         <div style={{ textAlign: "center", padding: "8px 0" }}>
           <p style={{ fontSize: 21, fontWeight: 800, color: "#15130f", lineHeight: 1.3 }}>See if you qualify.</p>
-          <p style={{ marginTop: 10, fontSize: 14.5, lineHeight: 1.6, color: "#6b665d" }}>Six short questions — about two minutes. Every application is reviewed personally, and membership is by invitation only.</p>
+          <p style={{ marginTop: 10, fontSize: 14.5, lineHeight: 1.6, color: "#6b665d" }}>A real application — about four minutes. Every answer is read personally, and the next Founder Circle only has a few open seats.</p>
           <button onClick={next} className="btn-primary" style={{ marginTop: 22, background: ACCENT, color: "#fff", border: "none", padding: "16px 36px", fontSize: 15.5, fontWeight: 700, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: "pointer" }}>
             Start the application →
           </button>
@@ -150,7 +162,7 @@ export default function ApplicationForm() {
 
       {step === 3 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What does your business do?</p>
+          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What are you building?</p>
           <p style={{ fontSize: 13.5, color: "#8a847a", marginTop: -6 }}>One or two sentences is perfect.</p>
           <textarea autoFocus rows={3} placeholder="E.g. e-commerce brand in sports nutrition, 8 people, mostly EU market" value={data.business} onChange={(e) => setData({ ...data, business: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
         </div>
@@ -170,13 +182,47 @@ export default function ApplicationForm() {
 
       {step === 5 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>Why would you like to join?</p>
-          <p style={{ fontSize: 13.5, color: "#8a847a", marginTop: -6 }}>And what would make it truly valuable for you?</p>
-          <textarea autoFocus rows={4} placeholder="E.g. I want honest feedback, accountability and like-minded founders to grow and enjoy the journey with…" value={data.why} onChange={(e) => setData({ ...data, why: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What are you trying to achieve over the next 6–12 months?</p>
+          <textarea autoFocus rows={3} placeholder="E.g. cross €50k/month, hire a real ops lead, launch in a second market…" value={data.goals} onChange={(e) => setData({ ...data, goals: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
         </div>
       )}
 
       {step === 6 && (
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What is currently holding you back the most?</p>
+          <textarea autoFocus rows={3} placeholder="Be specific — the real constraint, not just the symptom." value={data.challenge} onChange={(e) => setData({ ...data, challenge: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+        </div>
+      )}
+
+      {step === 7 && (
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>Where would having the right group of founders around you make the biggest difference?</p>
+          <textarea autoFocus rows={3} placeholder="E.g. decisions I'm making alone, blind spots I can't see myself…" value={data.whereHelps} onChange={(e) => setData({ ...data, whereHelps: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+        </div>
+      )}
+
+      {step === 8 && (
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What would make this Circle extremely valuable for you?</p>
+          <textarea autoFocus rows={3} placeholder="E.g. honest feedback, accountability, like-minded founders to grow with…" value={data.why} onChange={(e) => setData({ ...data, why: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+        </div>
+      )}
+
+      {step === 9 && (
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What do you think you could contribute to the group?</p>
+          <textarea autoFocus rows={3} placeholder="Your experience, network, perspective — whatever you'd genuinely bring." value={data.contribution} onChange={(e) => setData({ ...data, contribution: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+        </div>
+      )}
+
+      {step === 10 && (
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>Why are you interested in joining now?</p>
+          <textarea autoFocus rows={3} placeholder="What made this the right moment?" value={data.whyNow} onChange={(e) => setData({ ...data, whyNow: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+        </div>
+      )}
+
+      {step === 11 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f", marginBottom: 4 }}>How did you hear about us?</p>
           {sources.map((src) => (
