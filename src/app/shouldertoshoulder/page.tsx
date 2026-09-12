@@ -64,6 +64,7 @@ const copy = {
       { title: "Growth beyond the business", desc: "Business, fitness, relationships, mindset." },
       { title: "Warm, not competitive", desc: "We want each other to win." },
       { title: "Successful, not soft", desc: "Driven, without the flex." },
+      { title: "Matched, not random", desc: "Business success is already a given. We match on character, development level and intelligence." },
     ],
 
     proofEyebrow: "Proof",
@@ -154,6 +155,7 @@ const copy = {
       { title: "Groei voorbij de business", desc: "Business, fitheid, relaties, mindset." },
       { title: "Warm, niet competitief", desc: "We gunnen elkaar het winnen." },
       { title: "Gedreven, niet soft", desc: "Gedreven, zonder de show." },
+      { title: "Gematcht, niet willekeurig", desc: "Succes in business is al een gegeven. We matchen op karakter, ontwikkelingsniveau en slimheid." },
     ],
 
     proofEyebrow: "Bewijs",
