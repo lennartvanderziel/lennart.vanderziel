@@ -17,7 +17,7 @@ export default function PlatformLogin() {
       setError("Please fill in both fields.");
       return;
     }
-    // Demo auth — replaced by real authentication when the backend lands
+    // Demo auth, replaced by real authentication when the backend lands
     sessionStorage.setItem("sts-member", email);
     router.push("/platform/dashboard");
   }

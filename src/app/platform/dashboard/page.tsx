@@ -36,9 +36,9 @@ const circles = assigned.some((c) => c.members.length > 0)
   : [{ name: "The crew", goal: "", meets: "", members: portalMembers }];
 
 const pastSessions = [
-  { date: "Last Tuesday", title: "Circle Session — Pricing deep-dive", summary: "Reviewed two pricing models; agreed on value-anchoring experiment for Member 3. Everyone set one pricing action.", recording: "#" },
-  { date: "2 weeks ago", title: "Circle Session — Hiring bottlenecks", summary: "Discussed first ops hires. Key lesson: hire against your calendar, not your org chart.", recording: "#" },
-  { date: "3 weeks ago", title: "Circle Session — Q3 objectives", summary: "Each member locked their Q3 objective and key metric. These now live in your Accountability dashboard.", recording: "#" },
+  { date: "Last Tuesday", title: "Circle Session, Pricing deep-dive", summary: "Reviewed two pricing models; agreed on value-anchoring experiment for Member 3. Everyone set one pricing action.", recording: "#" },
+  { date: "2 weeks ago", title: "Circle Session, Hiring bottlenecks", summary: "Discussed first ops hires. Key lesson: hire against your calendar, not your org chart.", recording: "#" },
+  { date: "3 weeks ago", title: "Circle Session, Q3 objectives", summary: "Each member locked their Q3 objective and key metric. These now live in your Accountability dashboard.", recording: "#" },
 ];
 
 const winsFeed = [
@@ -49,9 +49,9 @@ const winsFeed = [
 ];
 
 const boardPosts = [
-  { type: "Bottleneck", author: "Member 3", time: "2d ago", text: "Scaling past my own capacity in sales — who has experience handing sales off to a first closer?", replies: 4 },
+  { type: "Bottleneck", author: "Member 3", time: "2d ago", text: "Scaling past my own capacity in sales, who has experience handing sales off to a first closer?", replies: 4 },
   { type: "Introduction", author: "Member 1", time: "4d ago", text: "Can anyone intro me to a good 3PL partner in Western Europe? Volume ~2k orders/month.", replies: 2 },
-  { type: "Bottleneck", author: "Member 2", time: "1w ago", text: "Hiring my first ops manager — what did you pay and where did you find them?", replies: 5 },
+  { type: "Bottleneck", author: "Member 2", time: "1w ago", text: "Hiring my first ops manager, what did you pay and where did you find them?", replies: 5 },
 ];
 
 const statusConfig: Record<ActionStatus, { label: string; color: string; bg: string }> = {
@@ -123,7 +123,7 @@ export default function Dashboard() {
   const firstName = member.split("@")[0].split(".")[0];
   const displayName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
   const doneCount = acc.actions.filter((a) => a.status === "done").length;
-  const execScore = acc.actions.some((a) => a.label) ? ((doneCount / acc.actions.length) * 10).toFixed(1) : "—";
+  const execScore = acc.actions.some((a) => a.label) ? ((doneCount / acc.actions.length) * 10).toFixed(1) : "–";
 
   const sectionCard: React.CSSProperties = { background: CARD, border: BORDER, borderRadius: 16, padding: "26px 28px" };
   const inputDark: React.CSSProperties = { width: "100%", background: "rgba(255,255,255,0.05)", border: BORDER, color: "#f0ece4", padding: "13px 15px", fontSize: 14.5, fontFamily: "inherit", borderRadius: 10, outline: "none" };
@@ -265,7 +265,7 @@ export default function Dashboard() {
                 <section style={{ ...sectionCard, borderLeft: `3px solid ${RED}` }}>
                   <span style={eyebrowStyle(RED)}>Rolling · update when it changes</span>
                   <h2 style={{ fontSize: 16.5, fontWeight: 800, color: "#fff", margin: "12px 0 6px" }}>Current bottleneck / constraint</h2>
-                  <p style={{ fontSize: 12.5, color: "#8a847a", margin: "0 0 10px" }}>The one thing blocking your pathway. Solve it, then name the next — we work this every session.</p>
+                  <p style={{ fontSize: 12.5, color: "#8a847a", margin: "0 0 10px" }}>The one thing blocking your pathway. Solve it, then name the next, we work this every session.</p>
                   <input placeholder="What's the one thing blocking your progress?" value={acc.bottleneck} onChange={(e) => saveAcc({ ...acc, bottleneck: e.target.value })} style={inputDark} />
                 </section>
 
@@ -312,7 +312,7 @@ export default function Dashboard() {
                   {acc.actions.map((action, i) => (
                     <div key={i} style={{ marginBottom: 14 }}>
                       <input
-                        placeholder={i === 0 ? "#1 — the action that moves the needle most" : i === 1 ? "#2 — supporting needle-mover" : "#3 — upgrade yourself: identity, beliefs, skills"}
+                        placeholder={i === 0 ? "#1, the action that moves the needle most" : i === 1 ? "#2, supporting needle-mover" : "#3, upgrade yourself: identity, beliefs, skills"}
                         value={action.label}
                         onChange={(e) => { const actions = [...acc.actions]; actions[i] = { ...action, label: e.target.value }; saveAcc({ ...acc, actions }); }}
                         style={inputDark}
@@ -351,7 +351,7 @@ export default function Dashboard() {
             </header>
             <section style={{ ...sectionCard, border: "1px solid rgba(232,116,43,0.35)", marginBottom: 20 }}>
               <span style={eyebrowStyle(ACCENT)}>Upcoming · Tuesday 16:00 CET</span>
-              <h2 style={{ fontSize: 19, fontWeight: 800, color: "#fff", margin: "14px 0 6px" }}>Circle Session — weekly</h2>
+              <h2 style={{ fontSize: 19, fontWeight: 800, color: "#fff", margin: "14px 0 6px" }}>Circle Session, weekly</h2>
               <p style={{ fontSize: 14.5, color: "#a59e93", margin: 0 }}>Zoom · link shared in your WhatsApp group</p>
               <div style={{ marginTop: 14, background: "rgba(255,255,255,0.03)", border: BORDER, borderRadius: 12, padding: "16px 18px" }}>
                 <h3 style={{ fontSize: 13, fontWeight: 800, color: ACCENT, margin: "0 0 8px", letterSpacing: "0.08em", textTransform: "uppercase" }}>Prepare</h3>
@@ -410,7 +410,7 @@ export default function Dashboard() {
                 </div>
               </div>
             ))}
-            <p style={{ fontSize: 12.5, color: "#8a847a" }}>Profiles are placeholders — real names, photos and intros go live once you send them over.</p>
+            <p style={{ fontSize: 12.5, color: "#8a847a" }}>Profiles are placeholders, real names, photos and intros go live once you send them over.</p>
           </>
         )}
 
@@ -419,7 +419,7 @@ export default function Dashboard() {
           <>
             <header className="fade-up" style={{ marginBottom: 28 }}>
               <h1 style={{ fontSize: "clamp(26px,4vw,36px)", fontWeight: 800, letterSpacing: "-0.03em", color: "#fff" }}>The Board.</h1>
-              <p style={{ marginTop: 6, fontSize: 14.5, color: "#a59e93" }}>Bottlenecks, intro requests, wins and lessons — from the whole club.</p>
+              <p style={{ marginTop: 6, fontSize: 14.5, color: "#a59e93" }}>Bottlenecks, intro requests, wins and lessons, from the whole club.</p>
             </header>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {[...boardPosts, ...winsFeed.map((w) => ({ type: w.type, author: w.author, time: w.time, text: w.text, replies: 0 }))].map((post, i) => (
@@ -449,7 +449,7 @@ export default function Dashboard() {
                 <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 12 }}>
                   {[
                     { n: "1", text: "Think of a founder at your level who'd raise the bar of the room." },
-                    { n: "2", text: "Send them the site — lennartvanderziel.com/shoulder-to-shoulder — or intro them directly to Lennart on WhatsApp." },
+                    { n: "2", text: "Send them the site, lennartvanderziel.com/shoulder-to-shoulder, or intro them directly to Lennart on WhatsApp." },
                     { n: "3", text: "They mention your name in their application (\"How did you hear about us → A member or referral\")." },
                     { n: "4", text: "When they join, your next month is free. Automatically applied." },
                   ].map((s) => (
@@ -461,7 +461,7 @@ export default function Dashboard() {
                 </div>
                 <div style={{ marginTop: 16, background: "rgba(255,255,255,0.03)", border: BORDER, borderRadius: 12, padding: "14px 16px" }}>
                   <h3 style={{ fontSize: 12, fontWeight: 800, color: ACCENT, margin: "0 0 6px", letterSpacing: "0.08em", textTransform: "uppercase" }}>What to share</h3>
-                  <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "#a59e93", margin: 0 }}>The one-liner: &quot;It&apos;s a circle of 6–8 founders at your level — weekly online sessions, dinners and side quests in Southeast Asia and Europe, and two Summits a year. By application only.&quot;</p>
+                  <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "#a59e93", margin: 0 }}>The one-liner: &quot;It&apos;s a circle of 6–8 founders at your level, weekly online sessions, dinners and side quests in Southeast Asia and Europe, and two Summits a year. By application only.&quot;</p>
                 </div>
               </section>
               <section style={sectionCard}>
@@ -478,7 +478,7 @@ export default function Dashboard() {
                   </div>
                   <div style={{ background: "rgba(127,176,105,0.08)", border: "1px solid rgba(127,176,105,0.3)", borderRadius: 12, padding: "16px 18px" }}>
                     <h3 style={{ fontSize: 14.5, fontWeight: 800, color: GREEN, margin: "0 0 6px" }}>The thank-you</h3>
-                    <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "#a59e93", margin: 0 }}>Deliver both and there&apos;s a bonus on Lennart — announced at the next dinner.</p>
+                    <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "#a59e93", margin: 0 }}>Deliver both and there&apos;s a bonus on Lennart, announced at the next dinner.</p>
                   </div>
                 </div>
               </section>
@@ -495,12 +495,12 @@ export default function Dashboard() {
             </header>
             <div style={{ maxWidth: 760, display: "flex", flexDirection: "column", gap: 14 }}>
               {[
-                { title: "Confidentiality is absolute", text: "What's shared in the circle stays in the circle. Numbers, struggles, plans — nothing leaves the room, ever." },
+                { title: "Confidentiality is absolute", text: "What's shared in the circle stays in the circle. Numbers, struggles, plans, nothing leaves the room, ever." },
                 { title: "Show up", text: "Weekly sessions and your Thursday buddy call are commitments, not options. If you can't make it, tell your circle in advance." },
-                { title: "Radical honesty, zero judgment", text: "We tell each other the truth — about the business and about ourselves. Feedback is a gift here, not an attack." },
+                { title: "Radical honesty, zero judgment", text: "We tell each other the truth, about the business and about ourselves. Feedback is a gift here, not an attack." },
                 { title: "Give first", text: "Lead with contributions: intros, solutions, experience. The club works because everyone deposits more than they withdraw." },
                 { title: "No pitching", text: "Members are peers, not prospects. Selling to the room breaks the trust that makes it valuable." },
-                { title: "Have fun, stay classy", text: "Dinners, side quests and Summits are part of the work. Enjoy them fully — and represent the club well." },
+                { title: "Have fun, stay classy", text: "Dinners, side quests and Summits are part of the work. Enjoy them fully, and represent the club well." },
               ].map((rule, i) => (
                 <div key={rule.title} style={{ ...sectionCard, display: "flex", gap: 18, alignItems: "flex-start" }}>
                   <span style={{ flex: "0 0 auto", width: 32, height: 32, borderRadius: "50%", background: "rgba(232,116,43,0.14)", border: "1px solid rgba(232,116,43,0.4)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 800, color: ACCENT }}>{i + 1}</span>

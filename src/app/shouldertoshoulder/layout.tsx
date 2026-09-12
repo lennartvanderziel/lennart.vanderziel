@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
   openGraph: {
     title: "Shoulder to Shoulder · By Invitation",
-    description: "A private circle of founders growing exponentially — together. By application only.",
+    description: "A private circle of founders growing exponentially, together. By application only.",
     images: [{ url: "/founders.jpg", width: 1200, height: 630, alt: "Shoulder to Shoulder" }],
   },
 };

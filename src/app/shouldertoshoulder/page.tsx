@@ -52,19 +52,19 @@ const copy = {
 
     globalEyebrow: "The bigger vision",
     globalTitle: "One network, wherever you go.",
-    globalBody: "We're building toward a global founder network — so wherever you land, South Africa, Dubai, Bali, Europe, someone picks you up from the airport and you already have friends there. Our Summits happen in places like these, so if you want to live in a few different places each year, it works perfectly: you can spend a stretch of time in each, and always have the right people around you.",
+    globalBody: "We're building toward a global founder network, so wherever you land, South Africa, Dubai, Bali, Europe, someone picks you up from the airport and you already have friends there. Our Summits happen in places like these, so if you want to live in a few different places each year, it works perfectly: you can spend a stretch of time in each, and always have the right people around you.",
     globalPlaces: ["Bali", "South Africa", "Dubai", "Europe"],
 
     roomEyebrow: "The members",
     roomTitle: "Some of our members, based across 3 continents",
     selEyebrow: "Who we are",
     selTitle: "Not a typical founder club",
-    selSub: "This is for a specific kind of entrepreneur: conscious, self-aware, and doing real inner work. It's not only about what you build — it's about who you become in the process, in every part of life: business, fitness, relationships, spirituality.",
+    selSub: "This is for a specific kind of entrepreneur: conscious, self-aware, and doing real inner work. It's not only about what you build, it's about who you become in the process, in every part of life: business, fitness, relationships, spirituality.",
     selItems: [
       { title: "Depth over ego", desc: "No masks, no performance. Founders who've done the inner work and can be honest about what's actually going on." },
-      { title: "Growth beyond the business", desc: "Fitness, relationships, spirituality, mindset — becoming the best version of yourself, not just growing revenue." },
+      { title: "Growth beyond the business", desc: "Fitness, relationships, spirituality, mindset, becoming the best version of yourself, not just growing revenue." },
       { title: "Warm, not competitive", desc: "People who genuinely want to see each other win, and show up for it." },
-      { title: "Successful, not soft", desc: "Driven, ambitious men — just without the mask or the flex." },
+      { title: "Successful, not soft", desc: "Driven, ambitious men, just without the mask or the flex." },
     ],
 
     proofEyebrow: "Proof",
@@ -81,18 +81,18 @@ const copy = {
     howTitle: "One hour a week. Never more.",
     howNote: "Every circle session is capped at 60 minutes, online, every week.",
     how: [
-      { n: "1", title: "Hot-seat sessions", desc: "Twice a month, one member brings a real challenge and the circle solves it together — sharp, specific, no fluff." },
-      { n: "2", title: "Expert session", desc: "Once a month, a guest expert goes deep on what moves the needle — AI, team building, sales, whatever the group needs most." },
-      { n: "3", title: "Personal growth session", desc: "Once a month, the focus is on you — not just the business. Mindset, habits, relationships, the whole man." },
+      { n: "1", title: "Hot-seat sessions", desc: "Twice a month, one member brings a real challenge and the circle solves it together, sharp, specific, no fluff." },
+      { n: "2", title: "Expert session", desc: "Once a month, a guest expert goes deep on what moves the needle, AI, team building, sales, whatever the group needs most." },
+      { n: "3", title: "Personal growth session", desc: "Once a month, the focus is on you, not just the business. Mindset, habits, relationships, the whole man." },
       { n: "4", title: "Growth dashboard", desc: "A shared dashboard where everyone tracks where they stand, where they're headed, and holds each other accountable to it." },
-      { n: "5", title: "In person, together", desc: "Dinners, activities and side quests — offline, whenever the club gathers near you." },
+      { n: "5", title: "In person, together", desc: "Dinners, activities and side quests, offline, whenever the club gathers near you." },
       { n: "6", title: "Monthly 1-on-1", desc: "An optional, personal coaching session with Lennart, your business coach." },
     ],
 
     hostEyebrow: "Your host",
     hostName: "Lennart van der Ziel",
     hostChips: ["Former tech CEO", "200k+ products sold", "100+ founders guided"],
-    hostDesc: "As founder & CEO I built Travis the Translator — an award-winning startup named Dutch Startup of the Year, with 200,000+ devices sold worldwide — and helped start one of the Netherlands' largest founder communities. Along the way I made costly mistakes and often felt alone, so I built the environment I wish I'd had. Today I personally host everything inside Shoulder to Shoulder.",
+    hostDesc: "As founder & CEO I built Travis the Translator, an award-winning startup named Dutch Startup of the Year, with 200,000+ devices sold worldwide, and helped start one of the Netherlands' largest founder communities. Along the way I made costly mistakes and often felt alone, so I built the environment I wish I'd had. Today I personally host everything inside Shoulder to Shoulder.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Good questions",
@@ -104,7 +104,7 @@ const copy = {
       { q: "Is this coaching?", a: "No. It's peers, not a coach talking at you." },
       { q: "I'm too busy.", a: "It's one focused hour a week, and it saves you far more. You set better priorities, make fewer bad decisions, and spend less time on things that don't matter." },
       { q: "How does the application actually work?", a: "We work in cohorts, not open enrollment. When you apply, we look at fit with the upcoming Circle specifically. If there's a potential match, you're invited to a call where we figure out together whether it's a real fit." },
-      { q: "What if I don't get into this cohort?", a: "If the current Circle is full or the timing isn't right yet, you'll be considered for the next cohort — we just can't promise exactly when that opens." },
+      { q: "What if I don't get into this cohort?", a: "If the current Circle is full or the timing isn't right yet, you'll be considered for the next cohort, we just can't promise exactly when that opens." },
     ],
 
     eventEyebrow: "Our events",
@@ -148,19 +148,19 @@ const copy = {
 
     globalEyebrow: "De grotere visie",
     globalTitle: "Eén netwerk, waar je ook bent.",
-    globalBody: "We bouwen aan een wereldwijd foundernetwerk — dus waar je ook landt, Zuid-Afrika, Dubai, Bali, Europa, er staat iemand voor je klaar op het vliegveld en je hebt er al vrienden. Onze Summits vinden plaats op precies zulke plekken, dus als je meerdere plekken per jaar wil wonen, werkt dat perfect: je kan er telkens een tijd zitten en hebt altijd de juiste mensen om je heen.",
+    globalBody: "We bouwen aan een wereldwijd foundernetwerk, dus waar je ook landt, Zuid-Afrika, Dubai, Bali, Europa, er staat iemand voor je klaar op het vliegveld en je hebt er al vrienden. Onze Summits vinden plaats op precies zulke plekken, dus als je meerdere plekken per jaar wil wonen, werkt dat perfect: je kan er telkens een tijd zitten en hebt altijd de juiste mensen om je heen.",
     globalPlaces: ["Bali", "Zuid-Afrika", "Dubai", "Europa"],
 
     roomEyebrow: "De members",
     roomTitle: "Een aantal van onze members, verspreid over 3 continenten",
     selEyebrow: "Wie we zijn",
     selTitle: "Geen doorsnee founderclub",
-    selSub: "Dit is voor een heel specifiek type ondernemer: bewust, zelfreflectief, en echt bezig met innerlijk werk. Het gaat niet alleen om wat je bouwt — het gaat om wie je wordt in het proces, op elk vlak van het leven: business, fitheid, relaties, spiritualiteit.",
+    selSub: "Dit is voor een heel specifiek type ondernemer: bewust, zelfreflectief, en echt bezig met innerlijk werk. Het gaat niet alleen om wat je bouwt, het gaat om wie je wordt in het proces, op elk vlak van het leven: business, fitheid, relaties, spiritualiteit.",
     selItems: [
       { title: "Diepgang boven ego", desc: "Geen maskers, geen stoerdoenerij. Founders die het innerlijke werk hebben gedaan en eerlijk durven zijn over wat er echt speelt." },
-      { title: "Groei voorbij de business", desc: "Fitheid, relaties, spiritualiteit, mindset — de beste versie van jezelf worden, niet alleen omzet laten groeien." },
+      { title: "Groei voorbij de business", desc: "Fitheid, relaties, spiritualiteit, mindset, de beste versie van jezelf worden, niet alleen omzet laten groeien." },
       { title: "Warm, niet competitief", desc: "Mensen die elkaar oprecht winst gunnen, en daarvoor opstaan." },
-      { title: "Gedreven, niet soft", desc: "Succesvolle, ambitieuze mannen — gewoon zonder het masker of de show." },
+      { title: "Gedreven, niet soft", desc: "Succesvolle, ambitieuze mannen, gewoon zonder het masker of de show." },
     ],
 
     proofEyebrow: "Bewijs",
@@ -177,18 +177,18 @@ const copy = {
     howTitle: "Eén uur per week. Nooit meer.",
     howNote: "Elke circle-sessie duurt maximaal 60 minuten, online, elke week.",
     how: [
-      { n: "1", title: "Hotseat-sessies", desc: "Twee keer per maand brengt een member een echte uitdaging in, en de circle lost 'm samen op — scherp, specifiek, geen ruis." },
-      { n: "2", title: "Expert-sessie", desc: "Eén keer per maand duikt een gastexpert diep in wat het verschil maakt — AI, teambuilding, sales, wat de groep het hardst nodig heeft." },
-      { n: "3", title: "Personal growth-sessie", desc: "Eén keer per maand draait het om jou — niet alleen de business. Mindset, gewoontes, relaties, de hele man." },
+      { n: "1", title: "Hotseat-sessies", desc: "Twee keer per maand brengt een member een echte uitdaging in, en de circle lost 'm samen op, scherp, specifiek, geen ruis." },
+      { n: "2", title: "Expert-sessie", desc: "Eén keer per maand duikt een gastexpert diep in wat het verschil maakt, AI, teambuilding, sales, wat de groep het hardst nodig heeft." },
+      { n: "3", title: "Personal growth-sessie", desc: "Eén keer per maand draait het om jou, niet alleen de business. Mindset, gewoontes, relaties, de hele man." },
       { n: "4", title: "Growth dashboard", desc: "Een gedeeld dashboard waarin iedereen ziet waar hij staat, waar hij naartoe gaat, en elkaar daarop accountable houdt." },
-      { n: "5", title: "In het echt, samen", desc: "Diners, activiteiten en side quests — offline, wanneer de club bij elkaar komt in jouw buurt." },
+      { n: "5", title: "In het echt, samen", desc: "Diners, activiteiten en side quests, offline, wanneer de club bij elkaar komt in jouw buurt." },
       { n: "6", title: "Maandelijks 1-op-1", desc: "Een optionele, persoonlijke coachingsessie met Lennart, je business coach." },
     ],
 
     hostEyebrow: "Je host",
     hostName: "Lennart van der Ziel",
     hostChips: ["Voormalig tech-CEO", "200k+ producten verkocht", "100+ founders begeleid"],
-    hostDesc: "Als founder & CEO bouwde ik Travis the Translator — een bekroonde startup, uitgeroepen tot Dutch Startup of the Year, met 200.000+ verkochte apparaten wereldwijd — en hielp ik een van de grootste foundercommunities van Nederland opstarten. Onderweg maakte ik dure fouten en voelde ik me vaak alleen, dus bouwde ik de omgeving die ik zelf had willen hebben. Vandaag host ik alles binnen Shoulder to Shoulder persoonlijk.",
+    hostDesc: "Als founder & CEO bouwde ik Travis the Translator, een bekroonde startup, uitgeroepen tot Dutch Startup of the Year, met 200.000+ verkochte apparaten wereldwijd, en hielp ik een van de grootste foundercommunities van Nederland opstarten. Onderweg maakte ik dure fouten en voelde ik me vaak alleen, dus bouwde ik de omgeving die ik zelf had willen hebben. Vandaag host ik alles binnen Shoulder to Shoulder persoonlijk.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Goede vragen",
@@ -200,7 +200,7 @@ const copy = {
       { q: "Is dit coaching?", a: "Nee. Het zijn peers, geen coach die tegen je praat." },
       { q: "Ik heb geen tijd.", a: "Het is één gefocust uur per week, en het bespaart je veel meer. Je stelt betere prioriteiten, maakt minder verkeerde keuzes, en verliest minder tijd aan wat er niet toe doet." },
       { q: "Hoe werkt de aanmelding precies?", a: "We werken met cohorten, niet met doorlopende inschrijving. Als je je aanmeldt, kijken we naar fit met de aankomende Circle specifiek. Bij een mogelijke match nodigen we je uit voor een gesprek waarin we samen bepalen of het een echte fit is." },
-      { q: "Wat als ik niet in dit cohort kom?", a: "Als de huidige Circle vol zit of het moment nog niet goed is, kom je in beeld voor het volgende cohort — we kunnen alleen niet precies zeggen wanneer dat opent." },
+      { q: "Wat als ik niet in dit cohort kom?", a: "Als de huidige Circle vol zit of het moment nog niet goed is, kom je in beeld voor het volgende cohort, we kunnen alleen niet precies zeggen wanneer dat opent." },
     ],
 
     eventEyebrow: "Onze events",
@@ -287,7 +287,7 @@ export default function Join() {
         </div>
       </header>
 
-      {/* PAINPOINT — alone vs together */}
+      {/* PAINPOINT, alone vs together */}
       <section style={{ background: "#0f0e0b", padding: "76px 24px 56px" }}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 38 }}>

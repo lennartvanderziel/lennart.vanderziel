@@ -47,7 +47,7 @@ export default function ApplicationForm() {
   const [step, setStep] = useState(0);
   const [data, setData] = useState({ ...emptyData });
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
-  const [hp, setHp] = useState(""); // honeypot — humans never see or fill this
+  const [hp, setHp] = useState(""); // honeypot, humans never see or fill this
 
   const steps = [
     { valid: true }, // 0 intro
@@ -90,7 +90,7 @@ export default function ApplicationForm() {
           contribution: data.contribution,
           whyNow: data.whyNow,
           source: data.source,
-          company_website: hp, // honeypot — bots fill this, humans never do
+          company_website: hp, // honeypot, bots fill this, humans never do
         }),
       });
       ok = !!(await res.json().catch(() => ({ ok: false }))).ok;
@@ -112,7 +112,7 @@ export default function ApplicationForm() {
         <span style={{ display: "inline-flex", width: 54, height: 54, borderRadius: "50%", background: `color-mix(in srgb, ${ACCENT} 14%, transparent)`, alignItems: "center", justifyContent: "center", fontSize: 24, color: ACCENT, fontWeight: 800 }}>✓</span>
         <p style={{ marginTop: 16, fontSize: 24, fontWeight: 800, color: "#15130f" }}>Application received.</p>
         <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#6b665d", maxWidth: 400, marginLeft: "auto", marginRight: "auto" }}>
-          Every application is reviewed personally. If there&apos;s a strong mutual fit, you&apos;ll be invited to a short <strong style={{ color: "#15130f" }}>Founder Fit Conversation</strong> — a personal call, no pitch, no pressure. If we invite you, it&apos;s because we already think you belong in this Circle.
+          Every application is reviewed personally. If there&apos;s a strong mutual fit, you&apos;ll be invited to a short <strong style={{ color: "#15130f" }}>Founder Fit Conversation</strong>, a personal call, no pitch, no pressure. If we invite you, it&apos;s because we already think you belong in this Circle.
         </p>
       </div>
     );
@@ -135,7 +135,7 @@ export default function ApplicationForm() {
       {step === 0 && (
         <div style={{ textAlign: "center", padding: "8px 0" }}>
           <p style={{ fontSize: 21, fontWeight: 800, color: "#15130f", lineHeight: 1.3 }}>See if you qualify.</p>
-          <p style={{ marginTop: 10, fontSize: 14.5, lineHeight: 1.6, color: "#6b665d" }}>A real application — about four minutes. Every answer is read personally, and the next Founder Circle only has a few open seats.</p>
+          <p style={{ marginTop: 10, fontSize: 14.5, lineHeight: 1.6, color: "#6b665d" }}>A real application, about four minutes. Every answer is read personally, and the next Founder Circle only has a few open seats.</p>
           <button onClick={next} className="btn-primary" style={{ marginTop: 22, background: ACCENT, color: "#fff", border: "none", padding: "16px 36px", fontSize: 15.5, fontWeight: 700, fontFamily: "var(--font-sans), sans-serif", borderRadius: 100, cursor: "pointer" }}>
             Start the application →
           </button>
@@ -144,7 +144,7 @@ export default function ApplicationForm() {
 
       {step === 1 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>First — who are you?</p>
+          <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>First, who are you?</p>
           <input type="text" name="company_website" tabIndex={-1} autoComplete="off" value={hp} onChange={(e) => setHp(e.target.value)} style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }} aria-hidden="true" />
           <input autoFocus type="text" placeholder="First name" value={data.firstName} onChange={(e) => setData({ ...data, firstName: e.target.value })} className="input-premium" style={inputStyle} />
           <input type="text" placeholder="Last name" value={data.lastName} onChange={(e) => setData({ ...data, lastName: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
@@ -190,7 +190,7 @@ export default function ApplicationForm() {
       {step === 6 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What is currently holding you back the most?</p>
-          <textarea autoFocus rows={3} placeholder="Be specific — the real constraint, not just the symptom." value={data.challenge} onChange={(e) => setData({ ...data, challenge: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+          <textarea autoFocus rows={3} placeholder="Be specific, the real constraint, not just the symptom." value={data.challenge} onChange={(e) => setData({ ...data, challenge: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
         </div>
       )}
 
@@ -211,7 +211,7 @@ export default function ApplicationForm() {
       {step === 9 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What do you think you could contribute to the group?</p>
-          <textarea autoFocus rows={3} placeholder="Your experience, network, perspective — whatever you'd genuinely bring." value={data.contribution} onChange={(e) => setData({ ...data, contribution: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+          <textarea autoFocus rows={3} placeholder="Your experience, network, perspective, whatever you'd genuinely bring." value={data.contribution} onChange={(e) => setData({ ...data, contribution: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
         </div>
       )}
 

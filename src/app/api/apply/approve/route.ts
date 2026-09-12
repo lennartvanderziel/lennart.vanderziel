@@ -58,7 +58,7 @@ export async function GET(req: Request) {
 
   const sent = await sendEmail(
     email,
-    "You're invited — book your Shoulder to Shoulder call",
+    "You're invited, book your Shoulder to Shoulder call",
     `<div style="font-family:system-ui,sans-serif;font-size:15px;color:#15130f;line-height:1.6">
       <p>Hi ${firstName},</p>
       <p>Thanks for applying to <strong>Shoulder to Shoulder</strong>. I'd love to speak with you.</p>

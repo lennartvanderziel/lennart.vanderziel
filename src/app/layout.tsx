@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s · Lennart van der Ziel",
   },
   description:
-    "Former founder & CEO of an award-winning tech startup, now developing the people behind businesses — strategy, masterminds and founder communities. Home of Shoulder to Shoulder.",
+    "Former founder & CEO of an award-winning tech startup, now developing the people behind businesses, strategy, masterminds and founder communities. Home of Shoulder to Shoulder.",
   keywords: [
     "founder coaching",
     "founder development",
@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     siteName: "Lennart van der Ziel",
     title: "Lennart van der Ziel · Developing Founders, Not Technology",
     description:
-      "Strategy, masterminds and founder communities. I help business owners grow — surrounded by the right entrepreneurs.",
+      "Strategy, masterminds and founder communities. I help business owners grow, surrounded by the right entrepreneurs.",
     images: [{ url: "/lennart.jpg", width: 1200, height: 630, alt: "Lennart van der Ziel" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Lennart van der Ziel · Developing Founders, Not Technology",
     description:
-      "Strategy, masterminds and founder communities. I help business owners grow — surrounded by the right entrepreneurs.",
+      "Strategy, masterminds and founder communities. I help business owners grow, surrounded by the right entrepreneurs.",
     images: ["/lennart.jpg"],
   },
   robots: {
@@ -73,7 +73,7 @@ const jsonLd = {
       url: "https://lennartvanderziel.com",
       founder: { "@id": "https://lennartvanderziel.com/#person" },
       description:
-        "Elite health performance coaching and the Shoulder to Shoulder Founder Circle — a private community for high-level founders.",
+        "Elite health performance coaching and the Shoulder to Shoulder Founder Circle, a private community for high-level founders.",
       areaServed: "Worldwide",
     },
     {

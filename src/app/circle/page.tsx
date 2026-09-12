@@ -55,7 +55,7 @@ function normaliseRoster(list: RosterMember[]): RosterMember[] {
   return list
     .filter((m) => m && typeof m.id === "string" && typeof m.name === "string")
     .filter((m) => (m.status ?? "active") === "active")
-    .map((m) => ({ id: m.id, name: m.name, email: m.email ?? "", circle: m.circle ?? "—", status: "active" }));
+    .map((m) => ({ id: m.id, name: m.name, email: m.email ?? "", circle: m.circle ?? "–", status: "active" }));
 }
 
 const statusColor: Record<ActionStatus, string> = {
@@ -264,10 +264,10 @@ export default function CirclePage() {
                   <input
                     placeholder={
                       i === 0
-                        ? "#1 — the action that moves the needle most"
+                        ? "#1, the action that moves the needle most"
                         : i === 1
-                        ? "#2 — supporting needle-mover"
-                        : "#3 — upgrade yourself: identity, beliefs, skills"
+                        ? "#2, supporting needle-mover"
+                        : "#3, upgrade yourself: identity, beliefs, skills"
                     }
                     value={action.label}
                     onChange={(e) => updateAction(i, { label: e.target.value })}

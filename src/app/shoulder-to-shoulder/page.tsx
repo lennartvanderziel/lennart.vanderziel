@@ -7,34 +7,34 @@ const ACCENT = "#E8742B";
 
 
 const included = [
-  "Your Founder Circle — 6 to 8 founders at your level",
-  "A one-hour online circle session every week — from anywhere",
+  "Your Founder Circle, 6 to 8 founders at your level",
+  "A one-hour online circle session every week, from anywhere",
   "Offline dinners, activities and side quests in Southeast Asia and Europe",
-  "Two STS Summits per year — everybody together",
+  "Two STS Summits per year, everybody together",
 ];
 
 const fitFor = [
-  "Already know what to do — and want to get the most out of themselves.",
-  "Are conscious, self-aware, and have done real inner work — no masks, no performance.",
+  "Already know what to do, and want to get the most out of themselves.",
+  "Are conscious, self-aware, and have done real inner work, no masks, no performance.",
   "Believe the most exceptional businesses are never built alone.",
-  "Want to grow as a whole man — business, fitness, relationships, mindset — not just revenue.",
+  "Want to grow as a whole man, business, fitness, relationships, mindset, not just revenue.",
 ];
 
 const steps = [
-  { n: "1", title: "Apply", desc: "A short application — takes two minutes. Tell us about you and your business." },
+  { n: "1", title: "Apply", desc: "A short application, takes two minutes. Tell us about you and your business." },
   { n: "2", title: "Founder Fit Conversation", desc: "A personal call to make sure it's the right fit, both ways. No pitch, no pressure." },
   { n: "3", title: "Join your circle", desc: "You're matched into a Founder Circle of 6–8 founders operating at your level." },
 ];
 
 const faqs = [
   { q: "How do the Founder Circles work?", a: "Your circle is a fixed group of 6 to 8 founders operating at your level. You meet online for one hour every week, using a structured system: sharing opportunities, providing solutions, solving each other's problems and holding each other accountable. Same faces, growing trust, compounding value." },
-  { q: "Are the sessions online or offline?", a: "Both — by design. Circle sessions are online, so you can join from anywhere in the world. The events, dinners, activities and side quests are offline, in Southeast Asia and Europe — where most members are based. And twice a year the whole community comes together at the STS Summit." },
-  { q: "I split my time between countries. Does that work?", a: "Perfectly. Most members are based in Europe or Southeast Asia, and many move between them. Your circle travels with you because it's online — and there are offline gatherings in both regions." },
+  { q: "Are the sessions online or offline?", a: "Both, by design. Circle sessions are online, so you can join from anywhere in the world. The events, dinners, activities and side quests are offline, in Southeast Asia and Europe, where most members are based. And twice a year the whole community comes together at the STS Summit." },
+  { q: "I split my time between countries. Does that work?", a: "Perfectly. Most members are based in Europe or Southeast Asia, and many move between them. Your circle travels with you because it's online, and there are offline gatherings in both regions." },
   { q: "Who is in the community?", a: "Two levels: founders doing €5k–25k/month scaling to €1M/year, and founders past €25k/month scaling to multiple 7 figures. Every member is personally vetted on level, values and attitude." },
-  { q: "Is it only for male founders?", a: "Yes — Shoulder to Shoulder is built around male founders working in small, tight circles. It keeps the dynamic honest and direct. Reach out if you have questions about fit." },
+  { q: "Is it only for male founders?", a: "Yes, Shoulder to Shoulder is built around male founders working in small, tight circles. It keeps the dynamic honest and direct. Reach out if you have questions about fit." },
   { q: "What is the time commitment?", a: "Built for busy founders: regular circle sessions online, offline gatherings you choose to attend, and two Summits a year. Intentional, never noise." },
-  { q: "What happens after I apply?", a: "Every application is reviewed personally. If there's a potential fit, you're invited to a short Founder Fit Conversation — and from there, matched into your circle." },
-  { q: "How does the cohort system work?", a: "We build new Founder Circles as cohorts, not open enrollment. Your application is reviewed for fit with the upcoming Circle specifically. If it's not the right fit or the Circle is full, you're considered for the next cohort — we just can't promise exactly when that opens." },
+  { q: "What happens after I apply?", a: "Every application is reviewed personally. If there's a potential fit, you're invited to a short Founder Fit Conversation, and from there, matched into your circle." },
+  { q: "How does the cohort system work?", a: "We build new Founder Circles as cohorts, not open enrollment. Your application is reviewed for fit with the upcoming Circle specifically. If it's not the right fit or the Circle is full, you're considered for the next cohort, we just can't promise exactly when that opens." },
 ];
 
 export default function ShoulderToShoulder() {
@@ -89,7 +89,7 @@ export default function ShoulderToShoulder() {
           <p style={{ fontWeight: 800, fontSize: "clamp(28px,4vw,44px)", lineHeight: 1.2, letterSpacing: "-0.02em", color: "#fff", textAlign: "center" }}>
             This isn&apos;t for founders who don&apos;t know what to do.
           </p>
-          <p style={{ marginTop: 26, fontSize: 17, lineHeight: 1.65, color: "#a59e93", textAlign: "center" }}>You already know. You move, you build, you figure it out. This is for founders who want to get the <span style={{ color: ACCENT, fontWeight: 700 }}>most</span> out of themselves — because alone you go fast, but together you go further.</p>
+          <p style={{ marginTop: 26, fontSize: 17, lineHeight: 1.65, color: "#a59e93", textAlign: "center" }}>You already know. You move, you build, you figure it out. This is for founders who want to get the <span style={{ color: ACCENT, fontWeight: 700 }}>most</span> out of themselves, because alone you go fast, but together you go further.</p>
           <p style={{ marginTop: 18, fontSize: 17, lineHeight: 1.65, color: "#f0ece4", textAlign: "center", fontWeight: 600 }}>The fastest-growing entrepreneurs have a few things in common:</p>
           <div style={{ marginTop: 34, display: "flex", flexDirection: "column", gap: 14, maxWidth: 560, marginLeft: "auto", marginRight: "auto" }}>
             {[
@@ -117,22 +117,22 @@ export default function ShoulderToShoulder() {
       {/* IMAGINE / WHY */}
       <section style={{ background: "#0f0e0b", padding: "110px 28px" }}>
         <div style={{ maxWidth: 680, margin: "0 auto", textAlign: "center" }}>
-          <p style={{ fontWeight: 800, fontSize: "clamp(26px,3.6vw,38px)", letterSpacing: "-0.02em", lineHeight: 1.2, color: "#fff" }}>Alone, you grow <span style={{ color: "#a59e93" }}>linearly</span> — and get stuck alone. Together, you grow <span style={{ color: ACCENT }}>exponentially</span>.</p>
+          <p style={{ fontWeight: 800, fontSize: "clamp(26px,3.6vw,38px)", letterSpacing: "-0.02em", lineHeight: 1.2, color: "#fff" }}>Alone, you grow <span style={{ color: "#a59e93" }}>linearly</span>, and get stuck alone. Together, you grow <span style={{ color: ACCENT }}>exponentially</span>.</p>
           <p style={{ marginTop: 26, fontSize: "clamp(18px,2.4vw,22px)", lineHeight: 1.55, color: "#f0ece4", fontWeight: 500 }}>Imagine overcoming obstacles faster. Imagine consistently acting on the highest-leverage opportunities. How much further ahead would your business be in 12 months? And in 3 years?</p>
           <p style={{ marginTop: 28, fontSize: "clamp(22px,3vw,30px)", lineHeight: 1.4, color: "#fff", fontWeight: 800 }}>This is why Shoulder to Shoulder exists:<br /><span style={{ color: ACCENT }}>make reaching your potential inevitable.</span></p>
         </div>
       </section>
 
-      {/* THE FOUNDER CIRCLE — the heart of the club */}
+      {/* THE FOUNDER CIRCLE, the heart of the club */}
       <section style={{ background: "#fff", color: "#15130f", padding: "110px 28px" }}>
         <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
           <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>The heart of the club</span>
           <h2 style={{ marginTop: 10, fontSize: "clamp(28px,4.2vw,46px)", fontWeight: 800, lineHeight: 1.06, letterSpacing: "-0.02em" }}>Your Founder Circle.</h2>
-          <p style={{ marginTop: 20, fontSize: 17.5, lineHeight: 1.65, color: "#5f5a51" }}>A fixed circle of <strong style={{ color: "#15130f" }}>6–8 founders operating at your level</strong>, meeting online for one hour every week. Using a proven system, you share opportunities, solve each other&apos;s problems and hold each other accountable — so the whole circle grows exponentially. And yes: we have fun doing it.</p>
+          <p style={{ marginTop: 20, fontSize: 17.5, lineHeight: 1.65, color: "#5f5a51" }}>A fixed circle of <strong style={{ color: "#15130f" }}>6–8 founders operating at your level</strong>, meeting online for one hour every week. Using a proven system, you share opportunities, solve each other&apos;s problems and hold each other accountable, so the whole circle grows exponentially. And yes: we have fun doing it.</p>
         </div>
       </section>
 
-      {/* ONLINE + OFFLINE — how it works geographically */}
+      {/* ONLINE + OFFLINE, how it works geographically */}
       <section style={{ background: "#f6f5f2", color: "#15130f", padding: "110px 28px", borderTop: "1px solid rgba(0,0,0,0.06)" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto" }}>
           <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 56px" }}>
@@ -141,19 +141,19 @@ export default function ShoulderToShoulder() {
           </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))", gap: 20 }}>
             <div className="card-lift" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 16, padding: "36px 32px" }}>
-              <span className="eyebrow" style={{ color: ACCENT }}>01 — Weekly</span>
-              <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 14 }}>Circle sessions — online</h3>
-              <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#6b665d" }}>Your Founder Circle meets online, so it works from anywhere — whether you&apos;re in Amsterdam, Southeast Asia or on the road. No flights needed to stay sharp.</p>
+              <span className="eyebrow" style={{ color: ACCENT }}>01, Weekly</span>
+              <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 14 }}>Circle sessions, online</h3>
+              <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#6b665d" }}>Your Founder Circle meets online, so it works from anywhere, whether you&apos;re in Amsterdam, Southeast Asia or on the road. No flights needed to stay sharp.</p>
             </div>
             <div className="card-lift" style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 16, padding: "36px 32px" }}>
-              <span className="eyebrow" style={{ color: ACCENT }}>02 — Monthly</span>
-              <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 14 }}>Events & side quests — offline</h3>
-              <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#6b665d" }}>Dinners, activities and side quests happen in person, in <strong>Southeast Asia</strong> and <strong>Europe</strong> — where most members are based. Join whatever is happening near you.</p>
+              <span className="eyebrow" style={{ color: ACCENT }}>02, Monthly</span>
+              <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 14 }}>Events & side quests, offline</h3>
+              <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#6b665d" }}>Dinners, activities and side quests happen in person, in <strong>Southeast Asia</strong> and <strong>Europe</strong>, where most members are based. Join whatever is happening near you.</p>
             </div>
             <div className="card-lift" style={{ background: "#15130f", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 16, padding: "36px 32px" }}>
-              <span className="eyebrow" style={{ color: ACCENT }}>03 — Biannual</span>
-              <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 14, color: "#fff" }}>STS Summit — twice a year</h3>
-              <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#a59e93" }}>Twice a year <strong style={{ color: "#fff" }}>everybody comes together</strong> at the STS Summit — several days of strategy, connection and unforgettable experiences.</p>
+              <span className="eyebrow" style={{ color: ACCENT }}>03, Biannual</span>
+              <h3 style={{ fontSize: 20, fontWeight: 800, marginTop: 14, color: "#fff" }}>STS Summit, twice a year</h3>
+              <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6, color: "#a59e93" }}>Twice a year <strong style={{ color: "#fff" }}>everybody comes together</strong> at the STS Summit, several days of strategy, connection and unforgettable experiences.</p>
             </div>
           </div>
           <div style={{ marginTop: 40, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12, maxWidth: 900, marginLeft: "auto", marginRight: "auto" }}>
@@ -175,10 +175,10 @@ export default function ShoulderToShoulder() {
           </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 16 }}>
             {[
-              { title: "You grow faster", desc: "Solve problems in one session that would&apos;ve cost you weeks alone — and act on opportunities before the rest of the world sees them." },
+              { title: "You grow faster", desc: "Solve problems in one session that would&apos;ve cost you weeks alone, and act on opportunities before the rest of the world sees them." },
               { title: "You stop being the bottleneck", desc: "Honest feedback from founders at your level exposes your blind spots, so the business stops depending entirely on you." },
               { title: "You raise your standards", desc: "Surrounded by high performers, your baseline shifts. What felt ambitious becomes your new normal." },
-              { title: "You enjoy the journey", desc: "Dinners, side quests and Summits with people who truly get it. Growth and a great life — not one or the other." },
+              { title: "You enjoy the journey", desc: "Dinners, side quests and Summits with people who truly get it. Growth and a great life, not one or the other." },
             ].map((r) => (
               <div key={r.title} className="card-lift" style={{ background: "#f6f5f2", border: "1px solid rgba(0,0,0,0.07)", borderRadius: 14, padding: "30px 28px" }}>
                 <h3 style={{ fontSize: 19, fontWeight: 800, letterSpacing: "-0.01em" }} dangerouslySetInnerHTML={{ __html: r.title }} />
@@ -224,7 +224,7 @@ export default function ShoulderToShoulder() {
         <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
           <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>And just as important</span>
           <h2 style={{ marginTop: 12, fontWeight: 800, fontSize: "clamp(28px,4.4vw,46px)", letterSpacing: "-0.02em", lineHeight: 1.1, color: "#fff" }}>What is growth worth,<br />if it&apos;s only serious?</h2>
-          <p style={{ marginTop: 22, fontSize: 17, lineHeight: 1.65, color: "#a59e93", maxWidth: 580, marginLeft: "auto", marginRight: "auto" }}>Shoulder to Shoulder is also simply a <strong style={{ color: "#f0ece4" }}>great life</strong>: side quests, long dinners and weekends away with guys who actually understand you. Life quality isn&apos;t a bonus — it&apos;s the point.</p>
+          <p style={{ marginTop: 22, fontSize: 17, lineHeight: 1.65, color: "#a59e93", maxWidth: 580, marginLeft: "auto", marginRight: "auto" }}>Shoulder to Shoulder is also simply a <strong style={{ color: "#f0ece4" }}>great life</strong>: side quests, long dinners and weekends away with guys who actually understand you. Life quality isn&apos;t a bonus, it&apos;s the point.</p>
         </div>
         <div className="photo-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, marginTop: 64 }}>
           <div className="photo-zoom" style={{ position: "relative", aspectRatio: "4/5", overflow: "hidden" }}>
@@ -234,7 +234,7 @@ export default function ShoulderToShoulder() {
             </div>
           </div>
           <div className="photo-zoom" style={{ position: "relative", aspectRatio: "4/5", overflow: "hidden", background: "#1a1816" }}>
-            <Image src="/founders.jpg" alt="Side quests — shoulder to shoulder" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 35%" }} />
+            <Image src="/founders.jpg" alt="Side quests, shoulder to shoulder" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 35%" }} />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,9,7,0.7), transparent 40%)", display: "flex", alignItems: "flex-end", padding: 24 }}>
               <span style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>The side quests</span>
             </div>
@@ -337,7 +337,7 @@ export default function ShoulderToShoulder() {
             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>Join the next Founder Circle</span>
             <h2 style={{ marginTop: 8, fontSize: "clamp(28px,4.4vw,46px)", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-0.025em", color: "#fff" }}>Start with a four-minute application.</h2>
             <p style={{ marginTop: 16, fontSize: 16.5, lineHeight: 1.55, color: "#a59e93" }}>Applications are reviewed personally. If there&apos;s a strong mutual fit, we&apos;ll invite you to a short Founder Fit Conversation.</p>
-            <p style={{ marginTop: 22, fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 17.5, lineHeight: 1.5, color: "#cfc8bd" }}>&quot;Worth your time. You will meet new people — people you always wished to be surrounded by, with high energy — and you will expand your knowledge.&quot;</p>
+            <p style={{ marginTop: 22, fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 17.5, lineHeight: 1.5, color: "#cfc8bd" }}>&quot;Worth your time. You will meet new people, people you always wished to be surrounded by, with high energy, and you will expand your knowledge.&quot;</p>
           </div>
           <div style={{ background: "#fff", borderRadius: 18, overflow: "hidden", boxShadow: "0 30px 70px rgba(0,0,0,0.35)" }}>
             <div style={{ padding: "32px 32px 34px" }}>

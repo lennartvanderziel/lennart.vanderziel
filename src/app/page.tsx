@@ -91,9 +91,9 @@ export default function Home() {
           <div style={{ flex: "1 1 440px" }}>
             <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 23, color: ACCENT }}>My story</span>
             <h2 style={{ fontSize: "clamp(30px,4vw,48px)", fontWeight: 800, lineHeight: 1.06, letterSpacing: "-0.02em", marginTop: 10, color: INK }}>From building products to building people.</h2>
-            <p style={{ marginTop: 22, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>As founder &amp; CEO I built <strong style={{ color: INK }}>Travis the Translator</strong> — named <strong style={{ color: INK }}>Dutch Startup of the Year</strong>, winner of <strong style={{ color: INK }}>Best of CES</strong>, with 200,000+ devices sold worldwide and coverage across global media.</p>
+            <p style={{ marginTop: 22, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>As founder &amp; CEO I built <strong style={{ color: INK }}>Travis the Translator</strong>, named <strong style={{ color: INK }}>Dutch Startup of the Year</strong>, winner of <strong style={{ color: INK }}>Best of CES</strong>, with 200,000+ devices sold worldwide and coverage across global media.</p>
             <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>I was also on the founding team of <strong style={{ color: INK }}>Venture Café Rotterdam</strong>, one of the largest founder communities in the Netherlands. In 2020 I made a decision: I&apos;d rather develop <strong style={{ color: INK }}>founders</strong> than technology. Since then I&apos;ve worked with 100+ business owners and built the founder club I always wished I&apos;d had.</p>
-            <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>The work is simple: help founders grow as fast as their businesses do — through strategy, the right room around them, and their own performance.</p>
+            <p style={{ marginTop: 16, maxWidth: 520, fontSize: 17, lineHeight: 1.6, color: "#5f5a51" }}>The work is simple: help founders grow as fast as their businesses do, through strategy, the right room around them, and their own performance.</p>
             <div style={{ marginTop: 26, display: "flex", alignItems: "center", gap: 12 }}>
               <span style={{ width: 30, height: 1, background: "rgba(0,0,0,0.25)" }} />
               <span style={{ fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: 22, color: INK }}>Lennart van der Ziel</span>
@@ -116,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROGRAMS — the two initiatives */}
+      {/* PROGRAMS, the two initiatives */}
       <section id="programs" style={{ background: PANEL, borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "110px 32px" }}>
           <div style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 64px" }}>
@@ -129,12 +129,12 @@ export default function Home() {
             {/* Shoulder to Shoulder */}
             <a href="/shoulder-to-shoulder" className="card-lift" style={{ textDecoration: "none", background: "#fffdf9", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
               <div className="photo-zoom" style={{ position: "relative", aspectRatio: "16/10" }}>
-                <Image src="/event-group.jpg" alt="Shoulder to Shoulder — founders event" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 60%" }} />
+                <Image src="/event-group.jpg" alt="Shoulder to Shoulder, founders event" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 60%" }} />
               </div>
               <div style={{ padding: "34px 32px 38px" }}>
                 <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>The Club</span>
                 <h3 style={{ fontSize: 26, fontWeight: 800, marginTop: 10, letterSpacing: "-0.02em", color: INK }}>Shoulder to Shoulder</h3>
-                <p style={{ marginTop: 12, fontSize: 16, lineHeight: 1.6, color: "#5f5a51" }}>Founder Circles that meet in regular sessions, the Global STS Summit, and a community where founders hold each other accountable and reach exponential growth — together.</p>
+                <p style={{ marginTop: 12, fontSize: 16, lineHeight: 1.6, color: "#5f5a51" }}>Founder Circles that meet in regular sessions, the Global STS Summit, and a community where founders hold each other accountable and reach exponential growth, together.</p>
                 <span style={{ display: "inline-flex", marginTop: 20, color: ACCENT, fontSize: 14.5, fontWeight: 700 }}>Discover the club →</span>
               </div>
             </a>
@@ -142,12 +142,12 @@ export default function Home() {
             {/* High Performance Mentoring */}
             <a href="/high-performance-mentoring" className="card-lift" style={{ textDecoration: "none", background: "#fffdf9", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 16, overflow: "hidden", display: "flex", flexDirection: "column" }}>
               <div className="photo-zoom" style={{ position: "relative", aspectRatio: "16/10" }}>
-                <Image src="/circle.jpg" alt="High Performance Mentoring — 1-on-1" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 30%" }} />
+                <Image src="/circle.jpg" alt="High Performance Mentoring, 1-on-1" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 30%" }} />
               </div>
               <div style={{ padding: "34px 32px 38px" }}>
                 <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: ACCENT }}>1-on-1</span>
                 <h3 style={{ fontSize: 26, fontWeight: 800, marginTop: 10, letterSpacing: "-0.02em", color: INK }}>High Performance Mentoring</h3>
-                <p style={{ marginTop: 12, fontSize: 16, lineHeight: 1.6, color: "#5f5a51" }}>Private mentoring for founders who want to operate at their A-game — mentally, physically and emotionally. Built on real assessments and a plan that keeps getting better.</p>
+                <p style={{ marginTop: 12, fontSize: 16, lineHeight: 1.6, color: "#5f5a51" }}>Private mentoring for founders who want to operate at their A-game, mentally, physically and emotionally. Built on real assessments and a plan that keeps getting better.</p>
                 <span style={{ display: "inline-flex", marginTop: 20, color: ACCENT, fontSize: 14.5, fontWeight: 700 }}>Explore the mentoring →</span>
               </div>
             </a>
@@ -159,11 +159,11 @@ export default function Home() {
       <section id="contact" style={{ background: "#fbf9f5" }}>
         <div style={{ maxWidth: 720, margin: "0 auto", padding: "110px 32px", textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(36px,5.4vw,64px)", fontWeight: 800, lineHeight: 1.02, letterSpacing: "-0.03em", color: INK }}>Start the conversation.</h2>
-          <p style={{ margin: "20px auto 0", maxWidth: 480, fontSize: 17, lineHeight: 1.55, color: MUTED }}>Leave your email and I&apos;ll personally reach out to find the right fit — the club or 1-on-1 mentoring.</p>
+          <p style={{ margin: "20px auto 0", maxWidth: 480, fontSize: 17, lineHeight: 1.55, color: MUTED }}>Leave your email and I&apos;ll personally reach out to find the right fit, the club or 1-on-1 mentoring.</p>
           {joined ? (
             <div style={{ margin: "38px auto 0", maxWidth: 520, border: `1px solid ${ACCENT}`, background: `color-mix(in srgb, ${ACCENT} 8%, transparent)`, padding: 28, borderRadius: 12 }}>
               <p style={{ fontSize: 22, fontWeight: 700, color: INK }}>Received.</p>
-              <p style={{ marginTop: 8, fontSize: 15, color: MUTED }}>Watch your inbox — I&apos;ll be in touch personally.</p>
+              <p style={{ marginTop: 8, fontSize: 15, color: MUTED }}>Watch your inbox, I&apos;ll be in touch personally.</p>
             </div>
           ) : (
             <>

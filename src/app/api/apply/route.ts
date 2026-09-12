@@ -41,7 +41,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "Bad request" }, { status: 400 });
   }
 
-  // Honeypot — bots (and occasionally an overzealous autofill) fill this
+  // Honeypot, bots (and occasionally an overzealous autofill) fill this
   // hidden field. We never silently drop a submission on this alone: a false
   // positive here would mean losing a real applicant with no trace. Instead
   // we flag it in the source so it still shows up for manual review.
@@ -63,7 +63,7 @@ export async function POST(req: Request) {
     instagram: (b.instagram || "").trim(),
     business: (b.business || "").trim(),
     revenue: (b.revenue || "").trim(),
-    source: (flaggedAsSpam ? "⚠️ Flagged (honeypot) — " : "") + (b.source || "Landing page").trim(),
+    source: (flaggedAsSpam ? "⚠️ Flagged (honeypot), " : "") + (b.source || "Landing page").trim(),
     segment: "shoulder_to_shoulder",
     status: "new",
     notes: [
@@ -101,7 +101,7 @@ export async function POST(req: Request) {
   const row = (k: string, v: string) => (v ? `<tr><td style="padding:4px 12px 4px 0;color:#888">${k}</td><td style="padding:4px 0"><strong>${v}</strong></td></tr>` : "");
   await sendEmail(
     NOTIFY_TO,
-    `New STS application — ${name}`,
+    `New STS application, ${name}`,
     `<div style="font-family:system-ui,sans-serif;font-size:14px;color:#15130f">
       <h2 style="margin:0 0 12px">New application</h2>
       <table style="border-collapse:collapse">
