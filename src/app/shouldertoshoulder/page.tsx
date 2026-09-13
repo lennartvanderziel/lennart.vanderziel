@@ -32,8 +32,8 @@ const copy = {
     heroSub: "A hand-picked circle that helps you grow exponentially.",
     cohortPill: "Next Founder Circle · Starts October 2026",
 
-    painEyebrow: "Why alone is worse",
-    painIntro: "You know what to do and your business is growing. But you want to reach your potential. And that can't be done alone.",
+    painEyebrow: "Why together is better",
+    painIntro: "Your business is growing. But what if you'd be challenged to do the uncomfortable, every single week? How much further ahead would your business be in a year?",
     painAloneTitle: "Alone",
     painAlone: ["You make the big calls alone", "Fewer opportunities reach you", "No one keeps you accountable"],
     painTogetherTitle: "Together",
@@ -47,8 +47,6 @@ const copy = {
       { title: "Enjoy the journey", desc: "Side quests, dinners and activities. You're not alone anymore." },
     ],
 
-    visionLine: "Imagine overcoming obstacles faster and acting on your biggest opportunities.",
-    visionQ: "How much further ahead would your business be in a year?",
 
     globalEyebrow: "The bigger vision",
     globalTitle: "One family, wherever you go.",
@@ -115,8 +113,8 @@ const copy = {
     heroSub: "Een zorgvuldig geselecteerde kring die je exponentieel laat groeien.",
     cohortPill: "Volgende Founder Circle · Start oktober 2026",
 
-    painEyebrow: "Waarom alleen zwakker is",
-    painIntro: "Je weet wat je moet doen en je business groeit. Maar je wil je potentieel bereiken. En dat kan niet alleen.",
+    painEyebrow: "Waarom samen beter is",
+    painIntro: "Je business groeit. Maar wat als je elke week wordt uitgedaagd om het ongemakkelijke te doen? Hoeveel verder zou je business zijn over een jaar?",
     painAloneTitle: "Alleen",
     painAlone: ["Je maakt de grote keuzes alleen", "Minder kansen bereiken je", "Niemand houdt je accountable"],
     painTogetherTitle: "Samen",
@@ -130,8 +128,6 @@ const copy = {
       { title: "Geniet van de reis", desc: "Sidequests, diners en activiteiten. Je bent niet meer alleen." },
     ],
 
-    visionLine: "Stel je voor: obstakels sneller overwinnen en inzetten op je grootste kansen.",
-    visionQ: "Hoeveel verder zou je business zijn over een jaar?",
 
     globalEyebrow: "De grotere visie",
     globalTitle: "Eén familie, waar je ook bent.",
@@ -322,14 +318,6 @@ export default function Join() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* VISION */}
-      <section style={{ background: "#fff", padding: "64px 24px" }}>
-        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
-          <p style={{ fontSize: "clamp(19px,2.5vw,25px)", lineHeight: 1.5, color: INK_MUT, fontWeight: 500 }}>{t.visionLine}</p>
-          <p style={{ marginTop: 18, fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: "clamp(23px,3.2vw,32px)", lineHeight: 1.3, color: ACCENT, letterSpacing: "-0.01em" }}>{t.visionQ}</p>
         </div>
       </section>
 
