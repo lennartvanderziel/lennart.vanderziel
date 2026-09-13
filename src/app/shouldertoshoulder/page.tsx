@@ -73,14 +73,14 @@ const copy = {
     howEyebrow: "Our growth system",
     howTitle: "One hour to make all the other hours better.",
     howNote: "4 sessions a month, always 60 minutes.",
-    howMonthly: ["2× Hot-seat", "Expert session", "Personal growth"],
+    howMonthly: ["2× Hot-seat", "1× Expert session", "1× Personal growth"],
     howExtraLabel: "Plus",
     howExtra: ["Growth dashboard", "In-person events", "Monthly 1-on-1"],
 
     hostEyebrow: "Your coach",
     hostName: "Lennart van der Ziel",
     hostChips: ["Business & performance coach", "Former tech CEO", "100+ founders guided"],
-    hostDesc: "Former tech CEO turned business and performance coach. I built Travis the Translator, named Dutch Startup of the Year, sold 200,000+ devices worldwide, and helped start one of the Netherlands' largest founder communities. Since then I've personally guided over 100 founders, through their business, their health and their mindset. I've seen what actually moves the needle, and what just feels productive. Today I bring all of that into Shoulder to Shoulder, as your facilitator and coach.",
+    hostDesc: "Former tech CEO turned business and performance coach. I built Travis the Translator, named Dutch Startup of the Year, sold 200,000+ devices worldwide, and helped start one of the Netherlands' largest founder communities. Since then I've personally guided over 100 founders, through their business, their health and their mindset. Today I bring all of that into Shoulder to Shoulder, as your facilitator and coach.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Good questions",
@@ -156,14 +156,14 @@ const copy = {
     howEyebrow: "Ons groeisysteem",
     howTitle: "Eén uur dat al je andere uren beter maakt.",
     howNote: "4 sessies per maand, altijd 60 minuten.",
-    howMonthly: ["2× Hotseat", "Expert-sessie", "Personal growth"],
+    howMonthly: ["2× Hotseat", "1× Expert-sessie", "1× Personal growth"],
     howExtraLabel: "Plus",
     howExtra: ["Growth dashboard", "In-person events", "Maandelijks 1-op-1"],
 
     hostEyebrow: "Je coach",
     hostName: "Lennart van der Ziel",
     hostChips: ["Business & performance coach", "Voormalig tech-CEO", "100+ founders begeleid"],
-    hostDesc: "Voormalig tech-CEO, nu business en performance coach. Ik bouwde Travis the Translator, uitgeroepen tot Dutch Startup of the Year, verkocht 200.000+ apparaten wereldwijd, en hielp een van de grootste foundercommunities van Nederland opstarten. Sindsdien heb ik persoonlijk meer dan 100 founders begeleid, in hun business, hun gezondheid en hun mindset. Ik weet inmiddels wat écht het verschil maakt, en wat alleen maar productief voelt. Vandaag breng ik dat allemaal in binnen Shoulder to Shoulder, als jouw facilitator en coach.",
+    hostDesc: "Voormalig tech-CEO, nu business en performance coach. Ik bouwde Travis the Translator, uitgeroepen tot Dutch Startup of the Year, verkocht 200.000+ apparaten wereldwijd, en hielp een van de grootste foundercommunities van Nederland opstarten. Sindsdien heb ik persoonlijk meer dan 100 founders begeleid, in hun business, hun gezondheid en hun mindset. Vandaag breng ik dat allemaal in binnen Shoulder to Shoulder, als jouw facilitator en coach.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Goede vragen",
@@ -312,7 +312,7 @@ export default function Join() {
       </section>
 
       {/* EXPERIENCE PHOTOS */}
-      <section style={{ background: "#0f0e0b", padding: "0 24px 24px" }}>
+      <section style={{ background: "#fff", padding: "0 24px 88px" }}>
         <div className="photo-grid" style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
           {[{ src: "/dinner.jpg" }, { src: "/session-meet.jpg" }, { src: "/event-group.jpg" }].map((p, i) => (
             <div key={p.src} className="photo-zoom" style={{ position: "relative", aspectRatio: "1/1", borderRadius: 12, overflow: "hidden" }}>
