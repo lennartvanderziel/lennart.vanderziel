@@ -33,11 +33,11 @@ const copy = {
     cohortPill: "Next Founder Circle · Starts October 2026",
 
     painEyebrow: "Why alone is worse",
-    painIntro: "You know what to do. You don't need help. But you're hungry to go faster, especially without a co-founder to spar with. Together is better.",
+    painIntro: "You know what to do and your business is growing. But you want to reach your potential. And that can't be done alone.",
     painAloneTitle: "Alone",
     painAlone: ["You make the big calls alone", "Fewer opportunities reach you", "No one keeps you accountable"],
     painTogetherTitle: "Together",
-    painTogether: ["You decide with a team behind you", "Opportunities come your way, in abundance", "Support and accountability, every week"],
+    painTogether: ["You decide with a team behind you", "Opportunities in abundance", "You're held accountable"],
 
     changeEyebrow: "What you get",
     changeTitle: "What joining a circle changes",
@@ -52,23 +52,16 @@ const copy = {
 
     globalEyebrow: "The bigger vision",
     globalTitle: "One family, wherever you go.",
-    globalBody: "Someone to call when things get hard. Deals shared before anyone else hears. Lifelong memories, living together in villas from Bali to Cape Town.",
+    globalBody: "Someone to call when things get hard. Deals shared before anyone else hears. Lifelong memories, living together in villas from Bali to Cape Town. Wherever you land, you already have friends there.",
 
     roomEyebrow: "The members",
     roomTitle: "Some of our members, based across 3 continents",
     selEyebrow: "Who we are",
     selTitle: "Not a typical founder club",
-    selSub: "Conscious founders doing real inner work. No masks, no ego.",
-    selItems: [
-      { title: "Depth over ego", desc: "No masks, no performance." },
-      { title: "Growth beyond the business", desc: "Business, fitness, relationships, mindset." },
-      { title: "Warm, not competitive", desc: "We want each other to win." },
-      { title: "Successful, not soft", desc: "Driven, without the flex." },
-      { title: "Matched, not random", desc: "Business success is already a given. We match on character, development level and intelligence." },
-    ],
+    selBody: "We're not the group with the big watches, chasing the biggest car. We're conscious men who've done real inner work, matched on character and development level, not just business success. We want each other to become the best version of ourselves, in business and in life.",
 
     proofEyebrow: "Proof",
-    proofTitle: "Why they joined",
+    proofTitle: "The difference it made",
     videoCaption: "Zach · Member",
     videoCaptionDavid: "David · Member",
     testimonials: [
@@ -77,8 +70,8 @@ const copy = {
     ],
     dinnerCaps: ["Founder dinner", "Weekly online call", "Founder event"],
 
-    howEyebrow: "How it works",
-    howTitle: "One hour a week.",
+    howEyebrow: "Our growth system",
+    howTitle: "One hour to make all the other hours better.",
     howNote: "4 sessions a month, always 60 minutes.",
     howMonthly: ["2× Hot-seat", "Expert session", "Personal growth"],
     howExtraLabel: "Plus",
@@ -87,7 +80,7 @@ const copy = {
     hostEyebrow: "Your coach",
     hostName: "Lennart van der Ziel",
     hostChips: ["Business & performance coach", "Former tech CEO", "100+ founders guided"],
-    hostDesc: "Former tech CEO turned business and performance coach. I built Travis the Translator, named Dutch Startup of the Year, sold 200,000+ devices worldwide, and helped start one of the Netherlands' largest founder communities. Today I'm your facilitator and coach inside Shoulder to Shoulder.",
+    hostDesc: "Former tech CEO turned business and performance coach. I built Travis the Translator, named Dutch Startup of the Year, sold 200,000+ devices worldwide, and helped start one of the Netherlands' largest founder communities. Since then I've personally guided over 100 founders, through their business, their health and their mindset. I've seen what actually moves the needle, and what just feels productive. Today I bring all of that into Shoulder to Shoulder, as your facilitator and coach.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Good questions",
@@ -108,7 +101,6 @@ const copy = {
     cohortDetail: "October 2026 · 6 founders · Applications close September 30",
     cohortDays: (n: number) => `${n} day${n === 1 ? "" : "s"} left to apply`,
     finalTitle: "Ready to grow faster?",
-    finalSub: "No pitch. Just an honest conversation about fit.",
     footer: "Shoulder to Shoulder",
     fullDetails: "Full details",
   },
@@ -124,11 +116,11 @@ const copy = {
     cohortPill: "Volgende Founder Circle · Start oktober 2026",
 
     painEyebrow: "Waarom alleen zwakker is",
-    painIntro: "Je weet wat je moet doen. Je hebt geen hulp nodig. Maar je wil sneller, zeker zonder co-founder om mee te sparren. Samen is beter.",
+    painIntro: "Je weet wat je moet doen en je business groeit. Maar je wil je potentieel bereiken. En dat kan niet alleen.",
     painAloneTitle: "Alleen",
     painAlone: ["Je maakt de grote keuzes alleen", "Minder kansen bereiken je", "Niemand houdt je accountable"],
     painTogetherTitle: "Samen",
-    painTogether: ["Je beslist met een team achter je", "Kansen komen in overvloed naar je toe", "Steun en accountability, elke week"],
+    painTogether: ["Je beslist met een team achter je", "Kansen in overvloed", "Je wordt accountable gehouden"],
 
     changeEyebrow: "Wat je krijgt",
     changeTitle: "Wat verandert als je in een founder circle komt",
@@ -143,23 +135,16 @@ const copy = {
 
     globalEyebrow: "De grotere visie",
     globalTitle: "Eén familie, waar je ook bent.",
-    globalBody: "Iemand om te bellen als het zwaar wordt. Deals die gedeeld worden voordat de rest ervan hoort. Herinneringen voor het leven, samenwonen in villa's van Bali tot Kaapstad.",
+    globalBody: "Iemand om te bellen als het zwaar wordt. Deals die gedeeld worden voordat de rest ervan hoort. Herinneringen voor het leven, samenwonen in villa's van Bali tot Kaapstad. Waar je ook landt, je hebt er al vrienden.",
 
     roomEyebrow: "De members",
     roomTitle: "Een aantal van onze members, verspreid over 3 continenten",
     selEyebrow: "Wie we zijn",
     selTitle: "Geen doorsnee founderclub",
-    selSub: "Bewuste founders die echt innerlijk werk doen. Geen maskers, geen ego.",
-    selItems: [
-      { title: "Diepgang boven ego", desc: "Geen maskers, geen stoerdoenerij." },
-      { title: "Groei voorbij de business", desc: "Business, fitheid, relaties, mindset." },
-      { title: "Warm, niet competitief", desc: "We gunnen elkaar het winnen." },
-      { title: "Gedreven, niet soft", desc: "Gedreven, zonder de show." },
-      { title: "Gematcht, niet willekeurig", desc: "Succes in business is al een gegeven. We matchen op karakter, ontwikkelingsniveau en slimheid." },
-    ],
+    selBody: "We zijn niet de groep met de dikke horloges, die bezig is met de grootste auto. We zijn bewuste mannen die echt innerlijk werk doen, gematcht op karakter en ontwikkelingsniveau, niet alleen op succes in business. We gunnen elkaar de beste versie van onszelf te worden, in business en in het leven.",
 
     proofEyebrow: "Bewijs",
-    proofTitle: "Waarom zij zich aansloten",
+    proofTitle: "Het verschil dat het maakte",
     videoCaption: "Zach · Lid",
     videoCaptionDavid: "David · Lid",
     testimonials: [
@@ -168,8 +153,8 @@ const copy = {
     ],
     dinnerCaps: ["Founder-diner", "Wekelijkse online call", "Founder event"],
 
-    howEyebrow: "Hoe het werkt",
-    howTitle: "Eén uur per week.",
+    howEyebrow: "Ons groeisysteem",
+    howTitle: "Eén uur dat al je andere uren beter maakt.",
     howNote: "4 sessies per maand, altijd 60 minuten.",
     howMonthly: ["2× Hotseat", "Expert-sessie", "Personal growth"],
     howExtraLabel: "Plus",
@@ -178,7 +163,7 @@ const copy = {
     hostEyebrow: "Je coach",
     hostName: "Lennart van der Ziel",
     hostChips: ["Business & performance coach", "Voormalig tech-CEO", "100+ founders begeleid"],
-    hostDesc: "Voormalig tech-CEO, nu business en performance coach. Ik bouwde Travis the Translator, uitgeroepen tot Dutch Startup of the Year, verkocht 200.000+ apparaten wereldwijd, en hielp een van de grootste foundercommunities van Nederland opstarten. Vandaag ben ik jouw facilitator en coach binnen Shoulder to Shoulder.",
+    hostDesc: "Voormalig tech-CEO, nu business en performance coach. Ik bouwde Travis the Translator, uitgeroepen tot Dutch Startup of the Year, verkocht 200.000+ apparaten wereldwijd, en hielp een van de grootste foundercommunities van Nederland opstarten. Sindsdien heb ik persoonlijk meer dan 100 founders begeleid, in hun business, hun gezondheid en hun mindset. Ik weet inmiddels wat écht het verschil maakt, en wat alleen maar productief voelt. Vandaag breng ik dat allemaal in binnen Shoulder to Shoulder, als jouw facilitator en coach.",
 
     faqEyebrow: "FAQ",
     faqTitle: "Goede vragen",
@@ -199,7 +184,6 @@ const copy = {
     cohortDetail: "Oktober 2026 · 6 founders · Aanmeldingen sluiten 30 september",
     cohortDays: (n: number) => `Nog ${n} dag${n === 1 ? "" : "en"} om je aan te melden`,
     finalTitle: "Klaar om sneller te groeien?",
-    finalSub: "Geen pitch. Gewoon een eerlijk gesprek over fit.",
     footer: "Shoulder to Shoulder",
     fullDetails: "Alle details",
   },
@@ -309,18 +293,18 @@ export default function Join() {
       </section>
 
       {/* WHAT YOU GET */}
-      <section style={{ background: "#0f0e0b", padding: "80px 24px 88px" }}>
+      <section style={{ background: "#fff", padding: "80px 24px 88px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 48px" }}>
             <span style={eyebrowS}>{t.changeEyebrow}</span>
-            <h2 style={h2(true)}>{t.changeTitle}</h2>
+            <h2 style={h2(false)}>{t.changeTitle}</h2>
           </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 18 }}>
             {t.changes.map((b, i) => (
-              <div key={b.title} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 18, padding: "34px 32px 38px" }}>
+              <div key={b.title} style={{ background: "#f4f1ea", border: "1px solid rgba(0,0,0,0.07)", borderRadius: 18, padding: "34px 32px 38px" }}>
                 <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 40, height: 40, borderRadius: "50%", background: "rgba(232,116,43,0.14)", border: `1px solid ${ACCENT}`, color: ACCENT, fontWeight: 800, fontSize: 17, marginBottom: 20 }}>{i + 1}</span>
-                <h3 style={{ fontSize: 25, fontWeight: 800, letterSpacing: "-0.02em", color: "#fff" }}>{b.title}</h3>
-                <p style={{ marginTop: 12, fontSize: 16.5, lineHeight: 1.55, color: MUT_SOFT }}>{b.desc}</p>
+                <h3 style={{ fontSize: 25, fontWeight: 800, letterSpacing: "-0.02em", color: INK }}>{b.title}</h3>
+                <p style={{ marginTop: 12, fontSize: 16.5, lineHeight: 1.55, color: INK_MUT }}>{b.desc}</p>
               </div>
             ))}
           </div>
@@ -342,9 +326,9 @@ export default function Join() {
       </section>
 
       {/* VISION */}
-      <section style={{ background: "#15130f", padding: "64px 24px" }}>
+      <section style={{ background: "#fff", padding: "64px 24px" }}>
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
-          <p style={{ fontSize: "clamp(19px,2.5vw,25px)", lineHeight: 1.5, color: MUT_SOFT, fontWeight: 500 }}>{t.visionLine}</p>
+          <p style={{ fontSize: "clamp(19px,2.5vw,25px)", lineHeight: 1.5, color: INK_MUT, fontWeight: 500 }}>{t.visionLine}</p>
           <p style={{ marginTop: 18, fontFamily: "var(--font-serif), serif", fontStyle: "italic", fontSize: "clamp(23px,3.2vw,32px)", lineHeight: 1.3, color: ACCENT, letterSpacing: "-0.01em" }}>{t.visionQ}</p>
         </div>
       </section>
@@ -422,20 +406,10 @@ export default function Join() {
 
       {/* SELECTION (white) */}
       <section style={{ background: "#fff", color: INK, padding: SEC }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto 32px" }}>
-            <span style={eyebrowS}>{t.selEyebrow}</span>
-            <h2 style={h2(false)}>{t.selTitle}</h2>
-            <p style={{ marginTop: 10, fontSize: 16, lineHeight: 1.55, color: INK_MUT }}>{t.selSub}</p>
-          </div>
-          <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 16 }}>
-            {t.selItems.map((s) => (
-              <div key={s.title} style={{ background: "#f4f1ea", border: "1px solid rgba(0,0,0,0.07)", borderRadius: 14, padding: "24px 22px" }}>
-                <h4 style={{ fontSize: 17, fontWeight: 800, color: INK, letterSpacing: "-0.01em" }}>{s.title}</h4>
-                <p style={{ marginTop: 7, fontSize: 14.5, lineHeight: 1.5, color: INK_MUT }}>{s.desc}</p>
-              </div>
-            ))}
-          </div>
+        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
+          <span style={eyebrowS}>{t.selEyebrow}</span>
+          <h2 style={h2(false)}>{t.selTitle}</h2>
+          <p style={{ marginTop: 16, fontSize: 17, lineHeight: 1.65, color: INK_MUT }}>{t.selBody}</p>
         </div>
       </section>
 
@@ -539,7 +513,6 @@ export default function Join() {
             )}
           </div>
           <h2 style={{ fontSize: "clamp(30px,4.4vw,48px)", fontWeight: 800, lineHeight: 1.08, letterSpacing: "-0.03em", color: "#fff" }}>{t.finalTitle}</h2>
-          <p style={{ margin: "16px auto 0", maxWidth: 400, fontSize: 16.5, lineHeight: 1.5, color: MUT }}>{t.finalSub}</p>
           <div style={{ marginTop: 30, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
             <button onClick={book} className="btn-light" style={btnLight({ padding: "17px 34px", fontSize: 16 })}>{t.applyArrow}</button>
           </div>
