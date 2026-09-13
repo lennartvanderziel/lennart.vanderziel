@@ -33,7 +33,7 @@ const copy = {
     cohortPill: "Next Founder Circle · Starts October 2026",
 
     painEyebrow: "Why together is better",
-    painIntro: "Your business is growing. But what if you'd be challenged to do the uncomfortable, every single week? How much further ahead would your business be in a year?",
+    painIntro: "What if you'd be challenged to do the uncomfortable, every single week? How much further ahead would your business be in a year?",
     painAloneTitle: "Alone",
     painAlone: ["You make the big calls alone", "Fewer opportunities reach you", "No one keeps you accountable"],
     painTogetherTitle: "Together",
@@ -114,7 +114,7 @@ const copy = {
     cohortPill: "Volgende Founder Circle · Start oktober 2026",
 
     painEyebrow: "Waarom samen beter is",
-    painIntro: "Je business groeit. Maar wat als je elke week wordt uitgedaagd om het ongemakkelijke te doen? Hoeveel verder zou je business zijn over een jaar?",
+    painIntro: "Wat als je elke week wordt uitgedaagd om het ongemakkelijke te doen? Hoeveel verder zou je business zijn over een jaar?",
     painAloneTitle: "Alleen",
     painAlone: ["Je maakt de grote keuzes alleen", "Minder kansen bereiken je", "Niemand houdt je accountable"],
     painTogetherTitle: "Samen",
