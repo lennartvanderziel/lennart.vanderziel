@@ -47,12 +47,10 @@ const copy = {
       { title: "Enjoy the journey", desc: "Side quests, dinners and activities." },
     ],
 
-    globalEyebrow: "The bigger vision",
     globalTitle: "One family, wherever you go.",
     globalBody: "Someone to call when things get hard. Deals shared before anyone else hears. Lifelong memories, living together in villas from Bali to Cape Town. Wherever you land, you already have friends there.",
 
     roomEyebrow: "The members",
-    roomTitle: "Some of our members, based across 3 continents",
     selEyebrow: "Who we are",
     selTitle: "Not a typical founder club",
     selBody: "We're not the group with the big watches, chasing the biggest car. We're conscious men who've done real inner work, matched on character and development level, not just business success. We want each other to become the best version of ourselves, in business and in life.",
@@ -69,7 +67,7 @@ const copy = {
 
     howEyebrow: "What we do",
     howTitle: "Your Circle is the core.",
-    howBody: "STS is all circles together. Every member joins a small Founder Circle of around six founders. Your Circle knows you inside and out and becomes your board of advisors. The Circles are connected through the wider STS community.",
+    howBody: "Every member joins a small Founder Circle of around six founders. Your Circle knows you inside and out and becomes your board of advisors. The Circles are connected through the wider STS community.",
     howMonthlyLabel: "Every month",
     howMonthly: ["Hotseats", "Expert Sessions", "Personal growth masterclasses"],
     howExtraLabel: "Plus",
@@ -128,12 +126,10 @@ const copy = {
       { title: "Geniet van de reis", desc: "Sidequests, diners en activiteiten." },
     ],
 
-    globalEyebrow: "De grotere visie",
     globalTitle: "Eén familie, waar je ook bent.",
     globalBody: "Iemand om te bellen als het zwaar wordt. Deals die gedeeld worden voordat de rest ervan hoort. Herinneringen voor het leven, samenwonen in villa's van Bali tot Kaapstad. Waar je ook landt, je hebt er al vrienden.",
 
     roomEyebrow: "De members",
-    roomTitle: "Een aantal van onze members, verspreid over 3 continenten",
     selEyebrow: "Wie we zijn",
     selTitle: "Geen doorsnee founderclub",
     selBody: "We zijn niet de groep met de dikke horloges, die bezig is met de grootste auto. We zijn bewuste mannen die echt innerlijk werk doen, gematcht op karakter en ontwikkelingsniveau, niet alleen op succes in business. We gunnen elkaar de beste versie van onszelf te worden, in business en in het leven.",
@@ -150,7 +146,7 @@ const copy = {
 
     howEyebrow: "Wat we doen",
     howTitle: "Je Circle is de kern.",
-    howBody: "STS is alle circles samen. Elke member sluit aan bij een kleine Founder Circle van rond de zes founders. Je Circle kent je door en door en wordt je raad van advies. De Circles zijn verbonden via de bredere STS-community.",
+    howBody: "Elke member sluit aan bij een kleine Founder Circle van rond de zes founders. Je Circle kent je door en door en wordt je raad van advies. De Circles zijn verbonden via de bredere STS-community.",
     howMonthlyLabel: "Elke maand",
     howMonthly: ["Hotseats", "Expert-sessies", "Personal growth masterclasses"],
     howExtraLabel: "Plus",
@@ -326,7 +322,8 @@ export default function Join() {
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}>
             <span style={eyebrowS}>{t.roomEyebrow}</span>
-            <h2 style={h2(true)}>{t.roomTitle}</h2>
+            <h2 style={h2(true)}>{t.globalTitle}</h2>
+            <p style={{ marginTop: 18, fontSize: 16.5, lineHeight: 1.65, color: MUT_SOFT }}>{t.globalBody}</p>
           </div>
           <div style={{ position: "relative" }}>
           <button aria-label="Previous" onClick={() => scrollMembers(-1)} style={arrowBtn("left")}>‹</button>
@@ -380,15 +377,6 @@ export default function Join() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* GLOBAL NETWORK */}
-      <section style={{ background: "#0f0e0b", padding: "88px 24px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-        <div style={{ maxWidth: 780, margin: "0 auto", textAlign: "center" }}>
-          <span style={eyebrowS}>{t.globalEyebrow}</span>
-          <h2 style={h2(true)}>{t.globalTitle}</h2>
-          <p style={{ marginTop: 18, fontSize: 16.5, lineHeight: 1.65, color: MUT_SOFT }}>{t.globalBody}</p>
         </div>
       </section>
 
