@@ -29,7 +29,7 @@ const copy = {
 
     heroTitleA: "The founders who grow fastest ",
     heroTitleB: "never do it alone",
-    heroSub: "A community of exceptional entrepreneurs who are reaching their potential.",
+    heroSub: "A community of exceptional entrepreneurs, moving as a team.",
     cohortPill: "Next Founder Circle · 6 men · Starts October 2026",
 
     painEyebrow: "Why together is better",
@@ -41,7 +41,6 @@ const copy = {
 
     changeEyebrow: "What you get",
     changeTitle: "What happens when you join",
-    changeClosing: "You're not alone anymore.",
     changes: [
       { title: "Exponential growth", desc: "Normal founders grow linearly. Together we grow exponentially." },
       { title: "Feeling supported", desc: "A real team of founders around you, who know your business." },
@@ -111,7 +110,7 @@ const copy = {
 
     heroTitleA: "De founders die het snelst groeien ",
     heroTitleB: "doen het nooit alleen",
-    heroSub: "Een community van uitzonderlijke ondernemers die hun potentieel bereiken.",
+    heroSub: "Een community van uitzonderlijke ondernemers, die samen optrekken.",
     cohortPill: "Volgende Founder Circle · 6 mannen · Start oktober 2026",
 
     painEyebrow: "Waarom samen beter is",
@@ -123,7 +122,6 @@ const copy = {
 
     changeEyebrow: "Wat je krijgt",
     changeTitle: "Wat er gebeurt als je meedoet",
-    changeClosing: "Je bent niet meer alleen.",
     changes: [
       { title: "Exponentiële groei", desc: "Normale founders groeien lineair. Samen groeien we exponentieel." },
       { title: "Gesteund voelen", desc: "Een echt team van founders om je heen, die je business kennen." },
@@ -306,7 +304,6 @@ export default function Join() {
               </div>
             ))}
           </div>
-          <p style={{ marginTop: 40, textAlign: "center", fontSize: 20, fontWeight: 800, color: INK, letterSpacing: "-0.01em" }}>{t.changeClosing}</p>
         </div>
       </section>
 
