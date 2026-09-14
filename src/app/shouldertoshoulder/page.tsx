@@ -411,35 +411,35 @@ export default function Join() {
         </div>
       </section>
 
-      {/* YOUR HOST (white) */}
-      <section style={{ background: "#fff", padding: "80px 24px 88px" }}>
+      {/* YOUR HOST (black) */}
+      <section style={{ background: "#0f0e0b", padding: "80px 24px 88px" }}>
         <div className="flex-wrap-col" style={{ maxWidth: 900, margin: "0 auto", display: "flex", gap: 44, alignItems: "center", flexWrap: "wrap" }}>
           <div style={{ flex: "0 0 auto" }}>
-            <div style={{ position: "relative", width: 200, height: 240, borderRadius: 16, overflow: "hidden", border: "1px solid rgba(0,0,0,0.08)" }}>
+            <div style={{ position: "relative", width: 200, height: 240, borderRadius: 16, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)" }}>
               <Image src="/coaching-portrait.jpg" alt={t.hostName} fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 15%" }} />
             </div>
           </div>
           <div style={{ flex: "1 1 340px" }}>
             <span style={eyebrowS}>{t.hostEyebrow}</span>
-            <h2 style={{ marginTop: 12, fontSize: "clamp(24px,3.2vw,34px)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.02em", color: INK }}>{t.hostName}</h2>
+            <h2 style={{ marginTop: 12, fontSize: "clamp(24px,3.2vw,34px)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.02em", color: "#fff" }}>{t.hostName}</h2>
             <div style={{ marginTop: 14, display: "flex", flexWrap: "wrap", gap: 8 }}>
               {t.hostChips.map((c) => (
-                <span key={c} style={{ fontSize: 12.5, fontWeight: 700, color: INK, background: "#f4f1ea", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 100, padding: "6px 13px" }}>{c}</span>
+                <span key={c} style={{ fontSize: 12.5, fontWeight: 700, color: "#fff", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 100, padding: "6px 13px" }}>{c}</span>
               ))}
             </div>
-            <p style={{ marginTop: 18, fontSize: 16.5, lineHeight: 1.6, color: INK_MUT }}>{t.hostDesc}</p>
+            <p style={{ marginTop: 18, fontSize: 16.5, lineHeight: 1.6, color: MUT_SOFT }}>{t.hostDesc}</p>
           </div>
         </div>
       </section>
 
-      {/* OUR EVENTS (black) */}
-      <section style={{ background: "#0f0e0b", color: "#f0ece4", padding: "64px 24px 88px" }}>
+      {/* OUR EVENTS (white) */}
+      <section style={{ background: "#fff", color: INK, padding: "64px 24px 88px" }}>
         <div style={{ textAlign: "center", marginBottom: 26 }}>
           <span style={eyebrowS}>{t.eventEyebrow}</span>
-          <h2 style={h2(true)}>{t.eventLook}</h2>
+          <h2 style={h2(false)}>{t.eventLook}</h2>
         </div>
         <div style={{ maxWidth: 360, margin: "0 auto" }}>
-          <div style={{ position: "relative", width: "100%", aspectRatio: "9/16", borderRadius: 18, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)", background: "#000" }}>
+          <div style={{ position: "relative", width: "100%", aspectRatio: "9/16", borderRadius: 18, overflow: "hidden", border: "1px solid rgba(0,0,0,0.1)", background: "#000" }}>
             {eventPlaying ? (
               // eslint-disable-next-line jsx-a11y/media-has-caption
               <video src="/event.mp4" autoPlay controls playsInline style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
@@ -457,39 +457,35 @@ export default function Join() {
         </div>
       </section>
 
-      {/* FAQ (white) */}
-      <section style={{ background: "#fff", color: INK, padding: SEC }}>
+      {/* FAQ (black) */}
+      <section style={{ background: "#0f0e0b", color: "#f0ece4", padding: SEC }}>
         <div style={{ maxWidth: 680, margin: "0 auto" }}>
-          <Head eye={t.faqEyebrow} title={t.faqTitle} dark={false} center />
+          <Head eye={t.faqEyebrow} title={t.faqTitle} dark center />
           {t.faqs.map((f, i) => (
-            <div key={i} style={{ borderBottom: "1px solid rgba(0,0,0,0.1)" }}>
+            <div key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.12)" }}>
               <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ width: "100%", background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, padding: "20px 4px", textAlign: "left", fontFamily: "inherit" }}>
-                <span style={{ fontSize: 16.5, fontWeight: 700, color: INK }}>{f.q}</span>
-                <span style={{ flex: "0 0 auto", width: 27, height: 27, borderRadius: "50%", border: "1px solid rgba(0,0,0,0.2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 17, color: ACCENT, fontWeight: 600 }}>{openFaq === i ? "–" : "+"}</span>
+                <span style={{ fontSize: 16.5, fontWeight: 700, color: "#fff" }}>{f.q}</span>
+                <span style={{ flex: "0 0 auto", width: 27, height: 27, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.25)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 17, color: ACCENT, fontWeight: 600 }}>{openFaq === i ? "–" : "+"}</span>
               </button>
-              {openFaq === i && <p style={{ padding: "0 4px 20px", maxWidth: 600, fontSize: 15.5, lineHeight: 1.55, color: INK_MUT }}>{f.a}</p>}
+              {openFaq === i && <p style={{ padding: "0 4px 20px", maxWidth: 600, fontSize: 15.5, lineHeight: 1.55, color: MUT_SOFT }}>{f.a}</p>}
             </div>
           ))}
         </div>
       </section>
 
-      {/* FINAL CTA (black) */}
-      <section id="book" style={{ position: "relative", padding: 0 }}>
-        <div style={{ position: "absolute", inset: 0 }}>
-          <Image src="/mastermind.jpg" alt="" fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 40%" }} />
-        </div>
-        <div style={{ position: "absolute", inset: 0, background: "rgba(10,9,7,0.93)" }} />
-        <div style={{ position: "relative", maxWidth: 620, margin: "0 auto", padding: "80px 24px 92px", textAlign: "center" }}>
-          <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 6, background: "rgba(232,116,43,0.1)", border: `1px solid ${ACCENT}`, borderRadius: 16, padding: "14px 26px", marginBottom: 30 }}>
+      {/* FINAL CTA (white) */}
+      <section id="book" style={{ background: "#fff", padding: 0 }}>
+        <div style={{ maxWidth: 620, margin: "0 auto", padding: "80px 24px 92px", textAlign: "center" }}>
+          <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 6, background: "rgba(232,116,43,0.07)", border: `1px solid ${ACCENT}`, borderRadius: 16, padding: "14px 26px", marginBottom: 30 }}>
             <span style={{ fontSize: 12, fontWeight: 800, letterSpacing: "0.14em", textTransform: "uppercase", color: ACCENT }}>{t.cohortLabel}</span>
-            <span style={{ fontSize: 15, fontWeight: 700, color: "#fff" }}>{t.cohortDetail}</span>
+            <span style={{ fontSize: 15, fontWeight: 700, color: INK }}>{t.cohortDetail}</span>
             {daysLeft !== null && daysLeft > 0 && (
-              <span style={{ fontSize: 13, fontWeight: 600, color: MUT }}>{t.cohortDays(daysLeft)}</span>
+              <span style={{ fontSize: 13, fontWeight: 600, color: INK_MUT }}>{t.cohortDays(daysLeft)}</span>
             )}
           </div>
-          <h2 style={{ fontSize: "clamp(30px,4.4vw,48px)", fontWeight: 800, lineHeight: 1.08, letterSpacing: "-0.03em", color: "#fff" }}>{t.finalTitle}</h2>
+          <h2 style={{ fontSize: "clamp(30px,4.4vw,48px)", fontWeight: 800, lineHeight: 1.08, letterSpacing: "-0.03em", color: INK }}>{t.finalTitle}</h2>
           <div style={{ marginTop: 30, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
-            <button onClick={book} className="btn-light" style={btnLight({ padding: "17px 34px", fontSize: 16 })}>{t.applyArrow}</button>
+            <button onClick={book} className="btn-primary" style={{ color: "#fff", background: ACCENT, padding: "17px 34px", borderRadius: 100, fontSize: 16, fontWeight: 700, cursor: "pointer", border: "none", fontFamily: "inherit" }}>{t.applyArrow}</button>
           </div>
         </div>
       </section>
