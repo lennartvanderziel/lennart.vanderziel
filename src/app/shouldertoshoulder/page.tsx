@@ -29,8 +29,8 @@ const copy = {
 
     heroTitleA: "The founders who grow fastest ",
     heroTitleB: "never do it alone",
-    heroSub: "A hand-picked circle that helps you grow exponentially.",
-    cohortPill: "Next Founder Circle · Starts October 2026",
+    heroSub: "A community of exceptional entrepreneurs who are reaching their potential.",
+    cohortPill: "Next Founder Circle · 6 men · Starts October 2026",
 
     painEyebrow: "Why together is better",
     painIntro: "What if you'd be challenged to do the uncomfortable, every single week? How much further ahead would your business be in a year?",
@@ -40,13 +40,13 @@ const copy = {
     painTogether: ["You decide with a team behind you", "Opportunities in abundance", "You're held accountable"],
 
     changeEyebrow: "What you get",
-    changeTitle: "What joining a circle changes",
+    changeTitle: "What happens when you join",
+    changeClosing: "You're not alone anymore.",
     changes: [
       { title: "Exponential growth", desc: "Normal founders grow linearly. Together we grow exponentially." },
       { title: "Feeling supported", desc: "A real team of founders around you, who know your business." },
-      { title: "Enjoy the journey", desc: "Side quests, dinners and activities. You're not alone anymore." },
+      { title: "Enjoy the journey", desc: "Side quests, dinners and activities." },
     ],
-
 
     globalEyebrow: "The bigger vision",
     globalTitle: "One family, wherever you go.",
@@ -68,12 +68,13 @@ const copy = {
     ],
     dinnerCaps: ["Founder dinner", "Weekly online call", "Founder event"],
 
-    howEyebrow: "Our growth system",
-    howTitle: "One hour to make all the other hours better.",
-    howNote: "4 sessions a month, always 60 minutes.",
-    howMonthly: ["2× Hot-seat", "1× Expert session", "1× Personal growth"],
+    howEyebrow: "What we do",
+    howTitle: "Your Circle is the core.",
+    howBody: "STS is all circles together. Every member joins a small Founder Circle of around six founders. Your Circle knows you inside and out and becomes your board of advisors. The Circles are connected through the wider STS community.",
+    howMonthlyLabel: "Every month",
+    howMonthly: ["Hotseats", "Expert Sessions", "Personal growth masterclasses"],
     howExtraLabel: "Plus",
-    howExtra: ["Growth dashboard", "In-person events", "Monthly 1-on-1"],
+    howExtra: ["Dinners & activities", "Growth dashboard", "Monthly 1-on-1 (optional)"],
 
     hostEyebrow: "Your coach",
     hostName: "Lennart van der Ziel",
@@ -110,8 +111,8 @@ const copy = {
 
     heroTitleA: "De founders die het snelst groeien ",
     heroTitleB: "doen het nooit alleen",
-    heroSub: "Een zorgvuldig geselecteerde kring die je exponentieel laat groeien.",
-    cohortPill: "Volgende Founder Circle · Start oktober 2026",
+    heroSub: "Een community van uitzonderlijke ondernemers die hun potentieel bereiken.",
+    cohortPill: "Volgende Founder Circle · 6 mannen · Start oktober 2026",
 
     painEyebrow: "Waarom samen beter is",
     painIntro: "Wat als je elke week wordt uitgedaagd om het ongemakkelijke te doen? Hoeveel verder zou je business zijn over een jaar?",
@@ -121,13 +122,13 @@ const copy = {
     painTogether: ["Je beslist met een team achter je", "Kansen in overvloed", "Je wordt accountable gehouden"],
 
     changeEyebrow: "Wat je krijgt",
-    changeTitle: "Wat verandert als je in een founder circle komt",
+    changeTitle: "Wat er gebeurt als je meedoet",
+    changeClosing: "Je bent niet meer alleen.",
     changes: [
       { title: "Exponentiële groei", desc: "Normale founders groeien lineair. Samen groeien we exponentieel." },
       { title: "Gesteund voelen", desc: "Een echt team van founders om je heen, die je business kennen." },
-      { title: "Geniet van de reis", desc: "Sidequests, diners en activiteiten. Je bent niet meer alleen." },
+      { title: "Geniet van de reis", desc: "Sidequests, diners en activiteiten." },
     ],
-
 
     globalEyebrow: "De grotere visie",
     globalTitle: "Eén familie, waar je ook bent.",
@@ -149,12 +150,13 @@ const copy = {
     ],
     dinnerCaps: ["Founder-diner", "Wekelijkse online call", "Founder event"],
 
-    howEyebrow: "Ons groeisysteem",
-    howTitle: "Eén uur dat al je andere uren beter maakt.",
-    howNote: "4 sessies per maand, altijd 60 minuten.",
-    howMonthly: ["2× Hotseat", "1× Expert-sessie", "1× Personal growth"],
+    howEyebrow: "Wat we doen",
+    howTitle: "Je Circle is de kern.",
+    howBody: "STS is alle circles samen. Elke member sluit aan bij een kleine Founder Circle van rond de zes founders. Je Circle kent je door en door en wordt je raad van advies. De Circles zijn verbonden via de bredere STS-community.",
+    howMonthlyLabel: "Elke maand",
+    howMonthly: ["Hotseats", "Expert-sessies", "Personal growth masterclasses"],
     howExtraLabel: "Plus",
-    howExtra: ["Growth dashboard", "In-person events", "Maandelijks 1-op-1"],
+    howExtra: ["Diners & activiteiten", "Growth dashboard", "Maandelijks 1-op-1 (optioneel)"],
 
     hostEyebrow: "Je coach",
     hostName: "Lennart van der Ziel",
@@ -304,6 +306,7 @@ export default function Join() {
               </div>
             ))}
           </div>
+          <p style={{ marginTop: 40, textAlign: "center", fontSize: 20, fontWeight: 800, color: INK, letterSpacing: "-0.01em" }}>{t.changeClosing}</p>
         </div>
       </section>
 
@@ -321,12 +324,32 @@ export default function Join() {
         </div>
       </section>
 
-      {/* GLOBAL NETWORK */}
-      <section style={{ background: "#0f0e0b", padding: "88px 24px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-        <div style={{ maxWidth: 780, margin: "0 auto", textAlign: "center" }}>
-          <span style={eyebrowS}>{t.globalEyebrow}</span>
-          <h2 style={h2(true)}>{t.globalTitle}</h2>
-          <p style={{ marginTop: 18, fontSize: 16.5, lineHeight: 1.65, color: MUT_SOFT }}>{t.globalBody}</p>
+      {/* WHO'S IN THE ROOM */}
+      <section style={{ background: "#15130f", color: "#f0ece4", padding: SEC }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}>
+            <span style={eyebrowS}>{t.roomEyebrow}</span>
+            <h2 style={h2(true)}>{t.roomTitle}</h2>
+          </div>
+          <div style={{ position: "relative" }}>
+          <button aria-label="Previous" onClick={() => scrollMembers(-1)} style={arrowBtn("left")}>‹</button>
+          <button aria-label="Next" onClick={() => scrollMembers(1)} style={arrowBtn("right")}>›</button>
+          <div ref={scroller} className="member-scroll" style={{ display: "flex", gap: 18, overflowX: "auto", scrollSnapType: "x mandatory", padding: "4px 8px 12px", WebkitOverflowScrolling: "touch", scrollbarWidth: "none", maskImage: "linear-gradient(to right, transparent 0, #000 30px, #000 calc(100% - 30px), transparent 100%)", WebkitMaskImage: "linear-gradient(to right, transparent 0, #000 30px, #000 calc(100% - 30px), transparent 100%)" }}>
+            {members.map((m) => (
+              <div key={m.name} style={{ flex: "0 0 auto", width: 170, textAlign: "center", scrollSnapAlign: "center" }}>
+                <div style={{ position: "relative", width: 118, height: 118, borderRadius: "50%", margin: "0 auto", overflow: "hidden", background: `color-mix(in srgb, ${ACCENT} 20%, #e7e0d4)`, display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid rgba(0,0,0,0.05)" }}>
+                  <span style={{ fontSize: 36, fontWeight: 800, color: ACCENT }}>{m.name.slice(0, 1)}</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={m.img} alt={m.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: m.pos || "center", transform: m.scale ? `scale(${m.scale})` : undefined }} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                </div>
+                <h3 style={{ marginTop: 14, fontSize: 17, fontWeight: 800 }}>{m.name}</h3>
+                <p style={{ marginTop: 3, fontSize: 12.5, fontWeight: 600, color: MUT, lineHeight: 1.35 }}>{m.tag}</p>
+                {m.note && <p style={{ marginTop: 4, fontSize: 11.5, color: "#8f887c", lineHeight: 1.35 }}>{m.note}</p>}
+              </div>
+            ))}
+          </div>
+          </div>
+
         </div>
       </section>
 
@@ -363,32 +386,34 @@ export default function Join() {
         </div>
       </section>
 
-      {/* WHO'S IN THE ROOM */}
-      <section style={{ background: "#15130f", color: "#f0ece4", padding: SEC }}>
+      {/* GLOBAL NETWORK */}
+      <section style={{ background: "#0f0e0b", padding: "88px 24px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+        <div style={{ maxWidth: 780, margin: "0 auto", textAlign: "center" }}>
+          <span style={eyebrowS}>{t.globalEyebrow}</span>
+          <h2 style={h2(true)}>{t.globalTitle}</h2>
+          <p style={{ marginTop: 18, fontSize: 16.5, lineHeight: 1.65, color: MUT_SOFT }}>{t.globalBody}</p>
+        </div>
+      </section>
+
+      {/* WHAT WE DO (black) */}
+      <section style={{ background: "#0f0e0b", padding: "88px 24px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}>
-            <span style={eyebrowS}>{t.roomEyebrow}</span>
-            <h2 style={h2(true)}>{t.roomTitle}</h2>
+          <Head eye={t.howEyebrow} title={t.howTitle} dark center />
+          <p style={{ marginTop: -16, marginBottom: 40, maxWidth: 640, marginLeft: "auto", marginRight: "auto", textAlign: "center", fontSize: 16.5, lineHeight: 1.65, color: MUT_SOFT }}>{t.howBody}</p>
+          <div style={{ textAlign: "center", marginBottom: 16 }}>
+            <span style={{ fontSize: 12.5, fontWeight: 700, color: ACCENT, textTransform: "uppercase", letterSpacing: "0.1em" }}>{t.howMonthlyLabel}</span>
           </div>
-          <div style={{ position: "relative" }}>
-          <button aria-label="Previous" onClick={() => scrollMembers(-1)} style={arrowBtn("left")}>‹</button>
-          <button aria-label="Next" onClick={() => scrollMembers(1)} style={arrowBtn("right")}>›</button>
-          <div ref={scroller} className="member-scroll" style={{ display: "flex", gap: 18, overflowX: "auto", scrollSnapType: "x mandatory", padding: "4px 8px 12px", WebkitOverflowScrolling: "touch", scrollbarWidth: "none", maskImage: "linear-gradient(to right, transparent 0, #000 30px, #000 calc(100% - 30px), transparent 100%)", WebkitMaskImage: "linear-gradient(to right, transparent 0, #000 30px, #000 calc(100% - 30px), transparent 100%)" }}>
-            {members.map((m) => (
-              <div key={m.name} style={{ flex: "0 0 auto", width: 170, textAlign: "center", scrollSnapAlign: "center" }}>
-                <div style={{ position: "relative", width: 118, height: 118, borderRadius: "50%", margin: "0 auto", overflow: "hidden", background: `color-mix(in srgb, ${ACCENT} 20%, #e7e0d4)`, display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid rgba(0,0,0,0.05)" }}>
-                  <span style={{ fontSize: 36, fontWeight: 800, color: ACCENT }}>{m.name.slice(0, 1)}</span>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={m.img} alt={m.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: m.pos || "center", transform: m.scale ? `scale(${m.scale})` : undefined }} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                </div>
-                <h3 style={{ marginTop: 14, fontSize: 17, fontWeight: 800 }}>{m.name}</h3>
-                <p style={{ marginTop: 3, fontSize: 12.5, fontWeight: 600, color: MUT, lineHeight: 1.35 }}>{m.tag}</p>
-                {m.note && <p style={{ marginTop: 4, fontSize: 11.5, color: "#8f887c", lineHeight: 1.35 }}>{m.note}</p>}
-              </div>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12 }}>
+            {t.howMonthly.map((label) => (
+              <span key={label} style={{ fontSize: 15, fontWeight: 800, color: "#fff", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 100, padding: "13px 24px" }}>{label}</span>
             ))}
           </div>
+          <div style={{ marginTop: 22, display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: 10 }}>
+            <span style={{ fontSize: 12.5, fontWeight: 700, color: MUT, textTransform: "uppercase", letterSpacing: "0.1em" }}>{t.howExtraLabel}</span>
+            {t.howExtra.map((label) => (
+              <span key={label} style={{ fontSize: 13.5, fontWeight: 600, color: MUT_SOFT, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 100, padding: "8px 16px" }}>{label}</span>
+            ))}
           </div>
-
         </div>
       </section>
 
@@ -398,6 +423,27 @@ export default function Join() {
           <span style={eyebrowS}>{t.selEyebrow}</span>
           <h2 style={h2(false)}>{t.selTitle}</h2>
           <p style={{ marginTop: 16, fontSize: 17, lineHeight: 1.65, color: INK_MUT }}>{t.selBody}</p>
+        </div>
+      </section>
+
+      {/* YOUR HOST (white) */}
+      <section style={{ background: "#fff", padding: "80px 24px 88px" }}>
+        <div className="flex-wrap-col" style={{ maxWidth: 900, margin: "0 auto", display: "flex", gap: 44, alignItems: "center", flexWrap: "wrap" }}>
+          <div style={{ flex: "0 0 auto" }}>
+            <div style={{ position: "relative", width: 200, height: 240, borderRadius: 16, overflow: "hidden", border: "1px solid rgba(0,0,0,0.08)" }}>
+              <Image src="/coaching-portrait.jpg" alt={t.hostName} fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 15%" }} />
+            </div>
+          </div>
+          <div style={{ flex: "1 1 340px" }}>
+            <span style={eyebrowS}>{t.hostEyebrow}</span>
+            <h2 style={{ marginTop: 12, fontSize: "clamp(24px,3.2vw,34px)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.02em", color: INK }}>{t.hostName}</h2>
+            <div style={{ marginTop: 14, display: "flex", flexWrap: "wrap", gap: 8 }}>
+              {t.hostChips.map((c) => (
+                <span key={c} style={{ fontSize: 12.5, fontWeight: 700, color: INK, background: "#f4f1ea", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 100, padding: "6px 13px" }}>{c}</span>
+              ))}
+            </div>
+            <p style={{ marginTop: 18, fontSize: 16.5, lineHeight: 1.6, color: INK_MUT }}>{t.hostDesc}</p>
+          </div>
         </div>
       </section>
 
@@ -422,50 +468,6 @@ export default function Join() {
                 </span>
               </button>
             )}
-          </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS (white) */}
-      <section style={{ background: "#fff", color: INK, padding: "78px 24px" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <Head eye={t.howEyebrow} title={t.howTitle} dark={false} center />
-          <div style={{ textAlign: "center", marginTop: -20, marginBottom: 40 }}>
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 700, color: ACCENT, background: "rgba(232,116,43,0.08)", border: `1px solid ${ACCENT}`, borderRadius: 100, padding: "8px 18px" }}>
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: ACCENT, display: "inline-block" }} />{t.howNote}
-            </span>
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12 }}>
-            {t.howMonthly.map((label) => (
-              <span key={label} style={{ fontSize: 15, fontWeight: 800, color: INK, background: "#f4f1ea", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 100, padding: "13px 24px" }}>{label}</span>
-            ))}
-          </div>
-          <div style={{ marginTop: 22, display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: 10 }}>
-            <span style={{ fontSize: 12.5, fontWeight: 700, color: INK_MUT, textTransform: "uppercase", letterSpacing: "0.1em" }}>{t.howExtraLabel}</span>
-            {t.howExtra.map((label) => (
-              <span key={label} style={{ fontSize: 13.5, fontWeight: 600, color: INK_MUT, background: "#fff", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 100, padding: "8px 16px" }}>{label}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* YOUR HOST */}
-      <section style={{ background: "#0f0e0b", padding: "56px 24px 88px" }}>
-        <div className="flex-wrap-col" style={{ maxWidth: 900, margin: "0 auto", display: "flex", gap: 44, alignItems: "center", flexWrap: "wrap" }}>
-          <div style={{ flex: "0 0 auto" }}>
-            <div style={{ position: "relative", width: 200, height: 240, borderRadius: 16, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)" }}>
-              <Image src="/coaching-portrait.jpg" alt={t.hostName} fill className="photo-grade" style={{ objectFit: "cover", objectPosition: "center 15%" }} />
-            </div>
-          </div>
-          <div style={{ flex: "1 1 340px" }}>
-            <span style={eyebrowS}>{t.hostEyebrow}</span>
-            <h2 style={{ marginTop: 12, fontSize: "clamp(24px,3.2vw,34px)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.02em", color: "#fff" }}>{t.hostName}</h2>
-            <div style={{ marginTop: 14, display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {t.hostChips.map((c) => (
-                <span key={c} style={{ fontSize: 12.5, fontWeight: 700, color: "#fff", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 100, padding: "6px 13px" }}>{c}</span>
-              ))}
-            </div>
-            <p style={{ marginTop: 18, fontSize: 16.5, lineHeight: 1.6, color: MUT_SOFT }}>{t.hostDesc}</p>
           </div>
         </div>
       </section>
