@@ -10,10 +10,8 @@ export async function GET() {
   const db = getSupabase();
   if (!db) return NextResponse.json({ ok: false, error: "Supabase not configured" }, { status: 501 });
 
-  const { count, error } = await db
-    .from("crm_records")
-    .select("id", { count: "exact", head: true });
+  const { data, error } = await db.from("crm_records").select("id").limit(1);
 
   if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
-  return NextResponse.json({ ok: true, count });
+  return NextResponse.json({ ok: true, rows: data?.length ?? 0 });
 }
