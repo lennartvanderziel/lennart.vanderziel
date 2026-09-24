@@ -59,9 +59,9 @@ const copy = {
     proofTitle: "The difference it made",
     videoCaption: "Zach · Member",
     videoCaptionDavid: "David · Member",
+    videoCaptionKibet: "Kibet · Member",
     testimonials: [
       { quote: "I'd been stuck on a real estate idea for months. With the circle it became land I now own and a 14-unit project.", name: "Samer", type: "member" },
-      { quote: "I started thinking like the founder I need to become to raise €40M. It changed everything.", name: "Kibet", type: "member" },
     ],
     dinnerCaps: ["Founder dinner", "Weekly online call", "Founder event"],
 
@@ -138,9 +138,9 @@ const copy = {
     proofTitle: "Het verschil dat het maakte",
     videoCaption: "Zach · Lid",
     videoCaptionDavid: "David · Lid",
+    videoCaptionKibet: "Kibet · Lid",
     testimonials: [
       { quote: "Ik zat al maanden vast op een vastgoedidee. Met de kring werd het grond die ik nu bezit en een project van 14 units.", name: "Samer", type: "lid" },
-      { quote: "Ik begon te denken als de founder die ik moet worden om €40M op te halen. Dat veranderde alles.", name: "Kibet", type: "lid" },
     ],
     dinnerCaps: ["Founder-diner", "Wekelijkse online call", "Founder event"],
 
@@ -349,20 +349,32 @@ export default function Join() {
 
       {/* PROOF */}
       <section style={{ background: "#fff", color: INK, padding: SEC }}>
-        <div style={{ maxWidth: 940, margin: "0 auto" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Head eye={t.proofEyebrow} title={t.proofTitle} dark={false} center />
           <div style={{ display: "flex", flexWrap: "wrap", gap: 24, justifyContent: "center", alignItems: "flex-start", margin: "0 auto 26px" }}>
             <div style={{ flex: "0 1 300px", maxWidth: 300 }}>
               <div style={{ ...mediaBox, aspectRatio: "9/16" }}>
-                <video src="/zachreview.mp4" controls playsInline preload="metadata" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
+                <video src="/zachreview.mp4" controls playsInline preload="metadata" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }}>
+                  <track kind="subtitles" src="/zachreview.en.vtt" srcLang="en" label="English" default />
+                </video>
               </div>
               <p style={{ textAlign: "center", fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 10 }}>{t.videoCaption}</p>
             </div>
             <div style={{ flex: "0 1 300px", maxWidth: 300 }}>
               <div style={{ ...mediaBox, aspectRatio: "9/16" }}>
-                <video src="/davidreview.mp4" controls playsInline preload="metadata" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }} />
+                <video src="/davidreview.mp4" controls playsInline preload="metadata" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }}>
+                  <track kind="subtitles" src="/davidreview.en.vtt" srcLang="en" label="English" default />
+                </video>
               </div>
               <p style={{ textAlign: "center", fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 10 }}>{t.videoCaptionDavid}</p>
+            </div>
+            <div style={{ flex: "0 1 300px", maxWidth: 300 }}>
+              <div style={{ ...mediaBox, aspectRatio: "9/16" }}>
+                <video src="/kibetreview.mp4" controls playsInline preload="metadata" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", background: "#000" }}>
+                  <track kind="subtitles" src="/kibetreview.en.vtt" srcLang="en" label="English" default />
+                </video>
+              </div>
+              <p style={{ textAlign: "center", fontSize: 12.5, fontWeight: 700, color: ACCENT, letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 10 }}>{t.videoCaptionKibet}</p>
             </div>
           </div>
           <div className="grid-auto" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: 18 }}>
