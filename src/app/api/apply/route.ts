@@ -18,7 +18,10 @@ export function signId(id: string): string {
 
 async function sendEmail(to: string, subject: string, html: string): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return false;
+  if (!apiKey) {
+    console.error("[apply] RESEND_API_KEY missing");
+    return false;
+  }
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
@@ -30,6 +33,10 @@ async function sendEmail(to: string, subject: string, html: string): Promise<boo
       html,
     }),
   });
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    console.error("[apply] Resend send failed", res.status, body);
+  }
   return res.ok;
 }
 
