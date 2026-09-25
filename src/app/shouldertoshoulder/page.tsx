@@ -68,7 +68,9 @@ const copy = {
     howEyebrow: "What we do",
     howTitle: "Your Circle is the core.",
     howBody: "Every member joins a small Founder Circle of around six founders. Your Circle knows you inside and out and becomes your board of advisors. The Circles are connected through the wider STS community.",
-    howMonthlyLabel: "Every month",
+    howTime: "4 × 1 hour",
+    howTimeSub: "4 sessions a month, one hour each. That's all we ask of your calendar.",
+    howMonthlyLabel: "Every month, in those 4 hours",
     howMonthly: ["Hotseats", "Expert Sessions", "Personal growth masterclasses"],
     howExtraLabel: "Plus",
     howExtra: ["Dinners & activities", "Growth dashboard", "Monthly 1-on-1 (optional)"],
@@ -147,7 +149,9 @@ const copy = {
     howEyebrow: "Wat we doen",
     howTitle: "Je Circle is de kern.",
     howBody: "Elke member sluit aan bij een kleine Founder Circle van rond de zes founders. Je Circle kent je door en door en wordt je raad van advies. De Circles zijn verbonden via de bredere STS-community.",
-    howMonthlyLabel: "Elke maand",
+    howTime: "4 × 1 uur",
+    howTimeSub: "4 sessies per maand, elk één uur. Meer vragen we niet van je agenda.",
+    howMonthlyLabel: "Elke maand, in die 4 uur",
     howMonthly: ["Hotseats", "Expert-sessies", "Personal growth masterclasses"],
     howExtraLabel: "Plus",
     howExtra: ["Diners & activiteiten", "Growth dashboard", "Maandelijks 1-op-1 (optioneel)"],
@@ -397,6 +401,10 @@ export default function Join() {
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Head eye={t.howEyebrow} title={t.howTitle} dark center />
           <p style={{ marginTop: -16, marginBottom: 40, maxWidth: 640, marginLeft: "auto", marginRight: "auto", textAlign: "center", fontSize: 16.5, lineHeight: 1.65, color: MUT_SOFT }}>{t.howBody}</p>
+          <div style={{ textAlign: "center", marginBottom: 36 }}>
+            <div style={{ display: "inline-block", fontSize: "clamp(34px, 6vw, 52px)", fontWeight: 900, color: "#fff", letterSpacing: "-0.02em", lineHeight: 1.1, borderBottom: `3px solid ${ACCENT}`, paddingBottom: 6 }}>{t.howTime}</div>
+            <p style={{ margin: "14px auto 0", fontSize: 15.5, color: MUT_SOFT }}>{t.howTimeSub}</p>
+          </div>
           <div style={{ textAlign: "center", marginBottom: 16 }}>
             <span style={{ fontSize: 12.5, fontWeight: 700, color: ACCENT, textTransform: "uppercase", letterSpacing: "0.1em" }}>{t.howMonthlyLabel}</span>
           </div>
