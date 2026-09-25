@@ -109,7 +109,7 @@ const copy = {
     byInvite: "Alleen op uitnodiging",
 
     heroTitleA: "De founders die het snelst groeien ",
-    heroTitleB: "doen het nooit alleen",
+    heroTitleB: "doen dat nooit alleen",
     heroSub: "Een community van uitzonderlijke ondernemers, die samen optrekken.",
     cohortPill: "Volgende Founder Circle · 6 mannen · Start oktober 2026",
 
