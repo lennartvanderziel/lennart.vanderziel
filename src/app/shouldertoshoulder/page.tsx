@@ -68,7 +68,7 @@ const copy = {
     howEyebrow: "What we do",
     howTitle: "Your Circle is the core.",
     howBody: "Every member joins a small Founder Circle of around six founders. Your Circle knows you inside and out and becomes your board of advisors. The Circles are connected through the wider STS community.",
-    howTime: "4 sessions × 1 hour",
+    howTime: "4 sessions a month, one hour each",
     howTimeSub: "per month. That's all.",
     howMonthlyLabel: "Every month, in those 4 hours",
     howMonthly: ["Hotseats", "Expert Sessions", "Personal growth masterclasses"],
@@ -149,7 +149,7 @@ const copy = {
     howEyebrow: "Wat we doen",
     howTitle: "Je Circle is de kern.",
     howBody: "Elke member sluit aan bij een kleine Founder Circle van rond de zes founders. Je Circle kent je door en door en wordt je raad van advies. De Circles zijn verbonden via de bredere STS-community.",
-    howTime: "4 sessies × 1 uur",
+    howTime: "4 sessies per maand, elk één uur",
     howTimeSub: "per maand. Meer is het niet.",
     howMonthlyLabel: "Elke maand, in die 4 uur",
     howMonthly: ["Hotseats", "Expert-sessies", "Personal growth masterclasses"],
@@ -401,13 +401,7 @@ export default function Join() {
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Head eye={t.howEyebrow} title={t.howTitle} dark center />
           <p style={{ marginTop: -16, marginBottom: 40, maxWidth: 640, marginLeft: "auto", marginRight: "auto", textAlign: "center", fontSize: 16.5, lineHeight: 1.65, color: MUT_SOFT }}>{t.howBody}</p>
-          <div style={{ textAlign: "center", marginBottom: 28 }}>
-            <span style={{ fontSize: 22, fontWeight: 900, color: "#fff", letterSpacing: "-0.01em" }}>{t.howTime}</span>
-            <span style={{ fontSize: 15, color: MUT_SOFT }}> · {t.howTimeSub}</span>
-          </div>
-          <div style={{ textAlign: "center", marginBottom: 16 }}>
-            <span style={{ fontSize: 12.5, fontWeight: 700, color: ACCENT, textTransform: "uppercase", letterSpacing: "0.1em" }}>{t.howMonthlyLabel}</span>
-          </div>
+          <p style={{ textAlign: "center", margin: "0 0 24px", fontSize: 20, fontWeight: 800, color: ACCENT }}>{t.howTime}</p>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12 }}>
             {t.howMonthly.map((label) => (
               <span key={label} style={{ fontSize: 15, fontWeight: 800, color: "#fff", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 100, padding: "13px 24px" }}>{label}</span>
