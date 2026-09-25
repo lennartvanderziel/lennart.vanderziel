@@ -13,6 +13,7 @@ const INK_MUT = "#57534c";
 
 type Member = { name: string; tag: string; img: string; pos?: string; scale?: number; note?: string };
 const members: Member[] = [
+  { name: "Brady", tag: "Travel company · 20+ years an entrepreneur", img: "/members/Brady.jpeg", pos: "center 20%" },
   { name: "Kibet", tag: "AgTech hardware · raising Series A", img: "/members/Kibet.png" },
   { name: "David", tag: "Bali real estate investment", img: "/members/David.png" },
   { name: "Demian", tag: "2× AI-run B2B SaaS", img: "/members/Demian.jpeg", scale: 1.3 },
