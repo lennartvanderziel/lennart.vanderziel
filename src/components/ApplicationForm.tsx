@@ -146,17 +146,17 @@ export default function ApplicationForm() {
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>First, who are you?</p>
           <input type="text" name="company_website" tabIndex={-1} autoComplete="off" value={hp} onChange={(e) => setHp(e.target.value)} style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }} aria-hidden="true" />
-          <input autoFocus type="text" name="firstName" autoComplete="given-name" placeholder="First name" value={data.firstName} onChange={(e) => setData({ ...data, firstName: e.target.value })} className="input-premium" style={inputStyle} />
-          <input type="text" name="lastName" autoComplete="family-name" placeholder="Last name" value={data.lastName} onChange={(e) => setData({ ...data, lastName: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
+          <input autoFocus type="text" name="sts_firstName" autoComplete="off" placeholder="First name" value={data.firstName} onChange={(e) => setData({ ...data, firstName: e.target.value })} className="input-premium" style={inputStyle} />
+          <input type="text" name="sts_lastName" autoComplete="off" placeholder="Last name" value={data.lastName} onChange={(e) => setData({ ...data, lastName: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
         </div>
       )}
 
       {step === 2 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>How can we reach you?</p>
-          <input autoFocus type="email" name="email" autoComplete="email" placeholder="Email address" value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} className="input-premium" style={inputStyle} />
-          <input type="tel" name="whatsapp" autoComplete="tel" placeholder="WhatsApp number (incl. country code)" value={data.whatsapp} onChange={(e) => setData({ ...data, whatsapp: e.target.value })} className="input-premium" style={inputStyle} />
-          <input type="text" name="instagram" autoComplete="off" placeholder="Instagram (optional)" value={data.instagram} onChange={(e) => setData({ ...data, instagram: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
+          <input autoFocus type="email" name="sts_email" autoComplete="off" placeholder="Email address" value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} className="input-premium" style={inputStyle} />
+          <input type="tel" name="sts_whatsapp" autoComplete="off" placeholder="WhatsApp number (incl. country code)" value={data.whatsapp} onChange={(e) => setData({ ...data, whatsapp: e.target.value })} className="input-premium" style={inputStyle} />
+          <input type="text" name="sts_instagram" autoComplete="off" placeholder="Instagram (optional)" value={data.instagram} onChange={(e) => setData({ ...data, instagram: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
         </div>
       )}
 

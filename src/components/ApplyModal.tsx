@@ -202,10 +202,10 @@ export default function ApplyModal({ open, onClose }: { open: boolean; onClose: 
               {step === 0 && (
                 <Q title={t.contactTitle}>
                   <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
-                    <input autoFocus name="name" autoComplete="name" placeholder={t.name} value={d.name} onChange={set("name")} style={field} />
-                    <input type="email" name="email" autoComplete="email" placeholder={t.email} value={d.email} onChange={set("email")} style={field} />
-                    <input type="tel" name="whatsapp" autoComplete="tel" placeholder={t.whatsapp} value={d.whatsapp} onChange={set("whatsapp")} style={field} />
-                    <input name="instagram" autoComplete="off" placeholder={t.instagram} value={d.instagram} onChange={set("instagram")} onKeyDown={(e) => e.key === "Enter" && next()} style={field} />
+                    <input autoFocus name="sts_name" autoComplete="off" placeholder={t.name} value={d.name} onChange={set("name")} style={field} />
+                    <input type="email" name="sts_email" autoComplete="off" placeholder={t.email} value={d.email} onChange={set("email")} style={field} />
+                    <input type="tel" name="sts_whatsapp" autoComplete="off" placeholder={t.whatsapp} value={d.whatsapp} onChange={set("whatsapp")} style={field} />
+                    <input name="sts_instagram" autoComplete="off" placeholder={t.instagram} value={d.instagram} onChange={set("instagram")} onKeyDown={(e) => e.key === "Enter" && next()} style={field} />
                   </div>
                 </Q>
               )}
