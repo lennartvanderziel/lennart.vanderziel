@@ -242,8 +242,8 @@ export default function Dashboard() {
                 {/* QUARTERLY */}
                 <section style={{ ...sectionCard, borderLeft: "3px solid #8a7aa8" }}>
                   <span style={eyebrowStyle("#8a7aa8")}>Quarterly · set once per quarter</span>
-                  <h2 style={{ fontSize: 16.5, fontWeight: 800, color: "#fff", margin: "12px 0 10px" }}>Q3 Objective</h2>
-                  <textarea rows={2} placeholder="What's your Q3 objective?" value={acc.q3Objective} onChange={(e) => saveAcc({ ...acc, q3Objective: e.target.value })} style={{ ...inputDark, resize: "vertical" }} />
+                  <h2 style={{ fontSize: 16.5, fontWeight: 800, color: "#fff", margin: "12px 0 10px" }}>Q4 Objective</h2>
+                  <textarea rows={2} placeholder="What's your Q4 objective?" value={acc.q3Objective} onChange={(e) => saveAcc({ ...acc, q3Objective: e.target.value })} style={{ ...inputDark, resize: "vertical" }} />
                 </section>
 
                 {/* MONTHLY */}
