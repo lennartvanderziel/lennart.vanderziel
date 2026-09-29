@@ -87,6 +87,16 @@ const optionStyle = (selected: boolean): React.CSSProperties => ({
   transition: "background .15s ease, border-color .15s ease",
 });
 
+function Q({ title, sub, children }: { title: string; sub?: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <h3 style={{ fontSize: 21, fontWeight: 800, color: "#15130f", letterSpacing: "-0.01em", lineHeight: 1.3 }}>{title}</h3>
+      {sub && <p style={{ marginTop: 6, fontSize: 13.5, color: "#8a847a" }}>{sub}</p>}
+      <div style={{ marginTop: 18 }}>{children}</div>
+    </div>
+  );
+}
+
 export default function ApplyModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { lang } = useLang();
   const t = copy[lang];
@@ -158,14 +168,6 @@ export default function ApplyModal({ open, onClose }: { open: boolean; onClose: 
       >
         {status === "sending" ? t.sending : step === steps.length - 1 ? t.submit : t.next}
       </button>
-    </div>
-  );
-
-  const Q = ({ title, sub, children }: { title: string; sub?: string; children: React.ReactNode }) => (
-    <div>
-      <h3 style={{ fontSize: 21, fontWeight: 800, color: "#15130f", letterSpacing: "-0.01em", lineHeight: 1.3 }}>{title}</h3>
-      {sub && <p style={{ marginTop: 6, fontSize: 13.5, color: "#8a847a" }}>{sub}</p>}
-      <div style={{ marginTop: 18 }}>{children}</div>
     </div>
   );
 
