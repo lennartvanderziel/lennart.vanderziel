@@ -76,7 +76,7 @@ const emptyData = {
 
 const field: React.CSSProperties = {
   width: "100%", background: "#fff", border: "1px solid rgba(0,0,0,0.16)", color: "#15130f",
-  padding: "14px 16px", fontSize: 15.5, fontFamily: "inherit", borderRadius: 10, outline: "none",
+  padding: "14px 16px", fontSize: 16, fontFamily: "inherit", borderRadius: 10, outline: "none",
 };
 
 const optionStyle = (selected: boolean): React.CSSProperties => ({
