@@ -40,16 +40,27 @@ const faqs = [
 export default function ShoulderToShoulder() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [daysLeft, setDaysLeft] = useState<number | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const deadline = new Date("2026-09-30T23:59:59+02:00").getTime();
     setDaysLeft(Math.max(Math.ceil((deadline - Date.now()) / 86400000), 0));
+  }, []);
+  useEffect(() => {
+    // The nav is fixed with a transparent gradient made to sit over the hero
+    // photo only. Once the page scrolls past the hero, give it a solid
+    // background so it stops overlapping the section (and, on mobile, the
+    // application form) scrolled underneath it.
+    const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.7);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <div style={{ background: "#0f0e0b", color: "#15130f", fontFamily: "var(--font-sans), ui-sans-serif, sans-serif", minHeight: "100vh", overflowX: "hidden", WebkitFontSmoothing: "antialiased" }}>
 
       {/* NAV */}
-      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 40, background: "linear-gradient(to bottom, rgba(10,9,7,0.55), transparent)" }}>
+      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 40, background: scrolled ? "#0f0e0b" : "linear-gradient(to bottom, rgba(10,9,7,0.55), transparent)", borderBottom: scrolled ? "1px solid rgba(255,255,255,0.08)" : "none", transition: "background .2s ease" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "16px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20 }}>
           <a href="/" style={{ display: "flex", alignItems: "center", gap: 11, textDecoration: "none", color: "#fff" }}>
             <span style={{ flex: "0 0 auto", width: 32, height: 32, borderRadius: 9, background: ACCENT, display: "flex", alignItems: "center", justifyContent: "center", gap: 3.5 }}>
