@@ -146,17 +146,17 @@ export default function ApplicationForm() {
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>First, who are you?</p>
           <input type="text" name="company_website" tabIndex={-1} autoComplete="off" value={hp} onChange={(e) => setHp(e.target.value)} style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }} aria-hidden="true" />
-          <input autoFocus type="text" placeholder="First name" value={data.firstName} onChange={(e) => setData({ ...data, firstName: e.target.value })} className="input-premium" style={inputStyle} />
-          <input type="text" placeholder="Last name" value={data.lastName} onChange={(e) => setData({ ...data, lastName: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
+          <input autoFocus type="text" name="firstName" autoComplete="given-name" placeholder="First name" value={data.firstName} onChange={(e) => setData({ ...data, firstName: e.target.value })} className="input-premium" style={inputStyle} />
+          <input type="text" name="lastName" autoComplete="family-name" placeholder="Last name" value={data.lastName} onChange={(e) => setData({ ...data, lastName: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
         </div>
       )}
 
       {step === 2 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>How can we reach you?</p>
-          <input autoFocus type="email" placeholder="Email address" value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} className="input-premium" style={inputStyle} />
-          <input type="tel" placeholder="WhatsApp number (incl. country code)" value={data.whatsapp} onChange={(e) => setData({ ...data, whatsapp: e.target.value })} className="input-premium" style={inputStyle} />
-          <input type="text" placeholder="Instagram (optional)" value={data.instagram} onChange={(e) => setData({ ...data, instagram: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
+          <input autoFocus type="email" name="email" autoComplete="email" placeholder="Email address" value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} className="input-premium" style={inputStyle} />
+          <input type="tel" name="whatsapp" autoComplete="tel" placeholder="WhatsApp number (incl. country code)" value={data.whatsapp} onChange={(e) => setData({ ...data, whatsapp: e.target.value })} className="input-premium" style={inputStyle} />
+          <input type="text" name="instagram" autoComplete="off" placeholder="Instagram (optional)" value={data.instagram} onChange={(e) => setData({ ...data, instagram: e.target.value })} onKeyDown={(e) => e.key === "Enter" && next()} className="input-premium" style={inputStyle} />
         </div>
       )}
 
@@ -164,7 +164,7 @@ export default function ApplicationForm() {
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What are you building?</p>
           <p style={{ fontSize: 13.5, color: "#8a847a", marginTop: -6 }}>One or two sentences is perfect.</p>
-          <textarea autoFocus rows={3} placeholder="E.g. e-commerce brand in sports nutrition, 8 people, mostly EU market" value={data.business} onChange={(e) => setData({ ...data, business: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+          <textarea autoFocus rows={3} autoComplete="off" placeholder="E.g. e-commerce brand in sports nutrition, 8 people, mostly EU market" value={data.business} onChange={(e) => setData({ ...data, business: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
         </div>
       )}
 
@@ -183,42 +183,42 @@ export default function ApplicationForm() {
       {step === 5 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What are you trying to achieve over the next 6–12 months?</p>
-          <textarea autoFocus rows={3} placeholder="E.g. cross €50k/month, hire a real ops lead, launch in a second market…" value={data.goals} onChange={(e) => setData({ ...data, goals: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+          <textarea autoFocus rows={3} autoComplete="off" placeholder="E.g. cross €50k/month, hire a real ops lead, launch in a second market…" value={data.goals} onChange={(e) => setData({ ...data, goals: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
         </div>
       )}
 
       {step === 6 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What is currently holding you back the most?</p>
-          <textarea autoFocus rows={3} placeholder="Be specific, the real constraint, not just the symptom." value={data.challenge} onChange={(e) => setData({ ...data, challenge: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+          <textarea autoFocus rows={3} autoComplete="off" placeholder="Be specific, the real constraint, not just the symptom." value={data.challenge} onChange={(e) => setData({ ...data, challenge: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
         </div>
       )}
 
       {step === 7 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>Where would having the right group of founders around you make the biggest difference?</p>
-          <textarea autoFocus rows={3} placeholder="E.g. decisions I'm making alone, blind spots I can't see myself…" value={data.whereHelps} onChange={(e) => setData({ ...data, whereHelps: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+          <textarea autoFocus rows={3} autoComplete="off" placeholder="E.g. decisions I'm making alone, blind spots I can't see myself…" value={data.whereHelps} onChange={(e) => setData({ ...data, whereHelps: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
         </div>
       )}
 
       {step === 8 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What would make this Circle extremely valuable for you?</p>
-          <textarea autoFocus rows={3} placeholder="E.g. honest feedback, accountability, like-minded founders to grow with…" value={data.why} onChange={(e) => setData({ ...data, why: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+          <textarea autoFocus rows={3} autoComplete="off" placeholder="E.g. honest feedback, accountability, like-minded founders to grow with…" value={data.why} onChange={(e) => setData({ ...data, why: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
         </div>
       )}
 
       {step === 9 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>What do you think you could contribute to the group?</p>
-          <textarea autoFocus rows={3} placeholder="Your experience, network, perspective, whatever you'd genuinely bring." value={data.contribution} onChange={(e) => setData({ ...data, contribution: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+          <textarea autoFocus rows={3} autoComplete="off" placeholder="Your experience, network, perspective, whatever you'd genuinely bring." value={data.contribution} onChange={(e) => setData({ ...data, contribution: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
         </div>
       )}
 
       {step === 10 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ fontSize: 17, fontWeight: 800, color: "#15130f" }}>Why are you interested in joining now?</p>
-          <textarea autoFocus rows={3} placeholder="What made this the right moment?" value={data.whyNow} onChange={(e) => setData({ ...data, whyNow: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
+          <textarea autoFocus rows={3} autoComplete="off" placeholder="What made this the right moment?" value={data.whyNow} onChange={(e) => setData({ ...data, whyNow: e.target.value })} className="input-premium" style={{ ...inputStyle, resize: "vertical" }} />
         </div>
       )}
 

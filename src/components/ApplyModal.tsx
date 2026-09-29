@@ -202,16 +202,16 @@ export default function ApplyModal({ open, onClose }: { open: boolean; onClose: 
               {step === 0 && (
                 <Q title={t.contactTitle}>
                   <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
-                    <input autoFocus placeholder={t.name} value={d.name} onChange={set("name")} style={field} />
-                    <input type="email" placeholder={t.email} value={d.email} onChange={set("email")} style={field} />
-                    <input type="tel" placeholder={t.whatsapp} value={d.whatsapp} onChange={set("whatsapp")} style={field} />
-                    <input placeholder={t.instagram} value={d.instagram} onChange={set("instagram")} onKeyDown={(e) => e.key === "Enter" && next()} style={field} />
+                    <input autoFocus name="name" autoComplete="name" placeholder={t.name} value={d.name} onChange={set("name")} style={field} />
+                    <input type="email" name="email" autoComplete="email" placeholder={t.email} value={d.email} onChange={set("email")} style={field} />
+                    <input type="tel" name="whatsapp" autoComplete="tel" placeholder={t.whatsapp} value={d.whatsapp} onChange={set("whatsapp")} style={field} />
+                    <input name="instagram" autoComplete="off" placeholder={t.instagram} value={d.instagram} onChange={set("instagram")} onKeyDown={(e) => e.key === "Enter" && next()} style={field} />
                   </div>
                 </Q>
               )}
               {step === 1 && (
                 <Q title={t.business} sub={t.businessSub}>
-                  <textarea autoFocus rows={3} value={d.business} onChange={set("business")} style={{ ...field, resize: "vertical" }} />
+                  <textarea autoFocus rows={3} autoComplete="off" value={d.business} onChange={set("business")} style={{ ...field, resize: "vertical" }} />
                 </Q>
               )}
               {step === 2 && (
@@ -227,32 +227,32 @@ export default function ApplyModal({ open, onClose }: { open: boolean; onClose: 
               )}
               {step === 3 && (
                 <Q title={t.goals}>
-                  <textarea autoFocus rows={3} value={d.goals} onChange={set("goals")} style={{ ...field, resize: "vertical" }} />
+                  <textarea autoFocus rows={3} autoComplete="off" value={d.goals} onChange={set("goals")} style={{ ...field, resize: "vertical" }} />
                 </Q>
               )}
               {step === 4 && (
                 <Q title={t.challenge}>
-                  <textarea autoFocus rows={3} value={d.challenge} onChange={set("challenge")} style={{ ...field, resize: "vertical" }} />
+                  <textarea autoFocus rows={3} autoComplete="off" value={d.challenge} onChange={set("challenge")} style={{ ...field, resize: "vertical" }} />
                 </Q>
               )}
               {step === 5 && (
                 <Q title={t.whereHelps}>
-                  <textarea autoFocus rows={3} value={d.whereHelps} onChange={set("whereHelps")} style={{ ...field, resize: "vertical" }} />
+                  <textarea autoFocus rows={3} autoComplete="off" value={d.whereHelps} onChange={set("whereHelps")} style={{ ...field, resize: "vertical" }} />
                 </Q>
               )}
               {step === 6 && (
                 <Q title={t.why}>
-                  <textarea autoFocus rows={3} value={d.why} onChange={set("why")} style={{ ...field, resize: "vertical" }} />
+                  <textarea autoFocus rows={3} autoComplete="off" value={d.why} onChange={set("why")} style={{ ...field, resize: "vertical" }} />
                 </Q>
               )}
               {step === 7 && (
                 <Q title={t.contribution}>
-                  <textarea autoFocus rows={3} value={d.contribution} onChange={set("contribution")} style={{ ...field, resize: "vertical" }} />
+                  <textarea autoFocus rows={3} autoComplete="off" value={d.contribution} onChange={set("contribution")} style={{ ...field, resize: "vertical" }} />
                 </Q>
               )}
               {step === 8 && (
                 <Q title={t.whyNow}>
-                  <textarea autoFocus rows={3} value={d.whyNow} onChange={set("whyNow")} style={{ ...field, resize: "vertical" }} />
+                  <textarea autoFocus rows={3} autoComplete="off" value={d.whyNow} onChange={set("whyNow")} style={{ ...field, resize: "vertical" }} />
                 </Q>
               )}
               {step === 9 && (
