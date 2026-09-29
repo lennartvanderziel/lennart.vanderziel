@@ -16,26 +16,38 @@ export function signId(id: string): string {
     .slice(0, 32);
 }
 
-async function sendEmail(to: string, subject: string, html: string): Promise<boolean> {
+async function sendEmail(to: string, subject: string, html: string, fallbackPayload: Record<string, string>): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.error("[apply] RESEND_API_KEY missing");
-    return false;
+  if (apiKey) {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from: "Shoulder to Shoulder <lennart@shouldertoshoulder.club>",
+        to: [to],
+        reply_to: NOTIFY_TO,
+        subject,
+        html,
+      }),
+    });
+    if (!res.ok) {
+      const body = await res.text().catch(() => "");
+      console.error("[apply] Resend send failed", res.status, body);
+    }
+    return res.ok;
   }
-  const res = await fetch("https://api.resend.com/emails", {
+
+  // Fallback: FormSubmit (RESEND_API_KEY not configured / empty in this env).
+  // No HTML button here, just the plain fields plus the approve link as text.
+  console.error("[apply] RESEND_API_KEY missing, using FormSubmit fallback");
+  const res = await fetch(`https://formsubmit.co/ajax/${to}`, {
     method: "POST",
-    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-    body: JSON.stringify({
-      from: "Shoulder to Shoulder <lennart@shouldertoshoulder.club>",
-      to: [to],
-      reply_to: NOTIFY_TO,
-      subject,
-      html,
-    }),
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({ _subject: subject, _template: "table", ...fallbackPayload }),
   });
   if (!res.ok) {
     const body = await res.text().catch(() => "");
-    console.error("[apply] Resend send failed", res.status, body);
+    console.error("[apply] FormSubmit fallback failed", res.status, body);
   }
   return res.ok;
 }
@@ -121,7 +133,12 @@ export async function POST(req: Request) {
         <a href="${approveUrl}" style="background:#E8742B;color:#fff;text-decoration:none;padding:12px 22px;border-radius:100px;font-weight:700;display:inline-block">✅ Approve &amp; send call link</a>
       </p>
       <p style="margin:14px 0 0;color:#888;font-size:12px">This lead is now in your CRM pipeline (Shoulder to Shoulder · New).</p>
-    </div>`
+    </div>`,
+    {
+      Name: name, Email: email, WhatsApp: lead.whatsapp, Instagram: lead.instagram,
+      Business: lead.business, Revenue: lead.revenue, Source: lead.source,
+      Notes: lead.notes, "Approve & send call link": approveUrl,
+    }
   );
 
   return NextResponse.json({ ok: true });
